@@ -1,53 +1,166 @@
-; boot.masm - Bootloader en Español
-; Boot sector que carga y ejecuta un kernel
-[bits 16]
-[org 0x7C00]
+; ============================================================================
+; BOOTLOADER EN ESPAÑOL - Explicado Línea por Línea
+; ============================================================================
+; Este es el primer código que se ejecuta cuando enciendes la computadora.
+; La BIOS carga este código en la dirección 0x7C00 y salta a él.
+;
+; ¿Por qué 0x7C00? Historia: En las PCs originales, 32 KB de RAM estaban 
+; garantizados. 0x7C00 = 31.75 KB, dejando espacio para la BIOS.
+; ============================================================================
+
+[bits 16]                   ; Le dice al ensamblador que genere código de 16 bits
+                            ; ¿Por qué? Porque el CPU arranca en "modo real" (16 bits)
+                            ; En modo real solo puedes direccionar 1 MB de RAM
+
+[org 0x7C00]                ; Origen: Todas las direcciones son relativas a 0x7C00
+                            ; ¿Por qué? Porque aquí es donde la BIOS carga nuestro código
+                            ; Sin esto, las direcciones de memoria estarían mal
 
 inicio:
-    ; Limpiar segmentos
-    mover ax, 0
-    mover ds, ax
-    mover es, ax
-    mover ss, ax
-    mover sp, 0x7C00
+    ; ------------------------------------------------------------------------
+    ; PASO 1: Inicializar Segmentos de Memoria
+    ; ------------------------------------------------------------------------
+    ; En modo real, las direcciones se calculan como: segmento * 16 + offset
+    ; Queremos segmento 0 para que offset = dirección real
     
-    ; Cargar kernel desde disco
-    ; AH=02h (leer sectores), AL=10 (cantidad)
-    mover ah, 0x02
-    mover al, 10
-    mover ch, 0             ; cilindro 0
-    mover cl, 2             ; sector 2 (después del boot)
-    mover dh, 0             ; cabeza 0
-    mover bx, 0x1000        ; ES:BX = 0x0000:0x1000
-    interrupcion 0x13       ; llamada BIOS
+    mover ax, 0             ; AX = 0
+                            ; ¿Por qué AX? No puedes mover directamente a DS/ES/SS
+                            
+    mover ds, ax            ; DS (Data Segment) = 0
+                            ; ¿Por qué? Para acceder a datos sin offset extra
+                            
+    mover es, ax            ; ES (Extra Segment) = 0
+                            ; ¿Por qué? Para operaciones de string (movsb, etc.)
+                            
+    mover ss, ax            ; SS (Stack Segment) = 0
+                            ; ¿Por qué? Para que la pila esté en los primeros 64KB
+                            
+    mover sp, 0x7C00        ; SP (Stack Pointer) = 0x7C00
+                            ; ¿Por qué 0x7C00? La pila crece HACIA ABAJO
+                            ; Así no sobrescribe nuestro código (que está en 0x7C00+)
     
-    ; Mensaje de carga
-    mover si, msg_boot
-    llamar imprimir
+    ; ------------------------------------------------------------------------
+    ; PASO 2: Cargar el Kernel desde el Disco
+    ; ------------------------------------------------------------------------
+    ; Necesitamos leer sectores 2-11 del disco (nuestro kernel)
+    ; Sector 1 es este bootloader, así que el kernel empieza en sector 2
     
-    ; Saltar al kernel cargado
-    saltar 0x1000
+    mover ah, 0x02          ; AH = 0x02 → Función BIOS "Leer Sectores"
+                            ; ¿Por qué 0x02? Código de función de la INT 13h
+                            
+    mover al, 10            ; AL = 10 → Cantidad de sectores a leer
+                            ; ¿Por qué 10? Nuestro kernel ocupa 10 sectores (5 KB)
+                            ; Cada sector = 512 bytes
+                            
+    mover ch, 0             ; CH = 0 → Número de cilindro
+                            ; ¿Por qué 0? El primer cilindro del disco
+                            
+    mover cl, 2             ; CL = 2 → Número de sector
+                            ; ¿Por qué 2? Sector 1 es el bootloader, empezamos en 2
+                            
+    mover dh, 0             ; DH = 0 → Número de cabeza (head)
+                            ; ¿Por qué 0? La primera cabeza del disco
+                            
+    mover bx, 0x1000        ; ES:BX = 0x0000:0x1000 → Dirección destino
+                            ; ¿Por qué 0x1000? Queremos cargar el kernel lejos del bootloader
+                            ; 0x1000 = 4 KB después del inicio de la RAM
+                            
+    interrupcion 0x13       ; INT 13h → Llamada BIOS para operaciones de disco
+                            ; ¿Qué hace? La BIOS lee los sectores del disco a ES:BX
+                            ; Si falla, CF (carry flag) = 1
+    
+    ; ------------------------------------------------------------------------
+    ; PASO 3: Mostrar Mensaje de Confirmación
+    ; ------------------------------------------------------------------------
+    
+    mover si, msg_boot      ; SI = dirección del mensaje
+                            ; ¿Por qué SI? La función imprimir espera la dirección en SI
+                            
+    llamar imprimir         ; Llamar a nuestra función de impresión
+                            ; ¿Qué hace? Muestra "Cargando kernel..." en pantalla
+    
+    ; ------------------------------------------------------------------------
+    ; PASO 4: Saltar al Kernel
+    ; ------------------------------------------------------------------------
+    
+    saltar 0x1000           ; JMP 0x1000 → Salto incondicional
+                            ; ¿Por qué? Para transferir control al kernel que cargamos
+                            ; El CPU ahora ejecuta el código en 0x1000
 
-; Función imprimir
-; Entrada: SI = dirección del string
+; ============================================================================
+; FUNCIÓN: imprimir
+; ----------------------------------------------------------------------------
+; Imprime una cadena de texto en la pantalla
+; 
+; Entrada: SI = dirección de la cadena (terminada en 0)
+; Salida:  Ninguna
+; Modifica: AX, BX (pero los restaura)
+; ============================================================================
 imprimir:
-    meter ax
-    meter bx
+    meter ax                ; PUSH AX → Guardar AX en la pila
+                            ; ¿Por qué? Para no perder su valor original
+                            
+    meter bx                ; PUSH BX → Guardar BX en la pila
+                            ; ¿Por qué? Vamos a modificarlo, pero el llamador puede necesitarlo
+                            
 .loop:
-    cargar_byte             ; lodsb: AL = [SI++]
-    comparar al, 0
-    si_igual .done
-    mover ah, 0x0E          ; función teletype
-    mover bx, 0x07          ; atributo
-    interrupcion 0x10       ; BIOS video
-    saltar .loop
+    cargar_byte             ; LODSB → AL = [DS:SI], luego SI++
+                            ; ¿Qué hace? Carga el byte apuntado por SI en AL
+                            ; y automáticamente incrementa SI
+                            ; ¿Por qué es útil? Para recorrer strings fácilmente
+                            
+    comparar al, 0          ; CMP AL, 0 → ¿Es el byte actual un 0?
+                            ; ¿Por qué? Las cadenas en C terminan con 0 (null terminator)
+                            
+    si_igual .done          ; JE .done → Si es 0, terminar
+                            ; ¿Por qué? Llegamos al final de la cadena
+    
+    mover ah, 0x0E          ; AH = 0x0E → Función "Teletype Output"
+                            ; ¿Por qué? Es la función BIOS para imprimir un carácter
+                            
+    mover bx, 0x07          ; BX = 0x07 → Atributo de color (blanco sobre negro)
+                            ; ¿Por qué? BH = página, BL = color
+                            
+    interrupcion 0x10       ; INT 10h → Llamada BIOS de video
+                            ; ¿Qué hace? Imprime el carácter en AL en la pantalla
+                            
+    saltar .loop            ; JMP .loop → Volver al inicio del bucle
+                            ; ¿Por qué? Para imprimir el siguiente carácter
+    
 .done:
-    sacar bx
-    sacar ax
-    retornar
+    sacar bx                ; POP BX → Restaurar valor original de BX
+                            ; ¿Por qué? Para que el llamador no note que lo modificamos
+                            
+    sacar ax                ; POP AX → Restaurar valor original de AX
+                            ; Nota: POP en orden inverso a PUSH (LIFO - Last In First Out)
+                            
+    retornar                ; RET → Volver a quien nos llamó
+                            ; ¿Cómo funciona? Saca la dirección de retorno de la pila
+                            ; y salta a ella
 
+; ============================================================================
+; DATOS
+; ============================================================================
 msg_boot db 'Cargando kernel...', 13, 10, 0
+                            ; db = Define Byte
+                            ; 13 = Carriage Return (CR, volver al inicio de línea)
+                            ; 10 = Line Feed (LF, nueva línea)
+                            ; 0 = Null terminator (marca el fin de la cadena)
 
-; Firma de boot (debe estar en bytes 510-511)
-times 510-($-$$) db 0
-dw 0xAA55
+; ============================================================================
+; BOOT SECTOR SIGNATURE
+; ----------------------------------------------------------------------------
+; Los últimos 2 bytes del sector deben ser 0xAA55 para que la BIOS
+; reconozca esto como un sector de arranque válido.
+; ============================================================================
+
+times 510-($-$$) db 0       ; Rellenar con ceros hasta el byte 510
+                            ; $ = ubicación actual
+                            ; $$ = inicio de la sección
+                            ; $ - $$ = bytes escritos hasta ahora
+                            ; ¿Por qué? El sector debe ser exactamente 512 bytes
+                            
+dw 0xAA55                   ; dw = Define Word (2 bytes)
+                            ; ¿Por qué 0xAA55? Es la firma mágica que busca la BIOS
+                            ; En little-endian: 0x55, 0xAA en memoria
+                            ; Sin esto, la BIOS no ejecutará este código

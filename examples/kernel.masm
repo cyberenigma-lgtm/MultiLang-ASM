@@ -1,84 +1,219 @@
-; kernel.masm - Kernel Mínimo en Español
-; Kernel cargado por el bootloader
-[bits 16]
-[org 0x1000]
+; ============================================================================
+; KERNEL MÍNIMO EN ESPAÑOL - Explicado Línea por Línea
+; ============================================================================
+; Este es el kernel que el bootloader carga y ejecuta.
+; Demuestra conceptos fundamentales de programación de bajo nivel.
+;
+; Conceptos cubiertos:
+; - Llamadas BIOS para video y teclado
+; - Funciones y convenciones de llamada
+; - Manipulación de strings
+; - Bucles infinitos para sistemas operativos
+; ============================================================================
+
+[bits 16]                   ; Código de 16 bits (modo real)
+                            ; ¿Por qué? El bootloader nos pasa el control en modo real
+                            ; Para cambiar a 32-bit necesitaríamos modo protegido
+
+[org 0x1000]                ; Origen en 0x1000
+                            ; ¿Por qué? El bootloader nos cargó aquí
+                            ; Todas las direcciones son relativas a 0x1000
 
 inicio_kernel:
-    ; Limpiar pantalla
-    mover ah, 0x00
-    mover al, 0x03          ; modo texto 80x25
-    interrupcion 0x10
+    ; ------------------------------------------------------------------------
+    ; PASO 1: Limpiar la Pantalla
+    ; ------------------------------------------------------------------------
+    ; Queremos partir con una pantalla limpia para nuestro kernel
     
-    ; Mostrar título
-    mover si, titulo
-    llamar imprimir
+    mover ah, 0x00          ; AH = 0x00 → Función "Set Video Mode"
+                            ; ¿Por qué? Cambiar modo de video limpia la pantalla
+                            
+    mover al, 0x03          ; AL = 0x03 → Modo texto 80x25, 16 colores
+                            ; ¿Por qué 0x03? Es el modo texto estándar
+                            ; Alternativas: 0x12 = VGA 640x480, 0x13 = VGA 320x200
+                            
+    interrupcion 0x10       ; INT 10h → Llamada BIOS de video
+                            ; ¿Qué hace? Reinicia el modo de video, limpiando pantalla
     
-    ; Mostrar mensaje principal
-    mover si, mensaje
-    llamar imprimir
+    ; ------------------------------------------------------------------------
+    ; PASO 2: Mostrar Título del Kernel
+    ; ------------------------------------------------------------------------
     
-    ; Mostrar prompt
-    mover si, prompt
-    llamar imprimir
+    mover si, titulo        ; SI = dirección del título
+                            ; ¿Por qué SI? Convención: SI para punteros a strings
+                            
+    llamar imprimir         ; Llamar función imprimir
+                            ; ¿Qué hace? Muestra el banner del kernel
     
-    ; Loop principal del kernel
+    ; ------------------------------------------------------------------------
+    ; PASO 3: Mostrar Mensaje de Bienvenida
+    ; ------------------------------------------------------------------------
+    
+    mover si, mensaje       ; SI = dirección del mensaje
+    llamar imprimir         ; Imprimir mensaje de bienvenida
+    
+    ; ------------------------------------------------------------------------
+    ; PASO 4: Mostrar Prompt
+    ; ------------------------------------------------------------------------
+    
+    mover si, prompt        ; SI = dirección del prompt "> "
+    llamar imprimir         ; Mostrar prompt
+    
+    ; ------------------------------------------------------------------------
+    ; PASO 5: Loop Principal (Event Loop)
+    ; ------------------------------------------------------------------------
+    ; Todo kernel u OS tiene un loop principal que:
+    ; 1. Espera eventos (teclas, interrupciones, etc.)
+    ; 2. Procesa eventos
+    ; 3. Actualiza estado
+    ; 4. Repite
+    
 bucle_principal:
-    ; Esperar tecla
-    mover ah, 0x00
-    interrupcion 0x16       ; esperar tecla
+    ; Esperar que el usuario presione una tecla
+    mover ah, 0x00          ; AH = 0x00 → Función "Wait for Keystroke"
+                            ; ¿Por qué? Bloquea hasta que hay una tecla
+                            
+    interrupcion 0x16       ; INT 16h → Llamada BIOS de teclado
+                            ; ¿Qué hace? AL = código ASCII de la tecla
+                            ; AH = scan code de la tecla
     
-    ; Mostrar tecla presionada
-    mover ah, 0x0E
-    interrupcion 0x10
+    ; Echo: Mostrar la tecla presionada
+    mover ah, 0x0E          ; AH = 0x0E → Función "Teletype Output"
+                            ; ¿Por qué? Para mostrar el carácter en AL
+                            
+    interrupcion 0x10       ; INT 10h → Imprimir carácter
+                            ; ¿Qué hace? Muestra AL en pantalla y avanza cursor
     
-    ; Si es ESC, detener
-    comparar al, 27
-    si_igual shutdown
+    ; Verificar si presionaron ESC (código ASCII 27)
+    comparar al, 27         ; CMP AL, 27 → ¿Es ESC?
+                            ; ¿Por qué 27? Es el código ASCII de ESC
+                            ; ASCII: 13=Enter, 27=ESC, 32=Space, 65=A, etc.
+                           
+    si_igual shutdown       ; JE shutdown → Si es ESC, ir a shutdown
+                            ; ¿Por qué? Para darle al usuario forma de salir
     
-    saltar bucle_principal
+    ; Si no es ESC, seguir en el loop
+    saltar bucle_principal  ; JMP bucle_principal → Volver al inicio
+                            ; ¿Por qué? Para esperar la siguiente tecla
 
+; ============================================================================
+; PROCEDIMIENTO DE APAGADO
+; ----------------------------------------------------------------------------
+; Mostrar mensaje de despedida y detener el sistema
+; En un OS real, aquí se guardarían datos, desmontarían discos, etc.
+; ============================================================================
 shutdown:
-    mover si, msg_apagado
-    llamar imprimir
+    mover si, msg_apagado   ; SI = dirección del mensaje de despedida
+    llamar imprimir         ; Mostrar mensaje
     
 bucle_infinito:
-    detener
-    saltar bucle_infinito
+    detener                 ; HLT → Halt (detener CPU)
+                            ; ¿Por qué HLT? Ahorra energía y reduce calor
+                            ; El CPU espera interrupciones en bajo consumo
+                            
+    saltar bucle_infinito   ; JMP bucle_infinito → Por si hay interrupción
+                            ; ¿Por qué? HLT se despierta con interrupciones
+                            ; El saltar lo vuelve a detener
 
-; Función: Imprimir cadena
-; Entrada: SI = puntero a string (terminado en 0)
+; ============================================================================
+; FUNCIÓN: imprimir
+; ----------------------------------------------------------------------------
+; Imprime una cadena de texto terminada en null
+;
+; ENTRADA:
+;   SI = Dirección de la cadena (string terminado en 0)
+;
+; SALIDA:
+;   Ninguna
+;
+; MODIFICA:
+;   AX, BX (pero los restaura con push/pop)
+;
+; ALGORITMO:
+;   1. Guardar registros que vamos a modificar
+;   2. MIENTRAS el byte actual NO sea 0:
+;        a. Cargar byte en AL
+;        b. Imprimir byte con INT 10h
+;        c. Avanzar al siguiente byte
+;   3. Restaurar registros
+;   4. Retornar
+; ============================================================================
 imprimir:
-    meter ax
-    meter bx
+    meter ax                ; PUSH AX → Guardar en pila
+                            ; ¿Por qué? Convención: las funciones no deben
+                            ; alterar registros del llamador
+                            
+    meter bx                ; PUSH BX → Guardar en pila
     
-.ciclo:
-    cargar_byte             ; AL = [SI], SI++
-    comparar al, 0
-    si_igual .fin
+.ciclo:                     ; Etiqueta local (el . indica que es local a imprimir)
+    cargar_byte             ; LODSB → AL = [DS:SI]; SI = SI + 1
+                            ; ¿Qué hace? Operación atómica de carga e incremento
+                            ; Es más eficiente que MOV + INC
+                            
+    comparar al, 0          ; CMP AL, 0 → ¿Llegamos al null terminator?
+                            ; ¿Por qué comparar con 0? Convención de C
+                            ; Las strings terminan con byte 0
+                            
+    si_igual .fin           ; JE .fin → Si es 0, salir del loop
+                            ; ¿Por qué JE? JE salta si ZF (Zero Flag) = 1
+                            ; CMP pone ZF=1 cuando los operandos son iguales
     
-    mover ah, 0x0E
-    mover bx, 0x07
-    interrupcion 0x10
-    saltar .ciclo
+    mover ah, 0x0E          ; AH = 0x0E → Teletype output
+    mover bx, 0x07          ; BH = 0 (página 0), BL = 7 (color: gris claro)
+                            ; ¿Qué es una página? Modo texto tiene múltiples
+                            ; buffers de pantalla (páginas) para cambios rápidos
+                            
+    interrupcion 0x10       ; INT 10h → Imprimir AL
+    
+    saltar .ciclo           ; JMP .ciclo → Siguiente carácter
     
 .fin:
-    sacar bx
-    sacar ax
-    retornar
+    sacar bx                ; POP BX → Restaurar valor original
+                            ; ¿Por qué en orden inverso? La pila es LIFO
+                            ; (Last In, First Out)
+                            
+    sacar ax                ; POP AX → Restaurar valor original
+    
+    retornar                ; RET → Volver al llamador
+                            ; ¿Cómo funciona RET? POP IP (saca dirección de retorno)
 
-; Datos del kernel
+; ============================================================================
+; SECCIÓN DE DATOS
+; ----------------------------------------------------------------------------
+; Aquí definimos todas las strings que usa el kernel
+; db = Define Byte
+; 13 = \r (Carriage Return)
+; 10 = \n (Line Feed)
+; 0 = null terminator
+; ============================================================================
+
 titulo    db '========================================', 13, 10
           db '   KERNEL MULTILINGUE v0.1', 13, 10
           db '   Creado con MultiLang-ASM', 13, 10
           db '========================================', 13, 10, 13, 10, 0
+          ; ¿Por qué 13 y 10? En DOS/Windows se necesitan ambos:
+          ; 13 mueve el cursor al inicio de la línea
+          ; 10 baja a la siguiente línea
+          ; Unix solo usa 10, Mac clásico solo usa 13
 
 mensaje   db 'Kernel en espanol funcionando!', 13, 10
           db 'Presiona teclas para ver el echo...', 13, 10
           db 'ESC para detener.', 13, 10, 13, 10, 0
 
-prompt    db '> ', 0
+prompt    db '> ', 0        ; Prompt simple
+                            ; ¿Por qué '> '? Convención: indica que espera entrada
 
 msg_apagado db 13, 10, 13, 10, 'Sistema detenido. Puedes cerrar QEMU.', 13, 10, 0
 
-; Rellenar hasta 5KB (10 sectores de 512 bytes)
-times 5120-($-$$) db 0
+; ============================================================================
+; PADDING
+; ----------------------------------------------------------------------------
+; Rellenamos el kernel hasta 5 KB (10 sectores de 512 bytes)
+; ¿Por qué? El bootloader lee exactamente 10 sectores
+; ============================================================================
+
+times 5120-($-$$) db 0      ; 5120 bytes = 10 sectores × 512 bytes/sector
+                            ; $ - $$ = bytes escritos hasta ahora
+                            ; Rellenamos el resto con ceros
+                            ; ¿Por qué rellenar? Para que el tamaño sea exacto
+                            ; y el bootloader no lea basura
