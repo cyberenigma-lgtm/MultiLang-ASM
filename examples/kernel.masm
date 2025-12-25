@@ -1,0 +1,84 @@
+; kernel.masm - Kernel Mínimo en Español
+; Kernel cargado por el bootloader
+[bits 16]
+[org 0x1000]
+
+inicio_kernel:
+    ; Limpiar pantalla
+    mover ah, 0x00
+    mover al, 0x03          ; modo texto 80x25
+    interrupcion 0x10
+    
+    ; Mostrar título
+    mover si, titulo
+    llamar imprimir
+    
+    ; Mostrar mensaje principal
+    mover si, mensaje
+    llamar imprimir
+    
+    ; Mostrar prompt
+    mover si, prompt
+    llamar imprimir
+    
+    ; Loop principal del kernel
+bucle_principal:
+    ; Esperar tecla
+    mover ah, 0x00
+    interrupcion 0x16       ; esperar tecla
+    
+    ; Mostrar tecla presionada
+    mover ah, 0x0E
+    interrupcion 0x10
+    
+    ; Si es ESC, detener
+    comparar al, 27
+    si_igual shutdown
+    
+    saltar bucle_principal
+
+shutdown:
+    mover si, msg_apagado
+    llamar imprimir
+    
+bucle_infinito:
+    detener
+    saltar bucle_infinito
+
+; Función: Imprimir cadena
+; Entrada: SI = puntero a string (terminado en 0)
+imprimir:
+    meter ax
+    meter bx
+    
+.ciclo:
+    cargar_byte             ; AL = [SI], SI++
+    comparar al, 0
+    si_igual .fin
+    
+    mover ah, 0x0E
+    mover bx, 0x07
+    interrupcion 0x10
+    saltar .ciclo
+    
+.fin:
+    sacar bx
+    sacar ax
+    retornar
+
+; Datos del kernel
+titulo    db '========================================', 13, 10
+          db '   KERNEL MULTILINGUE v0.1', 13, 10
+          db '   Creado con MultiLang-ASM', 13, 10
+          db '========================================', 13, 10, 13, 10, 0
+
+mensaje   db 'Kernel en espanol funcionando!', 13, 10
+          db 'Presiona teclas para ver el echo...', 13, 10
+          db 'ESC para detener.', 13, 10, 13, 10, 0
+
+prompt    db '> ', 0
+
+msg_apagado db 13, 10, 13, 10, 'Sistema detenido. Puedes cerrar QEMU.', 13, 10, 0
+
+; Rellenar hasta 5KB (10 sectores de 512 bytes)
+times 5120-($-$$) db 0

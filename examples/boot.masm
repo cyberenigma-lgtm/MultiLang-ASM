@@ -1,0 +1,53 @@
+; boot.masm - Bootloader en Español
+; Boot sector que carga y ejecuta un kernel
+[bits 16]
+[org 0x7C00]
+
+inicio:
+    ; Limpiar segmentos
+    mover ax, 0
+    mover ds, ax
+    mover es, ax
+    mover ss, ax
+    mover sp, 0x7C00
+    
+    ; Cargar kernel desde disco
+    ; AH=02h (leer sectores), AL=10 (cantidad)
+    mover ah, 0x02
+    mover al, 10
+    mover ch, 0             ; cilindro 0
+    mover cl, 2             ; sector 2 (después del boot)
+    mover dh, 0             ; cabeza 0
+    mover bx, 0x1000        ; ES:BX = 0x0000:0x1000
+    interrupcion 0x13       ; llamada BIOS
+    
+    ; Mensaje de carga
+    mover si, msg_boot
+    llamar imprimir
+    
+    ; Saltar al kernel cargado
+    saltar 0x1000
+
+; Función imprimir
+; Entrada: SI = dirección del string
+imprimir:
+    meter ax
+    meter bx
+.loop:
+    cargar_byte             ; lodsb: AL = [SI++]
+    comparar al, 0
+    si_igual .done
+    mover ah, 0x0E          ; función teletype
+    mover bx, 0x07          ; atributo
+    interrupcion 0x10       ; BIOS video
+    saltar .loop
+.done:
+    sacar bx
+    sacar ax
+    retornar
+
+msg_boot db 'Cargando kernel...', 13, 10, 0
+
+; Firma de boot (debe estar en bytes 510-511)
+times 510-($-$$) db 0
+dw 0xAA55
