@@ -1,226 +1,230 @@
-# 🤝 Contribuir a MultiLang-ASM
+# 🤝 Contributing to MultiLang-ASM
 
-¡Gracias por tu interés en contribuir a MultiLang-ASM! Este proyecto busca democratizar la programación de bajo nivel eliminando barreras lingüísticas.
+📖 **English** | **[Español](CONTRIBUTING_ES.md)**
 
-## 🌍 Formas de Contribuir
+---
 
-### 1. Añadir un Nuevo Idioma
+Thank you for your interest in contributing to MultiLang-ASM! This project seeks to democratize low-level programming by removing linguistic barriers.
 
-**Lo que necesitas:**
-- Ser hablante nativo o tener dominio avanzado del idioma
-- Conocer términos naturales de programación en ese idioma
-- 30-60 minutos de tiempo
+## 🌍 Ways to Contribute
 
-**Pasos:**
+### 1. Add a New Language
 
-1. Fork el repositorio
-2. Edita `mlasm.py` y añade tu idioma a la tabla `TABLE`:
+**What you need:**
+- Be a native speaker or have advanced proficiency in the language
+- Know natural programming terms in that language
+- 30-60 minutes of time
+
+**Steps:**
+
+1. Fork the repository
+2. Edit `mlasm.py` and add your language to the `TABLE`:
 
 ```python
-TABLE["tu_codigo"] = {
-    # Movimiento
-    "palabra_nativa": "mov",
-    "otra_palabra": "add",
-    # ... continuar con 80+ instrucciones
+TABLE["your_code"] = {
+    # Movement
+    "native_word": "mov",
+    "another_word": "add",
+    # ... continue with 80+ instructions
 }
 ```
 
-3. Crea la documentación en `docs/INSTRUCCIONES_TU.md` siguiendo el formato de los existentes
-4. Actualiza `docs/README.md` para incluir tu idioma
-5. Crea un pull request
+3. Create documentation in `docs/INSTRUCTIONS_XX.md` following the format of existing ones
+4. Update `docs/README.md` to include your language
+5. Create a pull request
 
-**Idiomas que necesitamos:**
+**Languages we need:**
 - 🇵🇹 Português
 - 🇹🇷 Türkçe
 - 🇵🇱 Polski
 - 🇻🇳 Tiếng Việt
 - 🇹🇭 ไทย
 - 🇬🇷 Ελληνικά
-- Y más...
+- And more...
 
 ---
 
-### 2. Mejorar Traducciones Existentes
+### 2. Improve Existing Translations
 
-Si eres hablante nativo de un idioma soportado y encuentras que algunos términos podrían ser más naturales:
+If you're a native speaker of a supported language and find that some terms could be more natural:
 
-1. Abre un issue describiendo la mejora
-2. Propón el término alternativo y por qué suena más natural
-3. Haz un pull request con el cambio
+1. Open an issue describing the improvement
+2. Propose the alternative term and why it sounds more natural
+3. Make a pull request with the change
 
-**Principio:** Naturalidad > Literalidad
-
----
-
-### 3. Expandir Documentación
-
-- Tutoriales en tu idioma
-- Ejemplos de proyectos reales
-- Casos de uso específicos
-- Videos explicativos
+**Principle:** Naturalness > Literality
 
 ---
 
-### 4. Reportar Bugs
+### 3. Expand Documentation
 
-**Formato del issue:**
+- Tutorials in your language
+- Real project examples
+- Specific use cases
+- Explanatory videos
+
+---
+
+### 4. Report Bugs
+
+**Issue format:**
 ```markdown
-## Descripción
-[Describe el problema]
+## Description
+[Describe the problem]
 
-## Pasos para reproducir
+## Steps to Reproduce
 1. ...
 2. ...
 
-## Comportamiento esperado
-[Qué debería pasar]
+## Expected Behavior
+[What should happen]
 
-## Comportamiento actual
-[Qué pasa realmente]
+## Actual Behavior
+[What actually happens]
 
-## Entorno
+## Environment
 - OS: [Windows/Linux/macOS]
-- Python: [versión]
-- MultiLang-ASM: [versión]
+- Python: [version]
+- MultiLang-ASM: [version]
 ```
 
 ---
 
-### 5. Solicitar Funcionalidades
+### 5. Request Features
 
-Abre un issue con la etiqueta `enhancement` describiendo:
-- Qué funcionalidad quieres
-- Por qué es útil
-- Ejemplos de uso
+Open an issue with the `enhancement` label describing:
+- What functionality you want
+- Why it's useful
+- Usage examples
 
 ---
 
-## 📋 Guías de Estilo
+## 📋 Style Guidelines
 
-### Código Python
+### Python Code
 
 ```python
-# Usar nombres descriptivos
+# Use descriptive names
 def translate_token(token, lang):  # ✅
 def tt(t, l):  # ❌
 
-# Documentar funciones complejas
+# Document complex functions
 def foo():
-    """Explica qué hace la función"""
+    """Explain what the function does"""
     pass
 
-# Seguir PEP 8 (pero no obsesionarse)
+# Follow PEP 8 (but don't obsess)
 ```
 
-### Documentación Markdown
+### Markdown Documentation
 
-- Usa emojis para secciones (mejora scannability)
-- Incluye ejemplos de código funcionales
-- Enlaza a otros documentos cuando sea relevante
-- Mantén líneas de 80 columnas cuando sea posible
+- Use emojis for sections (improves scannability)
+- Include functional code examples
+- Link to other documents when relevant
+- Keep lines to 80 columns when possible
 
-### Traducciones
+### Translations
 
-**Principios:**
-1. **Naturalidad sobre Literalidad** - Usa términos que suenen naturales, no traducciones palabra por palabra
-2. **Claridad sobre Brevedad** - `comparar` es mejor que `comp`
-3. **Consistencia** - Si usas infinitivos verbales, manténlo en todo el idioma
-4. **Compatibilidad** - Las instrucciones en inglés siempre deben seguir funcionando
+**Principles:**
+1. **Naturalness over Literality** - Use terms that sound natural, not word-for-word translations
+2. **Clarity over Brevity** - `compare` is better than `cmp`
+3. **Consistency** - If you use verb infinitives, maintain it throughout the language
+4. **Compatibility** - English instructions must always continue to work
 
 ---
 
-## 🔄 Proceso de Pull Request
+## 🔄 Pull Request Process
 
-1. **Fork** el repositorio
-2. **Crea una rama** para tu contribución:
+1. **Fork** the repository
+2. **Create a branch** for your contribution:
    ```bash
-   git checkout -b feat/añadir-portugues
+   git checkout -b lang-xx
    ```
-3. **Haz tus cambios** siguiendo las guías de estilo
-4. **Prueba** que todo funciona:
+3. **Make your changes** following style guidelines
+4. **Test** that everything works:
    ```bash
-   python mlasm.py tu_idioma demo.masm demo.asm
+   python mlasm.py your_lang demo.masm demo.asm
    ```
-5. **Commit** con mensaje descriptivo:
+5. **Commit** with descriptive message:
    ```bash
-   git commit -m "feat: añadir soporte para Português"
+   git commit -m "feat: add support for Portuguese"
    ```
-6. **Push** a tu fork:
+6. **Push** to your fork:
    ```bash
-   git push origin feat/añadir-portugues
+   git push origin lang-xx
    ```
-7. **Abre un Pull Request** en GitHub
+7. **Open a Pull Request** on GitHub
 
 ---
 
-## ✅ Checklist para Nuevos Idiomas
+## ✅ Checklist for New Languages
 
-- [ ] Añadido a `TABLE` en `mlasm.py`
-- [ ] Creado `docs/INSTRUCCIONES_XX.md`
-- [ ] Actualizado `docs/README.md`
-- [ ] Actualizado `README.md` principal
-- [ ] Probado con al menos 3 ejemplos diferentes
-- [ ] Verificado que instrucciones en inglés siguen funcionando
-
----
-
-## 🎯 Prioridades Actuales
-
-**Alta prioridad:**
-- Expansión de `PRETTY` para todos los idiomas (modo reversible)
-- Más idiomas en `TABLE`
-- Ejemplos de proyectos reales
-
-**Media prioridad:**
-- Tests automatizados
-- Plugin VSCode
-- Detección automática de idioma
-
-**Baja prioridad:**
-- Soporte para arquitecturas ARM
-- Modo interactivo
+- [ ] Added to `TABLE` in `mlasm.py`
+- [ ] Created `docs/INSTRUCTIONS_XX.md`
+- [ ] Updated `docs/README.md`
+- [ ] Updated main `README.md`
+- [ ] Tested with at least 3 different examples
+- [ ] Verified existing functionality still works
 
 ---
 
-## 💬 Comunicación
+## 🎯 Current Priorities
 
-- **Issues:** Para bugs, features, preguntas
-- **Discussions:** Para ideas, debates largos
-- **Pull Requests:** Para contribuciones de código
+**High priority:**
+- Expansion of `PRETTY` for all languages (reversible mode)
+- More languages in `TABLE`
+- Real project examples
 
----
+**Medium priority:**
+- Automated tests
+- VSCode plugin
+- Automatic language detection
 
-## 📜 Código de Conducta
-
-**Regla de oro:** Trata a los demás como quieres ser tratado.
-
-Específicamente:
-- ✅ Sé respetuoso con todos los contribuidores
-- ✅ Acepta críticas constructivas
-- ✅ Enfócate en lo mejor para el proyecto
-- ❌ No toleramos discriminación de ningún tipo
-- ❌ No toleramos comportamiento hostil
+**Low priority:**
+- ARM architecture support
+- Interactive mode
 
 ---
 
-## 🙏 Reconocimientos
+## 💬 Communication
 
-Todos los contribuidores serán listados en:
-- `README.md` (sección Contributors)
-- Notas de lanzamiento de cada versión
-- Documentación del idioma que añadan
-
----
-
-## 📞 ¿Preguntas?
-
-Abre un issue con la etiqueta `question` o inicia una Discussion.
+- **Issues:** For bugs, features, questions
+- **Discussions:** For ideas, long debates
+- **Pull Requests:** For code contributions
 
 ---
 
-**Gracias por ayudar a democratizar la programación de bajo nivel.** 🛡️✨
+## 📜 Code of Conduct
+
+**Golden rule:** Treat others as you want to be treated.
+
+Specifically:
+- ✅ Be respectful to all contributors
+- ✅ Accept constructive criticism
+- ✅ Focus on what's best for the project
+- ❌ We don't tolerate discrimination of any kind
+- ❌ We don't tolerate hostile behavior
 
 ---
 
-**MultiLang-ASM** - Parte del ecosistema Neuro-OS  
+## 🙏 Acknowledgments
+
+All contributors will be listed in:
+- `README.md` (Contributors section)
+- Each version's release notes
+- Documentation of the language they add
+
+---
+
+## 📞 Questions?
+
+Open an issue with the `question` label or start a Discussion.
+
+---
+
+**Thanks for helping democratize low-level programming.** 🛡️✨
+
+---
+
+**MultiLang-ASM** - Part of the Neuro-OS ecosystem  
 https://github.com/cyberenigma-lgtm/MultiLang-ASM
