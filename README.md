@@ -241,7 +241,35 @@ Piénsalo como un "preprocesador humano" que elimina la barrera del idioma sin m
 
 ## 💭 Mensaje del Autor
 
-*"Creer que las barreras del idioma existen para frenarnos es no mirar hacia atrás y olvidar que toda evolución nace del cambio. Tu sueño, tu realidad: lo imaginas, lo construyes. No hay barreras. Tu único límite eres tú."*
+**"No saber inglés no debería ser una barrera para crear. El conocimiento debe fluir en todos los idiomas."**
+
+Si este proyecto te ayudó, compártelo. Cada persona que programa en su idioma nativo es una victoria contra las barreras artificiales en tecnología.
+
+---
+
+## 🤝 ¿Quieres Contribuir?
+
+**MultiLang-ASM está abierto a colaboraciones de todo el mundo.**
+
+No necesitas saber ensamblador: si hablas otro idioma, puedes ayudar a traducir, documentar o crear ejemplos.
+
+**¿Cómo puedes ayudar?**
+- 🌍 Añadir soporte para nuevos idiomas
+- 📝 Mejorar traducciones existentes
+- 📚 Crear tutoriales en tu idioma
+- 🐛 Reportar bugs o sugerir mejoras
+- ⭐ Dar una estrella al repo
+
+**Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para empezar.**
+
+Issues etiquetados con `good first issue` son perfectos para nuevos contribuidores.
+
+---
+
+**Versión:** v0.2  
+**Licencia:** MIT  
+**Autor:** J / Neuro-OS Project  
+**Repositorio:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
 
 — J
 
