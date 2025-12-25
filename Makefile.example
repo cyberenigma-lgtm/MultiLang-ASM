@@ -1,0 +1,80 @@
+# ============================================================================
+# Makefile de Ejemplo para MultiLang-ASM
+# ============================================================================
+
+# Configuración del idioma (cambia esto según tu preferencia)
+LANG = es
+
+# Herramientas
+MLASM = python mlasm.py
+NASM = nasm
+LD = ld
+
+# Directorios
+SRC_DIR = src
+BUILD_DIR = build
+
+# Archivos fuente (en tu idioma nativo)
+SOURCES = $(wildcard $(SRC_DIR)/*.masm)
+
+# Archivos intermedios y finales
+ASM_FILES = $(patsubst $(SRC_DIR)/%.masm,$(BUILD_DIR)/%.asm,$(SOURCES))
+OBJ_FILES = $(patsubst $(BUILD_DIR)/%.asm,$(BUILD_DIR)/%.o,$(ASM_FILES))
+BINARY = programa
+
+# ============================================================================
+# Reglas Principales
+# ============================================================================
+
+.PHONY: all clean run help
+
+all: $(BUILD_DIR) $(BINARY)
+	@echo "✅ Compilación completada: $(BINARY)"
+
+# Crear directorio de compilación
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# ============================================================================
+# Pipeline de Compilación
+# ============================================================================
+
+# Paso 1: MultiLang-ASM traduce de tu idioma a ASM estándar
+$(BUILD_DIR)/%.asm: $(SRC_DIR)/%.masm $(BUILD_DIR)
+	@echo "🛡️ Traduciendo $< ($(LANG)) -> $@"
+	$(MLASM) $(LANG) $< $@
+
+# Paso 2: NASM compila ASM a objeto
+$(BUILD_DIR)/%.o: $(BUILD_DIR)/%.asm
+	@echo "🔧 Compilando $< -> $@"
+	$(NASM) -f elf64 $< -o $@
+
+# Paso 3: LD enlaza objetos a binario final
+$(BINARY): $(OBJ_FILES)
+	@echo "🔗 Enlazando objetos -> $@"
+	$(LD) $^ -o $@
+
+# ============================================================================
+# Utilidades
+# ============================================================================
+
+clean:
+	@echo "🧹 Limpiando archivos generados..."
+	rm -rf $(BUILD_DIR) $(BINARY)
+
+run: $(BINARY)
+	@echo "🚀 Ejecutando $(BINARY)..."
+	@./$(BINARY)
+
+help:
+	@echo "MultiLang-ASM - Makefile de Ejemplo"
+	@echo ""
+	@echo "Uso:"
+	@echo "  make          - Compila todo el proyecto"
+	@echo "  make run      - Compila y ejecuta"
+	@echo "  make clean    - Limpia archivos generados"
+	@echo "  make help     - Muestra esta ayuda"
+	@echo ""
+	@echo "Configuración actual:"
+	@echo "  Idioma: $(LANG)"
+	@echo "  Fuentes: $(SOURCES)"

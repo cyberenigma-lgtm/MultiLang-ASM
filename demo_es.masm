@@ -1,0 +1,19 @@
+; 🛡️ PROGRAMA DE PRUEBA: MultiLang-ASM (Español)
+; Este código será traducido a NASM estándar
+
+seccion .texto
+global _inicio
+
+_inicio:
+    mover rax, 1          ; syscall write
+    mover rdi, 1          ; stdout
+    mover rsi, mensaje    ; direccion del mensaje
+    mover rdx, 14         ; longitud
+    interrupcion 0x80     ; llamar al kernel
+
+    mover rax, 60         ; syscall exit
+    mover rdi, 0          ; codigo de salida
+    interrupcion 0x80
+
+seccion .datos
+    mensaje db "Hola Mundo!", 0xA
