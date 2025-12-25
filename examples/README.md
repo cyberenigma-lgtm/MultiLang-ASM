@@ -1,6 +1,8 @@
 # Examples - MultiLang-ASM
 
-Ejemplos funcionales de código escrito con MultiLang-ASM.
+Functional code examples written with MultiLang-ASM.
+
+**🚀 [QUICKSTART: Build a Kernel in 5 Minutes →](QUICKSTART.md)**
 
 ---
 
