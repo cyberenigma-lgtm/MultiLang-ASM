@@ -220,6 +220,8 @@ All contributors will be listed in:
 
 Open an issue with the `question` label or start a Discussion.
 
+**Contact:** neuro.so.ia.sim@gmail.com
+
 ---
 
 **Thanks for helping democratize low-level programming.** 🛡️✨

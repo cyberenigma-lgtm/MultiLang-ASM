@@ -277,12 +277,22 @@ Issues etiquetados con `good first issue` son perfectos para nuevos contribuidor
 
 ---
 
+## 📧 Contacto
+
+**Email:** neuro.so.ia.sim@gmail.com  
+**Issues:** [GitHub Issues](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)  
+**Discussions:** [GitHub Discussions](https://github.com/cyberenigma-lgtm/MultiLang-ASM/discussions)
+
+---
+
 **Versión:** v0.2  
 **Licencia:** MIT  
 **Autor:** J / Neuro-OS Project  
 **Repositorio:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
 
 — J
+
+🛡️ **Parte del ecosistema Neuro-OS**
 
 ## 📜 Licencia
 

@@ -178,6 +178,14 @@ Thanks to all contributors who help democratize low-level programming.
 
 ---
 
+## 📧 Contact
+
+**Email:** neuro.so.ia.sim@gmail.com  
+**Issues:** [GitHub Issues](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)  
+**Discussions:** [GitHub Discussions](https://github.com/cyberenigma-lgtm/MultiLang-ASM/discussions)
+
+---
+
 **Version:** v0.2  
 **Author:** J / Neuro-OS Project  
 **Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
