@@ -1,4 +1,4 @@
-# 🛡️# MultiLang-ASM
+# MultiLang-ASM
 **The first multilingual x86_64 assembler.**  
 Write assembly in your native language · 10 languages · 80+ instructions · reversible translation · NASM-compatible.
 
@@ -122,9 +122,9 @@ Issues labeled `good first issue` are perfect for first-time contributors.
 | Version | Features | Status |
 |---------|----------|--------|
 | v0.2 | 10 languages, 80+ instructions, reversible mode | ✅ Released |
-| v0.3 | More languages, PRETTY expansion | 🔄 In progress |
-| v0.4 | Macro support, VSCode plugin | 📋 Planned |
-| v0.5 | Web playground, ARM support | 📋 Planned |
+| v0.3 | PRETTY expansion for all 10 languages | ✅ Released |
+| v0.4 | Auto-detection, tests, macros | 🔄 In Progress |
+| v0.5 | VSCode plugin, web playground | 📋 Planned |
 | v1.0 | Stable release, full test coverage | 📋 Planned |
 
 ---
@@ -186,7 +186,7 @@ Thanks to all contributors who help democratize low-level programming.
 
 ---
 
-**Version:** v0.2  
+**Version:** v0.3  
 **Author:** J / Neuro-OS Project  
 **Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
 
