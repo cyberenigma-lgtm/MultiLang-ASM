@@ -1,0 +1,57 @@
+# Makefile 用於中文核心範例
+# 使用 MultiLang-ASM 翻譯程式碼
+
+MLASM = python ../mlasm.py
+NASM = nasm
+DD = dd
+QEMU = qemu-system-x86_64
+
+all: kernel_zh.img
+
+# 翻譯啟動載入程式從中文到 NASM
+boot_zh.asm: boot_zh.masm
+	@echo "翻譯啟動載入程式 (中文 -> NASM)..."
+	$(MLASM) zh $< $@
+
+# 翻譯核心從中文到 NASM
+kernel_zh.asm: kernel_zh.masm
+	@echo "翻譯核心 (中文 -> NASM)..."
+	$(MLASM) zh $< $@
+
+# 編譯啟動載入程式為二進位
+boot_zh.bin: boot_zh.asm
+	@echo "編譯啟動載入程式..."
+	$(NASM) -f bin $< -o $@
+
+# 編譯核心為二進位
+kernel_zh.bin: kernel_zh.asm
+	@echo "編譯核心..."
+	$(NASM) -f bin $< -o $@
+
+# 建立磁碟映像
+kernel_zh.img: boot_zh.bin kernel_zh.bin
+	@echo "建立磁碟映像..."
+	$(DD) if=/dev/zero of=kernel_zh.img bs=512 count=2880 status=none
+	$(DD) if=boot_zh.bin of=kernel_zh.img conv=notrunc status=none
+	$(DD) if=kernel_zh.bin of=kernel_zh.img seek=1 conv=notrunc status=none
+	@echo "映像已建立：kernel_zh.img"
+
+# 在 QEMU 中執行
+run: kernel_zh.img
+	@echo "在 QEMU 中執行..."
+	$(QEMU) -drive file=kernel_zh.img,format=raw
+
+# 清理生成的檔案
+clean:
+	rm -f *_zh.asm *_zh.bin kernel_zh.img
+	@echo "檔案已清理"
+
+# 調試：顯示翻譯後的程式碼
+debug: boot_zh.asm kernel_zh.asm
+	@echo "=== 啟動載入程式 (NASM) ==="
+	@head -20 boot_zh.asm
+	@echo ""
+	@echo "=== 核心 (NASM) ==="
+	@head -20 kernel_zh.asm
+
+.PHONY: all run clean debug
