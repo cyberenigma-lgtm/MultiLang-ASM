@@ -1,162 +1,185 @@
-# 🛡️ Crear un Kernel desde Cero con MultiLang-ASM
+# 🛡️ Creating a Kernel from Scratch with MultiLang-ASM
 
-Ejemplo completo de cómo crear un kernel mínimo en **50 líneas** usando MultiLang-ASM en Español.
+Complete example of how to create a minimal kernel in **50 lines** using MultiLang-ASM.
 
----
-
-## 📦 Archivos del Proyecto
-
-```
-mi-kernel/
-├── mlasm.py              # Copiado del proyecto
-├── boot.masm             # Bootloader en español
-├── kernel.masm           # Kernel en español
-├── linker.ld             # Linker script
-└── Makefile              # Automatización
-```
+📖 **English** | **[Español](KERNEL-EXAMPLE_ES.md)** | **[中文示例](examples/README.md#-kernel-mínimo-en-chino-中文核心)**
 
 ---
 
-## 🚀 Paso 1: Bootloader (boot.masm)
+## 📦 Project Files
 
-**boot.masm** - 16 líneas en Español:
+```
+my-kernel/
+├── mlasm.py              # Copied from project
+├── boot.masm             # Bootloader in your language
+├── kernel.masm           # Kernel in your language
+├── linker.ld             # Linker script (optional)
+└── Makefile              # Build automation
+```
+
+---
+
+## 🚀 Step 1: Bootloader (boot.masm)
+
+**boot.masm** - 16 lines fully documented (see `examples/boot.masm` for detailed version):
 
 ```asm
-; boot.masm - Bootloader en Español
+; boot.masm - Bootloader
 [bits 16]
 [org 0x7C00]
 
 inicio:
-    ; Limpiar segmentos
+    ; Initialize segments
     mover ax, 0
     mover ds, ax
     mover es, ax
     mover ss, ax
     mover sp, 0x7C00
     
-    ; Cargar kernel en 0x1000
-    mover ah, 0x02          ; función leer
-    mover al, 10            ; 10 sectores
-    mover ch, 0             ; cilindro 0
-    mover cl, 2             ; sector 2
-    mover dh, 0             ; cabeza 0
-    mover bx, 0x1000        ; destino
-    interrupcion 0x13       ; BIOS disk
+    ; Load kernel from disk (10 sectors)
+    mover ah, 0x02          ; BIOS function: read sectors
+    mover al, 10            ; number of sectors
+    mover ch, 0             ; cylinder 0
+    mover cl, 2             ; sector 2 (sector 1 is bootloader)
+    mover dh, 0             ; head 0
+    mover bx, 0x1000        ; destination address
+    interrupcion 0x13       ; BIOS disk services
     
-    ; Saltar al kernel
+    ; Print message
+    mover si, msg_boot
+    llamar imprimir
+    
+    ; Jump to kernel
     saltar 0x1000
-    
-; Firma de boot
+
+; Print function
+imprimir:
+    meter ax
+    meter bx
+.loop:
+    cargar_byte             ; lodsb: AL = [SI++]
+    comparar al, 0
+    si_igual .done
+    mover ah, 0x0E          ; teletype function
+    mover bx, 0x07          ; color
+    interrupcion 0x10       ; BIOS video
+    saltar .loop
+.done:
+    sacar bx
+    sacar ax
+    retornar
+
+msg_boot db 'Loading kernel...', 13, 10, 0
+
+; Boot signature (must be at bytes 510-511)
 times 510-($-$$) db 0
 dw 0xAA55
 ```
 
 ---
 
-## 💻 Paso 2: Kernel (kernel.masm)
+## 💻 Step 2: Kernel (kernel.masm)
 
-**kernel.masm** - 34 líneas en Español:
+**kernel.masm** - 34 lines (see `examples/kernel.masm` for detailed version):
 
 ```asm
-; kernel.masm - Kernel Minimalista en Español
+; kernel.masm - Minimal Kernel
 [bits 16]
 [org 0x1000]
 
 inicio_kernel:
-    ; Limpiar pantalla
+    ; Clear screen
     mover ah, 0x00
     mover al, 0x03
     interrupcion 0x10
     
-    ; Imprimir mensaje
+    ; Print message
     mover si, mensaje
     llamar imprimir
     
-    ; Loop infinito
+    ; Main loop
+bucle_principal:
+    ; Wait for key
+    mover ah, 0x00
+    interrupcion 0x16
+    
+    ; Echo character
+    mover ah, 0x0E
+    interrupcion 0x10
+    
+    ; Check if ESC
+    comparar al, 27
+    si_igual shutdown
+    
+    saltar bucle_principal
+
+shutdown:
+    mover si, msg_apagado
+    llamar imprimir
 bucle_infinito:
-    detener
+    detener                 ; HLT
     saltar bucle_infinito
 
-; Función: Imprimir cadena
-; Entrada: SI = puntero a cadena
+; Print function (same as bootloader)
 imprimir:
     meter ax
     meter bx
-    
 .ciclo:
-    cargar_byte                 ; al = [si], si++
+    cargar_byte
     comparar al, 0
-    si_igual .fin
-    
+   si_igual .fin
     mover ah, 0x0E
     mover bx, 0x07
     interrupcion 0x10
     saltar .ciclo
-    
 .fin:
     sacar bx
     sacar ax
     retornar
 
-; Datos
-mensaje db '¡Kernel en Español funcionando!', 0
+; Data
+mensaje db 'Kernel in your language running!', 13, 10, 0
+msg_apagado db 'System halted.', 13, 10, 0
 
-; Rellenar hasta 5KB (10 sectores)
+; Fill to 5KB (10 sectors)
 times 5120-($-$$) db 0
 ```
 
 ---
 
-## 🔗 Paso 3: Linker Script (linker.ld)
-
-```ld
-OUTPUT_FORMAT(binary)
-ENTRY(inicio_kernel)
-
-SECTIONS
-{
-    . = 0x1000;
-    .text : { *(.text) }
-    .data : { *(.data) }
-    .bss  : { *(.bss) }
-}
-```
-
----
-
-## ⚙️ Paso 4: Makefile
+## ⚙️ Step 3: Makefile
 
 ```makefile
-# Makefile para kernel en Español
+# Makefile for multilingual kernel
 MLASM = python mlasm.py
 NASM = nasm
 DD = dd
 
 all: kernel.img
 
-# Traducir bootloader
+# Translate bootloader
 boot.asm: boot.masm
 	$(MLASM) es $< $@
 
-# Traducir kernel
+# Translate kernel
 kernel.asm: kernel.masm
 	$(MLASM) es $< $@
 
-# Compilar bootloader
+# Compile bootloader
 boot.bin: boot.asm
 	$(NASM) -f bin $< -o $@
 
-# Compilar kernel
+# Compile kernel
 kernel.bin: kernel.asm
 	$(NASM) -f bin $< -o $@
 
-# Crear imagen de disco
+# Create disk image
 kernel.img: boot.bin kernel.bin
 	$(DD) if=/dev/zero of=kernel.img bs=512 count=2880
 	$(DD) if=boot.bin of=kernel.img conv=notrunc
 	$(DD) if=kernel.bin of=kernel.img seek=1 conv=notrunc
 
-# Ejecutar en QEMU
+# Run in QEMU
 run: kernel.img
 	qemu-system-x86_64 -drive file=kernel.img,format=raw
 
@@ -168,166 +191,168 @@ clean:
 
 ---
 
-## 🏗️ Paso 5: Compilar y Ejecutar
+## 🏗️ Step 4: Compile and Run
 
-### Compilación Completa
+### Complete Build
 
 ```bash
-# Copiar MultiLang-ASM
+# Copy MultiLang-ASM
 cp /path/to/mlasm.py .
 
-# Compilar todo
+# Build everything
 make
 
-# Ejecutar en QEMU
+# Run in QEMU
 make run
 ```
 
-### Paso a Paso (Manual)
+### Step by Step (Manual)
 
 ```bash
-# 1. Traducir código español → NASM
+# 1. Translate code (your language → NASM)
 python mlasm.py es boot.masm boot.asm
 python mlasm.py es kernel.masm kernel.asm
 
-# 2. Compilar a binario
+# 2. Compile to binary
 nasm -f bin boot.asm -o boot.bin
 nasm -f bin kernel.asm -o kernel.bin
 
-# 3. Crear imagen de disco
+# 3. Create disk image
 dd if=/dev/zero of=kernel.img bs=512 count=2880
 dd if=boot.bin of=kernel.img conv=notrunc
 dd if=kernel.bin of=kernel.img seek=1 conv=notrunc
 
-# 4. Ejecutar
+# 4. Run
 qemu-system-x86_64 -drive file=kernel.img,format=raw
 ```
 
 ---
 
-## 🎯 Resultado Esperado
+## 🎯 Expected Result
 
-Al ejecutar `make run`, verás:
+When you run `make run`, you'll see:
 
 ```
-┌─────────────────────────────────┐
-│                                 │
-│ ¡Kernel en Español funcionando! │
-│                                 │
-│                                 │
-└─────────────────────────────────┘
+========================================
+   MULTILINGUAL KERNEL v0.1
+   Created with MultiLang-ASM
+========================================
+
+Kernel in your language running!
+Press keys to see echo...
+ESC to halt.
+
+> 
 ```
 
 ---
 
-## 📊 Análisis del Código
+## 📊 Code Analysis
 
-### Líneas de Código
+### Lines of Code
 
-| Archivo | Líneas | Idioma |
-|---------|--------|--------|
-| boot.masm | 16 | Español |
-| kernel.masm | 34 | Español |
-| **Total** | **50** | **100% Español** |
+| File | Lines | Language |
+|------|-------|----------|
+| boot.masm | 16 | Your language |
+| kernel.masm | 34 | Your language |
+| **Total** | **50** | **100%** |
 
-### Instrucciones Usadas (en Español)
+### Instructions Used (Examples)
 
-- `mover` (mov) - Movimiento de datos
-- `saltar` (jmp) - Saltos incondicionales
-- `comparar` (cmp) - Comparaciones
-- `si_igual` (je) - Salto condicional
-- `llamar` (call) - Llamada a función
-- `retornar` (ret) - Retorno de función
-- `meter` (push) - Push a pila
-- `sacar` (pop) - Pop de pila
-- `interrupcion` (int) - Interrupciones BIOS
-- `detener` (hlt) - Detener CPU
-- `cargar_byte` (lodsb) - Cargar byte
+**In Spanish:**
+- `mover` (mov) - Data movement
+- `saltar` (jmp) - Unconditional jumps
+- `comparar` (cmp) - Comparisons
+- `si_igual` (je) - Conditional jump
+- `llamar` (call) - Function call
+- `retornar` (ret) - Return from function
+- `meter` (push) - Push to stack
+- `sacar` (pop) - Pop from stack
+- `interrupcion` (int) - BIOS interrupts
+- `detener` (hlt) - Halt CPU
+- `cargar_byte` (lodsb) - Load byte
+
+**In Chinese (中文):**
+- `移動` (mov)
+- `跳躍` (jmp)
+- `呼叫` (call)
+- `返回` (ret)
+- `若相等` (je)
+- `中斷` (int)
+- `推入` (push)
+- `彈出` (pop)
+
+**All generate the same machine code!**
 
 ---
 
-## 🔍 Cómo Funciona
+## 🔍 How It Works
 
 ### Bootloader
-1. BIOS carga los primeros 512 bytes en `0x7C00`
-2. Bootloader configura segmentos
-3. Lee 10 sectores del disco a `0x1000` (kernel)
-4. Salta a `0x1000` para ejecutar kernel
+1. BIOS loads first 512 bytes at `0x7C00`
+2. Bootloader configures segments
+3. Reads 10 sectors from disk to `0x1000` (kernel)
+4. Jumps to `0x1000` to execute kernel
 
 ### Kernel
-1. Limpia la pantalla (INT 10h, AH=00h)
-2. Imprime mensaje carácter por carácter (INT 10h, AH=0Eh)
-3. Entra en loop infinito con `hlt`
+1. Clears the screen (INT 10h, AH=00h)
+2. Prints message character by character (INT 10h, AH=0Eh)
+3. Enters infinite loop with `hlt`
 
 ---
 
-## 🌍 Versiones en Otros Idiomas
+## 🌍 Versions in Other Languages
 
-### Francés
-```asm
-; Cambia "mover" → "deplacer"
-deplacer ax, 0
-deplacer ds, ax
-appeler imprimer
+The project includes complete working examples in:
+
+### Spanish (Español)
+```bash
+cd examples
+make run
 ```
 
-### Alemán
-```asm
-; Cambia "mover" → "bewegen"
-bewegen ax, 0
-bewegen ds, ax
-rufen drucken
+### Chinese (中文)
+```bash
+cd examples
+make -f Makefile.zh run
 ```
 
-### Japonés
-```asm
-; Cambia "mover" → "移動"
-移動 ax, 0
-移動 ds, ax
-呼出 印刷
-```
-
-**Solo cambia el código, todo lo demás igual.**
+**Same functionality. Different language. Same binary output.**
 
 ---
 
-## 🚀 Próximos Pasos
+## 🚀 Next Steps
 
-### Expandir el Kernel
+### Expand the Kernel
 
-1. **Modo Protegido (32-bit)**
-```asm
-; Activar A20
-; Cargar GDT
-; Cambiar a modo protegido
-```
+1. **Protected Mode (32-bit)**
+   - Enable A20 line
+   - Load GDT (Global Descriptor Table)
+   - Switch to protected mode
 
-2. **Drivers Básicos**
-```asm
-; Driver de teclado
-; Driver de timer
-; Driver VGA
-```
+2. **Basic Drivers**
+   - Keyboard driver
+   - Timer driver
+   - VGA driver
 
-3. **Sistema de Archivos**
-```asm
-; FAT12/FAT16
-; Leer/escribir archivos
-```
+3. **File System**
+   - FAT12/FAT16
+   - Read/write files
 
 ---
 
-## 📚 Recursos
+## 📚 Resources
 
-- [OSDev Wiki](https://wiki.osdev.org/) - Documentación técnica
-- [MultiLang-ASM Docs](https://github.com/cyberenigma-lgtm/MultiLang-ASM/tree/main/docs) - Referencias
-- [NASM Manual](https://nasm.us/doc/) - Sintaxis ASM
+- [OSDev Wiki](https://wiki.osdev.org/) - Technical documentation
+- [MultiLang-ASM Docs](https://github.com/cyberenigma-lgtm/MultiLang-ASM/tree/main/docs) - Language references
+- [NASM Manual](https://nasm.us/doc/) - ASM syntax
+- [Kernel Tutorial (Wiki)](https://github.com/cyberenigma-lgtm/MultiLang-ASM/wiki/Kernel-Tutorial) - Detailed tutorial
 
 ---
 
-## 💡 Ventajas de MultiLang-ASM
+## 💡 Advantages of MultiLang-ASM
 
-### Antes (Inglés)
+### Before (English)
 ```asm
 mov ax, 0
 mov ds, ax
@@ -335,7 +360,9 @@ call print
 jmp loop
 ```
 
-### Ahora (Tu Idioma)
+### Now (Your Language)
+
+**Spanish:**
 ```asm
 mover ax, 0
 mover ds, ax
@@ -343,21 +370,29 @@ llamar imprimir
 saltar bucle
 ```
 
-**Misma funcionalidad, código más natural.**
+**Chinese:**
+```asm
+移動 ax, 0
+移動 ds, ax
+呼叫 印出
+跳躍 循環
+```
+
+**Same functionality, more natural code.**
 
 ---
 
-## 🎓 Ejercicios
+## 🎓 Exercises
 
-1. **Cambiar el mensaje** - Modifica `mensaje` en kernel.masm
-2. **Agregar colores** - Usa BH para color de texto
-3. **Múltiples líneas** - Imprime varias cadenas
-4. **Entrada de teclado** - Lee teclas con INT 16h
-5. **Modo gráfico** - Cambia a modo VGA 13h
+1. **Change Colors** - Modify text colors (BL register)
+2. **Count Keypresses** - Add keystroke counter
+3. **Command Interpreter** - Recognize "help", "clear" commands
+4. **Multiple Lines** - Print several strings
+5. **Graphics Mode** - Switch to VGA mode 13h
 
 ---
 
-## 📧 ¿Dudas?
+## 📧 Questions?
 
 - **Email:** neuro.so.ia.sim@gmail.com
 - **Wiki:** https://github.com/cyberenigma-lgtm/MultiLang-ASM/wiki
@@ -365,7 +400,8 @@ saltar bucle
 
 ---
 
-**¡Acabas de crear un kernel en tu idioma nativo!** 🛡️✨
+**You just created a kernel in your native language!** 🛡️✨
 
-**Versión:** v0.3  
-**Fecha:** 2025-12-25
+**Version:** v0.3  
+**Date:** 2025-12-25  
+**Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
