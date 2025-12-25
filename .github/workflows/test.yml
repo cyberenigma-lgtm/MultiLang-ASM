@@ -1,0 +1,51 @@
+name: Test MultiLang-ASM
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Test Spanish translation
+      run: |
+        python mlasm.py es demo_es.masm test_es.asm
+        cat test_es.asm
+    
+    - name: Test French translation
+      run: |
+        python mlasm.py fr demo_fr.masm test_fr.asm
+        cat test_fr.asm
+    
+    - name: Test reverse mode (Spanish)
+      run: |
+        python mlasm.py es test_es.asm test_reverse.masm --reverse
+        cat test_reverse.masm
+    
+    - name: Verify files exist
+      run: |
+        test -f test_es.asm && test -f test_fr.asm && test -f test_reverse.masm
+      shell: bash
+    
+    - name: Check for translation errors
+      run: |
+        if grep -i "error" test_es.asm test_fr.asm; then
+          echo "Translation produced errors"
+          exit 1
+        fi
+      shell: bash

@@ -1,0 +1,26 @@
+# Code Owners for MultiLang-ASM
+# These users will be automatically requested for review when someone opens a pull request
+
+# Core engine and architecture
+/mlasm.py @cyberenigma-lgtm
+
+# Documentation
+/README.md @cyberenigma-lgtm
+/CONTRIBUTING.md @cyberenigma-lgtm
+/docs/ @cyberenigma-lgtm
+
+# Language-specific files (assign native speakers when available)
+/docs/INSTRUCCIONES_ES.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_FR.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_DE.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_IT.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_AR.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_RU.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_KO.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_ID.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_ZH.md @cyberenigma-lgtm
+/docs/INSTRUCCIONES_JA.md @cyberenigma-lgtm
+
+# Build and configuration files
+/Makefile* @cyberenigma-lgtm
+/.github/ @cyberenigma-lgtm
