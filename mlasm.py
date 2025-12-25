@@ -445,7 +445,122 @@ PRETTY = {
         "cbw": "convertir_byte_palabra", "cwd": "convertir_palabra_doble",
         "cdq": "convertir_doble_cuadruple", "cqo": "convertir_cuadruple_octo",
     },
-    # Para otros idiomas, se puede expandir aquí
+    
+    "fr": {
+        "mov": "deplacer", "xchg": "echanger", "lea": "charger_effectif",
+        "movzx": "etendre_zero", "movsx": "etendre_signe",
+        "add": "ajouter", "sub": "soustraire", "mul": "multiplier",
+        "imul": "multiplier_signe", "div": "diviser", "idiv": "diviser_signe",
+        "inc": "incrementer", "dec": "decrementer", "neg": "negativer",
+        "and": "et", "or": "ou", "not": "non", "xor": "ou_exclusif",
+        "cmp": "comparer", "test": "tester",
+        "jmp": "sauter", "call": "appeler", "ret": "retourner",
+        "je": "si_egal", "jne": "si_pas_egal",
+        "push": "empiler", "pop": "depiler",
+        "int": "interruption", "syscall": "appel_systeme",
+    },
+    
+    "de": {
+        "mov": "bewegen", "xchg": "tauschen", "lea": "effektiv_laden",
+        "movzx": "null_erweitern", "movsx": "vorzeichen_erweitern",
+        "add": "addieren", "sub": "subtrahieren", "mul": "multiplizieren",
+        "imul": "multiplizieren_vorzeichen", "div": "dividieren", "idiv": "dividieren_vorzeichen",
+        "inc": "inkrementieren", "dec": "dekrementieren", "neg": "negieren",
+        "and": "und", "or": "oder", "not": "nicht", "xor": "exklusiv_oder",
+        "jmp": "springen", "call": "rufen", "ret": "zurueckkehren",
+        "int": "unterbrechung",
+    },
+    
+    "it": {
+        "mov": "spostare", "xchg": "scambiare", "lea": "caricare_effettivo",
+        "movzx": "estendere_zero", "movsx": "estendere_segno",
+        "add": "sommare", "sub": "sottrarre", "mul": "moltiplicare",
+        "imul": "moltiplicare_segno", "div": "dividere", "idiv": "dividere_segno",
+        "inc": "incrementare", "dec": "decrementare", "neg": "negare",
+        "and": "e", "or": "o", "not": "non", "xor": "esclusivo",
+        "jmp": "saltare", "call": "chiamare", "ret": "ritornare",
+        "je": "se_uguale", "jne": "se_non_uguale",
+        "push": "spingere", "pop": "estrarre",
+        "int": "interruzione", "syscall": "chiamata_sistema",
+    },
+    
+    "ar": {
+        "mov": "نقل", "xchg": "تبديل", "lea": "تحميل_فعال",
+        "movzx": "توسيع_صفر", "movsx": "توسيع_إشارة",
+        "add": "جمع", "sub": "طرح", "mul": "ضرب",
+        "imul": "ضرب_إشارة", "div": "قسمة", "idiv": "قسمة_إشارة",
+        "inc": "زيادة", "dec": "نقص", "neg": "نفي",
+        "and": "و", "or": "أو", "not": "ليس", "xor": "أو_حصري",
+        "jmp": "اقفز", "call": "استدعاء", "ret": "رجوع",
+        "je": "إذا_يساوي", "jne": "إذا_لا_يساوي",
+        "push": "ادفع", "pop": "اسحب",
+        "int": "مقاطعة", "syscall": "استدعاء_النظام",
+    },
+    
+    "ru": {
+        "mov": "перенести", "xchg": "обменять", "lea": "загрузить_эффективный",
+        "movzx": "расширить_нулями", "movsx": "расширить_знаком",
+        "add": "добавить", "sub": "вычесть", "mul": "умножить",
+        "imul": "умножить_знак", "div": "разделить", "idiv": "разделить_знак",
+        "inc": "увеличить", "dec": "уменьшить", "neg": "отрицание",
+        "and": "и", "or": "или", "not": "не", "xor": "исключающее",
+        "jmp": "прыгнуть", "call": "вызвать", "ret": "вернуться",
+        "je": "если_равно", "jne": "если_не_равно",
+        "push": "положить", "pop": "извлечь",
+        "int": "прерывание", "syscall": "системный_вызов",
+    },
+    
+    "ko": {
+        "mov": "이동", "xchg": "교환", "lea": "주소로드",
+        "movzx": "영확장", "movsx": "부호확장",
+        "add": "더하기", "sub": "빼기", "mul": "곱하기",
+        "imul": "부호곱하기", "div": "나누기", "idiv": "부호나누기",
+        "inc": "증가", "dec": "감소", "neg": "부정",
+        "and": "그리고", "or": "또는", "xor": "배타적",
+        "jmp": "점프", "call": "호출", "ret": "돌아가기",
+        "je": "같으면", "jne": "다르면",
+        "push": "넣기", "pop": "빼기",
+        "int": "인터럽트", "syscall": "시스템호출",
+    },
+    
+    "id": {
+        "mov": "pindah", "xchg": "tukar", "lea": "muat_efektif",
+        "movzx": "perpanjang_nol", "movsx": "perpanjang_tanda",
+        "add": "tambah", "sub": "kurang", "mul": "kali",
+        "imul": "kali_tanda", "div": "bagi", "idiv": "bagi_tanda",
+        "inc": "tambah_satu", "dec": "kurang_satu", "neg": "negatif",
+        "and": "dan", "or": "atau", "not": "tidak", "xor": "eksklusif",
+        "jmp": "lompat", "call": "panggil", "ret": "kembali",
+        "je": "jika_sama", "jne": "jika_beda",
+        "push": "masukkan", "pop": "keluarkan",
+        "int": "interupsi", "syscall": "panggilan_sistem",
+    },
+    
+    "zh": {
+        "mov": "移動", "xchg": "交換", "lea": "載入有效位址",
+        "movzx": "零擴充", "movsx": "符號擴充",
+        "add": "加", "sub": "減", "mul": "乘",
+        "imul": "有符號乘", "div": "除", "idiv": "有符號除",
+        "inc": "遞增", "dec": "遞減", "neg": "取負",
+        "and": "且", "or": "或", "not": "非", "xor": "互斥或",
+        "jmp": "跳躍", "call": "呼叫", "ret": "返回",
+        "je": "若相等", "jne": "若不等",
+        "push": "推入", "pop": "彈出",
+        "int": "中斷", "syscall": "系統呼叫",
+    },
+    
+    "ja": {
+        "mov": "移動", "xchg": "交換", "lea": "実効アドレス読込",
+        "movzx": "ゼロ拡張", "movsx": "符号拡張",
+        "add": "加算", "sub": "減算", "mul": "乗算",
+        "imul": "符号付乗算", "div": "除算", "idiv": "符号付除算",
+        "inc": "インクリメント", "dec": "デクリメント", "neg": "否定",
+        "and": "論理積", "or": "論理和", "xor": "排他的論理和",
+        "jmp": "ジャンプ", "call": "呼出", "ret": "戻る",
+        "je": "等しければ", "jne": "等しくなければ",
+        "push": "プッシュ", "pop": "ポップ",
+        "int": "割込", "syscall": "システムコール",
+    },
 }
 
 def translate_token(token, lang):
@@ -513,7 +628,7 @@ def translate(code, lang, to_standard=True):
 
 def main():
     if len(sys.argv) < 4:
-        print("🛡️ MultiLang-ASM v0.2")
+        print("🛡️ MultiLang-ASM v0.3")
         print("Uso: python mlasm.py <idioma> <entrada> <salida> [--reverse]")
         print("\nIdiomas: es, fr, it, ar, de, ru, ko, id, zh, ja")
         return
