@@ -1,9 +1,9 @@
 # MultiLang-ASM
 **The first multilingual x86_64 assembler.**  
-Write assembly in your native language · 10 languages · 80+ instructions · reversible translation · NASM-compatible.
+Write assembly in your native language · 11 languages · 80+ instructions · reversible translation · NASM-compatible.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-10-blue.svg)](docs/)
+[![Languages](https://img.shields.io/badge/languages-11-blue.svg)](docs/)
 [![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
 
@@ -34,7 +34,7 @@ syscall
 ## ✨ Features
 
 - 🧠 **Write assembly in your native language**  
-- 🌍 **10 languages supported** (Spanish, French, German, Italian, Russian, Arabic, Korean, Indonesian, Chinese, Japanese)
+- 🌍 **11 languages supported** (Spanish, French, German, Italian, Russian, Arabic, Korean, Indonesian, Chinese, Japanese, Portuguese)
 - 🔁 **Reversible translation** (ASM → Language → ASM)  
 - 🧩 **80+ instructions mapped**  
 - 🛠️ **NASM/FASM/GAS compatible output**  
@@ -76,6 +76,7 @@ mlasm build es programa.masm
 | 🇮🇩 Bahasa | `id` | ✅ Complete | 80+ |
 | 🇨🇳 中文 | `zh` | ✅ Complete | 80+ |
 | 🇯🇵 日本語 | `ja` | ✅ Complete | 80+ |
+| 🇧🇷 Português | `pt` | ✅ Complete | 80+ |
 
 Want your language? Open an [issue](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)!
 
@@ -148,6 +149,7 @@ Issues labeled `good first issue` are perfect for first-time contributors.
 - 🇮🇩 [Bahasa](docs/INSTRUCCIONES_ID.md)
 - 🇨🇳 [中文](docs/INSTRUCCIONES_ZH.md)
 - 🇯🇵 [日本語](docs/INSTRUCCIONES_JA.md)
+- 🇧🇷 [Português](docs/MULTILANG_ASM_PTBR.md)
 
 ---
 

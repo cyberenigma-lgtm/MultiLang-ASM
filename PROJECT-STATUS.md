@@ -9,9 +9,9 @@
 ## ✅ Estado Actual - v0.3 COMPLETADO
 
 ### Características Implementadas
-- ✅ 10 idiomas completos (ES, FR, DE, IT, AR, RU, KO, ID, ZH, JA)
+- ✅ 11 idiomas completos (ES, FR, DE, IT, AR, RU, KO, ID, ZH, JA, PT)
 - ✅ 80+ instrucciones por idioma
-- ✅ PRETTY reverse mapping completo (540+ mappings)
+- ✅ PRETTY reverse mapping completo (720+ mappings)
 - ✅ Traducción bidireccional
 - ✅ Documentación exhaustiva
 - ✅ Ejemplos funcionales (kernel en Español y 中文)
@@ -35,8 +35,8 @@ MultiLang-ASM/
 │   ├── kernel_zh.masm        # Kernel 中文
 │   ├── Makefile              # Build ES
 │   └── Makefile.zh           # Build 中文
-├── wiki/                     # 9 páginas completas
-└── docs/                     # Referencias 10 idiomas
+├── wiki/                     # 10 páginas completas
+└── docs/                     # Referencias 11 idiomas
 ```
 
 ---
@@ -115,9 +115,9 @@ macros/
 |---------|-------|
 | Versión | v0.3 |
 | Líneas de código | 668 |
-| Idiomas | 10 |
+| Idiomas | 11 |
 | Instrucciones | 80+ |
-| Reverse mappings | 640+ |
+| Reverse mappings | 720+ |
 | Tests | 0 (pendiente v0.4) |
 | Documentación | 15+ archivos |
 | Ejemplos | 2 kernels completos |

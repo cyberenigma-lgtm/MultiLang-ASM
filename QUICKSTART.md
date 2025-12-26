@@ -165,14 +165,16 @@ make run
 ### Caso 3: Colaboración Multilingüe
 
 ```bash
-# Programador español escribe:
+# Programador espanhol escreve:
 python mlasm.py es bootloader_es.masm bootloader.asm
 
-# Programador francés revisa en su idioma:
+# Programador francês revisa em seu idioma:
 python mlasm.py fr bootloader.asm bootloader_fr.masm --reverse
-nano bootloader_fr.masm
 
-# Ambos comparten el mismo bootloader.asm estándar
+# Programador brasileiro otimiza em seu idioma:
+python mlasm.py pt bootloader.asm bootloader_pt.masm --reverse
+
+# Todos compartilham o mesmo bootloader.asm padrão
 ```
 
 ---

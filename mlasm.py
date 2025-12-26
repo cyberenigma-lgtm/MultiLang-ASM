@@ -408,6 +408,60 @@ TABLE = {
         # システム
         "割込": "int", "システムコール": "syscall",
     },
+
+    "pt": {
+        # Movimentação
+        "mover": "mov", "copiar": "mov", "trocar": "xchg",
+        "carregar_efetivo": "lea", "estender_zero": "movzx", "estender_sinal": "movsx",
+
+        # Aritmética
+        "somar": "add", "adicionar": "add", "subtrair": "sub",
+        "multiplicar": "mul", "multiplicar_sinal": "imul",
+        "dividir": "div", "dividir_sinal": "idiv",
+        "incrementar": "inc", "decrementar": "dec", "negar": "neg",
+
+        # Lógica
+        "e": "and", "ou": "or", "nao": "not", "exclusivo": "xor",
+        "deslocar_esq": "shl", "deslocar_dir": "shr",
+        "rotacionar_esq": "rol", "rotacionar_dir": "ror",
+
+        # Comparação
+        "comparar": "cmp", "testar": "test",
+
+        # Fluxo
+        "desviar": "jmp", "saltar": "jmp", "chamar": "call",
+        "retornar": "ret", "voltar": "ret",
+        "se_igual": "je", "se_cero": "jz", "se_nao_igual": "jne", "se_nao_cero": "jnz",
+        "se_maior": "jg", "se_maior_igual": "jge", "si_menor": "jl", "si_menor_igual": "jle",
+        "se_acima": "ja", "se_abaixo": "jb", "se_acima_igual": "jae", "se_abaixo_igual": "jbe",
+        "se_sinal": "js", "se_nao_sinal": "jns", "se_transbordo": "jo", "se_nao_transbordo": "jno",
+        "se_paridade": "jp", "se_nao_paridade": "jnp",
+
+        # Pilha
+        "empilhar": "push", "desempilhar": "pop",
+        "empilhar_flags": "pushf", "desempilhar_flags": "popf",
+
+        # Sequências
+        "mover_byte": "movsb", "mover_palavra": "movsw", "mover_dupla": "movsd",
+        "armazenar_byte": "stosb", "cargar_byte": "lodsb", "escanear_byte": "scasb",
+        "repetir": "rep", "repetir_enquanto": "repne",
+
+        # Repetições
+        "repetir_ciclo": "loop", "repetir_se_zero": "loopz", "repetir_se_nao_zero": "loopnz",
+
+        # Sistema
+        "interrupcao": "int", "chamada_sistema": "syscall",
+        "retorno_sistema": "sysret", "retorno_interrupcao": "iret",
+
+        # Miscelânea
+        "nada": "nop", "parar": "hlt",
+        "limpar_interrupcoes": "cli", "activar_interrupcoes": "sti",
+        "limpar_direcao": "cld", "fixar_direcao": "std", "esperar": "wait",
+
+        # Conversão
+        "converter_byte_palavra": "cbw", "converter_palavra_dupla": "cwd",
+        "converter_dupla_quadrupla": "cdq", "converter_quadrupla_octupla": "cqo",
+    },
 }
 
 # ============================================================================
@@ -458,6 +512,36 @@ PRETTY = {
         "je": "si_egal", "jne": "si_pas_egal",
         "push": "empiler", "pop": "depiler",
         "int": "interruption", "syscall": "appel_systeme",
+    },
+
+    "pt": {
+        "mov": "mover", "xchg": "trocar", "lea": "carregar_efetivo",
+        "movzx": "estender_zero", "movsx": "estender_sinal",
+        "add": "somar", "sub": "subtrair", "mul": "multiplicar",
+        "imul": "multiplicar_sinal", "div": "dividir", "idiv": "dividir_sinal",
+        "inc": "incrementar", "dec": "decrementar", "neg": "negar",
+        "and": "e", "or": "ou", "not": "nao", "xor": "exclusivo",
+        "shl": "deslocar_esq", "shr": "deslocar_dir",
+        "rol": "rotacionar_esq", "ror": "rotacionar_dir",
+        "cmp": "comparar", "test": "testar",
+        "jmp": "desviar", "call": "chamar", "ret": "retornar",
+        "je": "se_igual", "jz": "se_zero", "jne": "se_nao_igual", "jnz": "se_nao_zero",
+        "jg": "se_maior", "jge": "se_maior_igual", "jl": "se_menor", "jle": "se_menor_igual",
+        "ja": "se_acima", "jb": "se_abaixo", "jae": "se_acima_igual", "jbe": "se_abaixo_igual",
+        "js": "se_sinal", "jns": "se_nao_sinal", "jo": "se_transbordo", "jno": "se_nao_transbordo",
+        "jp": "se_paridade", "jnp": "se_nao_paridade",
+        "push": "empilhar", "pop": "desempilhar", "pushf": "empilhar_flags", "popf": "desempilhar_flags",
+        "movsb": "mover_byte", "movsw": "mover_palavra", "movsd": "mover_dupla",
+        "stosb": "armazenar_byte", "lodsb": "cargar_byte", "scasb": "escanear_byte",
+        "rep": "repetir", "repne": "repetir_enquanto",
+        "loop": "repetir_ciclo", "loopz": "repetir_se_zero", "loopnz": "repetir_se_nao_zero",
+        "int": "interrupcao", "syscall": "chamada_sistema",
+        "sysret": "retorno_sistema", "iret": "retorno_interrupcao",
+        "nop": "nada", "hlt": "parar",
+        "cli": "limpar_interrupcoes", "sti": "ativar_interrupcoes",
+        "cld": "limpar_direcao", "std": "fixar_direcao", "wait": "esperar",
+        "cbw": "converter_byte_palavra", "cwd": "converter_palavra_dupla",
+        "cdq": "converter_dupla_quadrupla", "cqo": "converter_quadrupla_octupla",
     },
     
     "de": {
@@ -561,6 +645,41 @@ PRETTY = {
         "push": "プッシュ", "pop": "ポップ",
         "int": "割込", "syscall": "システムコール",
     },
+
+    "pt": {
+        "mov": "mover", "xchg": "trocar", "lea": "carregar_efetivo",
+        "movzx": "estender_zero", "movsx": "estender_sinal",
+        "add": "somar", "sub": "subtrair", "mul": "multiplicar",
+        "imul": "multiplicar_sinal", "div": "dividir", "idiv": "dividir_sinal",
+        "inc": "incrementar", "dec": "decrementar", "neg": "negar",
+        "and": "e", "or": "ou", "not": "nao", "xor": "exclusivo",
+        "shl": "deslocar_esq", "shr": "deslocar_dir",
+        "rol": "rotacionar_esq", "ror": "rotacionar_dir",
+        "cmp": "comparar", "test": "testar",
+        "jmp": "desviar", "call": "chamar", "ret": "retornar",
+        "je": "se_igual", "jne": "se_nao_igual",
+        "jg": "se_maior", "jge": "se_maior_igual",
+        "jl": "se_menor", "jle": "se_menor_igual",
+        "ja": "se_acima", "jb": "se_abaixo",
+        "jae": "se_acima_igual", "jbe": "se_abaixo_igual",
+        "js": "se_sinal", "jns": "se_nao_sinal",
+        "jo": "se_transbordo", "jno": "se_nao_transbordo",
+        "jp": "se_paridade", "jnp": "se_nao_paridade",
+        "push": "empilhar", "pop": "desempilhar",
+        "pushf": "empilhar_flags", "popf": "desempilhar_flags",
+        "movsb": "mover_byte", "movsw": "mover_palavra", "movsd": "mover_dupla",
+        "stosb": "armazenar_byte", "lodsb": "cargar_byte", "scasb": "escanear_byte",
+        "rep": "repetir", "repne": "repetir_enquanto",
+        "loop": "repetir_ciclo", "loopz": "repetir_se_zero",
+        "loopnz": "repetir_se_nao_zero",
+        "int": "interrupcao", "syscall": "chamada_sistema",
+        "sysret": "retorno_sistema", "iret": "retorno_interrupcao",
+        "nop": "nada", "hlt": "parar",
+        "cli": "limpar_interrupcoes", "sti": "activar_interrupcoes",
+        "cld": "limpiar_direcao", "std": "fixar_direcao", "wait": "esperar",
+        "cbw": "converter_byte_palavra", "cwd": "converter_palavra_dupla",
+        "cdq": "converter_dupla_quadrupla", "cqo": "converter_quadrupla_octupla",
+    },
 }
 
 def translate_token(token, lang):
@@ -630,7 +749,7 @@ def main():
     if len(sys.argv) < 4:
         print("🛡️ MultiLang-ASM v0.3")
         print("Uso: python mlasm.py <idioma> <entrada> <salida> [--reverse]")
-        print("\nIdiomas: es, fr, it, ar, de, ru, ko, id, zh, ja")
+        print("\nIdiomas: es, fr, it, ar, de, ru, ko, id, zh, ja, pt")
         return
 
     lang = sys.argv[1]

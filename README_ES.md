@@ -5,7 +5,7 @@
 **El primer ensamblador multilingüe. Escribe ensamblador x86_64 en tu idioma nativo.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-10-blue.svg)](docs/)
+[![Languages](https://img.shields.io/badge/languages-11-blue.svg)](docs/)
 [![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
 
@@ -33,7 +33,7 @@ No es solo código. Es **justicia tecnológica**.
 
 ## ✨ Características
 
-- 🌐 **Multilingüe:** Escribe en Español, Árabe, Francés, Italiano, Portugués...
+- 🌐 **Multilingüe:** Escribe en Español, Árabe, Francés, Italiano, Portugués... (11 idiomas)
 - 🔄 **Reversible:** Visualiza el mismo código en diferentes idiomas sin modificarlo
 - 🛠️ **Compatible:** Genera ASM estándar compatible con NASM, FASM y GAS
 - 📚 **Educativo:** Ideal para estudiantes y autodidactas sin conocimientos previos de inglés
@@ -117,7 +117,7 @@ Este proyecto nace de una convicción simple:
 | Indonesio | `id` | ✅ Activo |
 | Chino Tradicional | `zh` | ✅ Activo |
 | Japonés | `ja` | ✅ Activo |
-| Portugués | `pt` | 📋 Planeado |
+| Portugués | `pt` | ✅ Activo |
 | Hindi | `hi` | 📋 Planeado |
 | Swahili | `sw` | 📋 Planeado |
 
@@ -241,6 +241,7 @@ python mlasm.py ar hola.asm hola_ar.masm --reverse
 - 🇮🇩 [Bahasa Indonesia](docs/INSTRUCCIONES_ID.md)
 - 🇨🇳 [中文 (Traditional Chinese)](docs/INSTRUCCIONES_ZH.md)
 - 🇯🇵 [日本語 (Japanese)](docs/INSTRUCCIONES_JA.md)
+- 🇧🇷 [Português (Portuguese-BR)](docs/MULTILANG_ASM_PTBR.md)
 
 ## ⚖️ Disclaimer Técnico
 
