@@ -1,6 +1,6 @@
 # MultiLang-ASM
 **The first multilingual x86_64 assembler.**  
-**The first multilingual x86_64 assembler.**  
+
 Write assembly in your native language · 16 languages · 80+ instructions · reversible translation · NASM-compatible.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
