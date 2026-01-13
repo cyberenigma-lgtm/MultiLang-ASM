@@ -130,11 +130,11 @@ INSTRUCTIONS = {
 TABLE = {
     "es": {
         # Movimiento
-        "mover": "mov", "copiar": "mov", "intercambiar": "xchg",
+        "mover": "mov", "copiar": "mov", "intercambiar": "xchg", "cargar": "mov",
         "cargar_efectivo": "lea", "extender_cero": "movzx", "extender_signo": "movsx",
         
         # Aritmética
-        "sumar": "add", "añadir": "add", "restar": "sub",
+        "sumar": "add", "añadir": "add", "agregar": "add", "restar": "sub",
         "multiplicar": "mul", "multiplicar_signado": "imul",
         "dividir": "div", "dividir_signado": "idiv",
         "incrementar": "inc", "decrementar": "dec", "negar": "neg",
@@ -462,6 +462,62 @@ TABLE = {
         "converter_byte_palavra": "cbw", "converter_palavra_dupla": "cwd",
         "converter_dupla_quadrupla": "cdq", "converter_quadrupla_octupla": "cqo",
     },
+
+    "hi": {
+        "bhejo": "mov", "rakho": "mov", "sthan": "mov",
+        "joro": "add", "ghatao": "sub", "guna": "mul", "bhag": "div",
+        "badhao": "inc", "ghatao_ek": "dec", "na": "neg",
+        "aur": "and", "ya": "or", "nahi": "not", "alag": "xor",
+        "tulna": "cmp", "pariksha": "test",
+        "pata_load": "lea",
+        "kudo": "jmp", "bulao": "call", "wapas": "ret",
+        "daalo": "push", "nikalo": "pop",
+        "rok": "int",
+    },
+    
+    "tr": {
+        "taşı": "mov", "kopyala": "mov", "yukle": "lea",
+        "ekle": "add", "çıkar": "sub", "çarp": "mul", "böl": "div",
+        "artir": "inc", "azalt": "dec", "tersle": "neg",
+        "ve": "and", "veya": "or", "degil": "not", "ozel_veya": "xor",
+        "karsilastir": "cmp", "sina": "test",
+        "atla": "jmp", "çağır": "call", "dön": "ret",
+        "it": "push", "çek": "pop",
+        "kesme": "int",
+    },
+    
+    "pl": {
+        "przesun": "mov", "kopiuj": "mov", "adres": "lea",
+        "dodaj": "add", "odejmij": "sub", "pomnoz": "mul", "podziel": "div",
+        "zwieksz": "inc", "zmniejsz": "dec", "neguj": "neg",
+        "oraz": "and", "lub": "or", "nie": "not", "xor": "xor",
+        "porownaj": "cmp", "testuj": "test",
+        "skocz": "jmp", "wywolaj": "call", "wroc": "ret",
+        "wepchnij": "push", "zdejmij": "pop",
+        "przerwanie": "int",
+    },
+    
+    "sv": {
+        "flytta": "mov", "ladda": "lea",
+        "addera": "add", "subtrahera": "sub", "multiplicera": "mul", "dividera": "div",
+        "oka": "inc", "minska": "dec", "negera": "neg",
+        "och": "and", "eller": "or", "inte": "not", "xor": "xor",
+        "jamfor": "cmp", "testa": "test",
+        "hoppa": "jmp", "kalla": "call", "returnera": "ret",
+        "tryck": "push", "pop": "pop",
+        "avbrott": "int",
+    },
+    
+    "nl": {
+        "verplaats": "mov", "laad": "lea", "wissel": "xchg",
+        "optellen": "add", "aftrekken": "sub", "vermenigvuldig": "mul", "delen": "div",
+        "verhoog": "inc", "verlaag": "dec", "negeer": "neg",
+        "en": "and", "of": "or", "niet": "not", "exclusief": "xor",
+        "vergelijk": "cmp", "test": "test",
+        "spring": "jmp", "roep": "call", "terug": "ret",
+        "duw": "push", "plop": "pop",
+        "onderbreking": "int",
+    },
 }
 
 # ============================================================================
@@ -680,7 +736,117 @@ PRETTY = {
         "cbw": "converter_byte_palavra", "cwd": "converter_palavra_dupla",
         "cdq": "converter_dupla_quadrupla", "cqo": "converter_quadrupla_octupla",
     },
+
+    "hi": {
+        "mov": "bhejo", "add": "joro", "sub": "ghatao",
+        "jmp": "kudo", "call": "bulao", "ret": "wapas",
+        "and": "aur", "or": "ya", "not": "nahi",
+        "cmp": "tulna", "test": "pariksha",
+        "inc": "badhao", "dec": "ghatao_ek",
+    },
+    
+    "tr": {
+        "mov": "taşı", "add": "ekle", "sub": "çıkar",
+        "jmp": "atla", "call": "çağır", "ret": "dön",
+        "and": "ve", "or": "veya", "not": "degil",
+        "cmp": "karsilastir", "test": "sina",
+        "inc": "artir", "dec": "azalt",
+    },
+    
+    "pl": {
+        "mov": "przesun", "add": "dodaj", "sub": "odejmij",
+        "jmp": "skocz", "call": "wywolaj", "ret": "wroc",
+        "and": "oraz", "or": "lub", "not": "nie",
+        "cmp": "porownaj", "test": "testuj",
+        "inc": "zwieksz", "dec": "zmniejsz",
+    },
+    
+    "sv": {
+        "mov": "flytta", "add": "addera", "sub": "subtrahera",
+        "jmp": "hoppa", "call": "kalla", "ret": "returnera",
+        "and": "och", "or": "eller", "not": "inte",
+        "cmp": "jamfor", "test": "testa",
+        "inc": "oka", "dec": "minska",
+    },
+    
+    "nl": {
+        "mov": "verplaats", "add": "optellen", "sub": "aftrekken",
+        "jmp": "spring", "call": "roep", "ret": "terug",
+        "and": "en", "or": "of", "not": "niet",
+        "cmp": "vergelijk", "test": "test",
+        "inc": "verhoog", "dec": "verlaag",
+    },
 }
+
+ERRORS = {
+    "en": {
+        "file_not_found": "❌ Error: File '{}' not found",
+        "io_error": "❌ Unexpected Error: {}",
+        "auto_detect_ok": "🔍 Auto-Detect: Identified Language -> {}",
+        "auto_detect_fail": "⚠️ Auto-Detect: Could not identify language. Defaulting to 'en'.",
+        "success": "   Status: ✅ OK",
+        "mode_native": "Native (View)",
+        "mode_standard": "Standard (NASM)"
+    },
+    "es": {
+        "file_not_found": "❌ Error: No se encontró el archivo '{}'",
+        "io_error": "❌ Error inesperado: {}",
+        "auto_detect_ok": "🔍 Auto-Detect: Idioma identificado -> {}",
+        "auto_detect_fail": "⚠️ Auto-Detect: No se pudo identificar el idioma. Usando 'en' (Standard).",
+        "success": "   Estado: ✅ OK",
+        "mode_native": "Natificado (Vista)",
+        "mode_standard": "Estándar (NASM)"
+    }
+}
+# Default to English for other languages for now
+for l in TABLE:
+    if l not in ERRORS:
+        ERRORS[l] = ERRORS["en"]
+
+def get_msg(key, lang, *args):
+    """Retrieve localized message"""
+    # Fallback to English if language not supported in ERRORS
+    msgs = ERRORS.get(lang, ERRORS["en"])
+    msg = msgs.get(key, ERRORS["en"][key])
+    msg = msgs.get(key, ERRORS["en"][key])
+    return msg.format(*args)
+
+def process_macros(code):
+    """
+    Procesa macros simples (%define CLAVE VALOR)
+    Retorna el código con las sustituciones aplicadas.
+    """
+    lines = code.split('\n')
+    processed_lines = []
+    macros = {}
+    
+    # 1. Scanner de definiciones
+    for line in lines:
+        line_strip = line.strip()
+        
+        # Detectar %define
+        if line_strip.lower().startswith('%define'):
+            parts = line_strip.split(None, 2)
+            if len(parts) >= 3:
+                key = parts[1]
+                val = parts[2]
+                macros[key] = val
+            continue # No añadir la línea de definición al output final
+            
+        processed_lines.append(line)
+        
+    # 2. Reemplazo (naive string replacement)
+    final_code = '\n'.join(processed_lines)
+    
+    if not macros:
+        return final_code
+        
+    for key, val in macros.items():
+        # Usar regex para reemplazar solo palabras completas
+        pattern = r'(?<!\w)' + re.escape(key) + r'(?!\w)'
+        final_code = re.sub(pattern, val, final_code)
+        
+    return final_code
 
 def translate_token(token, lang):
     """
@@ -716,6 +882,11 @@ def pretty_mnemonic(mnemonic, lang):
 
 def translate(code, lang, to_standard=True):
     """Traduce código entre mnemónicos nativos y estándar"""
+    
+    # PROCESAR MACROS (Si estamos traduciendo código fuente)
+    if to_standard:
+        code = process_macros(code)
+        
     lines = code.split('\n')
     translated_lines = []
     
@@ -745,6 +916,31 @@ def translate(code, lang, to_standard=True):
             
     return '\n'.join(translated_lines)
 
+
+
+def detect_language(code):
+    """
+    Detecta automáticamente el idioma del código fuente basándose en la frecuencia de palabras clave.
+    """
+    scores = {lang: 0 for lang in TABLE.keys()}
+    
+    # Tokenizar todo el código (palabras simples)
+    tokens = re.findall(r'[A-Za-zÀ-ÿ_\.0-9]+', code.lower())
+    
+    for token in tokens:
+        for lang, keywords in TABLE.items():
+            if token in keywords:
+                scores[lang] += 1
+                
+    # Encontrar el idioma con más coincidencias
+    best_lang = max(scores, key=scores.get)
+    
+    # Si no hay coincidencias claras (score 0), asumir 'es' o error?
+    if scores[best_lang] == 0:
+        return None
+        
+    return best_lang
+
 def main():
     if len(sys.argv) < 4:
         print("🛡️ MultiLang-ASM v0.3")
@@ -761,24 +957,37 @@ def main():
         with open(input_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
+        # LOGICA AUTO-DETECT
+        if lang == 'auto':
+            detected = detect_language(content)
+            if detected:
+                lang = detected
+                print(get_msg("auto_detect_ok", lang, lang.upper()))
+            else:
+                print(get_msg("auto_detect_fail", "en"))
+                lang = 'en'
+
+        # MACROS (Ahora se procesan dentro de translate)
         translated = translate(content, lang, to_standard=not reverse)
 
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(translated)
 
         # Mensajes humanos mejorados
-        mode = "Natificado (Vista)" if reverse else "Estándar (NASM)"
-        print("🛡️ MultiLang-ASM v0.2")
+        mode = get_msg("mode_native" if reverse else "mode_standard", lang)
+        
+        print(f"🛡️ MultiLang-ASM v0.4-dev")
         print(f"   Idioma: {lang.upper()}")
         print(f"   Modo: {mode}")
         print(f"   Entrada: {input_file}")
         print(f"   Salida: {output_file}")
-        print(f"   Estado: ✅ OK")
+        print(f"{get_msg('success', lang)}")
 
     except FileNotFoundError:
-        print(f"❌ Error: No se encontró el archivo '{input_file}'")
+        # Try to use 'lang' if set, else 'en'
+        print(get_msg("file_not_found", lang if lang != 'auto' else 'en', input_file))
     except Exception as e:
-        print(f"❌ Error inesperado: {e}")
+        print(get_msg("io_error", lang if lang != 'auto' else 'en', e))
 
 if __name__ == "__main__":
     main()

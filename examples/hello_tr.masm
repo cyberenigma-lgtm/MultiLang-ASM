@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (tr)
+; Run with: python ../mlasm.py auto hello_tr.masm
+
+; Hello World in MultiLang-ASM
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 13)
+    taşı rax, 1
+    taşı rdi, 1
+    taşı rsi, msg
+    taşı rdx, 13
+    syscall
+
+    ; Exit(0)
+    taşı rax, 60
+    taşı rdi, 0
+    syscall
+
+section .data
+    msg db "Hello World!", 0xA

@@ -5,7 +5,7 @@
 **El primer ensamblador multilingüe. Escribe ensamblador x86_64 en tu idioma nativo.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-11-blue.svg)](docs/)
+[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
 [![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
 
@@ -33,13 +33,50 @@ No es solo código. Es **justicia tecnológica**.
 
 ## ✨ Características
 
-- 🌐 **Multilingüe:** Escribe en Español, Árabe, Francés, Italiano, Portugués... (11 idiomas)
+- 🌐 **Multilingüe:** Escribe en Español, Árabe, Hindú, Turco... (16 idiomas)
 - 🔄 **Reversible:** Visualiza el mismo código en diferentes idiomas sin modificarlo
 - 🛠️ **Compatible:** Genera ASM estándar compatible con NASM, FASM y GAS
 - 📚 **Educativo:** Ideal para estudiantes y autodidactas sin conocimientos previos de inglés
 - 🎯 **Universal:** El binario final es idéntico, sin importar el idioma usado
 
-## 📖 Ejemplo Rápido
+## � Novedades v0.4 (Released)
+
+### 🤖 Auto-Detección de Idioma
+Ya no necesitas especificar el idioma manualmente. MultiLang-ASM analiza tu código y detecta el idioma con alta precisión.
+
+```bash
+# Antes (v0.3)
+python mlasm.py es programa.masm
+
+# Ahora (v0.4)
+python mlasm.py auto programa.masm
+```
+
+### ⚡ Macros (`%define`)
+Soporte básico para preprocesador. Define constantes o alias en tu propio idioma.
+
+```asm
+; Español
+%define SALUDO 0x1
+mover eax, SALUDO
+
+; Hindi
+%define RAKHO 0x1
+bhejo eax, RAKHO
+```
+
+### 🌍 5 Nuevos Idiomas (Beta)
+Se han añadido 5 nuevos idiomas a la familia, con soporte "Core+" (Instrucciones esenciales de lógica, aritmética y control de flujo):
+
+- 🇮🇳 **Hindi (`hi`)**: `bhejo` (mov), `joro` (add), `kudo` (jmp)...
+- 🇹🇷 **Turco (`tr`)**: `taşı` (mov), `ekle` (add), `atla` (jmp)...
+- 🇵🇱 **Polaco (`pl`)**: `przesun` (mov), `dodaj` (add), `skocz` (jmp)...
+- 🇸🇪 **Sueco (`sv`)**: `flytta` (mov), `addera` (add), `hoppa` (jmp)...
+- 🇳🇱 **Holandés (`nl`)**: `verplaats` (mov), `optellen` (add), `spring` (jmp)...
+
+Estos idiomas incluyen soporte completo para lógica (`AND`/`OR`/`XOR`/`NOT`) y comparación (`CMP`/`TEST`).
+
+## �📖 Ejemplo Rápido
 
 ### Código en Español
 ```asm
@@ -118,8 +155,11 @@ Este proyecto nace de una convicción simple:
 | Chino Tradicional | `zh` | ✅ Activo |
 | Japonés | `ja` | ✅ Activo |
 | Portugués | `pt` | ✅ Activo |
-| Hindi | `hi` | 📋 Planeado |
-| Swahili | `sw` | 📋 Planeado |
+| Hindi | `hi` | ✅ Beta |
+| Turco | `tr` | ✅ Beta |
+| Polaco | `pl` | ✅ Beta |
+| Sueco | `sv` | ✅ Beta |
+| Holandés | `nl` | ✅ Beta |
 
 ## 🛠️ Instalación
 
@@ -140,8 +180,8 @@ No se requieren dependencias externas. Solo Python 3.6+.
 | Soporte para 10 idiomas | ✅ Completado |
 | Preservación de comentarios | ✅ Completado |
 | Alias múltiples | ✅ Completado |
-| Expansión sintáctica (macros) | 🔄 En desarrollo |
-| Detección automática de idioma | 🔄 Planeado |
+| Expansión sintáctica (macros) | ✅ Completado |
+| Detección automática de idioma | ✅ Completado |
 | Integración con IDEs | 🔄 Planeado |
 | Validación sintáctica ASM | 🔄 Planeado |
 
@@ -286,7 +326,7 @@ Issues etiquetados con `good first issue` son perfectos para nuevos contribuidor
 
 ---
 
-**Versión:** v0.2  
+**Versión:** v0.4  
 **Licencia:** MIT  
 **Autor:** J / Neuro-OS Project  
 **Repositorio:** https://github.com/cyberenigma-lgtm/MultiLang-ASM

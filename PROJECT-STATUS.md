@@ -1,8 +1,8 @@
 # 🛡️ MultiLang-ASM - Estado del Proyecto
 
-**Fecha:** 2025-12-25  
-**Versión actual:** v0.3 ✅ Released  
-**Próxima versión:** v0.4 🔄 In Progress
+**Fecha:** 2026-01-13
+**Versión actual:** v0.4 ✅ Released
+**Próxima versión:** v0.5 (VSCode Plugin)
 
 ---
 

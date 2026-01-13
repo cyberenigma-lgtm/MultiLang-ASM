@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (zh)
+; Run with: python ../mlasm.py auto hello_zh.masm
+
+; Hello World in MultiLang-ASM
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 13)
+    移動 rax, 1
+    移動 rdi, 1
+    移動 rsi, msg
+    移動 rdx, 13
+    系統呼叫
+
+    ; Exit(0)
+    移動 rax, 60
+    移動 rdi, 0
+    系統呼叫
+
+section .data
+    msg db "Hello World!", 0xA

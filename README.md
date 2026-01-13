@@ -1,13 +1,14 @@
 # MultiLang-ASM
 **The first multilingual x86_64 assembler.**  
-Write assembly in your native language · 11 languages · 80+ instructions · reversible translation · NASM-compatible.
+**The first multilingual x86_64 assembler.**  
+Write assembly in your native language · 16 languages · 80+ instructions · reversible translation · NASM-compatible.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-11-blue.svg)](docs/)
+[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
 [![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
 
-📖 **English** | **[Español](README_ES.md)**
+📖 **[English](README.md)** | **[Español](README_ES.md)** | **[Français](README_FR.md)** | **[Deutsch](README_DE.md)** | **[Italiano](README_IT.md)** | **[Português](README_PT.md)** | **[Русский](README_RU.md)** | **[日本語](README_JA.md)** | **[中文](README_ZH.md)** | **[한국어](README_KO.md)** | **[العربية](README_AR.md)** | **[Bahasa](README_ID.md)** | **[Hindi](README_HI.md)** | **[Türkçe](README_TR.md)** | **[Polski](README_PL.md)** | **[Svenska](README_SV.md)** | **[Nederlands](README_NL.md)**
 
 ---
 
@@ -33,14 +34,53 @@ syscall
 
 ## ✨ Features
 
-- 🧠 **Write assembly in your native language**  
-- 🌍 **11 languages supported** (Spanish, French, German, Italian, Russian, Arabic, Korean, Indonesian, Chinese, Japanese, Portuguese)
-- 🔁 **Reversible translation** (ASM → Language → ASM)  
-- 🧩 **80+ instructions mapped**  
+- 🧠 **Write assembly in your native language**
+- 🌍 **16 languages supported** (Includes: Hindi, Turkish, Polish, Swedish, Dutch)
+- 🤖 **Auto-Detection** of source language
+- ⚡ **Macros** (%define) support
+- 🔁 **Reversible translation** (ASM → Language → ASM)
+- 🧩 **80+ instructions mapped** (Full support for 11 core languages, Essentials for 5 new)
 - 🛠️ **NASM/FASM/GAS compatible output**  
 - 📚 **Full documentation per language**  
 - 🧪 **Examples and tests included**  
-- 🔌 **Easy integration with Make, CMake, CI/CD**  
+- 🔌 **Easy integration with Make, CMake, CI/CD**
+
+## 🔥 What's New in v0.4 (Released)
+
+### 🤖 Smart Language Auto-Detection
+You no longer need to specify the language manually. MultiLang-ASM analyzes your code and detects the source language with high accuracy.
+
+```bash
+# Before (v0.3)
+python mlasm.py es program.masm
+
+# Now (v0.4)
+python mlasm.py auto program.masm
+```
+
+### ⚡ Macros (`%define`)
+Basic preprocessor support. Define constants or aliases in your own language.
+
+```asm
+; Spanish
+%define HELLO 0x1
+mover eax, HELLO
+
+; Hindi
+%define RAKHO 0x1
+bhejo eax, RAKHO
+```
+
+### 🌍 5 New Languages (Beta)
+Added 5 new languages with "Core+" support (Essential logic, arithmetic, and flow control):
+
+- 🇮🇳 **Hindi (`hi`)**: `bhejo` (mov), `joro` (add), `kudo` (jmp)...
+- 🇹🇷 **Turkish (`tr`)**: `taşı` (mov), `ekle` (add), `atla` (jmp)...
+- 🇵🇱 **Polish (`pl`)**: `przesun` (mov), `dodaj` (add), `skocz` (jmp)...
+- 🇸🇪 **Swedish (`sv`)**: `flytta` (mov), `addera` (add), `hoppa` (jmp)...
+- 🇳🇱 **Dutch (`nl`)**: `verplaats` (mov), `optellen` (add), `spring` (jmp)...
+
+These languages include full support for logic (`AND`/`OR`/`XOR`/`NOT`) and comparison (`CMP`/`TEST`).  
 
 ---
 
@@ -77,6 +117,11 @@ mlasm build es programa.masm
 | 🇨🇳 中文 | `zh` | ✅ Complete | 80+ |
 | 🇯🇵 日本語 | `ja` | ✅ Complete | 80+ |
 | 🇧🇷 Português | `pt` | ✅ Complete | 80+ |
+| 🇮🇳 Hindi | `hi` | ✅ beta | Core+ |
+| 🇹🇷 Turkish | `tr` | ✅ beta | Core+ |
+| 🇵🇱 Polish | `pl` | ✅ beta | Core+ |
+| 🇸🇪 Swedish | `sv` | ✅ beta | Core+ |
+| 🇳🇱 Dutch | `nl` | ✅ beta | Core+ |
 
 Want your language? Open an [issue](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)!
 
@@ -123,8 +168,8 @@ Issues labeled `good first issue` are perfect for first-time contributors.
 | Version | Features | Status |
 |---------|----------|--------|
 | v0.2 | 10 languages, 80+ instructions, reversible mode | ✅ Released |
-| v0.3 | PRETTY expansion for all 10 languages | ✅ Released |
-| v0.4 | Auto-detection, tests, macros | 🔄 In Progress |
+| v0.3 | PRETTY expansion for all 10 languages, 80+ Instr | ✅ Released |
+| v0.4 | Auto-detection, tests, macros, 16 languages | ✅ Released |
 | v0.5 | VSCode plugin, web playground | 📋 Planned |
 | v1.0 | Stable release, full test coverage | 📋 Planned |
 
@@ -188,7 +233,7 @@ Thanks to all contributors who help democratize low-level programming.
 
 ---
 
-**Version:** v0.3  
+**Version:** v0.4  
 **Author:** J / Neuro-OS Project  
 **Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
 

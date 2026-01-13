@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (ko)
+; Run with: python ../mlasm.py auto hello_ko.masm
+
+; Hello World in MultiLang-ASM
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 13)
+    이동 rax, 1
+    이동 rdi, 1
+    이동 rsi, msg
+    이동 rdx, 13
+    시스템호출
+
+    ; Exit(0)
+    이동 rax, 60
+    이동 rdi, 0
+    시스템호출
+
+section .data
+    msg db "Hello World!", 0xA
