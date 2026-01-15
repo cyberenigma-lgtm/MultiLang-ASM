@@ -1,0 +1,7 @@
+; MultiLang-ASM - Ukrainian Example
+; Kids Mode / Modo Niños
+
+polozhy rax 5
+polozhy rbx 10
+dodaty rax rbx
+pokazhy rax

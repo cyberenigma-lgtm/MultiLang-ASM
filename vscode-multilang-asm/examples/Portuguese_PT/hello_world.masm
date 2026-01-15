@@ -1,0 +1,7 @@
+; MultiLang-ASM - Portuguese Example
+; Kids Mode / Modo Niños
+
+coloca rax a 5
+coloca rbx a 10
+soma rax com rbx
+mostra rax

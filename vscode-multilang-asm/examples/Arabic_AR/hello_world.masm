@@ -1,0 +1,7 @@
+; MultiLang-ASM - Arabic Example
+; Kids Mode / Modo Niños
+
+da rax 5
+da rbx 10
+ijma rax rbx
+anzur rax

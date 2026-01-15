@@ -1,0 +1,7 @@
+; MultiLang-ASM - Thai Example
+; Kids Mode / Modo Niños
+
+sai rax 5
+sai rbx 10
+buak rax rbx
+sadang rax

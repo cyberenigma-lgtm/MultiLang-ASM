@@ -1,0 +1,7 @@
+; MultiLang-ASM - Indonesian Example
+; Kids Mode / Modo Niños
+
+taruh rax 5
+taruh rbx 10
+tambah rax rbx
+tampil rax

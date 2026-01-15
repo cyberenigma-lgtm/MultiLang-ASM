@@ -1,0 +1,7 @@
+; MultiLang-ASM - Greek Example
+; Kids Mode / Modo Niños
+
+bale rax 5
+bale rbx 10
+prosthese rax rbx
+diekse rax

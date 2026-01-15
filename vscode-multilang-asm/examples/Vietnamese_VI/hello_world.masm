@@ -1,0 +1,7 @@
+; MultiLang-ASM - Vietnamese Example
+; Kids Mode / Modo Niños
+
+dat rax 5
+dat rbx 10
+them rax rbx
+hien rax

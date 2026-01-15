@@ -1,0 +1,7 @@
+; MultiLang-ASM - Turkish Example
+; Kids Mode / Modo Niños
+
+koy rax 5
+koy rbx 10
+ekle rax rbx
+goster rax

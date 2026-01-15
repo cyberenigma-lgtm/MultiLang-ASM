@@ -1,0 +1,7 @@
+; MultiLang-ASM - Tagalog Example
+; Kids Mode / Modo Niños
+
+lagay rax 5
+lagay rbx 10
+dagdag rax rbx
+pakita rax

@@ -1,0 +1,7 @@
+; MultiLang-ASM - Hindi Example
+; Kids Mode / Modo Niños
+
+rakho rax 5
+rakho rbx 10
+jodo rax rbx
+dikhao rax

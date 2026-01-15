@@ -171,6 +171,7 @@ Issues labeled `good first issue` are perfect for first-time contributors.
 | v0.3 | PRETTY expansion for all 10 languages, 80+ Instr | ✅ Released |
 | v0.4 | Auto-detection, tests, macros, 16 languages | ✅ Released |
 | v0.5 | VSCode plugin, web playground | 📋 Planned |
+| v0.6 | Community platform, language packs, contributor system | 📋 Planned |
 | v1.0 | Stable release, full test coverage | 📋 Planned |
 
 ---

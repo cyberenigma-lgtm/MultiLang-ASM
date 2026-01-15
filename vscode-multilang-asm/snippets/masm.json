@@ -1,0 +1,121 @@
+{
+    "Move (ES)": {
+        "prefix": "mover",
+        "body": [
+            "mover ${1:rax}, ${2:valor}"
+        ],
+        "description": "Mover valor a registro (Español)"
+    },
+    "Add (ES)": {
+        "prefix": "sumar",
+        "body": [
+            "sumar ${1:rax}, ${2:valor}"
+        ],
+        "description": "Sumar valor a registro (Español)"
+    },
+    "Function (ES)": {
+        "prefix": "funcion",
+        "body": [
+            "funcion ${1:nombre}",
+            "    ${2:; código}",
+            "    retornar",
+            "fin"
+        ],
+        "description": "Crear función (Español)"
+    },
+    "Loop (ES)": {
+        "prefix": "repite",
+        "body": [
+            "repite ${1:5} veces",
+            "    ${2:; código}",
+            "fin"
+        ],
+        "description": "Bucle simple (Español)"
+    },
+    "If (ES)": {
+        "prefix": "si",
+        "body": [
+            "si ${1:rax} es ${2:mayor} que ${3:rbx}",
+            "    ${4:; código}",
+            "fin"
+        ],
+        "description": "Condicional (Español)"
+    },
+    "Kids Put (ES)": {
+        "prefix": "pon",
+        "body": [
+            "pon ${1:rax} a ${2:5}"
+        ],
+        "description": "Poner valor (Modo niños - Español)"
+    },
+    "Kids Show (ES)": {
+        "prefix": "enseña",
+        "body": [
+            "enseña ${1:rax}"
+        ],
+        "description": "Mostrar valor (Modo niños - Español)"
+    },
+    "Move (FR)": {
+        "prefix": "déplacer",
+        "body": [
+            "déplacer ${1:rax}, ${2:valeur}"
+        ],
+        "description": "Déplacer valeur vers registre (Français)"
+    },
+    "Move (DE)": {
+        "prefix": "verschieben",
+        "body": [
+            "verschieben ${1:rax}, ${2:wert}"
+        ],
+        "description": "Wert in Register verschieben (Deutsch)"
+    },
+    "Move (IT)": {
+        "prefix": "spostare",
+        "body": [
+            "spostare ${1:rax}, ${2:valore}"
+        ],
+        "description": "Spostare valore in registro (Italiano)"
+    },
+    "Move (PT)": {
+        "prefix": "mover",
+        "body": [
+            "mover ${1:rax}, ${2:valor}"
+        ],
+        "description": "Mover valor para registro (Português)"
+    },
+    "Move (ZH)": {
+        "prefix": "移动",
+        "body": [
+            "移动 ${1:rax}, ${2:值}"
+        ],
+        "description": "移动值到寄存器 (中文)"
+    },
+    "Move (JA)": {
+        "prefix": "移動",
+        "body": [
+            "移動 ${1:rax}, ${2:値}"
+        ],
+        "description": "レジスタに値を移動 (日本語)"
+    },
+    "Move (KO)": {
+        "prefix": "이동",
+        "body": [
+            "이동 ${1:rax}, ${2:값}"
+        ],
+        "description": "레지스터로 값 이동 (한국어)"
+    },
+    "Move (RU)": {
+        "prefix": "переместить",
+        "body": [
+            "переместить ${1:rax}, ${2:значение}"
+        ],
+        "description": "Переместить значение в регистр (Русский)"
+    },
+    "Move (HI)": {
+        "prefix": "bhejo",
+        "body": [
+            "bhejo ${1:rax}, ${2:value}"
+        ],
+        "description": "Register mein value bhejo (Hindi)"
+    }
+}

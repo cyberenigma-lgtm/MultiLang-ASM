@@ -1,0 +1,7 @@
+; MultiLang-ASM - Persian Example
+; Kids Mode / Modo Niños
+
+bezor rax 5
+bezor rbx 10
+jam rax rbx
+neshon rax

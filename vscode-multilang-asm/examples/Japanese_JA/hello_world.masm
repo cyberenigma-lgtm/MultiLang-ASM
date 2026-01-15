@@ -1,0 +1,7 @@
+; MultiLang-ASM - Japanese Example
+; Kids Mode / Modo Niños
+
+irete rax 5
+irete rbx 10
+tashite rax rbx
+misete rax

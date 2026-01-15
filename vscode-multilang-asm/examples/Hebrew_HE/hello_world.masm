@@ -1,0 +1,7 @@
+; MultiLang-ASM - Hebrew Example
+; Kids Mode / Modo Niños
+
+sim rax 5
+sim rbx 10
+hosef rax rbx
+hare rax

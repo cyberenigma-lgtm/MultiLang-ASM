@@ -1,0 +1,7 @@
+; MultiLang-ASM - Dutch Example
+; Kids Mode / Modo Niños
+
+zet rax op 5
+zet rbx op 10
+tel_op rax met rbx
+toon rax

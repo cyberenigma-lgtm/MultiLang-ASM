@@ -1,0 +1,231 @@
+{
+    "name": "multilang-asm",
+    "displayName": "MultiLang-ASM",
+    "description": "Assembly in 16 languages - The first multilingual x86_64 assembler",
+    "version": "0.5.0",
+    "publisher": "neuro-os",
+    "author": {
+        "name": "José Manuel",
+        "email": "neuro.so.ia.sim@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cyberenigma-lgtm/MultiLang-ASM"
+    },
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Education"
+    ],
+    "keywords": [
+        "assembly",
+        "asm",
+        "multilingual",
+        "español",
+        "français",
+        "deutsch",
+        "italiano",
+        "português",
+        "русский",
+        "日本語",
+        "中文",
+        "한국어",
+        "العربية",
+        "bahasa",
+        "hindi",
+        "turkish",
+        "polish",
+        "swedish",
+        "dutch",
+        "osdev",
+        "education"
+    ],
+    "icon": "images/icon.png",
+    "activationEvents": [
+        "onLanguage:masm"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "masm",
+                "aliases": [
+                    "MultiLang-ASM",
+                    "MASM"
+                ],
+                "extensions": [
+                    ".masm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "masm",
+                "scopeName": "source.masm",
+                "path": "./syntaxes/masm.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "masm",
+                "path": "./snippets/masm.json"
+            }
+        ],
+        "configuration": {
+            "title": "MultiLang-ASM",
+            "properties": {
+                "multilangasm.defaultLanguage": {
+                    "type": "string",
+                    "default": "es",
+                    "enum": [
+                        "es",
+                        "fr",
+                        "de",
+                        "it",
+                        "ar",
+                        "ru",
+                        "ko",
+                        "id",
+                        "zh",
+                        "ja",
+                        "pt",
+                        "hi",
+                        "tr",
+                        "pl",
+                        "sv",
+                        "pl",
+                        "sv",
+                        "nl",
+                        "ast",
+                        "val",
+                        "and",
+                        "mad",
+                        "sev",
+                        "sev",
+                        "gad",
+                        "en_cockney",
+                        "en_aus",
+                        "en_tx",
+                        "fr_qc",
+                        "de_bay",
+                        "it_nap",
+                        "ja_kan",
+                        "zh_yue",
+                        "ar_eg",
+                        "pt_br",
+                        "de_sw",
+                        "de_at",
+                        "it_sic",
+                        "it_rom",
+                        "nl_be",
+                        "pl_sil",
+                        "en_scots",
+                        "en_ie",
+                        "el",
+                        "he",
+                        "th",
+                        "vi",
+                        "sw",
+                        "tl",
+                        "ms",
+                        "fa",
+                        "uk",
+                        "ro"
+                    ],
+                    "description": "Default language for MultiLang-ASM"
+                },
+                "multilangasm.autoDetect": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically detect language from code"
+                },
+                "multilangasm.enableKidsMode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable simplified syntax for children"
+                }
+            }
+        },
+        "walkthroughs": [
+            {
+                "id": "multilangasm-intro",
+                "title": "Bienvenido a MultiLang-ASM",
+                "description": "Aprende a programar en ensamblador en tu propio idioma.",
+                "steps": [
+                    {
+                        "id": "intro",
+                        "title": "👋 Hola Mundo / Hello World",
+                        "description": "walkthroughs/intro.md",
+                        "media": {
+                            "image": "images/icon.png",
+                            "altText": "MultiLang-ASM Logo"
+                        }
+                    },
+                    {
+                        "id": "select-language",
+                        "title": "🌍 Elige tu Idioma",
+                        "description": "walkthroughs/language.md",
+                        "media": {
+                            "markdown": "walkthroughs/language_media.md"
+                        }
+                    },
+                    {
+                        "id": "kids-mode",
+                        "title": "🧸 Modo Niños",
+                        "description": "walkthroughs/kids.md",
+                        "media": {
+                            "image": "images/icon.png",
+                            "altText": "Kids Mode"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "multilangasm-teachers",
+                "title": "👨‍🏫 Taller para Profesores",
+                "description": "Guía didáctica para enseñar programación de bajo nivel.",
+                "steps": [
+                    {
+                        "id": "methodology",
+                        "title": "📘 Metodología",
+                        "description": "walkthroughs/teachers_methodology.md",
+                        "media": {
+                            "image": "images/icon.png",
+                            "altText": "Teachers"
+                        }
+                    },
+                    {
+                        "id": "curriculum",
+                        "title": "📅 Currículo",
+                        "description": "walkthroughs/teachers_curriculum.md",
+                        "media": {
+                            "image": "images/icon.png",
+                            "altText": "Curriculum"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.60.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint": "^8.0.0",
+        "typescript": "^4.5.0"
+    }
+}

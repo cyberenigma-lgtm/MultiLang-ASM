@@ -1,0 +1,7 @@
+; MultiLang-ASM - Malay Example
+; Kids Mode / Modo Niños
+
+letak rax 5
+letak rbx 10
+tambah rax rbx
+tunjuk rax

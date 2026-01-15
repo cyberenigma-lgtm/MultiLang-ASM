@@ -1,0 +1,7 @@
+; MultiLang-ASM - French Example
+; Kids Mode / Modo Niños
+
+mets rax a 5
+mets rbx a 10
+ajoute rax avec rbx
+montre rax

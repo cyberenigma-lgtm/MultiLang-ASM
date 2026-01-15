@@ -1,55 +1,8 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+node_modules
+*.pyc
+__pycache__
+.vscode
+.idea
+*.vsix
+MultiLang-ASM.wiki
 
-# Virtual environments
-venv/
-ENV/
-env/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# MultiLang-ASM specific
-*.o
-*.obj
-*.asm
-*.bin
-*.exe
-demo_*.asm
-demo_*_translated.asm
-demo_reverso_*.masm
-temp.asm
-temp.o
-programa
-build/
-
-# Excepciones (ejemplos que sí queremos en el repo)
-!demo_es.masm
-!demo_fr.masm

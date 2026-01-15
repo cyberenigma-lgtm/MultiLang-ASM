@@ -1,0 +1,7 @@
+; MultiLang-ASM - Chinese Example
+; Kids Mode / Modo Niños
+
+fang rax 5
+fang rbx 10
+jia rax rbx
+kan rax

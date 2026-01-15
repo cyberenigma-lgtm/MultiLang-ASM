@@ -1,0 +1,7 @@
+; MultiLang-ASM - Swedish Example
+; Kids Mode / Modo Niños
+
+stall rax 5
+stall rbx 10
+addera rax med rbx
+visa rax

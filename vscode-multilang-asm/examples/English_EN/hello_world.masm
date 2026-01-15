@@ -1,0 +1,7 @@
+; MultiLang-ASM - English Example
+; Kids Mode / Modo Niños
+
+put rax 5
+put rbx 10
+add rax and rbx
+look rax

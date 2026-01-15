@@ -1,0 +1,7 @@
+; MultiLang-ASM - Swahili Example
+; Kids Mode / Modo Niños
+
+weka rax 5
+weka rbx 10
+ongeza rax rbx
+onyesha rax

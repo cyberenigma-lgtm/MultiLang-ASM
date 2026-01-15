@@ -1,0 +1,7 @@
+; MultiLang-ASM - Spanish Example
+; Kids Mode / Modo Niños
+
+pon rax a 5
+pon rbx a 10
+suma rax con rbx
+enseña rax

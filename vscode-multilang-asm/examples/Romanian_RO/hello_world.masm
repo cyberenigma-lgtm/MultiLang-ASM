@@ -1,0 +1,7 @@
+; MultiLang-ASM - Romanian Example
+; Kids Mode / Modo Niños
+
+pune rax 5
+pune rbx 10
+adauga rax rbx
+arata rax

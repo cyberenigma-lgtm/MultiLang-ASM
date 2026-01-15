@@ -1,0 +1,7 @@
+; MultiLang-ASM - Korean Example
+; Kids Mode / Modo Niños
+
+neoh rax 5
+neoh rbx 10
+deohae rax rbx
+boyeo rax

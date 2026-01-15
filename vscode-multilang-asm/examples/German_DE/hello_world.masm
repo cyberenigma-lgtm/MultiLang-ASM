@@ -1,0 +1,7 @@
+; MultiLang-ASM - German Example
+; Kids Mode / Modo Niños
+
+setze rax auf 5
+setze rbx auf 10
+addiere rax mit rbx
+zeige rax

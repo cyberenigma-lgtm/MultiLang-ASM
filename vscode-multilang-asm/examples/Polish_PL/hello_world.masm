@@ -1,0 +1,7 @@
+; MultiLang-ASM - Polish Example
+; Kids Mode / Modo Niños
+
+wsadz rax 5
+wsadz rbx 10
+dodaj rax rbx
+pokaz rax

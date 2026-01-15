@@ -1,0 +1,108 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "MultiLang-ASM",
+    "scopeName": "source.masm",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#labels"
+        },
+        {
+            "include": "#instructions"
+        },
+        {
+            "include": "#registers"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#directives"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.semicolon.masm",
+                    "match": ";.*$"
+                }
+            ]
+        },
+        "labels": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.masm",
+                    "match": "^\\s*[a-zA-Z_][a-zA-Z0-9_]*:"
+                }
+            ]
+        },
+        "instructions": {
+            "patterns": [
+                {
+                    "name": "keyword.control.masm",
+                    "match": "\\b(mover|mov|sumar|add|restar|sub|multiplicar|imul|dividir|idiv|saltar|jmp|llamar|call|retornar|ret|pon|suma|resta|mueve|enseña|enseñar|guarda|carga|compara|cmp|si_igual|je|si_mayor|jg|si_menor|jl|repite|loop|déplacer|ajouter|soustraire|multiplier|diviser|sauter|appeler|retourner|verschieben|addieren|subtrahieren|multiplizieren|dividieren|springen|aufrufen|zurückkehren|spostare|aggiungere|sottrarre|moltiplicare|dividere|saltare|chiamare|ritornare|نقل|إضافة|طرح|ضرب|قسمة|قفز|استدعاء|عودة|переместить|добавить|вычесть|умножить|разделить|прыгнуть|вызвать|вернуться|이동|추가|빼기|곱하기|나누기|점프|호출|반환|pindah|tambah|kurang|kali|bagi|lompat|panggil|kembali|移动|加|减|乘|除|跳转|调用|返回|移動|加算|減算|乗算|除算|ジャンプ|呼び出し|戻る|mover|somar|subtrair|multiplicar|dividir|saltar|chamar|retornar|bhejo|joro|ghata|guna|bhag|kudo|bulao|wapas|taşı|ekle|çıkar|çarp|böl|atla|çağır|dön|przesun|dodaj|odejmij|pomnóż|podziel|skocz|wywołaj|wróć|flytta|addera|subtrahera|multiplicera|dividera|hoppa|anropa|återvända|verplaats|optellen|aftrekken|vermenigvuldigen|delen|spring|oproepen|terugkeren)\\b"
+                }
+            ]
+        },
+        "registers": {
+            "patterns": [
+                {
+                    "name": "variable.language.register.masm",
+                    "match": "\\b(rax|rbx|rcx|rdx|rsi|rdi|rbp|rsp|r8|r9|r10|r11|r12|r13|r14|r15|eax|ebx|ecx|edx|esi|edi|ebp|esp|ax|bx|cx|dx|si|di|bp|sp|al|bl|cl|dl|ah|bh|ch|dh)\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.hex.masm",
+                    "match": "\\b0x[0-9a-fA-F]+\\b"
+                },
+                {
+                    "name": "constant.numeric.decimal.masm",
+                    "match": "\\b[0-9]+\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.masm",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.masm",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.masm",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.masm",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "directives": {
+            "patterns": [
+                {
+                    "name": "keyword.other.directive.masm",
+                    "match": "\\b(section|global|extern|bits|org|times|db|dw|dd|dq|resb|resw|resd|resq|%define|%include|%macro|%endmacro)\\b"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+; MultiLang-ASM - Russian Example
+; Kids Mode / Modo Niños
+
+положи rax 5
+положи rbx 10
+добавь rax с rbx
+покажи rax
