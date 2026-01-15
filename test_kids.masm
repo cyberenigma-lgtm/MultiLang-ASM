@@ -1,0 +1,7 @@
+; Kids Mode Test (Spanish)
+; Should detect as ES/Kids and compile to MOV, ADD, SUB, SYSCALL
+
+pon rax 10
+suma rax 5
+resta rax 2
+enseña rax

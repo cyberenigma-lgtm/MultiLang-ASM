@@ -9,7 +9,7 @@ import os
 # ██║ ╚═╝ ██║███████╗███████╗███████╗██║  ██║██║ ╚████║╚██████╔╝
 # ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
 #
-#        MultiLang-ASM v0.2 — Parte del ecosistema Neuro-OS
+#        MultiLang-ASM v0.5 — Parte del ecosistema Neuro-OS
 #        Ensamblador Multilingüe Universal | Accesibilidad sin Barreras
 #        https://github.com/tuusuario/MultiLang-ASM
 
@@ -122,6 +122,96 @@ INSTRUCTIONS = {
     "cwd": {"category": "conversion"},
     "cdq": {"category": "conversion"},
     "cqo": {"category": "conversion"},
+}
+
+# ============================================================================
+# MODALIDAD INFANTIL / KIDS MODE (Verbos simplificados)
+# ============================================================================
+KIDS_INSTRUCTIONS = {
+    # 🇺🇸 English
+    "en": {"put": "mov", "add": "add", "take": "sub", "look": "syscall"},
+    "en_cockney": {"stash": "mov", "lob": "add", "nick": "sub", "gawk": "syscall"},
+    "en_aus": {"chuck": "mov", "reckon": "add", "nix": "sub", "squiz": "syscall"},
+    "en_tx": {"hitch": "mov", "roundup": "add", "cut": "sub", "spy": "syscall"},
+    "en_ie": {"park": "mov", "tally": "add", "slash": "sub", "dekko": "syscall"},
+    "en_scots": {"pit": "mov", "tot": "add", "dock": "sub", "keek": "syscall"},
+
+    # 🇪🇸 Spanish
+    "es": {"pon": "mov", "suma": "add", "resta": "sub", "enseña": "syscall"},
+    "es_ast": {"pon": "mov", "amesta": "add", "resta": "sub", "amuesa": "syscall"},
+    "es_val": {"posa": "mov", "suma": "add", "resta": "sub", "mostra": "syscall"},
+    "es_and": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"}, # Standardized
+    "es_mad": {"apanca": "mov", "suma": "add", "pilla": "sub", "lipa": "syscall"},
+    "es_sev": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"},
+    "es_gad": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"},
+
+    # 🇫🇷 French
+    "fr": {"mets": "mov", "ajoute": "add", "enleve": "sub", "montre": "syscall"},
+    "fr_qc": {"place": "mov", "ajoute": "add", "ote": "sub", "check": "syscall"},
+
+    # 🇩🇪 German
+    "de": {"setze": "mov", "addiere": "add", "ziehe_ab": "sub", "zeige": "syscall"},
+    "de_bay": {"pack": "mov", "dazu": "add", "weg": "sub", "schau": "syscall"}, # Bavarian
+    "de_sw": {"tue": "mov", "zelle": "add", "nimm": "sub", "lueg": "syscall"}, # Swiss
+    "de_at": {"gib": "mov", "dazua": "add", "weg": "sub", "schau": "syscall"}, # Austrian
+
+    # 🇮🇹 Italian
+    "it": {"metti": "mov", "aggiungi": "add", "togli": "sub", "mostra": "syscall"},
+    "it_nap": {"miett": "mov", "agna": "add", "lieve": "sub", "vide": "syscall"},
+    "it_sic": {"mintici": "mov", "iungi": "add", "leva": "sub", "talía": "syscall"},
+    "it_rom": {"moje": "mov", "jungi": "add", "leva": "sub", "guarda": "syscall"},
+
+    # 🇵🇹 Portuguese
+    "pt": {"coloca": "mov", "soma": "add", "tira": "sub", "mostra": "syscall"},
+    "pt_br": {"bota": "mov", "soma": "add", "tira": "sub", "mostra": "syscall"},
+
+    # 🇷🇺 Russian
+    "ru": {"положи": "mov", "добавь": "add", "отними": "sub", "покажи": "syscall"},
+
+    # 🇯🇵 Japanese
+    "ja": {"irete": "mov", "tashite": "add", "hiite": "sub", "misete": "syscall"},
+    "ja_kan": {"irete-ya": "mov", "tashite-ya": "add", "hiite-ya": "sub", "misete-ya": "syscall"},
+
+    # 🇨🇳 Chinese
+    "zh": {"fang": "mov", "jia": "add", "jian": "sub", "kan": "syscall"},
+    "zh_yue": {"fong": "mov", "ga": "add", "gaam": "sub", "tai": "syscall"}, # Cantonese
+
+    # 🇰🇷 Korean
+    "ko": {"neoh": "mov", "deohae": "add", "ppaera": "sub", "boyeo": "syscall"},
+
+    # 🇸🇦 Arabic (Transliterated for simplicity in non-RTL environments if needed, but keeping native too)
+    "ar": {"da": "mov", "ijma": "add", "itrah": "sub", "anzur": "syscall"},
+    "ar_eg": {"hot": "mov", "zawed": "add", "na'as": "sub", "bos": "syscall"}, # Egyptian
+
+    # 🇮🇳 Hindi
+    "hi": {"rakho": "mov", "jodo": "add", "ghatao": "sub", "dikhao": "syscall"},
+
+    # 🇹🇷 Turkish
+    "tr": {"koy": "mov", "ekle": "add", "cikar": "sub", "goster": "syscall"},
+
+    # 🇵🇱 Polish
+    "pl": {"wsadz": "mov", "dodaj": "add", "odejmij": "sub", "pokaz": "syscall"},
+    "pl_sil": {"wciep": "mov", "dodaj": "add", "odejmij": "sub", "pokoz": "syscall"}, # Silesian
+
+    # 🇸 Swedish
+    "sv": {"stall": "mov", "addera": "add", "dra_av": "sub", "visa": "syscall"},
+
+    # 🇳🇱 Dutch
+    "nl": {"zet": "mov", "tel_op": "add", "trek_af": "sub", "toon": "syscall"},
+    "nl_be": {"zet": "mov", "tel_bij": "add", "trek_af": "sub", "toont": "syscall"}, # Flemish
+
+    # New Languages
+    "el": {"bale": "mov", "prosthese": "add", "afairese": "sub", "diekse": "syscall"}, # Greek
+    "he": {"sim": "mov", "hosef": "add", "haser": "sub", "hare": "syscall"}, # Hebrew
+    "th": {"sai": "mov", "buak": "add", "lop": "sub", "sadang": "syscall"}, # Thai
+    "vi": {"dat": "mov", "them": "add", "tru": "sub", "hien": "syscall"}, # Vietnamese
+    "sw": {"weka": "mov", "ongeza": "add", "toa": "sub", "onyesha": "syscall"}, # Swahili
+    "tl": {"lagay": "mov", "dagdag": "add", "bawas": "sub", "pakita": "syscall"}, # Tagalog
+    "ms": {"letak": "mov", "tambah": "add", "tolak": "sub", "tunjuk": "syscall"}, # Malay
+    "fa": {"bezor": "mov", "jam": "add", "kam": "sub", "neshon": "syscall"}, # Persian
+    "uk": {"polozhy": "mov", "dodaty": "add", "vidnyaty": "sub", "pokazhy": "syscall"}, # Ukrainian
+    "ro": {"pune": "mov", "adauga": "add", "scade": "sub", "arata": "syscall"}, # Romanian
+    "id": {"taruh": "mov", "tambah": "add", "kurang": "sub", "tampil": "syscall"}, # Indonesian
 }
 
 # ============================================================================
@@ -857,9 +947,13 @@ def translate_token(token, lang):
     2. Si es mnemónico estándar en INSTRUCTIONS -> deja tal cual
     3. Si no, devuelve tal cual (etiquetas, registros, números, etc.)
     """
-    # Intentar traducción desde tabla de idioma
+    # Intentar traducción desde tabla de idioma (Standard)
     if lang in TABLE and token in TABLE[lang]:
         return TABLE[lang][token]
+
+    # Intentar traducción desde KIDS MODE (y dialectos)
+    if lang in KIDS_INSTRUCTIONS and token in KIDS_INSTRUCTIONS[lang]:
+        return KIDS_INSTRUCTIONS[lang][token]
     
     # Si ya es un mnemónico estándar, dejarlo tal cual
     if token in INSTRUCTIONS:
@@ -930,7 +1024,15 @@ def detect_language(code):
     for token in tokens:
         for lang, keywords in TABLE.items():
             if token in keywords:
+                # Standard match
                 scores[lang] += 1
+        
+        for lang, keywords in KIDS_INSTRUCTIONS.items():
+            if token in keywords:
+                # Kids match (normalize simple lang codes if possible, or keep dialect)
+                # If dialect creates a new key in scores, so be it
+                if lang not in scores: scores[lang] = 0
+                scores[lang] += 2  # Weighted higher for specific kids terms
                 
     # Encontrar el idioma con más coincidencias
     best_lang = max(scores, key=scores.get)
@@ -943,7 +1045,7 @@ def detect_language(code):
 
 def main():
     if len(sys.argv) < 4:
-        print("🛡️ MultiLang-ASM v0.3")
+        print("🛡️ MultiLang-ASM v0.5 (Includes Kids Mode)")
         print("Uso: python mlasm.py <idioma> <entrada> <salida> [--reverse]")
         print("\nIdiomas: es, fr, it, ar, de, ru, ko, id, zh, ja, pt")
         return
@@ -976,7 +1078,7 @@ def main():
         # Mensajes humanos mejorados
         mode = get_msg("mode_native" if reverse else "mode_standard", lang)
         
-        print(f"🛡️ MultiLang-ASM v0.4-dev")
+        print(f"🛡️ MultiLang-ASM v0.5 (Engine Updated)")
         print(f"   Idioma: {lang.upper()}")
         print(f"   Modo: {mode}")
         print(f"   Entrada: {input_file}")
