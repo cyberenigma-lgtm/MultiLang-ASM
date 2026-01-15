@@ -48,8 +48,14 @@ syscall
 ## 🔥 What's New in v0.5 (Released)
 
 ### 🧸 Kids Mode (Modo Niños)
-A revolutionary new way to teach assembly to children (7+ years). Simplified syntax, no complex registers, just logic.
+**New!** We have moved the educational suite to its own dedicated home.
+👉 **[Visit MultiLang-ASM Kids Repository](https://github.com/cyberenigma-lgtm/MultiLang-ASM-Kids)**
 
+- 📚 **[Kids Wiki & Guide](https://github.com/cyberenigma-lgtm/MultiLang-ASM-Kids/wiki)**
+- 🎮 **[Exercises & Examples](https://github.com/cyberenigma-lgtm/MultiLang-ASM-Kids/tree/main/examples)**
+- 🏫 **Teacher Resources**
+
+Simplified syntax for 27 languages:
 ```asm
 ; Kids Mode (Spanish)
 pon rax a 5
