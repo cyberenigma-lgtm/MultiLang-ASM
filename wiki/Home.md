@@ -6,7 +6,8 @@
 
 ## 🚀 Quick Links
 
-- **[Supported Languages](Supported-Languages)** - Full list of 10 supported languages
+- **[Supported Languages](Supported-Languages)** - Full list of 27 supported languages
+- **[Kids Mode](Kids-Mode)** - 🧸 Simplified coding for children (New!)
 - **[How to Use](How-to-Use)** - Installation and basic usage guide
 - **[PRETTY Mode](PRETTY-Mode)** - Reverse translation feature
 - **[Examples](Examples)** - Code examples in all languages
@@ -57,14 +58,14 @@ This project removes artificial linguistic barriers and opens systems programmin
 
 ---
 
-## 🎯 Current Version: v0.3
+## 🎯 Current Version: v0.5
 
 **Latest features:**
-- ✅ 10 languages fully supported
-- ✅ 80+ instructions per language
-- ✅ Complete PRETTY reverse mapping
+- ✅ **27 languages** fully supported
+- ✅ **Kids Mode** for all languages
+- ✅ **Professional Mode** (Stack/Logic/Flow)
+- ✅ **VSCode Extension**
 - ✅ Bidirectional translation
-- ✅ Comprehensive documentation
 
 ---
 

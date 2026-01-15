@@ -45,6 +45,31 @@ syscall
 - 🧪 **Examples and tests included**  
 - 🔌 **Easy integration with Make, CMake, CI/CD**
 
+## 🔥 What's New in v0.5 (Released)
+
+### 🧸 Kids Mode (Modo Niños)
+A revolutionary new way to teach assembly to children (7+ years). Simplified syntax, no complex registers, just logic.
+
+```asm
+; Kids Mode (Spanish)
+pon rax a 5
+suma rax con 3
+enseña rax
+```
+
+### 🛡️ Professional Mode
+Full x86-64 support mapped to native keywords. Now supports stack (`push`/`pop`), logic (`and`/`or`/`xo`/`not`), and control flow (`loop`/`je`/`jne`).
+
+### 🎭 Global Dialects
+Preserve cultural identity with dialect support:
+- **English**: Cockney, Aussie, Texan...
+- **Spanish**: Andaluz, Madrileño...
+- **German**: Bavarian, Swiss...
+- **Japanese**: Kansai-ben...
+
+### 🌍 11 New Languages
+Added 10 new languages + dialects: Greek, Hebrew, Thai, Vietnamese, Swahili, Tagalog, Malay, Persian, Ukrainian, Romanian...
+
 ## 🔥 What's New in v0.4 (Released)
 
 ### 🤖 Smart Language Auto-Detection
@@ -122,6 +147,16 @@ mlasm build es programa.masm
 | 🇵🇱 Polish | `pl` | ✅ beta | Core+ |
 | 🇸🇪 Swedish | `sv` | ✅ beta | Core+ |
 | 🇳🇱 Dutch | `nl` | ✅ beta | Core+ |
+| 🇬🇷 Greek | `el` | ✅ beta | Core+ |
+| 🇮🇱 Hebrew | `he` | ✅ beta | Core+ |
+| 🇹🇭 Thai | `th` | ✅ beta | Core+ |
+| 🇻🇳 Vietnamese | `vi` | ✅ beta | Core+ |
+| 🇰🇪 Swahili | `sw` | ✅ beta | Core+ |
+| 🇵🇭 Tagalog | `tl` | ✅ beta | Core+ |
+| 🇲🇾 Malay | `ms` | ✅ beta | Core+ |
+| 🇮🇷 Persian | `fa` | ✅ beta | Core+ |
+| 🇺🇦 Ukrainian | `uk` | ✅ beta | Core+ |
+| 🇷🇴 Romanian | `ro` | ✅ beta | Core+ |
 
 Want your language? Open an [issue](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)!
 
@@ -170,7 +205,7 @@ Issues labeled `good first issue` are perfect for first-time contributors.
 | v0.2 | 10 languages, 80+ instructions, reversible mode | ✅ Released |
 | v0.3 | PRETTY expansion for all 10 languages, 80+ Instr | ✅ Released |
 | v0.4 | Auto-detection, tests, macros, 16 languages | ✅ Released |
-| v0.5 | VSCode plugin, web playground | 📋 Planned |
+| v0.5 | VSCode plugin, Kids Mode, 27 Languages, Global Dialects | ✅ Released |
 | v0.6 | Community platform, language packs, contributor system | 📋 Planned |
 | v1.0 | Stable release, full test coverage | 📋 Planned |
 
@@ -234,7 +269,7 @@ Thanks to all contributors who help democratize low-level programming.
 
 ---
 
-**Version:** v0.4  
+**Version:** v0.5 (Babel Release)  
 **Author:** J / Neuro-OS Project  
 **Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
 
