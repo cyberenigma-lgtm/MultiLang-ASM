@@ -1,4 +1,7 @@
 # MultiLang-ASM
+<p align="center">
+  <img src="assets/logo.png" alt="MultiLang-ASM Logo" width="800">
+</p>
 **The first multilingual x86_64 assembler.**  
 
 Write assembly in your native language · 16 languages · 80+ instructions · reversible translation · NASM-compatible.
