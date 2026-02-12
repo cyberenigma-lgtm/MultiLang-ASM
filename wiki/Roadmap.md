@@ -11,8 +11,8 @@ Future plans and version timeline for MultiLang-ASM.
 | v0.1 | 2024-12 | ✅ Released | Initial prototype, 3 languages |
 | v0.2 | 2025-12 | ✅ Released | 10 languages, 80+ instructions |
 | v0.3 | 2025-12 | ✅ Released | PRETTY expansion for all languages |
-| v0.4 | Q1 2026 | 📋 Planned | Auto-detection, tests, macros |
-| v0.5 | Q2 2026 | 📋 Planned | VSCode plugin, web playground |
+| v0.6 | Feb 2026 | ✅ Released | Modular Architecture (Babel Edition) |
+| v0.7 | Feb 2026 | ✅ Released | Global Expansion (25+ Languages) |
 | v1.0 | Q3 2026 | 📋 Planned | Stable release, production-ready |
 
 ---

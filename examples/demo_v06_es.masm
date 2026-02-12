@@ -1,0 +1,31 @@
+; 🛡️ MULTILANG-ASM v0.6 EXAMPLE (Spanish)
+; Demostración de Macros y Operaciones Aritméticas
+
+%define EXIT_SUCCESS 0
+%define SYSCALL_WRITE 1
+%define SYSCALL_EXIT 60
+%define STDOUT 1
+
+seccion .texto
+global _inicio
+
+_inicio:
+    ; Uso de palabras nativas del paquete 'es'
+    mover rax, SYSCALL_WRITE
+    mover rdi, STDOUT
+    mover rsi, mensaje
+    mover rdx, 15
+    llamada_sistema
+
+    ; Aritmética básica
+    mover rax, 5
+    sumar rax, 10           ; ADD rax, 10
+    restar rax, 2            ; SUB rax, 2
+    
+    ; Salida
+    mover rax, SYSCALL_EXIT
+    mover rdi, EXIT_SUCCESS
+    llamada_sistema
+
+seccion .datos
+    mensaje db "Babel en Acción", 0xA

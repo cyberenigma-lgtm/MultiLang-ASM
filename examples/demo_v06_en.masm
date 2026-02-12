@@ -1,0 +1,21 @@
+; 🛡️ MULTILANG-ASM v0.6 EXAMPLE (English)
+; This demonstrates basic movements and system calls
+
+section .text
+global _start
+
+_start:
+    ; Standard keywords in English pack
+    move rax, 1             ; Setup write syscall
+    move rdi, 1             ; To stdout
+    move rsi, greeting      ; Load greeting address
+    move rdx, 13            ; Length of string
+    syscall                 ; Execute
+
+    ; Exit gracefully
+    move rax, 60            ; Exit syscall
+    move rdi, 0             ; Success code
+    syscall
+
+section .data
+    greeting db "Hello, Babel!", 0xA

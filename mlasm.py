@@ -9,8 +9,8 @@ import os
 # ██║ ╚═╝ ██║███████╗███████╗███████╗██║  ██║██║ ╚████║╚██████╔╝
 # ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
 #
-#        MultiLang-ASM v0.5 — Parte del ecosistema Neuro-OS
-#        Ensamblador Multilingüe Universal | Accesibilidad sin Barreras
+#        MultiLang-ASM v0.7 — Parte del ecosistema Neuro-OS
+#        Babel Global Expansion Edition | Technical Parity
 #        https://github.com/tuusuario/MultiLang-ASM
 
 # Fix para Windows: forzar UTF-8 en consola
@@ -124,491 +124,53 @@ INSTRUCTIONS = {
     "cqo": {"category": "conversion"},
 }
 
+import importlib.util
+
 # ============================================================================
-# MODALIDAD INFANTIL / KIDS MODE (Verbos simplificados)
+# SISTEMA DE CARGA DINÁMICA - MultiLang-ASM v0.6 (Babel Community)
 # ============================================================================
-KIDS_INSTRUCTIONS = {
-    # 🇺🇸 English
-    "en": {"put": "mov", "add": "add", "take": "sub", "look": "syscall"},
-    "en_cockney": {"stash": "mov", "lob": "add", "nick": "sub", "gawk": "syscall"},
-    "en_aus": {"chuck": "mov", "reckon": "add", "nix": "sub", "squiz": "syscall"},
-    "en_tx": {"hitch": "mov", "roundup": "add", "cut": "sub", "spy": "syscall"},
-    "en_ie": {"park": "mov", "tally": "add", "slash": "sub", "dekko": "syscall"},
-    "en_scots": {"pit": "mov", "tot": "add", "dock": "sub", "keek": "syscall"},
 
-    # 🇪🇸 Spanish
-    "es": {"pon": "mov", "suma": "add", "resta": "sub", "enseña": "syscall"},
-    "es_ast": {"pon": "mov", "amesta": "add", "resta": "sub", "amuesa": "syscall"},
-    "es_val": {"posa": "mov", "suma": "add", "resta": "sub", "mostra": "syscall"},
-    "es_and": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"}, # Standardized
-    "es_mad": {"apanca": "mov", "suma": "add", "pilla": "sub", "lipa": "syscall"},
-    "es_sev": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"},
-    "es_gad": {"pon": "mov", "suma": "add", "resta": "sub", "mira": "syscall"},
+TABLE = {}
+KIDS_INSTRUCTIONS = {}
+LANG_METADATA = {}
 
-    # 🇫🇷 French
-    "fr": {"mets": "mov", "ajoute": "add", "enleve": "sub", "montre": "syscall"},
-    "fr_qc": {"place": "mov", "ajoute": "add", "ote": "sub", "check": "syscall"},
+def load_language_packs():
+    """Carga dinámicamente todos los paquetes de idiomas desde la carpeta 'langs/'."""
+    global TABLE, KIDS_INSTRUCTIONS, LANG_METADATA
+    langs_dir = os.path.join(os.path.dirname(__file__), "langs")
+    
+    if not os.path.exists(langs_dir):
+        os.makedirs(langs_dir)
+        return
 
-    # 🇩🇪 German
-    "de": {"setze": "mov", "addiere": "add", "ziehe_ab": "sub", "zeige": "syscall"},
-    "de_bay": {"pack": "mov", "dazu": "add", "weg": "sub", "schau": "syscall"}, # Bavarian
-    "de_sw": {"tue": "mov", "zelle": "add", "nimm": "sub", "lueg": "syscall"}, # Swiss
-    "de_at": {"gib": "mov", "dazua": "add", "weg": "sub", "schau": "syscall"}, # Austrian
+    for filename in os.listdir(langs_dir):
+        if filename.endswith(".py") and filename != "__init__.py":
+            lang_code = filename[:-3]
+            file_path = os.path.join(langs_dir, filename)
+            
+            # Carga modular dinámica
+            spec = importlib.util.spec_from_file_location(lang_code, file_path)
+            module = importlib.util.module_from_spec(spec)
+            try:
+                spec.loader.exec_module(module)
+                
+                # Integrar diccionarios
+                if hasattr(module, "KEYWORDS"):
+                    TABLE[lang_code] = module.KEYWORDS
+                if hasattr(module, "KIDS_KEYWORDS"):
+                    KIDS_INSTRUCTIONS.update(module.KIDS_KEYWORDS)
+                if hasattr(module, "METADATA"):
+                    LANG_METADATA[lang_code] = module.METADATA
+            except Exception as e:
+                print(f"⚠️ Error cargando paquete '{lang_code}': {e}")
 
-    # 🇮🇹 Italian
-    "it": {"metti": "mov", "aggiungi": "add", "togli": "sub", "mostra": "syscall"},
-    "it_nap": {"miett": "mov", "agna": "add", "lieve": "sub", "vide": "syscall"},
-    "it_sic": {"mintici": "mov", "iungi": "add", "leva": "sub", "talía": "syscall"},
-    "it_rom": {"moje": "mov", "jungi": "add", "leva": "sub", "guarda": "syscall"},
-
-    # 🇵🇹 Portuguese
-    "pt": {"coloca": "mov", "soma": "add", "tira": "sub", "mostra": "syscall"},
-    "pt_br": {"bota": "mov", "soma": "add", "tira": "sub", "mostra": "syscall"},
-
-    # 🇷🇺 Russian
-    "ru": {"положи": "mov", "добавь": "add", "отними": "sub", "покажи": "syscall"},
-
-    # 🇯🇵 Japanese
-    "ja": {"irete": "mov", "tashite": "add", "hiite": "sub", "misete": "syscall"},
-    "ja_kan": {"irete-ya": "mov", "tashite-ya": "add", "hiite-ya": "sub", "misete-ya": "syscall"},
-
-    # 🇨🇳 Chinese
-    "zh": {"fang": "mov", "jia": "add", "jian": "sub", "kan": "syscall"},
-    "zh_yue": {"fong": "mov", "ga": "add", "gaam": "sub", "tai": "syscall"}, # Cantonese
-
-    # 🇰🇷 Korean
-    "ko": {"neoh": "mov", "deohae": "add", "ppaera": "sub", "boyeo": "syscall"},
-
-    # 🇸🇦 Arabic (Transliterated for simplicity in non-RTL environments if needed, but keeping native too)
-    "ar": {"da": "mov", "ijma": "add", "itrah": "sub", "anzur": "syscall"},
-    "ar_eg": {"hot": "mov", "zawed": "add", "na'as": "sub", "bos": "syscall"}, # Egyptian
-
-    # 🇮🇳 Hindi
-    "hi": {"rakho": "mov", "jodo": "add", "ghatao": "sub", "dikhao": "syscall"},
-
-    # 🇹🇷 Turkish
-    "tr": {"koy": "mov", "ekle": "add", "cikar": "sub", "goster": "syscall"},
-
-    # 🇵🇱 Polish
-    "pl": {"wsadz": "mov", "dodaj": "add", "odejmij": "sub", "pokaz": "syscall"},
-    "pl_sil": {"wciep": "mov", "dodaj": "add", "odejmij": "sub", "pokoz": "syscall"}, # Silesian
-
-    # 🇸 Swedish
-    "sv": {"stall": "mov", "addera": "add", "dra_av": "sub", "visa": "syscall"},
-
-    # 🇳🇱 Dutch
-    "nl": {"zet": "mov", "tel_op": "add", "trek_af": "sub", "toon": "syscall"},
-    "nl_be": {"zet": "mov", "tel_bij": "add", "trek_af": "sub", "toont": "syscall"}, # Flemish
-
-    # New Languages
-    "el": {"bale": "mov", "prosthese": "add", "afairese": "sub", "diekse": "syscall"}, # Greek
-    "he": {"sim": "mov", "hosef": "add", "haser": "sub", "hare": "syscall"}, # Hebrew
-    "th": {"sai": "mov", "buak": "add", "lop": "sub", "sadang": "syscall"}, # Thai
-    "vi": {"dat": "mov", "them": "add", "tru": "sub", "hien": "syscall"}, # Vietnamese
-    "sw": {"weka": "mov", "ongeza": "add", "toa": "sub", "onyesha": "syscall"}, # Swahili
-    "tl": {"lagay": "mov", "dagdag": "add", "bawas": "sub", "pakita": "syscall"}, # Tagalog
-    "ms": {"letak": "mov", "tambah": "add", "tolak": "sub", "tunjuk": "syscall"}, # Malay
-    "fa": {"bezor": "mov", "jam": "add", "kam": "sub", "neshon": "syscall"}, # Persian
-    "uk": {"polozhy": "mov", "dodaty": "add", "vidnyaty": "sub", "pokazhy": "syscall"}, # Ukrainian
-    "ro": {"pune": "mov", "adauga": "add", "scade": "sub", "arata": "syscall"}, # Romanian
-    "id": {"taruh": "mov", "tambah": "add", "kurang": "sub", "tampil": "syscall"}, # Indonesian
-}
+# Cargar idiomas al inicio
+load_language_packs()
 
 # ============================================================================
 # TABLA DE ALIAS POR IDIOMA (Idioma Nativo -> Mnemónico Estándar)
 # ============================================================================
-TABLE = {
-    "es": {
-        # Movimiento
-        "mover": "mov", "copiar": "mov", "intercambiar": "xchg", "cargar": "mov",
-        "cargar_efectivo": "lea", "extender_cero": "movzx", "extender_signo": "movsx",
-        
-        # Aritmética
-        "sumar": "add", "añadir": "add", "agregar": "add", "restar": "sub",
-        "multiplicar": "mul", "multiplicar_signado": "imul",
-        "dividir": "div", "dividir_signado": "idiv",
-        "incrementar": "inc", "decrementar": "dec", "negar": "neg",
-        
-        # Lógica
-        "y": "and", "o": "or", "no": "not", "exclusivo": "xor",
-        "desplazar_izq": "shl", "desplazar_der": "shr",
-        "desplazar_arit_izq": "sal", "desplazar_arit_der": "sar",
-        "rotar_izq": "rol", "rotar_der": "ror",
-        
-        # Comparación
-        "comparar": "cmp", "probar": "test",
-        
-        # Flujo
-        "saltar": "jmp", "llamar": "call", "retornar": "ret", "volver": "ret",
-        "si_igual": "je", "si_cero": "jz", "si_no_igual": "jne", "si_no_cero": "jnz",
-        "si_mayor": "jg", "si_mayor_igual": "jge", "si_menor": "jl", "si_menor_igual": "jle",
-        "si_arriba": "ja", "si_abajo": "jb", "si_arriba_igual": "jae", "si_abajo_igual": "jbe",
-        "si_signo": "js", "si_no_signo": "jns", "si_desborde": "jo", "si_no_desborde": "jno",
-        "si_paridad": "jp", "si_no_paridad": "jnp",
-        
-        # Pila
-        "meter": "push", "sacar": "pop", "meter_banderas": "pushf", "sacar_banderas": "popf",
-        
-        # Cadenas
-        "mover_byte": "movsb", "mover_palabra": "movsw", "mover_doble": "movsd",
-        "almacenar_byte": "stosb", "cargar_byte": "lodsb", "escanear_byte": "scasb",
-        "repetir": "rep", "repetir_mientras": "repne",
-        
-        # Bucles
-        "ciclo": "loop", "ciclo_si_cero": "loopz", "ciclo_si_no_cero": "loopnz",
-        
-        # Sistema
-        "interrupcion": "int", "llamada_sistema": "syscall",
-        "retorno_sistema": "sysret", "retorno_interrupcion": "iret",
-        
-        # Miscelánea
-        "nada": "nop", "detener": "hlt",
-        "limpiar_interrupciones": "cli", "activar_interrupciones": "sti",
-        "limpiar_direccion": "cld", "fijar_direccion": "std", "esperar": "wait",
-        
-        # Conversión
-        "convertir_byte_palabra": "cbw", "convertir_palabra_doble": "cwd",
-        "convertir_doble_cuadruple": "cdq", "convertir_cuadruple_octo": "cqo",
-    },
-    
-    "fr": {
-        # Mouvement
-        "deplacer": "mov", "copier": "mov", "echanger": "xchg",
-        "charger_effectif": "lea", "etendre_zero": "movzx", "etendre_signe": "movsx",
-        
-        # Arithmétique
-        "ajouter": "add", "soustraire": "sub", "multiplier": "mul",
-        "multiplier_signe": "imul", "diviser": "div", "diviser_signe": "idiv",
-        "incrementer": "inc", "decrementer": "dec", "negativer": "neg",
-        
-        # Logique
-        "et": "and", "ou": "or", "non": "not", "ou_exclusif": "xor",
-        "decaler_gauche": "shl",  "decaler_droite": "shr",
-        "decaler_arith_gauche": "sal", "decaler_arith_droite": "sar",
-        "rot_gauche": "rol", "rot_droite": "ror",
-        
-        # Comparaison
-        "comparer": "cmp", "tester": "test",
-        
-        # Sauts
-        "sauter": "jmp", "appeler": "call", "retourner": "ret",
-        "si_egal": "je", "si_zero": "jz", "si_pas_egal": "jne", "si_pas_zero": "jnz",
-        "si_plus_grand": "jg", "si_plus_grand_egal": "jge",
-        "si_plus_petit": "jl", "si_plus_petit_egal": "jle",
-        
-        # Pile
-        "empiler": "push", "depiler": "pop",
-        
-        # Système
-        "interruption": "int", "appel_systeme": "syscall",
-    },
-    
-    "de": {
-        # Datenbewegung
-        "bewegen": "mov", "tauschen": "xchg", "effektiv_laden": "lea",
-        "null_erweitern": "movzx", "vorzeichen_erweitern": "movsx",
-        
-        # Arithmetik
-        "addieren": "add", "subtrahieren": "sub", "multiplizieren": "mul",
-        "multiplizieren_vorzeichen": "imul", "dividieren": "div",
-        "dividieren_vorzeichen": "idiv", "inkrementieren": "inc",
-        "dekrementieren": "dec", "negieren": "neg",
-        
-        # Logik
-        "und": "and", "oder": "or", "nicht": "not", "exklusiv_oder": "xor",
-        
-        # Ablaufsteuerung
-        "springen": "jmp", "rufen": "call", "zurueckkehren": "ret",
-        
-        # System
-        "interruption": "int", "unterbrechung": "int",
-    },
-    
-    "it": {
-        # Movimento
-        "spostare": "mov", "copiare": "mov", "scambiare": "xchg",
-        "caricare_effettivo": "lea", "estendere_zero": "movzx",
-        "estendere_segno": "movsx",
-        
-        # Aritmetica
-        "sommare": "add", "aggiungere": "add", "sottrarre": "sub",
-        "moltiplicare": "mul", "moltiplicare_segno": "imul",
-        "dividere": "div", "dividere_segno": "idiv",
-        "incrementare": "inc", "decrementare": "dec", "negare": "neg",
-        
-        # Logica
-        "e": "and", "o": "or", "non": "not", "esclusivo": "xor",
-        
-        # Flusso
-        "saltare": "jmp", "chiamare": "call", "ritornare": "ret",
-        "se_uguale": "je", "se_non_uguale": "jne",
-        
-        # Sistema
-        "interruzione": "int", "chiamata_sistema": "syscall",
-    },
-    
-    "ar": {
-        # نقل البيانات
-        "نقل": "mov", "تبديل": "xchg", "تحميل_فعال": "lea",
-        "توسيع_صفر": "movzx", "توسيع_إشارة": "movsx",
-        
-        # العمليات الحسابية
-        "جمع": "add", "إضافة": "add", "طرح": "sub",
-        "ضرب": "mul", "ضرب_إشارة": "imul",
-        "قسمة": "div", "قسمة_إشارة": "idiv",
-        "زيادة": "inc", "نقص": "dec", "نفي": "neg",
-        
-        # العمليات المنطقية
-        "و": "and", "أو": "or", "ليس": "not", "أو_حصري": "xor",
-        
-        # التحكم في التدفق
-        "اقفز": "jmp", "اتصل": "call", "استدعاء": "call",
-        "عد": "ret", "رجوع": "ret",
-        "إذا_يساوي": "je", "إذا_لا_يساوي": "jne",
-        
-        # المكدس
-        "ادفع": "push", "اسحب": "pop",
-        
-        # النظام
-        "مقاطعة": "int", "استدعاء_النظام": "syscall",
-    },
-    
-    "ru": {
-        # Перемещение
-        "перенести": "mov", "обменять": "xchg", "загрузить_эффективный": "lea",
-        "расширить_нулями": "movzx", "расширить_знаком": "movsx",
-        
-        # Арифметика
-        "добавить": "add", "сложить": "add", "вычесть": "sub",
-        "умножить": "mul", "умножить_знак": "imul",
-        "разделить": "div", "разделить_знак": "idiv",
-        "увеличить": "inc", "уменьшить": "dec", "отрицание": "neg",
-        
-        # Логика
-        "и": "and", "или": "or", "не": "not", "исключающее": "xor",
-        
-        # Управление потоком
-        "прыгнуть": "jmp", "вызвать": "call", "вернуться": "ret",
-        "если_равно": "je", "если_не_равно": "jne",
-        
-        # Стек
-        "положить": "push", "извлечь": "pop",
-        
-        # Система
-        "прерывание": "int", "системный_вызов": "syscall",
-    },
-    
-    "ko": {
-        # 데이터 이동
-        "이동": "mov", "교환": "xchg", "주소로드": "lea",
-        "영확장": "movzx", "부호확장": "movsx",
-        
-        # 산술 연산
-        "더하기": "add", "합": "add", "빼기": "sub",
-        "곱하기": "mul", "부호곱하기": "imul",
-        "나누기": "div", "부호나누기": "idiv",
-        "증가": "inc", "감소": "dec", "부정": "neg",
-        
-        # 논리 연산
-        "그리고": "and", "또는": "or", "배타적": "xor",
-        
-        # 흐름 제어
-        "점프": "jmp", "호출": "call", "돌아가기": "ret",
-        "같으면": "je", "다르면": "jne",
-        
-        # 스택
-        "넣기": "push", "빼기": "pop",
-        
-        # 시스템
-        "인터럽트": "int", "시스템호출": "syscall",
-    },
-    
-    "id": {
-        # Perpindahan Data
-        "pindah": "mov", "salin": "mov", "tukar": "xchg",
-        "muat_efektif": "lea", "perpanjang_nol": "movzx",
-        "perpanjang_tanda": "movsx",
-        
-        # Aritmatika
-        "tambah": "add", "jumlah": "add", "kurang": "sub",
-        "kali": "mul", "kali_tanda": "imul",
-        "bagi": "div", "bagi_tanda": "idiv",
-        "tambah_satu": "inc", "kurang_satu": "dec", "negatif": "neg",
-        
-        # Logika
-        "dan": "and", "atau": "or", "tidak": "not", "eksklusif": "xor",
-        
-        # Kontrol Alur
-        "lompat": "jmp", "panggil": "call", "kembali": "ret",
-        "jika_sama": "je", "jika_beda": "jne",
-        
-        # Tumpukan
-        "masukkan": "push", "keluarkan": "pop",
-        
-        # Sistem
-        "interupsi": "int", "panggilan_sistem": "syscall",
-    },
-    
-    "zh": {
-        # 資料移動
-        "移動": "mov", "複製": "mov", "交換": "xchg",
-        "載入有效位址": "lea", "零擴充": "movzx", "符號擴充": "movsx",
-        
-        # 算術
-        "加": "add", "相加": "add", "減": "sub", "相減": "sub",
-        "乘": "mul", "有符號乘": "imul",
-        "除": "div", "有符號除": "idiv",
-        "遞增": "inc", "遞減": "dec", "取負": "neg",
-        
-        # 邏輯運算
-        "且": "and", "或": "or", "非": "not", "互斥或": "xor",
-        
-        # 流程控制
-        "跳躍": "jmp", "呼叫": "call", "返回": "ret",
-        "若相等": "je", "若不等": "jne",
-        
-        # 堆疊
-        "推入": "push", "彈出": "pop",
-        
-        # 系統
-        "中斷": "int", "系統呼叫": "syscall",
-    },
-    
-    "ja": {
-        # データ移動
-        "移動": "mov", "コピー": "mov", "交換": "xchg",
-        "実効アドレス読込": "lea", "ゼロ拡張": "movzx", "符号拡張": "movsx",
-        
-        # 算術演算
-        "加算": "add", "足す": "add", "減算": "sub", "引く": "sub",
-        "乗算": "mul", "符号付乗算": "imul",
-        "除算": "div", "符号付除算": "idiv",
-        "インクリメント": "inc", "デクリメント": "dec", "否定": "neg",
-        
-        # 論理演算
-        "論理積": "and", "論理和": "or", "排他的論理和": "xor",
-        
-        # 制御フロー
-        "ジャンプ": "jmp", "呼出": "call", "戻る": "ret",
-        "等しければ": "je", "等しくなければ": "jne",
-        
-        # スタック
-        "プッシュ": "push", "ポップ": "pop",
-        
-        # システム
-        "割込": "int", "システムコール": "syscall",
-    },
-
-    "pt": {
-        # Movimentação
-        "mover": "mov", "copiar": "mov", "trocar": "xchg",
-        "carregar_efetivo": "lea", "estender_zero": "movzx", "estender_sinal": "movsx",
-
-        # Aritmética
-        "somar": "add", "adicionar": "add", "subtrair": "sub",
-        "multiplicar": "mul", "multiplicar_sinal": "imul",
-        "dividir": "div", "dividir_sinal": "idiv",
-        "incrementar": "inc", "decrementar": "dec", "negar": "neg",
-
-        # Lógica
-        "e": "and", "ou": "or", "nao": "not", "exclusivo": "xor",
-        "deslocar_esq": "shl", "deslocar_dir": "shr",
-        "rotacionar_esq": "rol", "rotacionar_dir": "ror",
-
-        # Comparação
-        "comparar": "cmp", "testar": "test",
-
-        # Fluxo
-        "desviar": "jmp", "saltar": "jmp", "chamar": "call",
-        "retornar": "ret", "voltar": "ret",
-        "se_igual": "je", "se_cero": "jz", "se_nao_igual": "jne", "se_nao_cero": "jnz",
-        "se_maior": "jg", "se_maior_igual": "jge", "si_menor": "jl", "si_menor_igual": "jle",
-        "se_acima": "ja", "se_abaixo": "jb", "se_acima_igual": "jae", "se_abaixo_igual": "jbe",
-        "se_sinal": "js", "se_nao_sinal": "jns", "se_transbordo": "jo", "se_nao_transbordo": "jno",
-        "se_paridade": "jp", "se_nao_paridade": "jnp",
-
-        # Pilha
-        "empilhar": "push", "desempilhar": "pop",
-        "empilhar_flags": "pushf", "desempilhar_flags": "popf",
-
-        # Sequências
-        "mover_byte": "movsb", "mover_palavra": "movsw", "mover_dupla": "movsd",
-        "armazenar_byte": "stosb", "cargar_byte": "lodsb", "escanear_byte": "scasb",
-        "repetir": "rep", "repetir_enquanto": "repne",
-
-        # Repetições
-        "repetir_ciclo": "loop", "repetir_se_zero": "loopz", "repetir_se_nao_zero": "loopnz",
-
-        # Sistema
-        "interrupcao": "int", "chamada_sistema": "syscall",
-        "retorno_sistema": "sysret", "retorno_interrupcao": "iret",
-
-        # Miscelânea
-        "nada": "nop", "parar": "hlt",
-        "limpar_interrupcoes": "cli", "activar_interrupcoes": "sti",
-        "limpar_direcao": "cld", "fixar_direcao": "std", "esperar": "wait",
-
-        # Conversão
-        "converter_byte_palavra": "cbw", "converter_palavra_dupla": "cwd",
-        "converter_dupla_quadrupla": "cdq", "converter_quadrupla_octupla": "cqo",
-    },
-
-    "hi": {
-        "bhejo": "mov", "rakho": "mov", "sthan": "mov",
-        "joro": "add", "ghatao": "sub", "guna": "mul", "bhag": "div",
-        "badhao": "inc", "ghatao_ek": "dec", "na": "neg",
-        "aur": "and", "ya": "or", "nahi": "not", "alag": "xor",
-        "tulna": "cmp", "pariksha": "test",
-        "pata_load": "lea",
-        "kudo": "jmp", "bulao": "call", "wapas": "ret",
-        "daalo": "push", "nikalo": "pop",
-        "rok": "int",
-    },
-    
-    "tr": {
-        "taşı": "mov", "kopyala": "mov", "yukle": "lea",
-        "ekle": "add", "çıkar": "sub", "çarp": "mul", "böl": "div",
-        "artir": "inc", "azalt": "dec", "tersle": "neg",
-        "ve": "and", "veya": "or", "degil": "not", "ozel_veya": "xor",
-        "karsilastir": "cmp", "sina": "test",
-        "atla": "jmp", "çağır": "call", "dön": "ret",
-        "it": "push", "çek": "pop",
-        "kesme": "int",
-    },
-    
-    "pl": {
-        "przesun": "mov", "kopiuj": "mov", "adres": "lea",
-        "dodaj": "add", "odejmij": "sub", "pomnoz": "mul", "podziel": "div",
-        "zwieksz": "inc", "zmniejsz": "dec", "neguj": "neg",
-        "oraz": "and", "lub": "or", "nie": "not", "xor": "xor",
-        "porownaj": "cmp", "testuj": "test",
-        "skocz": "jmp", "wywolaj": "call", "wroc": "ret",
-        "wepchnij": "push", "zdejmij": "pop",
-        "przerwanie": "int",
-    },
-    
-    "sv": {
-        "flytta": "mov", "ladda": "lea",
-        "addera": "add", "subtrahera": "sub", "multiplicera": "mul", "dividera": "div",
-        "oka": "inc", "minska": "dec", "negera": "neg",
-        "och": "and", "eller": "or", "inte": "not", "xor": "xor",
-        "jamfor": "cmp", "testa": "test",
-        "hoppa": "jmp", "kalla": "call", "returnera": "ret",
-        "tryck": "push", "pop": "pop",
-        "avbrott": "int",
-    },
-    
-    "nl": {
-        "verplaats": "mov", "laad": "lea", "wissel": "xchg",
-        "optellen": "add", "aftrekken": "sub", "vermenigvuldig": "mul", "delen": "div",
-        "verhoog": "inc", "verlaag": "dec", "negeer": "neg",
-        "en": "and", "of": "or", "niet": "not", "exclusief": "xor",
-        "vergelijk": "cmp", "test": "test",
-        "spring": "jmp", "roep": "call", "terug": "ret",
-        "duw": "push", "plop": "pop",
-        "onderbreking": "int",
-    },
-}
+# Nota: Los diccionarios TABLE y PRETTY se cargan dinámicamente en v0.6.
 
 # ============================================================================
 # MAPA INVERSO (Mnemónico Estándar -> Palabra Canónica por Idioma)
@@ -886,6 +448,33 @@ ERRORS = {
         "success": "   Estado: ✅ OK",
         "mode_native": "Natificado (Vista)",
         "mode_standard": "Estándar (NASM)"
+    },
+    "fr": {
+        "file_not_found": "❌ Erreur: Fichier '{}' non trouvé",
+        "io_error": "❌ Erreur inattendue: {}",
+        "auto_detect_ok": "🔍 Auto-Detect: Langue identifiée -> {}",
+        "auto_detect_fail": "⚠️ Auto-Detect: Impossible d'identifier la langue. Utilisation de 'en'.",
+        "success": "   Statut: ✅ OK",
+        "mode_native": "Natif (Vue)",
+        "mode_standard": "Standard (NASM)"
+    },
+    "de": {
+        "file_not_found": "❌ Fehler: Datei '{}' nicht gefunden",
+        "io_error": "❌ Unerwarteter Fehler: {}",
+        "auto_detect_ok": "🔍 Auto-Detect: Sprache identifiziert -> {}",
+        "auto_detect_fail": "⚠️ Auto-Detect: Sprache konnte nicht identifiziert werden. Standardmäßig 'en'.",
+        "success": "   Status: ✅ OK",
+        "mode_native": "Nativ (Ansicht)",
+        "mode_standard": "Standard (NASM)"
+    },
+    "ru": {
+        "file_not_found": "❌ Ошибка: Файл '{}' не найден",
+        "io_error": "❌ Непредвиденная ошибка: {}",
+        "auto_detect_ok": "🔍 Автоопределение: Язык определен -> {}",
+        "auto_detect_fail": "⚠️ Автоопределение: Не удалось определить язык. По умолчанию 'en'.",
+        "success": "   Статус: ✅ OK",
+        "mode_native": "Родной (Вид)",
+        "mode_standard": "Стандарт (NASM)"
     }
 }
 # Default to English for other languages for now
@@ -1043,11 +632,63 @@ def detect_language(code):
         
     return best_lang
 
+def list_languages():
+    print("🛡️ MultiLang-ASM v0.7 - Paquetes de Idiomas Instalados:")
+    print("-" * 50)
+    for code, meta in LANG_METADATA.items():
+        print(f"[{code.upper()}] {meta.get('name', 'N/A')}")
+        print(f"   Autor: {meta.get('author', 'N/A')}")
+        print(f"   Versión: {meta.get('version', 'N/A')}")
+        print(f"   Descripción: {meta.get('description', '')}\n")
+
+def create_language_template(lang_code):
+    template = f'''# MultiLang-ASM Language Pack: {lang_code.upper()}
+# Generated by Babel CLI
+
+METADATA = {{
+    "name": "{lang_code.upper()}",
+    "code": "{lang_code}",
+    "author": "Tu Nombre/Comunidad",
+    "version": "1.0",
+    "description": "Soporte para ensamblador en {lang_code.upper()}."
+}}
+
+KEYWORDS = {{
+    # Mapea aquí tus palabras clave a mnemonics de NASM
+    "mover": "mov",
+    "sumar": "add",
+    # ... añade más
+}}
+
+KIDS_KEYWORDS = {{
+    "{lang_code}": {{"pon": "mov", "suma": "add", "resta": "sub", "enseña": "syscall"}},
+}}
+'''
+    langs_dir = os.path.join(os.path.dirname(__file__), "langs")
+    file_path = os.path.join(langs_dir, f"{lang_code}.py")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(template)
+    print(f"✅ Plantilla para '{lang_code}' creada con éxito en {file_path}")
+
 def main():
+    if len(sys.argv) < 2:
+        print("🛡️ MultiLang-ASM v0.7 (Global Expansion Edition)")
+        print("Uso:")
+        print("  python mlasm.py <idioma> <entrada> <salida> [--reverse]")
+        print("  python mlasm.py --list-langs           (Lista idiomas instalados)")
+        print("  python mlasm.py --new-lang <código>    (Crea plantilla para nuevo idioma)")
+        return
+
+    # Comandos Especiales v0.6
+    if sys.argv[1] == "--list-langs":
+        list_languages()
+        return
+    if sys.argv[1] == "--new-lang" and len(sys.argv) > 2:
+        create_language_template(sys.argv[2])
+        return
+
     if len(sys.argv) < 4:
-        print("🛡️ MultiLang-ASM v0.5 (Includes Kids Mode)")
-        print("Uso: python mlasm.py <idioma> <entrada> <salida> [--reverse]")
-        print("\nIdiomas: es, fr, it, ar, de, ru, ko, id, zh, ja, pt")
+        print("⚠️ Error: Faltan argumentos. Usa 'python mlasm.py' para ayuda.")
         return
 
     lang = sys.argv[1]
@@ -1078,7 +719,7 @@ def main():
         # Mensajes humanos mejorados
         mode = get_msg("mode_native" if reverse else "mode_standard", lang)
         
-        print(f"🛡️ MultiLang-ASM v0.5 (Engine Updated)")
+        print(f"🛡️ MultiLang-ASM v0.7 (Global Expansion)")
         print(f"   Idioma: {lang.upper()}")
         print(f"   Modo: {mode}")
         print(f"   Entrada: {input_file}")

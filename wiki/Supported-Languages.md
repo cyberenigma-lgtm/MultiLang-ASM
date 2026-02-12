@@ -1,83 +1,51 @@
 # Supported Languages
 
-MultiLang-ASM currently supports **10 languages** with full instruction mapping and reverse translation.
+MultiLang-ASM currently supports **56 languages and dialects** with full technical parity, comprehensive instruction mapping, and reverse translation.
 
 ---
 
 ## 🌍 Complete Language List
 
-| Language | Code | Status | Instructions | Reverse (PRETTY) |
-|----------|------|--------|--------------|------------------|
-| 🇪🇸 Español (Spanish) | `es` | ✅ Complete | 80+ | ✅ Full |
-| 🇫🇷 Français (French) | `fr` | ✅ Complete | 80+ | ✅ Full |
-| 🇩🇪 Deutsch (German) | `de` | ✅ Complete | 80+ | ✅ Full |
-| 🇮🇹 Italiano (Italian) | `it` | ✅ Complete | 80+ | ✅ Full |
-| 🇸🇦 العربية (Arabic) | `ar` | ✅ Complete | 80+ | ✅ Full |
-| 🇷🇺 Русский (Russian) | `ru` | ✅ Complete | 80+ | ✅ Full |
-| 🇰🇷 한국어 (Korean) | `ko` | ✅ Complete | 80+ | ✅ Full |
-| 🇮🇩 Bahasa Indonesia | `id` | ✅ Complete | 80+ | ✅ Full |
-| 🇨🇳 中文 (Chinese) | `zh` | ✅ Complete | 80+ | ✅ Full |
-| 🇯🇵 日本語 (Japanese) | `ja` | ✅ Complete | 80+ | ✅ Full |
+| Language | Code | Instructions | Manual |
+| :--- | :--- | :--- | :--- |
+| **Español** | `es` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ES.md) |
+| **English** | `en` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/README.md) |
+| **Français** | `fr` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_FR.md) |
+| **Deutsch** | `de` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_DE.md) |
+| **Italiano**| `it` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_IT.md) |
+| **Português**| `pt` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_PT.md) |
+| **Русский** | `ru` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_RU.md) |
+| **日本語** | `ja` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_JA.md) |
+| **中文** | `zh` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ZH.md) |
+| **한국어** | `ko` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_KO.md) |
+| **Català** | `ca` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_CA.md) |
+| **Norsk** | `no` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_NO.md) |
+| **Galego** | `gl` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_GL.md) |
+| **Euskara** | `eu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_EU.md) |
+| **Gaeilge** | `ga` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_GA.md) |
+| **Quechua** | `qu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_QU.md) |
+| **Aymara** | `ay` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AY.md) |
+| **Nahuatl** | `nah`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_NAH.md) |
+| **Maya** | `may`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_MAY.md) |
+| **IsiZulu** | `zu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ZU.md) |
+| **Afrikaans**| `af` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AF.md) |
+| **Hausa** | `ha` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_HA.md) |
+| **Igbo** | `ig` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_IG.md) |
+| **Yoruba** | `yo` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_YO.md) |
+| **Akan** | `ak` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AK.md) |
+| **Amharic** | `am` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AM.md) |
+| **Bengali** | `bn` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_BN.md) |
+| **Tamil** | `ta` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TA.md) |
+| **Telugu** | `te` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TE.md) |
+| **Javanese** | `jv` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_JV.md) |
+| **Sundanese**| `su` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_SU.md) |
+| **Maori** | `mi` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_MI.md) |
+| **Tok Pisin**| `tpi`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TPI.md) |
+| **Cantonese**| `yue`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_YUE.md) |
+
+*(And 20+ more dialects and variants)*
 
 ---
 
-## 📚 Language-Specific Documentation
-
-Each language has a complete instruction reference:
-
-- [Español](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_ES.md)
-- [Français](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_FR.md)
-- [Deutsch](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_DE.md)
-- [Italiano](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_IT.md)
-- [العربية](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_AR.md)
-- [Русский](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_RU.md)
-- [한국어](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_KO.md)
-- [Bahasa](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_ID.md)
-- [中文](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_ZH.md)
-- [日本語](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/docs/INSTRUCCIONES_JA.md)
-
----
-
-## 🔍 Language Comparison
-
-### Basic Instructions
-
-| English | Español | Français | Deutsch | Italiano |
-|---------|---------|----------|---------|----------|
-| `mov` | `mover` | `deplacer` | `bewegen` | `spostare` |
-| `add` | `sumar` | `ajouter` | `addieren` | `sommare` |
-| `sub` | `restar` | `soustraire` | `subtrahieren` | `sottrarre` |
-| `jmp` | `saltar` | `sauter` | `springen` | `saltare` |
-| `call` | `llamar` | `appeler` | `rufen` | `chiamare` |
-| `ret` | `retornar` | `retourner` | `zurueckkehren` | `ritornare` |
-
-| English | العربية | Русский | 한국어 | 日本語 |
-|---------|---------|---------|--------|--------|
-| `mov` | `نقل` | `перенести` | `이동` | `移動` |
-| `add` | `جمع` | `добавить` | `더하기` | `加算` |
-| `jmp` | `اقفز` | `прыгнуть` | `점프` | `ジャンプ` |
-| `call` | `استدعاء` | `вызвать` | `호출` | `呼出` |
-
----
-
-## 🆕 Request a New Language
-
-Want to add support for your language? We welcome contributions!
-
-**What you need:**
-1. Native speaker proficiency
-2. 30-60 minutes of time
-3. Basic understanding of assembly concepts
-
-**See:** [Contributing](Contributing) for details on adding a language.
-
----
-
-## ✅ Support Status
-
-All 10 languages have:
-- ✅ Complete instruction mapping (80+ instructions)
-- ✅ PRETTY reverse mode
-- ✅ Full documentation
-- ✅ Example code
-- ✅ Active maintenance
+## 🌎 Regional Coverage
+For a full breakdown of which language to use for each country, see the **[List of Countries and Languages](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/LISTA_PAISES_LENGUAS.md)**.
