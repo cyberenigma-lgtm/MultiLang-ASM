@@ -8,6 +8,10 @@ Write assembly in your native language · 16 languages · 80+ instructions · re
 [![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
 
+
+📜 **[Genealogía del Ecosistema Neuro‑ASM](https://github.com/cyberenigma-lgtm/NeuroUniversalASM/blob/main/docs/genealogia_neuro_asm.md)**  
+Consulta la evolución completa desde MultiLang‑ASM hasta NeuroWill‑Code.
+
 📖 **[English](README.md)** | **[Español](README_ES.md)** | **[Français](README_FR.md)** | **[Deutsch](README_DE.md)** | **[Italiano](README_IT.md)** | **[Português](README_PT.md)** | **[Русский](README_RU.md)** | **[日本語](README_JA.md)** | **[中文](README_ZH.md)** | **[한국어](README_KO.md)** | **[العربية](README_AR.md)** | **[Bahasa](README_ID.md)** | **[Hindi](README_HI.md)** | **[Türkçe](README_TR.md)** | **[Polski](README_PL.md)** | **[Svenska](README_SV.md)** | **[Nederlands](README_NL.md)**
 
 ---
@@ -64,6 +68,22 @@ enseña rax
 ```
 
 ### 🛡️ Professional Mode
+Standard ASM syntax (`MOV`, `ADD`, `SUB`) with multilingual comments and error handling. Compatible with standard NASM pipelines.
+
+---
+
+## 🏗️ The Philosophy: "A Bridge, Not a Bubble"
+To our friends in the **OSDev Community**: We are not reinventing the wheel. We are building a ramp to it.
+
+MultiLang-ASM acts as a zero-overhead **Bridge Tool**.
+1.  **Stage 1:** Accessibility (Kids/Native Syntax)
+2.  **Stage 2:** Transition (Bilingual Code)
+3.  **Stage 3:** Standard Proficiency (Pure NASM)
+
+👉 **[Read the Transition Guide](docs/TRANSITION_GUIDE.md)** to see how we guide users from `pon` to `mov` without magic.
+**Output is 100% NASM Compatible.** No runtime. No abstraction layer. Just access.
+
+---
 Full x86-64 support mapped to native keywords. Now supports stack (`push`/`pop`), logic (`and`/`or`/`xo`/`not`), and control flow (`loop`/`je`/`jne`).
 
 ### 🎭 Global Dialects
