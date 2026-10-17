@@ -1,118 +1,105 @@
-# 📚 Référence Complète des Instructions — Français (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [FR]
 
-Ce guide regroupe toutes les instructions supportées en Français pour l'assembleur multilingue **MultiLang-ASM**, partie de l'écosystème **Neuro-OS.es**.
-
-> MultiLang-ASM permet d'écrire du code assembleur dans votre langue maternelle et de générer du code ASM standard compatible avec NASM/FASM/GAS.
-
----
-
-## 📦 Mouvement de Données
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `deplacer`, `depl` | `mov` | Déplacer des données entre registres/mémoire |
-| `echanger` | `xchg` | Échanger les valeurs entre opérandes |
-| `charger_effectif` | `lea` | Charger l'adresse effective |
-| `etendre_zero` | `movzx` | Déplacer avec extension de zéros |
-| `etendre_signe` | `movsx` | Déplacer avec extension de signe |
+**Idioma:** French / Français (`fr`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 56  
 
 ---
 
-## ➕ Arithmétique
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `ajouter`, `additionner` | `add` | Additionner deux opérandes |
-| `soustraire` | `sub` | Soustraire deux opérandes |
-| `multiplier` | `mul` | Multiplication non signée |
-| `multiplier_signe` | `imul` | Multiplication signée |
-| `diviser` | `div` | Division non signée |
-| `diviser_signe` | `idiv` | Division signée |
-| `incrementer` | `inc` | Incrémenter de 1 |
-| `decrementer` | `dec` | Décrémenter de 1 |
-| `negation` | `neg` | Négation (complément à 2) |
-
----
-
-## 🔢 Opérations Logiques
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `et` | `and` | ET logique bit à bit |
-| `ou` | `or` | OU logique bit à bit |
-| `non` | `not` | NON logique (complément à 1) |
-| `ou_exclusif` | `xor` | OU exclusif bit à bit |
-| `decaler_gauche` | `shl`, `sal` | Décalage logique/arithmétique gauche |
-| `decaler_droite` | `shr`, `sar` | Décalage logique/arithmétique droite |
-| `rotation_gauche` | `rol` | Rotation à gauche |
-| `rotation_droite` | `ror` | Rotation à droite |
-
----
-
-## 🔍 Comparaison et Test
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `comparer` | `cmp` | Comparer deux opérandes |
-| `tester` | `test` | ET logique sans sauvegarder le résultat |
-
----
-
-## 🎯 Contrôle de Flux
-
-### Sauts Inconditionnels
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `sauter`, `saut` | `jmp` | Saut inconditionnel |
-| `appeler`, `appel` | `call` | Appeler une sous-routine |
-| `retourner`, `retour` | `ret` | Retourner de la sous-routine |
-
-### Sauts Conditionnels
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `si_egal` | `je`, `jz` | Sauter si égal / si zéro |
-| `si_different` | `jne`, `jnz` | Sauter si différent / si non zéro |
-| `si_superieur` | `jg` | Sauter si supérieur (signé) |
-| `si_superieur_egal` | `jge` | Sauter si supérieur ou égal (signé) |
-| `si_inferieur` | `jl` | Sauter si inférieur (signé) |
-| `si_inferieur_egal` | `jle` | Sauter si inférieur ou égal (signé) |
-| `si_au_dessus` | `ja` | Sauter si au-dessus (non signé) |
-| `si_en_dessous` | `jb` | Sauter si en-dessous (non signé) |
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `ajouter` | `add` |
+| `appel_systeme` | `syscall` |
+| `appeler` | `call` |
+| `arreter` | `hlt` |
+| `boucle` | `loop` |
+| `boucle_si_zero` | `loopz` |
+| `charger_effectif` | `lea` |
+| `charger_octet` | `lodsb` |
+| `comparer` | `cmp` |
+| `conv_mot_double` | `cwd` |
+| `conv_octet_mot` | `cbw` |
+| `copier` | `mov` |
+| `decaler_arith_droite` | `sar` |
+| `decaler_arith_gauche` | `sal` |
+| `decaler_droite` | `shr` |
+| `decaler_gauche` | `shl` |
+| `decrementer` | `dec` |
+| `depiler` | `pop` |
+| `deplacer` | `mov` |
+| `deplacer_octet` | `movsb` |
+| `diviser` | `div` |
+| `diviser_signe` | `idiv` |
+| `echanger` | `xchg` |
+| `empiler` | `push` |
+| `et` | `and` |
+| `etendre_signe` | `movsx` |
+| `etendre_zero` | `movzx` |
+| `incrementer` | `inc` |
+| `interruption` | `int` |
+| `multiplier` | `mul` |
+| `multiplier_signe` | `imul` |
+| `negativer` | `neg` |
+| `non` | `not` |
+| `ou` | `or` |
+| `ou_exclusif` | `xor` |
+| `pousser_drapeaux` | `pushf` |
+| `repeter` | `rep` |
+| `retour_interruption` | `iret` |
+| `retour_systeme` | `sysret` |
+| `retourner` | `ret` |
+| `rien` | `nop` |
+| `rot_droite` | `ror` |
+| `rot_gauche` | `rol` |
+| `sauter` | `jmp` |
+| `si_egal` | `je` |
+| `si_pas_egal` | `jne` |
+| `si_pas_zero` | `jnz` |
+| `si_plus_grand` | `jg` |
+| `si_plus_grand_egal` | `jge` |
+| `si_plus_petit` | `jl` |
+| `si_plus_petit_egal` | `jle` |
+| `si_zero` | `jz` |
+| `soustraire` | `sub` |
+| `stocker_octet` | `stosb` |
+| `tester` | `test` |
+| `tirer_drapeaux` | `popf` |
 
 ---
 
-## 📚 Pile (Stack)
-
-| Français | ASM | Description |
-|---------|-----|-------------|
-| `pousser`, `pousse` | `push` | Insérer une valeur dans la pile |
-| `tirer`, `tire` | `pop` | Extraire une valeur de la pile |
-| `pousser_drapeaux` | `pushf` | Insérer le registre de drapeaux |
-| `tirer_drapeaux` | `popf` | Extraire le registre de drapeaux |
-
----
-
-## 📝 Exemple d'Utilisation
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Fonction qui additionne deux nombres
-fonction_somme:
-    pousser rbp             ; push rbp
-    deplacer rbp, rsp       ; mov rbp, rsp
-    
-    ajouter rdi, rsi        ; add rdi, rsi
-    deplacer rax, rdi       ; mov rax, rdi
-    
-    tirer rbp               ; pop rbp
-    retourner               ; ret
+; Ejemplo en French / Français (fr)
+section .text
+global _start
+
+_start:
+    deplacer rax, 1
+    deplacer rdi, 1
+    deplacer rsi, msg
+    deplacer rdx, 13
+    appel_systeme
+
+    deplacer rax, 60
+    deplacer rdi, 0
+    appel_systeme
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-> [!TIP]
-> Toutes les instructions standard en anglais (mov, add, jmp, etc.) fonctionnent également directement sans traduction.
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm fr programa.masm -o programa.asm
 
-**Total:** 80+ instructions x86_64 supportées en Français.  
-**MultiLang-ASM** — Partie de l'écosystème **Neuro-OS.es**.
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build fr programa.masm
+```

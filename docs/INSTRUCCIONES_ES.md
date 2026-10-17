@@ -1,244 +1,276 @@
-# 📚 Referencia Completa de Instrucciones — Español (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [ES]
 
-Esta guía recoge todas las instrucciones soportadas en Español para el ensamblador multilingüe **MultiLang-ASM**, parte del ecosistema **Neuro-OS.es**.
-
-> MultiLang-ASM permite escribir código ensamblador en tu idioma nativo y generar ASM estándar compatible con NASM/FASM/GAS.
+**Idioma:** Spanish / Español (`es`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 227  
 
 ---
 
-## 🎨 Diseño del Lenguaje en Español
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-El diseño de las instrucciones en español de MultiLang-ASM sigue principios específicos:
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `activar_acarreo` | `stc` |
+| `activar_interrupciones` | `sti` |
+| `agregar` | `add` |
+| `ajuste_ascii_division` | `aad` |
+| `ajuste_ascii_multiplicacion` | `aam` |
+| `ajuste_ascii_resta` | `aas` |
+| `ajuste_ascii_suma` | `aaa` |
+| `ajuste_decimal_resta` | `das` |
+| `ajuste_decimal_suma` | `daa` |
+| `almacenar_ah_en_banderas` | `sahf` |
+| `almacenar_byte` | `stosb` |
+| `almacenar_cuadruple` | `stosq` |
+| `almacenar_doble` | `stosd` |
+| `almacenar_gdt` | `sgdt` |
+| `almacenar_idt` | `sidt` |
+| `almacenar_ldt` | `sldt` |
+| `almacenar_palabra` | `stosw` |
+| `almacenar_tr` | `str` |
+| `añadir` | `add` |
+| `barrera_almacenamiento` | `sfence` |
+| `barrera_carga` | `lfence` |
+| `barrera_memoria` | `mfence` |
+| `cargar` | `mov` |
+| `cargar_ah_desde_banderas` | `lahf` |
+| `cargar_byte` | `lodsb` |
+| `cargar_cuadruple` | `lodsq` |
+| `cargar_doble` | `lodsd` |
+| `cargar_efectivo` | `lea` |
+| `cargar_gdt` | `lgdt` |
+| `cargar_idt` | `lidt` |
+| `cargar_ldt` | `lldt` |
+| `cargar_palabra` | `lodsw` |
+| `cargar_tr` | `ltr` |
+| `ciclo` | `loop` |
+| `ciclo_si_cero` | `loopz` |
+| `ciclo_si_igual` | `loope` |
+| `ciclo_si_no_cero` | `loopnz` |
+| `ciclo_si_no_igual` | `loopne` |
+| `comparar` | `cmp` |
+| `comparar_bytes` | `cmpsb` |
+| `comparar_cuadruples` | `cmpsq` |
+| `comparar_dobles` | `cmpsd` |
+| `comparar_palabras` | `cmpsw` |
+| `complementar_acarreo` | `cmc` |
+| `contar_ceros_cola` | `tzcnt` |
+| `contar_ceros_lideres` | `lzcnt` |
+| `contar_unos` | `popcnt` |
+| `convertir_byte_palabra` | `cbw` |
+| `convertir_cuadruple_octo` | `cqo` |
+| `convertir_doble_cuadruple` | `cdq` |
+| `convertir_doble_cuadruple_ext` | `cdqe` |
+| `convertir_palabra_doble` | `cwd` |
+| `convertir_palabra_doble_ext` | `cwde` |
+| `copiar` | `mov` |
+| `decrementar` | `dec` |
+| `desplazar_arit_der` | `sar` |
+| `desplazar_arit_izq` | `sal` |
+| `desplazar_der` | `shr` |
+| `desplazar_doble_der` | `shrd` |
+| `desplazar_doble_izq` | `shld` |
+| `desplazar_izq` | `shl` |
+| `detener` | `hlt` |
+| `dividir` | `div` |
+| `dividir_signado` | `idiv` |
+| `entrada_puerto` | `in` |
+| `entrada_puerto_byte` | `insb` |
+| `entrada_puerto_doble` | `insd` |
+| `entrada_puerto_palabra` | `insw` |
+| `entrar` | `enter` |
+| `entrar_sistema` | `sysenter` |
+| `escanear_bit_adelante` | `bsf` |
+| `escanear_bit_atras` | `bsr` |
+| `escanear_byte` | `scasb` |
+| `escanear_cuadruple` | `scasq` |
+| `escanear_doble` | `scasd` |
+| `escanear_palabra` | `scasw` |
+| `escribir_e_invalidar_cache` | `wbinvd` |
+| `escribir_msr` | `wrmsr` |
+| `esperar` | `wait` |
+| `exclusivo` | `xor` |
+| `extender_cero` | `movzx` |
+| `extender_signo` | `movsx` |
+| `fijar_bit` | `bts` |
+| `fijar_direccion` | `std` |
+| `fijar_si_abajo` | `setb` |
+| `fijar_si_abajo_igual` | `setbe` |
+| `fijar_si_acarreo` | `setc` |
+| `fijar_si_arriba` | `seta` |
+| `fijar_si_arriba_igual` | `setae` |
+| `fijar_si_cero` | `setz` |
+| `fijar_si_desborde` | `seto` |
+| `fijar_si_igual` | `sete` |
+| `fijar_si_mayor` | `setg` |
+| `fijar_si_mayor_igual` | `setge` |
+| `fijar_si_menor` | `setl` |
+| `fijar_si_menor_igual` | `setle` |
+| `fijar_si_no_acarreo` | `setnc` |
+| `fijar_si_no_cero` | `setnz` |
+| `fijar_si_no_desborde` | `setno` |
+| `fijar_si_no_igual` | `setne` |
+| `fijar_si_no_signo` | `setns` |
+| `fijar_si_paridad` | `setp` |
+| `fijar_si_signo` | `sets` |
+| `fpu_absoluto` | `fabs` |
+| `fpu_almacenar` | `fst` |
+| `fpu_cambiar_signo` | `fchs` |
+| `fpu_cargar` | `fld` |
+| `fpu_coseno` | `fcos` |
+| `fpu_dividir` | `fdiv` |
+| `fpu_inicializar` | `finit` |
+| `fpu_limpiar_excepciones` | `fclex` |
+| `fpu_multiplicar` | `fmul` |
+| `fpu_nada` | `fnop` |
+| `fpu_raiz` | `fsqrt` |
+| `fpu_restar` | `fsub` |
+| `fpu_sacar` | `fstp` |
+| `fpu_seno` | `fsin` |
+| `fpu_sumar` | `fadd` |
+| `identificar_cpu` | `cpuid` |
+| `incrementar` | `inc` |
+| `intercambiar` | `xchg` |
+| `intercambiar_bytes` | `bswap` |
+| `intercambiar_sumar` | `xadd` |
+| `interrupcion` | `int` |
+| `interrupcion_desborde` | `into` |
+| `invalidar_cache` | `invd` |
+| `invertir_bit` | `btc` |
+| `leer_contador_tiempo` | `rdtsc` |
+| `leer_contador_tiempo_p` | `rdtscp` |
+| `leer_msr` | `rdmsr` |
+| `limpiar_acarreo` | `clc` |
+| `limpiar_cache` | `clflush` |
+| `limpiar_direccion` | `cld` |
+| `limpiar_interrupciones` | `cli` |
+| `llamada_sistema` | `syscall` |
+| `llamar` | `call` |
+| `meter` | `push` |
+| `meter_banderas` | `pushf` |
+| `meter_banderas_q` | `pushfq` |
+| `meter_todo` | `pusha` |
+| `mover` | `mov` |
+| `mover_byte` | `movsb` |
+| `mover_cuadruple` | `movsq` |
+| `mover_doble` | `movsd` |
+| `mover_endian` | `movbe` |
+| `mover_palabra` | `movsw` |
+| `mover_si_abajo` | `cmovb` |
+| `mover_si_abajo_igual` | `cmovbe` |
+| `mover_si_arriba` | `cmova` |
+| `mover_si_arriba_igual` | `cmovae` |
+| `mover_si_cero` | `cmovz` |
+| `mover_si_desborde` | `cmovo` |
+| `mover_si_igual` | `cmove` |
+| `mover_si_mayor` | `cmovg` |
+| `mover_si_mayor_igual` | `cmovge` |
+| `mover_si_menor` | `cmovl` |
+| `mover_si_menor_igual` | `cmovle` |
+| `mover_si_no_cero` | `cmovnz` |
+| `mover_si_no_desborde` | `cmovno` |
+| `mover_si_no_igual` | `cmovne` |
+| `mover_si_no_signo` | `cmovns` |
+| `mover_si_signo` | `cmovs` |
+| `multiplicar` | `mul` |
+| `multiplicar_signado` | `imul` |
+| `nada` | `nop` |
+| `negar` | `neg` |
+| `no` | `not` |
+| `o` | `or` |
+| `pausa` | `pause` |
+| `probar` | `test` |
+| `probar_bit` | `bt` |
+| `punto_interrupcion` | `int3` |
+| `repetir` | `rep` |
+| `repetir_mientras` | `repne` |
+| `repetir_si_cero` | `repz` |
+| `repetir_si_igual` | `repe` |
+| `repetir_si_no_cero` | `repnz` |
+| `restablecer_bit` | `btr` |
+| `restar` | `sub` |
+| `restar_con_prestamo` | `sbb` |
+| `resumir_modo_sistema` | `rsm` |
+| `retornar` | `ret` |
+| `retorno_interrupcion` | `iret` |
+| `retorno_interrupcion_doble` | `iretd` |
+| `retorno_interrupcion_q` | `iretq` |
+| `retorno_sistema` | `sysret` |
+| `rotar_con_acarreo_der` | `rcr` |
+| `rotar_con_acarreo_izq` | `rcl` |
+| `rotar_der` | `ror` |
+| `rotar_izq` | `rol` |
+| `sacar` | `pop` |
+| `sacar_banderas` | `popf` |
+| `sacar_banderas_q` | `popfq` |
+| `sacar_todo` | `popa` |
+| `salida_puerto` | `out` |
+| `salida_puerto_byte` | `outsb` |
+| `salida_puerto_doble` | `outsd` |
+| `salida_puerto_palabra` | `outsw` |
+| `salir` | `leave` |
+| `salir_sistema` | `sysexit` |
+| `saltar` | `jmp` |
+| `saltar_si_cx_cero` | `jcxz` |
+| `saltar_si_ecx_cero` | `jecxz` |
+| `saltar_si_rcx_cero` | `jrcxz` |
+| `si_abajo` | `jb` |
+| `si_abajo_igual` | `jbe` |
+| `si_arriba` | `ja` |
+| `si_arriba_igual` | `jae` |
+| `si_cero` | `jz` |
+| `si_desborde` | `jo` |
+| `si_igual` | `je` |
+| `si_mayor` | `jg` |
+| `si_mayor_igual` | `jge` |
+| `si_menor` | `jl` |
+| `si_menor_igual` | `jle` |
+| `si_no_cero` | `jnz` |
+| `si_no_desborde` | `jno` |
+| `si_no_igual` | `jne` |
+| `si_no_paridad` | `jnp` |
+| `si_no_signo` | `jns` |
+| `si_paridad` | `jp` |
+| `si_signo` | `js` |
+| `sumar` | `add` |
+| `sumar_con_acarreo` | `adc` |
+| `volver` | `ret` |
+| `y` | `and` |
+| `y_negada` | `andn` |
 
-### Filosofía de Diseño
+---
 
-**1. Naturalidad sobre Literalidad**
-- No traducimos palabra por palabra del inglés
-- Usamos términos que sean naturales para un hispanohablante
-- Ejemplo: `saltar` suena más natural que `brincar` o `jumpar`
+## 💻 Ejemplo de Uso Rápido
 
-**2. Claridad sobre Brevedad**
-- Preferimos `comparar` sobre `comp` porque es más claro
-- Las abreviaturas están disponibles pero no son obligatorias
-- El programador elige: `mover` o `mov` - ambos funcionan
-
-**3. Consistencia Lingüística**
-- Usamos infinitivos verbales: `sumar`, `restar`, `comparar`
-- Mantenemos coherencia en familias de instrucciones
-- Los nombres son predecibles: si existe `sumar`, existe `restar`
-
-**4. Compatibilidad Universal**
-- **Todas las instrucciones en inglés siguen funcionando**
-- Puedes mezclar: `mover rax, rbx` y `push rcx` en el mismo código
-- El ensamblador es agnóstico: traduce lo que necesita, ignora lo que ya es estándar
-
-**5. Alias Múltiples**
-- `mover` = `mov` = `copiar`
-- `retornar` = `ret` = `volver`
-- Esto permite estilos de código personalizados
-
-### ¿Por Qué No es Solo "Traducción"?
-
-Esto no es un diccionario inglés-español aplicado ciegamente. Es **diseño de lenguaje** pensado para:
-- Que suene natural al leerlo en voz alta
-- Que sea intuitivo para alguien que nunca vio ASM
-- Que respete las convenciones de la CPU sin crear confusión
-
-**Ejemplo:**
 ```asm
-; Versión natural en español
-mover rax, 10
-comparar rax, 5
-si_mayor etiqueta_positivo
-saltar fin
+; Ejemplo en Spanish / Español (es)
+section .text
+global _start
 
-; Versión mixta (igualmente válida)
-mov rax, 10
-comparar rax, 5
-jg etiqueta_positivo
-jmp fin
+_start:
+    mover rax, 1
+    mover rdi, 1
+    mover rsi, msg
+    mover rdx, 13
+    llamada_sistema
+
+    mover rax, 60
+    mover rdi, 0
+    llamada_sistema
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-Ambas son correctas. El programador elige su estilo.
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm es programa.masm -o programa.asm
 
-## 📦 Movimiento de Datos
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
 
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `mover`, `copiar` | `mov` | Mover datos entre registros/memoria |
-| `intercambiar` | `xchg` | Intercambiar valores entre operandos |
-| `cargar_efectivo` | `lea` | Cargar dirección efectiva |
-| `extender_cero` | `movzx` | Mover con extensión de ceros |
-| `extender_signo` | `movsx` | Mover con extensión de signo |
-
----
-
-## ➕ Aritmética
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `sumar`, `añadir` | `add` | Sumar dos operandos |
-| `restar` | `sub` | Restar dos operandos |
-| `multiplicar` | `mul` | Multiplicación sin signo |
-| `multiplicar_signado` | `imul` | Multiplicación con signo |
-| `dividir` | `div` | División sin signo |
-| `dividir_signado` | `idiv` | División con signo |
-| `incrementar` | `inc` | Incrementar en 1 |
-| `decrementar` | `dec` | Decrementar en 1 |
-| `negar` | `neg` | Negar (complemento a 2) |
-
----
-
-## 🔢 Operaciones Lógicas
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `y` | `and` | AND lógico bit a bit |
-| `o` | `or` | OR lógico bit a bit |
-| `no` | `not` | NOT lógico (complemento a 1) |
-| `exclusivo` | `xor` | XOR lógico bit a bit |
-| `desplazar_izq` | `shl`, `sal` | Desplazamiento lógico/aritmético izq. |
-| `desplazar_der` | `shr`, `sar` | Desplazamiento lógico/aritmético der. |
-| `rotar_izq` | `rol` | Rotación a la izquierda |
-| `rotar_der` | `ror` | Rotación a la derecha |
-
----
-
-## 🔍 Comparación y Prueba
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `comparar` | `cmp` | Comparar dos operandos |
-| `probar` | `test` | AND lógico sin guardar el resultado |
-
----
-
-## 🎯 Control de Flujo
-
-### Saltos Incondicionales
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `saltar` | `jmp` | Salto incondicional |
-| `llamar` | `call` | Llamar a subrutina |
-| `retornar`, `volver` | `ret` | Retornar de subrutina |
-
-### Saltos Condicionales
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `si_igual` | `je`, `jz` | Saltar si igual / si cero |
-| `si_no_igual` | `jne`, `jnz` | Saltar si no igual / si no cero |
-| `si_mayor` | `jg` | Saltar si mayor (signado) |
-| `si_mayor_igual` | `jge` | Saltar si mayor o igual (signado) |
-| `si_menor` | `jl` | Saltar si menor (signado) |
-| `si_menor_igual` | `jle` | Saltar si menor o igual (signado) |
-| `si_arriba` | `ja` | Saltar si arriba (sin signo) |
-| `si_abajo` | `jb` | Saltar si abajo (sin signo) |
-| `si_arriba_igual` | `jae` | Saltar si arriba o igual (sin signo) |
-| `si_abajo_igual` | `jbe` | Saltar si abajo o igual (sin signo) |
-| `si_signo` | `js` | Saltar si el bit de signo está activado |
-| `si_no_signo` | `jns` | Saltar si el bit de signo no está activado |
-| `si_desborde` | `jo` | Saltar si hubo desborde |
-| `si_no_desborde` | `jno` | Saltar si no hubo desborde |
-| `si_paridad` | `jp` | Saltar si paridad par |
-| `si_no_paridad` | `jnp` | Saltar si paridad impar |
-
----
-
-## 📚 Pila (Stack)
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `meter` | `push` | Insertar valor en la pila |
-| `sacar` | `pop` | Extraer valor de la pila |
-| `meter_banderas` | `pushf` | Insertar registro de banderas |
-| `sacar_banderas` | `popf` | Extraer registro de banderas |
-
----
-
-## 🔤 Operaciones de Cadenas
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `mover_byte` | `movsb` | Mover byte de cadena |
-| `mover_palabra` | `movsw` | Mover palabra de cadena |
-| `mover_doble` | `movsd` | Mover doble palabra de cadena |
-| `almacenar_byte` | `stosb` | Almacenar byte en cadena |
-| `cargar_byte` | `lodsb` | Cargar byte de cadena |
-| `escanear_byte` | `scasb` | Escanear byte en cadena |
-| `repetir` | `rep` | Repetir operación |
-| `repetir_mientras` | `repne` | Repetir mientras no sea igual |
-
----
-
-## 🔁 Bucles
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `ciclo` | `loop` | Decrementar RCX y saltar si RCX ≠ 0 |
-| `ciclo_si_cero` | `loopz` | Loop si zero flag está activado |
-| `ciclo_si_no_cero` | `loopnz` | Loop si zero flag no está activado |
-
----
-
-## ⚙️ Sistema
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `interrupcion` | `int` | Llamar interrupción software |
-| `llamada_sistema` | `syscall` | Llamada al sistema (x86_64) |
-| `retorno_sistema` | `sysret` | Retorno de llamada al sistema |
-| `retorno_interrupcion` | `iret` | Retorno de interrupción |
-
----
-
-## 🛠️ Miscelánea
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `nada` | `nop` | No hacer nada |
-| `detener` | `hlt` | Detener CPU hasta próxima interrupción |
-| `limpiar_interrupciones` | `cli` | Deshabilitar interrupciones |
-| `activar_interrupciones` | `sti` | Habilitar interrupciones |
-| `limpiar_direccion` | `cld` | Limpiar flag de dirección |
-| `fijar_direccion` | `std` | Fijar flag de dirección |
-| `esperar` | `wait` | Esperar operación de coprocesador |
-
----
-
-## 🔄 Conversión de Tamaños
-
-| Español | ASM | Descripción |
-|---------|-----|-------------|
-| `convertir_byte_palabra` | `cbw` | Convertir byte a palabra |
-| `convertir_palabra_doble` | `cwd` | Convertir palabra a doble palabra |
-| `convertir_doble_cuadruple` | `cdq` | Convertir doble palabra a cuádruple |
-| `convertir_cuadruple_octo` | `cqo` | Convertir cuádruple a octopalabra |
-
----
-
-## 📝 Ejemplo de Uso
-
-```asm
-; Función que suma dos números
-funcion_suma:
-    meter rbp               ; push rbp
-    mover rbp, rsp          ; mov rbp, rsp
-    
-    sumar rdi, rsi          ; add rdi, rsi
-    mover rax, rdi          ; mov rax, rdi
-    
-    sacar rbp               ; pop rbp
-    retornar                ; ret
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build es programa.masm
 ```
-
-> [!TIP]
-> Todas las instrucciones estándar en inglés (mov, add, jmp, etc.) también funcionan directamente sin traducción.
-
----
-
-**Total:** 80+ instrucciones x86_64 soportadas en Español.  
-**MultiLang-ASM** — Parte del ecosistema **Neuro-OS.es**.

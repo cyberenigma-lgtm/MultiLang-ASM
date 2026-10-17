@@ -1,45 +1,82 @@
-# MultiLang-ASM: คำแนะนำ (ไทย - th)
+# MultiLang-ASM: Manual de Instrucciones [TH]
 
-ยินดีต้อนรับสู่การรองรับภาษาไทยสำหรับ MultiLang-ASM
+**Idioma:** Thai / ไทย (`th`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 33  
 
-## 🛠 คำสั่งพื้นฐาน
+---
 
-| MultiLang-ASM | NASM (x86_64) | คำอธิบาย |
-| :--- | :--- | :--- |
-| `ย้าย` | `mov` | ย้ายข้อมูล |
-| `บวก` | `add` | บวกเลข |
-| `ลบ` | `sub` | ลบเลข |
-| `เปรียบเทียบ` | `cmp` | เปรียบเทียบค่า |
-| `กระโดด` | `jmp` | กระโดดไปยังตำแหน่ง |
-| `เรียก` | `call` | เรียกฟังก์ชัน |
-| `กลับ` | `ret` | กลับจากฟังก์ชัน |
-| `ขัดจังหวะ` | `int` | ขัดจังหวะซอฟต์แวร์ |
-| `เรียกใช้ระบบ` | `syscall` | เรียกใช้ระบบเคอร์เนล |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 ตัวอย่างโค้ด
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `กระโดด` | `jmp` |
+| `กลับ` | `ret` |
+| `ขัดจังหวะ` | `int` |
+| `คืนค่าระบบ` | `sysret` |
+| `คูณ` | `mul` |
+| `ดึง` | `pop` |
+| `ดึงแฟล็ก` | `popf` |
+| `ถ้าน้อยกว่า` | `jl` |
+| `ถ้ามากกว่า` | `jg` |
+| `ถ้าเท่ากับ` | `je` |
+| `ถ้าเป็นศูนย์` | `jz` |
+| `ถ้าไม่เท่ากับ` | `jne` |
+| `ทดสอบ` | `test` |
+| `ทำซ้ำ` | `rep` |
+| `บวก` | `add` |
+| `ผลัก` | `push` |
+| `ผลักแฟล็ก` | `pushf` |
+| `ย้าย` | `mov` |
+| `ย้ายไบต์` | `movsb` |
+| `ลบ` | `sub` |
+| `วนรอบ` | `loop` |
+| `วนรอบถ้าเป็นศูนย์` | `loopz` |
+| `สลับ` | `xchg` |
+| `หยุด` | `hlt` |
+| `เก็บบายต์` | `stosb` |
+| `เปรียบเทียบ` | `cmp` |
+| `เรียก` | `call` |
+| `เรียกใช้ระบบ` | `syscall` |
+| `เวิร์ดเป็นดับเบิล` | `cwd` |
+| `โหลด` | `lea` |
+| `โหลดไบต์` | `lodsb` |
+| `ไบต์เป็นเวิร์ด` | `cbw` |
+| `ไม่มีการทำงาน` | `nop` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Hello World ในภาษาไทย
-ส่วน .ข้อมูล
-    ข้อความ: db "สวัสดีชาวโลก!", 10
+; Ejemplo en Thai / ไทย (th)
+section .text
+global _start
 
-ส่วน .ข้อความ
-    สาธารณะ _เริ่ม
-
-_เริ่ม:
-    ย้าย rax, 1          ; syscall: write
-    ย้าย rdi, 1          ; fd: stdout
-    ย้าย rsi, ข้อความ     ; buffer
-    ย้าย rdx, 15         ; length
+_start:
+    ย้าย rax, 1
+    ย้าย rdi, 1
+    ย้าย rsi, msg
+    ย้าย rdx, 13
     เรียกใช้ระบบ
 
-    ย้าย rax, 60         ; syscall: exit
-    ย้าย rdi, 0          ; error code
+    ย้าย rax, 60
+    ย้าย rdi, 0
     เรียกใช้ระบบ
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 การใช้งาน
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py th program.masm
+# Transpilar a NASM estándar:
+mlasm th programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build th programa.masm
 ```

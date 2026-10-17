@@ -1,118 +1,89 @@
-# 📚 전체 명령어 참조 — 한국어 (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [KO]
 
-이 가이드는 다국어 어셈블러 **MultiLang-ASM**에서 지원하는 모든 한국어 명령어를 포함합니다. **Neuro-OS.es** 생태계의 일부입니다.
-
-> MultiLang-ASM을 사용하면 모국어로 어셈블리 코드를 작성하고 NASM/FASM/GAS와 호환되는 표준 ASM 코드를 생성할 수 있습니다.
-
----
-
-## 📦 데이터 이동
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `이동` | `mov` | 레지스터/메모리 간 데이터 이동 |
-| `교환` | `xchg` | 피연산자 간 값 교환 |
-| `주소로드` | `lea` | 유효 주소 로드 |
-| `영확장` | `movzx` | 0 확장하여 이동 |
-| `부호확장` | `movsx` | 부호 확장하여 이동 |
+**Idioma:** Korean / 한국어 (`ko`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
 ---
 
-## ➕ 산술 연산
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `더하기`, `합` | `add` | 두 피연산자 더하기 |
-| `빼기` | `sub` | 두 피연산자 빼기 |
-| `곱하기` | `mul` | 부호 없는 곱셈 |
-| `부호곱하기` | `imul` | 부호 있는 곱셈 |
-| `나누기` | `div` | 부호 없는 나눗셈 |
-| `부호나누기` | `idiv` | 부호 있는 나눗셈 |
-| `증가` | `inc` | 1 증가 |
-| `감소` | `dec` | 1 감소 |
-| `부정` | `neg` | 부정 (2의 보수) |
-
----
-
-## 🔢 논리 연산
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `그리고` | `and` | 비트 단위 AND |
-| `또는` | `or` | 비트 단위 OR |
-| `부정` | `not` | 비트 단위 NOT (1의 보수) |
-| `배타적` | `xor` | 비트 단위 XOR |
-| `왼쪽이동` | `shl`, `sal` | 논리/산술 왼쪽 시프트 |
-| `오른쪽이동` | `shr`, `sar` | 논리/산술 오른쪽 시프트 |
-| `왼쪽회전` | `rol` | 왼쪽 회전 |
-| `오른쪽회전` | `ror` | 오른쪽 회전 |
-
----
-
-## 🔍 비교 및 테스트
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `비교` | `cmp` | 두 피연산자 비교 |
-| `검사` | `test` | 결과를 저장하지 않는 AND |
-
----
-
-## 🎯 흐름 제어
-
-### 무조건 점프
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `점프` | `jmp` | 무조건 점프 |
-| `호출` | `call` | 서브루틴 호출 |
-| `돌아가기` | `ret` | 서브루틴에서 반환 |
-
-### 조건부 점프
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `같으면` | `je`, `jz` | 같으면/0이면 점프 |
-| `다르면` | `jne`, `jnz` | 다르면/0이 아니면 점프 |
-| `크면` | `jg` | 크면 점프 (부호 있음) |
-| `크거나같으면` | `jge` | 크거나 같으면 점프 |
-| `작으면` | `jl` | 작으면 점프 (부호 있음) |
-| `작거나같으면` | `jle` | 작거나 같으면 점프 |
-| `위면` | `ja` | 위면 점프 (부호 없음) |
-| `아래면` | `jb` | 아래면 점프 (부호 없음) |
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `감소` | `dec` |
+| `같으면` | `je` |
+| `곱하기` | `mul` |
+| `교환` | `xchg` |
+| `나누기` | `div` |
+| `넣기` | `push` |
+| `다르면` | `jne` |
+| `더블을쿼드로` | `cdq` |
+| `더하기` | `add` |
+| `돌아가기` | `ret` |
+| `루프` | `loop` |
+| `무작작` | `nop` |
+| `바이트로드` | `lodsb` |
+| `바이트를워드로` | `cbw` |
+| `바이트이동` | `movsb` |
+| `바이트저장` | `stosb` |
+| `반복` | `rep` |
+| `부정` | `neg` |
+| `부호확장` | `movsx` |
+| `비교` | `cmp` |
+| `빼기` | `pop` |
+| `뺄셈` | `sub` |
+| `시스템복귀` | `sysret` |
+| `시스템호출` | `syscall` |
+| `영이면` | `jz` |
+| `영이면루프` | `loopz` |
+| `영확장` | `movzx` |
+| `워드를더블로` | `cwd` |
+| `이동` | `mov` |
+| `인터럽트` | `int` |
+| `작으면` | `jl` |
+| `점프` | `jmp` |
+| `정지` | `hlt` |
+| `주소로드` | `lea` |
+| `증가` | `inc` |
+| `크면` | `jg` |
+| `테스트` | `test` |
+| `플래그넣기` | `pushf` |
+| `플래그빼기` | `popf` |
+| `호출` | `call` |
 
 ---
 
-## 📚 스택
-
-| 한국어 | ASM | 설명 |
-|---------|-----|------|
-| `넣기` | `push` | 스택에 값 넣기 |
-| `빼기` | `pop` | 스택에서 값 빼기 |
-| `플래그넣기` | `pushf` | 플래그 레지스터 넣기 |
-| `플래그빼기` | `popf` | 플래그 레지스터 빼기 |
-
----
-
-## 📝 사용 예제
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; 두 숫자를 더하는 함수
-함수_합:
-    넣기 rbp               ; push rbp
-    이동 rbp, rsp          ; mov rbp, rsp
-    
-    더하기 rdi, rsi        ; add rdi, rsi
-    이동 rax, rdi          ; mov rax, rdi
-    
-    빼기 rbp               ; pop rbp
-    돌아가기               ; ret
+; Ejemplo en Korean / 한국어 (ko)
+section .text
+global _start
+
+_start:
+    이동 rax, 1
+    이동 rdi, 1
+    이동 rsi, msg
+    이동 rdx, 13
+    시스템호출
+
+    이동 rax, 60
+    이동 rdi, 0
+    시스템호출
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-> [!TIP]
-> 모든 표준 영어 명령어 (mov, add, jmp 등)도 번역 없이 직접 작동합니다.
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm ko programa.masm -o programa.asm
 
-**총계:** 80+ x86_64 명령어가 한국어로 지원됩니다.  
-**MultiLang-ASM** — **Neuro-OS.es** 생태계의 일부입니다.
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build ko programa.masm
+```

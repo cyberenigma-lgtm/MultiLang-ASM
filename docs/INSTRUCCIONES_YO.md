@@ -1,45 +1,89 @@
-# MultiLang-ASM: Àwọn Ìtọ́ni (Yoruba - yo)
+# MultiLang-ASM: Manual de Instrucciones [YO]
 
-Kaabo si atilẹyin ede Yoruba fun MultiLang-ASM.
+**Idioma:** Yoruba (`yo`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Àwọn Àṣẹ Gboogi
+---
 
-| MultiLang-ASM | NASM (x86_64) | Ìtumọ̀ |
-| :--- | :--- | :--- |
-| `gbe` | `mov` | Gbe data |
-| `fikun` | `add` | Fikun iye |
-| `yọkuro` | `sub` | Yọ iye kuro |
-| `fiwe` | `cmp` | Fi iye we |
-| `mẹfọ` | `jmp` | Mẹfọ si adirẹsi |
-| `pè` | `call` | Pè iṣẹ́ |
-| `padà` | `ret` | Padà kuro ninu iṣẹ́ |
-| `da_duro` | `int` | Da duro |
-| `pe_eto` | `syscall` | Pe eto iṣẹ́ |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Àpẹẹrẹ Code
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `asán` | `nop` |
+| `bi_o_ba_dogba` | `je` |
+| `bi_o_ba_kere` | `jl` |
+| `bi_o_ba_odo` | `jz` |
+| `bi_o_ba_tobi` | `jg` |
+| `bi_o_ba_yatọ` | `jne` |
+| `byte_si_ọrọ` | `cbw` |
+| `da_duro` | `int` |
+| `danwo` | `test` |
+| `duro` | `hlt` |
+| `faagun_ami` | `movsx` |
+| `faagun_odo` | `movzx` |
+| `fikun` | `add` |
+| `fikun_ẹyọ` | `inc` |
+| `fipamọ_byte` | `stosb` |
+| `fiwe` | `cmp` |
+| `gbe` | `mov` |
+| `gbe_byte` | `movsb` |
+| `kojọpọ_adirẹsi` | `lea` |
+| `kojọpọ_byte` | `lodsb` |
+| `meji_si_mẹrin` | `cdq` |
+| `mẹfọ` | `jmp` |
+| `paarọ` | `xchg` |
+| `padà` | `ret` |
+| `padà_eto` | `sysret` |
+| `pe_eto` | `syscall` |
+| `pin` | `div` |
+| `pè` | `call` |
+| `pọsi` | `mul` |
+| `sẹ` | `neg` |
+| `tunṣe` | `rep` |
+| `tì` | `push` |
+| `tì_asia` | `pushf` |
+| `yipo` | `loop` |
+| `yipo_bi_o_ba_odo` | `loopz` |
+| `yọ` | `pop` |
+| `yọ_asia` | `popf` |
+| `yọkuro` | `sub` |
+| `yọkuro_ẹyọ` | `dec` |
+| `ọrọ_si_meji` | `cwd` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Kaabo Ayé ni ede Yoruba
-apa .data
-    ìran: db "Kaabo Aye!", 10
-
-apa .text
-    global _start
+; Ejemplo en Yoruba (yo)
+section .text
+global _start
 
 _start:
-    gbe rax, 1          ; syscall: write
-    gbe rdi, 1          ; fd: stdout
-    gbe rsi, ìran       ; buffer
-    gbe rdx, 11         ; length
+    gbe rax, 1
+    gbe rdi, 1
+    gbe rsi, msg
+    gbe rdx, 13
     pe_eto
 
-    gbe rax, 60         ; syscall: exit
-    gbe rdi, 0          ; exit code
+    gbe rax, 60
+    gbe rdi, 0
     pe_eto
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Ìlò
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py yo eto.masm
+# Transpilar a NASM estándar:
+mlasm yo programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build yo programa.masm
 ```

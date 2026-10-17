@@ -1,45 +1,89 @@
-# MultiLang-ASM: 指令 (粵語 - yue)
+# MultiLang-ASM: Manual de Instrucciones [YUE]
 
-歡迎使用 MultiLang-ASM 粵語支援。
+**Idioma:** Cantonese / 粵語 (`yue`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 基本指令
+---
 
-| MultiLang-ASM | NASM (x86_64) | 說明 |
-| :--- | :--- | :--- |
-| `搬` | `mov` | 移動數據 |
-| `加` | `add` | 加數 |
-| `減` | `sub` | 減數 |
-| `比` | `cmp` | 比較數值 |
-| `跳` | `jmp` | 跳去地址 |
-| `叫` | `call` | 呼叫功能 |
-| `返` | `ret` | 功能返回 |
-| `中斷` | `int` | 軟件中斷 |
-| `叫系統` | `syscall` | 系統呼叫 |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 程式範例
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `中斷` | `int` |
+| `乘` | `mul` |
+| `乜都唔做` | `nop` |
+| `位元組變字` | `cbw` |
+| `停` | `hlt` |
+| `加` | `add` |
+| `加一` | `inc` |
+| `叫` | `call` |
+| `叫系統` | `syscall` |
+| `圈` | `loop` |
+| `如果唔等` | `jne` |
+| `如果大` | `jg` |
+| `如果等` | `je` |
+| `如果細` | `jl` |
+| `如果零` | `jz` |
+| `字變雙字` | `cwd` |
+| `存位元組` | `stosb` |
+| `彈出` | `pop` |
+| `彈標誌` | `popf` |
+| `推入` | `push` |
+| `推標誌` | `pushf` |
+| `換` | `xchg` |
+| `搬` | `mov` |
+| `搬位元組` | `movsb` |
+| `攞位元組` | `lodsb` |
+| `攞有效地址` | `lea` |
+| `比` | `cmp` |
+| `減` | `sub` |
+| `減一` | `dec` |
+| `符號擴展` | `movsx` |
+| `試` | `test` |
+| `變負` | `neg` |
+| `跳` | `jmp` |
+| `返` | `ret` |
+| `返系統` | `sysret` |
+| `重複` | `rep` |
+| `除` | `div` |
+| `雙字變四字` | `cdq` |
+| `零圈` | `loopz` |
+| `零擴展` | `movzx` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; 粵語版你好世界
-部分 .data
-    內容: db "你好世界!", 10
-
-部分 .text
-    global _start
+; Ejemplo en Cantonese / 粵語 (yue)
+section .text
+global _start
 
 _start:
-    搬 rax, 1          ; syscall: write
-    搬 rdi, 1          ; fd: stdout
-    搬 rsi, 內容       ; buffer
-    搬 rdx, 14         ; length
+    搬 rax, 1
+    搬 rdi, 1
+    搬 rsi, msg
+    搬 rdx, 13
     叫系統
 
-    搬 rax, 60         ; syscall: exit
-    搬 rdi, 0          ; exit code
+    搬 rax, 60
+    搬 rdi, 0
     叫系統
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 使用方法
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py yue program.masm
+# Transpilar a NASM estándar:
+mlasm yue programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build yue programa.masm
 ```

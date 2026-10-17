@@ -1,45 +1,89 @@
-# MultiLang-ASM: Argibideak (Euskara - eu)
+# MultiLang-ASM: Manual de Instrucciones [EU]
 
-Ongi etorri MultiLang-ASM-ren euskarazko laguntzara.
+**Idioma:** Basque / Euskara (`eu`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Oinarrizko Komandoak
+---
 
-| MultiLang-ASM | NASM (x86_64) | Azalpena |
-| :--- | :--- | :--- |
-| `mugitu` | `mov` | Datuak mugitu |
-| `gehitu` | `add` | Balioak gehitu |
-| `kendu` | `sub` | Balioak kendu |
-| `konparatu` | `cmp` | Balioak konparatu |
-| `jauzi` | `jmp` | Helbide batera jauzi egin |
-| `deitu` | `call` | Funtzio bati deitu |
-| `itzuli` | `ret` | Funtziotik itzuli |
-| `etena` | `int` | Software etena |
-| `sistema_deia` | `syscall` | Sistema deia |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Kode Adibidea
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `atera` | `pop` |
+| `banderak_atera` | `popf` |
+| `banderak_sartu` | `pushf` |
+| `begizta` | `loop` |
+| `berdina_bada` | `je` |
+| `biderkatu` | `mul` |
+| `bikoitza_quadrera` | `cdq` |
+| `byte_gorde` | `stosb` |
+| `byte_hitzera` | `cbw` |
+| `byte_kargatu` | `lodsb` |
+| `byte_mugitu` | `movsb` |
+| `deitu` | `call` |
+| `dekrementatu` | `dec` |
+| `errepikatu` | `rep` |
+| `etena` | `int` |
+| `ez_berdina_bada` | `jne` |
+| `ezer_ez` | `nop` |
+| `gehitu` | `add` |
+| `gelditu` | `hlt` |
+| `handiagoa_bada` | `jg` |
+| `helbidea_kargatu` | `lea` |
+| `hitza_bikoitzera` | `cwd` |
+| `inkrementatu` | `inc` |
+| `itzuli` | `ret` |
+| `jauzi` | `jmp` |
+| `kendu` | `sub` |
+| `konparatu` | `cmp` |
+| `mugitu` | `mov` |
+| `probatu` | `test` |
+| `sartu` | `push` |
+| `sistema_deia` | `syscall` |
+| `sistema_itzulera` | `sysret` |
+| `trukatu` | `xchg` |
+| `txikiagoa_bada` | `jl` |
+| `ukatu` | `neg` |
+| `zatitu` | `div` |
+| `zeinu_hedatu` | `movsx` |
+| `zero_bada` | `jz` |
+| `zero_bada_begizta` | `loopz` |
+| `zero_hedatu` | `movzx` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Kaixo mundua euskaraz
-sektorea .data
-    mezua: db "Kaixo mundua!", 10
-
-sektorea .text
-    global _start
+; Ejemplo en Basque / Euskara (eu)
+section .text
+global _start
 
 _start:
-    mugitu rax, 1          ; syscall: write
-    mugitu rdi, 1          ; fd: stdout
-    mugitu rsi, mezua      ; buffer
-    mugitu rdx, 14         ; length
+    mugitu rax, 1
+    mugitu rdi, 1
+    mugitu rsi, msg
+    mugitu rdx, 13
     sistema_deia
 
-    mugitu rax, 60         ; syscall: exit
-    mugitu rdi, 0          ; errore kodea
+    mugitu rax, 60
+    mugitu rdi, 0
     sistema_deia
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Erabilera
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py eu programa.masm
+# Transpilar a NASM estándar:
+mlasm eu programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build eu programa.masm
 ```

@@ -1,45 +1,89 @@
-# MultiLang-ASM: নির্দেশাবলী (বাংলা - bn)
+# MultiLang-ASM: Manual de Instrucciones [BN]
 
-মাল্টি-ল্যাঙ্গুয়েজ অ্যাসেম্বলারে বাংলা সহায়তায় স্বাগতম।
+**Idioma:** Bengali / বাংলা (`bn`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 মৌলিক কমান্ড
+---
 
-| MultiLang-ASM | NASM (x86_64) | বর্ণনা |
-| :--- | :--- | :--- |
-| `সরানো` | `mov` | ডাটা মুভ করা |
-| `যোগ` | `add` | মান যোগ করা |
-| `বিয়োগ` | `sub` | মান বিয়োগ করা |
-| `তুলনা` | `cmp` | মান তুলনা করা |
-| `লাফানো` | `jmp` | অ্যাড্রেসে লাফানো |
-| `কল` | `call` | ফাংশন কল করা |
-| `ফেরা` | `ret` | ফাংশন থেকে ফেরা |
-| `ইন্টারাপ্ট` | `int` | সফটওয়্যার ইন্টারাপ্ট |
-| `সিস্টেম_কল` | `syscall` | সিস্টেম কল |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 কোড উদাহরণ
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `если_больше` | `jg` |
+| `অস্বীকার` | `neg` |
+| `অ্যাড্রেস_লোড` | `lea` |
+| `ইন্টারাপ্ট` | `int` |
+| `ওয়ার্ড_থেকে_ডাবল` | `cwd` |
+| `কল` | `call` |
+| `কিছু_না` | `nop` |
+| `গুণ` | `mul` |
+| `চিহ্ন_প্রসারণ` | `movsx` |
+| `ডাবল_থেকে_কোয়াড` | `cdq` |
+| `তুলনা` | `cmp` |
+| `থামানো` | `hlt` |
+| `পপ` | `pop` |
+| `পরীক্ষা` | `test` |
+| `পুনরাবৃত্তি` | `rep` |
+| `পুশ` | `push` |
+| `ফেরা` | `ret` |
+| `ফ্ল্যাগ_পপ` | `popf` |
+| `ফ্ল্যাগ_পুশ` | `pushf` |
+| `বাইট_থেকে_ওয়ার্ড` | `cbw` |
+| `বাইট_লোড` | `lodsb` |
+| `বাইট_সংরক্ষণ` | `stosb` |
+| `বাইট_সরানো` | `movsb` |
+| `বিনিময়` | `xchg` |
+| `বিয়োগ` | `sub` |
+| `বৃদ্ধি` | `inc` |
+| `ভাগ` | `div` |
+| `যদি_অসমান` | `jne` |
+| `যদি_ছোট` | `jl` |
+| `যদি_শূন্য` | `jz` |
+| `যদি_সমান` | `je` |
+| `যোগ` | `add` |
+| `লাফানো` | `jmp` |
+| `লুপ` | `loop` |
+| `শূন্য_প্রসারণ` | `movzx` |
+| `শূন্য_লুপ` | `loopz` |
+| `সরানো` | `mov` |
+| `সিস্টেম_কল` | `syscall` |
+| `সিস্টেম_রিটার্ন` | `sysret` |
+| `হ্রাস` | `dec` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; বাংলায় হ্যালো ওয়ার্ল্ড
-বিভাগ .data
-    বার্তা: db "Hello World!", 10
-
-বিভাগ .text
-    global _start
+; Ejemplo en Bengali / বাংলা (bn)
+section .text
+global _start
 
 _start:
-    সরানো rax, 1          ; syscall: write
-    সরানো rdi, 1          ; fd: stdout
-    সরানো rsi, বার্তা      ; buffer
-    সরানো rdx, 13         ; length
+    সরানো rax, 1
+    সরানো rdi, 1
+    সরানো rsi, msg
+    সরানো rdx, 13
     সিস্টেম_কল
 
-    সরানো rax, 60         ; syscall: exit
-    সরানো rdi, 0          ; exit code
+    সরানো rax, 60
+    সরানো rdi, 0
     সিস্টেম_কল
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 ব্যবহার
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py bn program.masm
+# Transpilar a NASM estándar:
+mlasm bn programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build bn programa.masm
 ```

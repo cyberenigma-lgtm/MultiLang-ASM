@@ -1,45 +1,89 @@
-# MultiLang-ASM: Instruksjoner (Norsk - no)
+# MultiLang-ASM: Manual de Instrucciones [NO]
 
-Velkommen til norsk støtte for MultiLang-ASM.
+**Idioma:** Norwegian / Norsk (`no`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Grunnleggende kommandoer
+---
 
-| MultiLang-ASM | NASM (x86_64) | Beskrivelse |
-| :--- | :--- | :--- |
-| `flytt` | `mov` | Flytt data |
-| `legg_til` | `add` | Legg til verdi |
-| `trekk_fra` | `sub` | Trekk fra verdi |
-| `sammenlign` | `cmp` | Sammenlign verdier |
-| `hopp` | `jmp` | Hopp til adresse |
-| `kall` | `call` | Kall en funksjon |
-| `returner` | `ret` | Returner fra funksjon |
-| `avbrudd` | `int` | Programvareavbrudd |
-| `systemkall` | `syscall` | Systemkall |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Kodeeksempel
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `avbrudd` | `int` |
+| `byte_til_ord` | `cbw` |
+| `divider` | `div` |
+| `dobbel_til_quad` | `cdq` |
+| `flytt` | `mov` |
+| `flytt_byte` | `movsb` |
+| `gjenta` | `rep` |
+| `hent` | `pop` |
+| `hent_flagg` | `popf` |
+| `hopp` | `jmp` |
+| `hvis_ikke_lik` | `jne` |
+| `hvis_lik` | `je` |
+| `hvis_mindre` | `jl` |
+| `hvis_null` | `jz` |
+| `hvis_større` | `jg` |
+| `ingen` | `nop` |
+| `kall` | `call` |
+| `lagre_byte` | `stosb` |
+| `last_byte` | `lodsb` |
+| `last_effektiv` | `lea` |
+| `legg_til` | `add` |
+| `løkke` | `loop` |
+| `løkke_hvis_null` | `loopz` |
+| `minsk` | `dec` |
+| `multipliser` | `mul` |
+| `neger` | `neg` |
+| `ord_til_dobbel` | `cwd` |
+| `returner` | `ret` |
+| `sammenlign` | `cmp` |
+| `skyv` | `push` |
+| `skyv_flagg` | `pushf` |
+| `stopp` | `hlt` |
+| `systemkall` | `syscall` |
+| `systemretur` | `sysret` |
+| `test` | `test` |
+| `trekk_fra` | `sub` |
+| `utvid_null` | `movzx` |
+| `utvid_tegn` | `movsx` |
+| `veksle` | `xchg` |
+| `øk` | `inc` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Hallo verden på norsk
-seksjon .data
-    melding: db "Hallo verden!", 10
-
-seksjon .text
-    global _start
+; Ejemplo en Norwegian / Norsk (no)
+section .text
+global _start
 
 _start:
-    flytt rax, 1          ; syscall: write
-    flytt rdi, 1          ; fd: stdout
-    flytt rsi, melding    ; buffer
-    flytt rdx, 14         ; length
+    flytt rax, 1
+    flytt rdi, 1
+    flytt rsi, msg
+    flytt rdx, 13
     systemkall
 
-    flytt rax, 60         ; syscall: exit
-    flytt rdi, 0          ; feilkode
+    flytt rax, 60
+    flytt rdi, 0
     systemkall
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Bruk
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py no programa.masm
+# Transpilar a NASM estándar:
+mlasm no programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build no programa.masm
 ```

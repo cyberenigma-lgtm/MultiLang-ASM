@@ -1,45 +1,89 @@
-# MultiLang-ASM: Umarni (Hausa - ha)
+# MultiLang-ASM: Manual de Instrucciones [HA]
 
-Sannu da zuwa tallafin Hausa don MultiLang-ASM.
+**Idioma:** Hausa (`ha`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Muhimman Umarni
+---
 
-| MultiLang-ASM | NASM (x86_64) | Bayani |
-| :--- | :--- | :--- |
-| `motsa` | `mov` | Motsa bayanai |
-| `kara` | `add` | Kara harka |
-| `rage` | `sub` | Rage harka |
-| `gwada` | `cmp` | Gwada bayanai |
-| `tsallaka` | `jmp` | Tsallaka zuwa adireshi |
-| `kira` | `call` | Kira aiki |
-| `koma` | `ret` | Koma daga aiki |
-| `tsayawa` | `int` | Tsayawar software |
-| `kiran_tsarin` | `syscall` | Kiran tsarin aiki |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Misalan Lambar
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `ajiye_byte` | `stosb` |
+| `babu` | `nop` |
+| `biyu_zuwa_hudu` | `cdq` |
+| `byte_zuwa_kalma` | `cbw` |
+| `cire` | `pop` |
+| `cire_tuta` | `popf` |
+| `dakatar` | `hlt` |
+| `fadada_shara` | `movsx` |
+| `fadada_sifiri` | `movzx` |
+| `gwada` | `cmp` |
+| `idan_ba_daidai_ba` | `jne` |
+| `idan_daidai` | `je` |
+| `idan_fi` | `jg` |
+| `idan_kasa` | `jl` |
+| `idan_sifiri` | `jz` |
+| `jarraba` | `test` |
+| `kalma_zuwa_biyu` | `cwd` |
+| `kara` | `add` |
+| `kara_daya` | `inc` |
+| `karyata` | `neg` |
+| `kira` | `call` |
+| `kiran_tsarin` | `syscall` |
+| `koma` | `ret` |
+| `koma_tsarin` | `sysret` |
+| `loda_adireshi` | `lea` |
+| `loda_byte` | `lodsb` |
+| `madauki` | `loop` |
+| `madauki_idan_sifiri` | `loopz` |
+| `maimaita` | `rep` |
+| `motsa` | `mov` |
+| `motsa_byte` | `movsb` |
+| `musaya` | `xchg` |
+| `raba` | `div` |
+| `rage` | `sub` |
+| `rage_daya` | `dec` |
+| `rubanya` | `mul` |
+| `tsallaka` | `jmp` |
+| `tsayawa` | `int` |
+| `tura` | `push` |
+| `tura_tuta` | `pushf` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Sannu Duniya a yaren Hausa
-fannin .data
-    sako: db "Sannu Duniya!", 10
-
-fannin .text
-    global _start
+; Ejemplo en Hausa (ha)
+section .text
+global _start
 
 _start:
-    motsa rax, 1          ; syscall: write
-    motsa rdi, 1          ; fd: stdout
-    motsa rsi, sako       ; buffer
-    motsa rdx, 14         ; length
+    motsa rax, 1
+    motsa rdi, 1
+    motsa rsi, msg
+    motsa rdx, 13
     kiran_tsarin
 
-    motsa rax, 60         ; syscall: exit
-    motsa rdi, 0          ; exit code
+    motsa rax, 60
+    motsa rdi, 0
     kiran_tsarin
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Amfani
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py ha shiri.masm
+# Transpilar a NASM estándar:
+mlasm ha programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build ha programa.masm
 ```

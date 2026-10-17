@@ -1,118 +1,90 @@
-# 📚 完整指令參考 — 繁體中文 (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [ZH]
 
-本指南包含多語言組譯器 **MultiLang-ASM** 支援的所有繁體中文指令，屬於 **Neuro-OS.es** 生態系統的一部分。
-
-> MultiLang-ASM 讓您能夠使用母語撰寫組合語言程式碼，並產生與 NASM/FASM/GAS 相容的標準 ASM 程式碼。
-
----
-
-## 📦 資料移動
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `移動`, `複製` | `mov` | 在暫存器/記憶體之間移動資料 |
-| `交換` | `xchg` | 交換兩個運算元的值 |
-| `載入有效位址` | `lea` | 載入有效位址 |
-| `零擴充` | `movzx` | 以零擴充移動 |
-| `符號擴充` | `movsx` | 以符號擴充移動 |
+**Idioma:** Chinese / 中文 (`zh`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 41  
 
 ---
 
-## ➕ 算術
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `加`, `相加` | `add` | 兩個運算元相加 |
-| `減`, `相減` | `sub` | 兩個運算元相減 |
-| `乘` | `mul` | 無符號乘法 |
-| `有符號乘` | `imul` | 有符號乘法 |
-| `除` | `div` | 無符號除法 |
-| `有符號除` | `idiv` | 有符號除法 |
-| `遞增` | `inc` | 增加 1 |
-| `遞減` | `dec` | 減少 1 |
-| `取負` | `neg` | 取負 (二補數) |
-
----
-
-## 🔢 邏輯運算
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `且` | `and` | 位元 AND |
-| `或` | `or` | 位元 OR |
-| `非` | `not` | 位元 NOT (一補數) |
-| `互斥或` | `xor` | 位元 XOR |
-| `左移` | `shl`, `sal` | 邏輯/算術左移 |
-| `右移` | `shr`, `sar` | 邏輯/算術右移 |
-| `左旋` | `rol` | 向左旋轉 |
-| `右旋` | `ror` | 向右旋轉 |
-
----
-
-## 🔍 比較與測試
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `比較` | `cmp` | 比較兩個運算元 |
-| `測試` | `test` | 執行 AND 但不儲存結果 |
-
----
-
-## 🎯 流程控制
-
-### 無條件跳躍
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `跳躍` | `jmp` | 無條件跳躍 |
-| `呼叫` | `call` | 呼叫副程式 |
-| `返回` | `ret` | 從副程式返回 |
-
-### 條件跳躍
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `若相等` | `je`, `jz` | 若相等/若為零則跳躍 |
-| `若不等` | `jne`, `jnz` | 若不等/若非零則跳躍 |
-| `若大於` | `jg` | 若大於則跳躍 (有符號) |
-| `若大於等於` | `jge` | 若大於或等於則跳躍 |
-| `若小於` | `jl` | 若小於則跳躍 (有符號) |
-| `若小於等於` | `jle` | 若小於或等於則跳躍 |
-| `若超過` | `ja` | 若超過則跳躍 (無符號) |
-| `若低於` | `jb` | 若低於則跳躍 (無符號) |
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `中斷` | `int` |
+| `乘` | `mul` |
+| `交換` | `xchg` |
+| `位元組轉字` | `cbw` |
+| `儲存位元組` | `stosb` |
+| `加` | `add` |
+| `呼叫` | `call` |
+| `字轉雙字` | `cwd` |
+| `彈出` | `pop` |
+| `彈出旗標` | `popf` |
+| `推入` | `push` |
+| `推入旗標` | `pushf` |
+| `暫停` | `hlt` |
+| `比較` | `cmp` |
+| `求反` | `neg` |
+| `減` | `sub` |
+| `測試` | `test` |
+| `無操作` | `nop` |
+| `移動` | `mov` |
+| `移動位元組` | `movsb` |
+| `符號擴充` | `movsx` |
+| `系統呼叫` | `syscall` |
+| `系統返回` | `sysret` |
+| `若不等` | `jne` |
+| `若大於` | `jg` |
+| `若小於` | `jl` |
+| `若為零` | `jz` |
+| `若為零迴圈` | `loopz` |
+| `若相等` | `je` |
+| `複製` | `mov` |
+| `跳躍` | `jmp` |
+| `載入位元組` | `lodsb` |
+| `載入有效位址` | `lea` |
+| `返回` | `ret` |
+| `迴圈` | `loop` |
+| `遞增` | `inc` |
+| `遞減` | `dec` |
+| `重複` | `rep` |
+| `除` | `div` |
+| `雙字轉四字` | `cdq` |
+| `零擴充` | `movzx` |
 
 ---
 
-## 📚 堆疊
-
-| 繁體中文 | ASM | 說明 |
-|---------|-----|------|
-| `推入` | `push` | 將值推入堆疊 |
-| `彈出` | `pop` | 從堆疊彈出值 |
-| `推入旗標` | `pushf` | 推入旗標暫存器 |
-| `彈出旗標` | `popf` | 彈出旗標暫存器 |
-
----
-
-## 📝 使用範例
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; 將兩個數字相加的函式
-函式_sum:
-    推入 rbp               ; push rbp
-    移動 rbp, rsp          ; mov rbp, rsp
-    
-    加 rdi, rsi            ; add rdi, rsi
-    移動 rax, rdi          ; mov rax, rdi
-    
-    彈出 rbp               ; pop rbp
-    返回                   ; ret
+; Ejemplo en Chinese / 中文 (zh)
+section .text
+global _start
+
+_start:
+    移動 rax, 1
+    移動 rdi, 1
+    移動 rsi, msg
+    移動 rdx, 13
+    系統呼叫
+
+    移動 rax, 60
+    移動 rdi, 0
+    系統呼叫
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-> [!TIP]
-> 所有標準英文指令 (mov, add, jmp 等) 也可直接使用而無需翻譯。
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm zh programa.masm -o programa.asm
 
-**總計:** 80+ x86_64 指令支援繁體中文。  
-**MultiLang-ASM** — **Neuro-OS.es** 生態系統的一部分。
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build zh programa.masm
+```

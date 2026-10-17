@@ -1,45 +1,89 @@
-# MultiLang-ASM: Mga Instruksyon (Tagalog/Filipino - tl)
+# MultiLang-ASM: Manual de Instrucciones [TL]
 
-Maligayang pagdating sa suporta para sa Tagalog ng MultiLang-ASM.
+**Idioma:** Tagalog / Filipino (`tl`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Mga Pangunahing Command
+---
 
-| MultiLang-ASM | NASM (x86_64) | Paglalarawan |
-| :--- | :--- | :--- |
-| `ilipat` | `mov` | Ilipat ang datos |
-| `idagdag` | `add` | Magdagdag ng halaga |
-| `ibawas` | `sub` | Magbawas ng halaga |
-| `ihambing` | `cmp` | Ihambing ang mga halaga |
-| `tumalon` | `jmp` | Tumalon sa address |
-| `itawag` | `call` | Tumawag ng function |
-| `bumalik` | `ret` | Bumalik mula sa function |
-| `abala` | `int` | Software interrupt |
-| `tawag_system` | `syscall` | System call |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Halimbawa ng Code
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `abala` | `int` |
+| `balik_system` | `sysret` |
+| `bumalik` | `ret` |
+| `byte_sa_word` | `cbw` |
+| `double_sa_quad` | `cdq` |
+| `i-divide` | `div` |
+| `i-load` | `lea` |
+| `i-load_byte` | `lodsb` |
+| `i-multiply` | `mul` |
+| `i-negate` | `neg` |
+| `i-save_byte` | `stosb` |
+| `ibaba` | `dec` |
+| `ibawas` | `sub` |
+| `idagdag` | `add` |
+| `ihambing` | `cmp` |
+| `ikot` | `loop` |
+| `ikot_kung_zero` | `loopz` |
+| `ilipat` | `mov` |
+| `ilipat_byte` | `movsb` |
+| `itaas` | `inc` |
+| `itawag` | `call` |
+| `itigil` | `hlt` |
+| `itulak` | `push` |
+| `itulak_flag` | `pushf` |
+| `kung_hindi_pareho` | `jne` |
+| `kung_mas_malaki` | `jg` |
+| `kung_mas_maliit` | `jl` |
+| `kung_pareho` | `je` |
+| `kung_zero` | `jz` |
+| `kunin` | `pop` |
+| `kunin_flag` | `popf` |
+| `pagpalit` | `xchg` |
+| `palawakin_sign` | `movsx` |
+| `palawakin_zero` | `movzx` |
+| `subukan` | `test` |
+| `tawag_system` | `syscall` |
+| `tumalon` | `jmp` |
+| `ulitin` | `rep` |
+| `wala` | `nop` |
+| `word_sa_double` | `cwd` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Hello World sa Tagalog
-seksyon .data
-    mensahe: db "Kumusta mundo!", 10
-
-seksyon .text
-    global _start
+; Ejemplo en Tagalog / Filipino (tl)
+section .text
+global _start
 
 _start:
-    ilipat rax, 1          ; syscall: write
-    ilipat rdi, 1          ; fd: stdout
-    ilipat rsi, mensahe    ; buffer
-    ilipat rdx, 15         ; length
+    ilipat rax, 1
+    ilipat rdi, 1
+    ilipat rsi, msg
+    ilipat rdx, 13
     tawag_system
 
-    ilipat rax, 60         ; syscall: exit
-    ilipat rdi, 0          ; exit code
+    ilipat rax, 60
+    ilipat rdi, 0
     tawag_system
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Paggamit
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py tl programa.masm
+# Transpilar a NASM estándar:
+mlasm tl programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build tl programa.masm
 ```

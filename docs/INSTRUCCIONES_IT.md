@@ -1,118 +1,89 @@
-# 📚 Riferimento Completo delle Istruzioni — Italiano (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [IT]
 
-Questa guida raccoglie tutte le istruzioni supportate in Italiano per l'assemblatore multilingue **MultiLang-ASM**, parte dell'ecosistema **Neuro-OS.es**.
-
-> MultiLang-ASM permette di scrivere codice assembly nella propria lingua madre e generare codice ASM standard compatibile con NASM/FASM/GAS.
-
----
-
-## 📦 Movimento Dati
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `muovere`, `muovi` | `mov` | Spostare dati tra registri/memoria |
-| `scambiare` | `xchg` | Scambiare valori tra operandi |
-| `caricare_effettivo` | `lea` | Caricare indirizzo effettivo |
-| `estendere_zero` | `movzx` | Spostare con estensione di zeri |
-| `estendere_segno` | `movsx` | Spostare con estensione del segno |
+**Idioma:** Italian / Italiano (`it`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
 ---
 
-## ➕ Aritmetica
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `sommare`, `aggiungere` | `add` | Sommare due operandi |
-| `sottrarre` | `sub` | Sottrarre due operandi |
-| `moltiplicare` | `mul` | Moltiplicazione senza segno |
-| `moltiplicare_segno` | `imul` | Moltiplicazione con segno |
-| `dividere` | `div` | Divisione senza segno |
-| `dividere_segno` | `idiv` | Divisione con segno |
-| `incrementare` | `inc` | Incrementare di 1 |
-| `decrementare` | `dec` | Decrementare di 1 |
-| `negare` | `neg` | Negare (complemento a 2) |
-
----
-
-## 🔢 Operazioni Logiche
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `e` | `and` | AND logico bit a bit |
-| `o` | `or` | OR logico bit a bit |
-| `non` | `not` | NOT logico (complemento a 1) |
-| `esclusivo` | `xor` | XOR logico bit a bit |
-| `spostare_sinistra` | `shl`, `sal` | Spostamento logico/aritmetico sinistra |
-| `spostare_destra` | `shr`, `sar` | Spostamento logico/aritmetico destra |
-| `ruotare_sinistra` | `rol` | Rotazione a sinistra |
-| `ruotare_destra` | `ror` | Rotazione a destra |
-
----
-
-## 🔍 Confronto e Test
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `confrontare` | `cmp` | Confrontare due operandi |
-| `testare` | `test` | AND logico senza salvare il risultato |
-
----
-
-## 🎯 Controllo del Flusso
-
-### Salti Incondizionati
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `saltare`, `salta` | `jmp` | Salto incondizionato |
-| `chiamare`, `chiama` | `call` | Chiamare una subroutine |
-| `tornare`, `torna` | `ret` | Tornare dalla subroutine |
-
-### Salti Condizionati
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `se_uguale` | `je`, `jz` | Saltare se uguale / se zero |
-| `se_diverso` | `jne`, `jnz` | Saltare se diverso / se non zero |
-| `se_maggiore` | `jg` | Saltare se maggiore (con segno) |
-| `se_maggiore_uguale` | `jge` | Saltare se maggiore o uguale |
-| `se_minore` | `jl` | Saltare se minore (con segno) |
-| `se_minore_uguale` | `jle` | Saltare se minore o uguale |
-| `se_sopra` | `ja` | Saltare se sopra (senza segno) |
-| `se_sotto` | `jb` | Saltare se sotto (senza segno) |
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `carica_byte` | `lodsb` |
+| `caricare_effettivo` | `lea` |
+| `chiamare` | `call` |
+| `chiamata_sistema` | `syscall` |
+| `ciclo` | `loop` |
+| `ciclo_se_zero` | `loopz` |
+| `confrontare` | `cmp` |
+| `conv_byte_parola` | `cbw` |
+| `conv_doppio_quad` | `cdq` |
+| `conv_parola_doppio` | `cwd` |
+| `copiare` | `mov` |
+| `decrementare` | `dec` |
+| `dividere` | `div` |
+| `estendere_segno` | `movsx` |
+| `estendere_zero` | `movzx` |
+| `ferma` | `hlt` |
+| `incrementare` | `inc` |
+| `interruzione` | `int` |
+| `mettere` | `push` |
+| `mettere_flag` | `pushf` |
+| `moltiplicare` | `mul` |
+| `muovi_byte` | `movsb` |
+| `niente` | `nop` |
+| `ripeti` | `rep` |
+| `ritornare` | `ret` |
+| `ritorno_sistema` | `sysret` |
+| `saltare` | `jmp` |
+| `salva_byte` | `stosb` |
+| `scambiare` | `xchg` |
+| `se_maggiore` | `jg` |
+| `se_minore` | `jl` |
+| `se_non_uguale` | `jne` |
+| `se_uguale` | `je` |
+| `se_zero` | `jz` |
+| `sommare` | `add` |
+| `sottrarre` | `sub` |
+| `spostare` | `mov` |
+| `testare` | `test` |
+| `togliere` | `pop` |
+| `togliere_flag` | `popf` |
 
 ---
 
-## 📚 Pila (Stack)
-
-| Italiano | ASM | Descrizione |
-|---------|-----|-------------|
-| `mettere`, `metti` | `push` | Inserire valore nello stack |
-| `togliere`, `togli` | `pop` | Estrarre valore dallo stack |
-| `mettere_bandiere` | `pushf` | Inserire registro bandiere |
-| `togliere_bandiere` | `popf` | Estrarre registro bandiere |
-
----
-
-## 📝 Esempio di Utilizzo
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Funzione che somma due numeri
-funzione_somma:
-    mettere rbp             ; push rbp
-    muovere rbp, rsp        ; mov rbp, rsp
-    
-    sommare rdi, rsi        ; add rdi, rsi
-    muovere rax, rdi        ; mov rax, rdi
-    
-    togliere rbp            ; pop rbp
-    tornare                 ; ret
+; Ejemplo en Italian / Italiano (it)
+section .text
+global _start
+
+_start:
+    spostare rax, 1
+    spostare rdi, 1
+    spostare rsi, msg
+    spostare rdx, 13
+    chiamata_sistema
+
+    spostare rax, 60
+    spostare rdi, 0
+    chiamata_sistema
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-> [!TIP]
-> Tutte le istruzioni standard in inglese (mov, add, jmp, ecc.) funzionano anche direttamente senza traduzione.
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm it programa.masm -o programa.asm
 
-**Totale:** 80+ istruzioni x86_64 supportate in Italiano.  
-**MultiLang-ASM** — Parte dell'ecosistema **Neuro-OS.es**.
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build it programa.masm
+```

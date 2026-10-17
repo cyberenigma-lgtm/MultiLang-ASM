@@ -1,45 +1,88 @@
-# MultiLang-ASM: Instruktioner (Svenska - sv)
+# MultiLang-ASM: Manual de Instrucciones [SV]
 
-Välkommen till det svenska stödet för MultiLang-ASM.
+**Idioma:** Swedish / Svenska (`sv`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 39  
 
-## 🛠 Grundläggande kommandon
+---
 
-| MultiLang-ASM | NASM (x86_64) | Beskrivning |
-| :--- | :--- | :--- |
-| `flytta` | `mov` | Flytta data |
-| `addera` | `add` | Addera |
-| `subtrahera` | `sub` | Subtrahera |
-| `jamfor` | `cmp` | Jämför värden |
-| `hoppa` | `jmp` | Hoppa till adress |
-| `anropa` | `call` | Anropa funktion |
-| `returnera` | `ret` | Returnera från funktion |
-| `avbrott` | `int` | Programvaruavbrott |
-| `systemanrop` | `syscall` | Kärnanrop |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Kodexempel
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `addera` | `add` |
+| `anropa` | `call` |
+| `avbrott` | `int` |
+| `byt` | `xchg` |
+| `dividera` | `div` |
+| `eller` | `or` |
+| `flytta` | `mov` |
+| `flytta_byte` | `movsb` |
+| `hoppa` | `jmp` |
+| `inget` | `nop` |
+| `inte` | `not` |
+| `jamfor` | `cmp` |
+| `ladda_adress` | `lea` |
+| `ladda_byte` | `lodsb` |
+| `lagg` | `push` |
+| `lagg_flaggor` | `pushf` |
+| `loop` | `loop` |
+| `loop_om_noll` | `loopz` |
+| `minska` | `dec` |
+| `multiplicera` | `mul` |
+| `negera` | `neg` |
+| `och` | `and` |
+| `oka` | `inc` |
+| `om_lika` | `je` |
+| `om_mindre` | `jl` |
+| `om_noll` | `jz` |
+| `om_olika` | `jne` |
+| `om_storre` | `jg` |
+| `repetera` | `rep` |
+| `returnera` | `ret` |
+| `spara_byte` | `stosb` |
+| `stopp` | `hlt` |
+| `subtrahera` | `sub` |
+| `systemanrop` | `syscall` |
+| `systemretur` | `sysret` |
+| `ta` | `pop` |
+| `ta_flaggor` | `popf` |
+| `testa` | `test` |
+| `xor` | `xor` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Hello World på svenska
-sektion .data
-    meddelande: db "Hej varlden!", 10
-
-sektion .text
-    global _start
+; Ejemplo en Swedish / Svenska (sv)
+section .text
+global _start
 
 _start:
-    flytta rax, 1          ; syscall: write
-    flytta rdi, 1          ; fd: stdout
-    flytta rsi, meddelande ; buffer
-    flytta rdx, 13         ; length
+    flytta rax, 1
+    flytta rdi, 1
+    flytta rsi, msg
+    flytta rdx, 13
     systemanrop
 
-    flytta rax, 60         ; syscall: exit
-    flytta rdi, 0          ; felkod
+    flytta rax, 60
+    flytta rdi, 0
     systemanrop
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Användning
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py sv program.masm
+# Transpilar a NASM estándar:
+mlasm sv programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build sv programa.masm
 ```

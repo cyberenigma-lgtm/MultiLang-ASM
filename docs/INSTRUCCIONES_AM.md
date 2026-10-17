@@ -1,45 +1,89 @@
-# MultiLang-ASM: መመሪያዎች (አማርኛ - am)
+# MultiLang-ASM: Manual de Instrucciones [AM]
 
-ወደ MultiLang-ASM የአማርኛ ድጋፍ እንኳን በደህና መጡ።
+**Idioma:** Amharic / አማርኛ (`am`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 መሰረታዊ ትዕዛዞች
+---
 
-| MultiLang-ASM | NASM (x86_64) | መግለጫ |
-| :--- | :--- | :--- |
-| `አንቀሳቅስ` | `mov` | መረጃ ማንቀሳቀስ |
-| `ጨምር` | `add` | እሴት መጨመር |
-| `ቀንስ` | `sub` | እሴት መቀነስ |
-| `አወዳድር` | `cmp` | እሴቶችን ማወዳደር |
-| `ዝለል` | `jmp` | ወደ አድራሻ መዝለል |
-| `ጥራ` | `call` | ተግባርን መጥራት |
-| `ተመለስ` | `ret` | ከተግባር መመለስ |
-| `አቋርጥ` | `int` | የሶፍትዌር ማቋረጥ |
-| `ሲስተም_ጥራ` | `syscall` | የስርዓት ጥሪ |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 የኮድ ምሳሌ
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `ሁለት_ወደ_አራት` | `cdq` |
+| `ሉፕ` | `loop` |
+| `ምልክት_አስፋ` | `movsx` |
+| `ምንም` | `nop` |
+| `ሲስተም_ተመለስ` | `sysret` |
+| `ሲስተም_ጥራ` | `syscall` |
+| `ቀንስ` | `sub` |
+| `ቀንስ_አንድ` | `dec` |
+| `ቀይር` | `xchg` |
+| `ቃል_ወደ_ሁለት` | `cwd` |
+| `ባንዲራ_አውጣ` | `popf` |
+| `ባንዲራ_ክተት` | `pushf` |
+| `ባይት_አስቀምጥ` | `stosb` |
+| `ባይት_አንቀሳቅስ` | `movsb` |
+| `ባይት_ወደ_ቃል` | `cbw` |
+| `ባይት_ጫን` | `lodsb` |
+| `ተመለስ` | `ret` |
+| `አሳድግ` | `inc` |
+| `አቁም` | `hlt` |
+| `አቋርጥ` | `int` |
+| `አባዛ` | `mul` |
+| `አንቀሳቅስ` | `mov` |
+| `አካፍል` | `div` |
+| `አወዳድር` | `cmp` |
+| `አውጣ` | `pop` |
+| `አድራሻ_ጫን` | `lea` |
+| `እኩል_ከሆነ` | `je` |
+| `እኩል_ካልሆነ` | `jne` |
+| `ካድ` | `neg` |
+| `ክተት` | `push` |
+| `ዜሮ_ሉፕ` | `loopz` |
+| `ዜሮ_አስፋ` | `movzx` |
+| `ዜሮ_ከሆነ` | `jz` |
+| `ዝለል` | `jmp` |
+| `የበለጠ_ከሆነ` | `jg` |
+| `ያነሰ_ከሆነ` | `jl` |
+| `ደጋግም` | `rep` |
+| `ጥራ` | `call` |
+| `ጨምር` | `add` |
+| `ፈትን` | `test` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; ሰላም ለዓለም በአማርኛ
-ክፍል .data
-    መልዕክት: db "Selam le Alem!", 10
-
-ክፍል .text
-    global _start
+; Ejemplo en Amharic / አማርኛ (am)
+section .text
+global _start
 
 _start:
-    አንቀሳቅስ rax, 1          ; syscall: write
-    አንቀሳቅስ rdi, 1          ; fd: stdout
-    አንቀሳቅስ rsi, መልዕክት     ; buffer
-    አንቀሳቅስ rdx, 15         ; length
+    አንቀሳቅስ rax, 1
+    አንቀሳቅስ rdi, 1
+    አንቀሳቅስ rsi, msg
+    አንቀሳቅስ rdx, 13
     ሲስተም_ጥራ
 
-    አንቀሳቅስ rax, 60         ; syscall: exit
-    አንቀሳቅስ rdi, 0          ; exit code
+    አንቀሳቅስ rax, 60
+    አንቀሳቅስ rdi, 0
     ሲስተም_ጥራ
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 አጠቃቀም
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py am ፕሮግራም.masm
+# Transpilar a NASM estándar:
+mlasm am programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build am programa.masm
 ```

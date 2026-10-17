@@ -1,45 +1,89 @@
-# MultiLang-ASM: Pituduh (Basa Sunda - su)
+# MultiLang-ASM: Manual de Instrucciones [SU]
 
-Wilujeng sumping di pangrojong basa Sunda pikeun MultiLang-ASM.
+**Idioma:** Sundanese / Basa Sunda (`su`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Parentah Dasar
+---
 
-| MultiLang-ASM | NASM (x86_64) | Katerangan |
-| :--- | :--- | :--- |
-| `pindah` | `mov` | Mindahkeun data |
-| `tambah` | `add` | Nambah nilai |
-| `kurang` | `sub` | Ngurangan nilai |
-| `banding` | `cmp` | Ngabandingkeun nilai |
-| `luncat` | `jmp` | Luncat ka alamat |
-| `ngagero` | `call` | Ngagero fungsi |
-| `balik` | `ret` | Balik ti fungsi |
-| `sela` | `int` | Sela software |
-| `gero_sistem` | `syscall` | Gero sistem |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Conto Kode
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `aluar_bandera` | `popf` |
+| `aluarkeun` | `pop` |
+| `asup_bandera` | `pushf` |
+| `asupkeun` | `push` |
+| `bagi` | `div` |
+| `balik` | `ret` |
+| `balik_sistem` | `sysret` |
+| `banding` | `cmp` |
+| `byte_ka_kecap` | `cbw` |
+| `dua_ka_opat` | `cdq` |
+| `eureun` | `hlt` |
+| `gelung` | `loop` |
+| `gelung_lamun_nol` | `loopz` |
+| `genti` | `xchg` |
+| `gero_sistem` | `syscall` |
+| `ingkar` | `neg` |
+| `kali` | `mul` |
+| `kecap_ka_dua` | `cwd` |
+| `kosong` | `nop` |
+| `kurang` | `sub` |
+| `lamun_beda` | `jne` |
+| `lamun_gede` | `jg` |
+| `lamun_leutik` | `jl` |
+| `lamun_nol` | `jz` |
+| `lamun_sarua` | `je` |
+| `lega_nol` | `movzx` |
+| `lega_tanda` | `movsx` |
+| `luncat` | `jmp` |
+| `muat_alamat` | `lea` |
+| `muat_byte` | `lodsb` |
+| `naek` | `inc` |
+| `ngagero` | `call` |
+| `pindah` | `mov` |
+| `pindah_byte` | `movsb` |
+| `sela` | `int` |
+| `simpen_byte` | `stosb` |
+| `tambah` | `add` |
+| `turun` | `dec` |
+| `uji` | `test` |
+| `ulang` | `rep` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Halo Dunya dina basa Sunda
-bagean .data
-    talatah: db "Halo Dunya!", 10
-
-bagean .text
-    global _start
+; Ejemplo en Sundanese / Basa Sunda (su)
+section .text
+global _start
 
 _start:
-    pindah rax, 1          ; syscall: write
-    pindah rdi, 1          ; fd: stdout
-    pindah rsi, talatah    ; buffer
-    pindah rdx, 12         ; length
+    pindah rax, 1
+    pindah rdi, 1
+    pindah rsi, msg
+    pindah rdx, 13
     gero_sistem
 
-    pindah rax, 60         ; syscall: exit
-    pindah rdi, 0          ; exit code
+    pindah rax, 60
+    pindah rdi, 0
     gero_sistem
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Pamakéan
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py su program.masm
+# Transpilar a NASM estándar:
+mlasm su programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build su programa.masm
 ```

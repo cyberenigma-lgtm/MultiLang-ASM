@@ -1,45 +1,89 @@
-# MultiLang-ASM: Kamachiykuna (Quechua - qu)
+# MultiLang-ASM: Manual de Instrucciones [QU]
 
-Allin hamuy MultiLang-ASM yanapayman Quechua simipi.
+**Idioma:** Quechua / Runa Simi (`qu`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Sananchakuna
+---
 
-| MultiLang-ASM | NASM (x86_64) | Imapaq |
-| :--- | :--- | :--- |
-| `astay` | `mov` | Datoskuna astay |
-| `yapay` | `add` | Yupaykunay yapay |
-| `qichuy` | `sub` | Yupaykunay qichuy |
-| `tupachiy` | `cmp` | Yupaykunay tupachiy |
-| `paway` | `jmp` | Huk kitiman paway |
-| `waqyay` | `call` | Ruwayta waqyay |
-| `kutimuy` | `ret` | Ruwaymanta kutimuy |
-| `samachiy` | `int` | Samachiy |
-| `llanu_waqyay` | `syscall` | Llanu waqyay |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Ejemplo Codi
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `astay` | `mov` |
+| `aswan_hatun` | `jg` |
+| `aswan_uchuy` | `jl` |
+| `byte_astay` | `movsb` |
+| `byte_kargay` | `lodsb` |
+| `byte_waqaychay` | `stosb` |
+| `byte_wordman` | `cbw` |
+| `chusaq_hina` | `jz` |
+| `chusaq_mastariy` | `movzx` |
+| `chusaq_muyuy` | `loopz` |
+| `dir_kargay` | `lea` |
+| `double_quadman` | `cdq` |
+| `imapas_mana` | `nop` |
+| `kaqlla_hina` | `je` |
+| `kutimuy` | `ret` |
+| `llanchiy` | `test` |
+| `llanu_kutimuy` | `sysret` |
+| `llanu_waqyay` | `syscall` |
+| `mana_kaqlla` | `jne` |
+| `mirachiy` | `mul` |
+| `muyuy` | `loop` |
+| `pampachay` | `neg` |
+| `paway` | `jmp` |
+| `pisiyachiy` | `dec` |
+| `qichuy` | `sub` |
+| `qurpuy` | `pop` |
+| `rakiniy` | `div` |
+| `samachiy` | `int` |
+| `sayachiy` | `hlt` |
+| `tikray` | `rep` |
+| `trukay` | `xchg` |
+| `tupachiy` | `cmp` |
+| `unancha_mastariy` | `movsx` |
+| `unancha_qurpuy` | `popf` |
+| `unancha_winay` | `pushf` |
+| `waqyay` | `call` |
+| `winay` | `push` |
+| `wiñachiy` | `inc` |
+| `word_doubleman` | `cwd` |
+| `yapay` | `add` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Napaykullayki Teqsimuyu Quechuapi
-t'aqa .data
-    napay: db "Napaykullayki Teqsimuyu!", 10
-
-t'aqa .text
-    global _start
+; Ejemplo en Quechua / Runa Simi (qu)
+section .text
+global _start
 
 _start:
-    astay rax, 1          ; syscall: write
-    astay rdi, 1          ; fd: stdout
-    astay rsi, napay      ; buffer
-    astay rdx, 25         ; length
+    astay rax, 1
+    astay rdi, 1
+    astay rsi, msg
+    astay rdx, 13
     llanu_waqyay
 
-    astay rax, 60         ; syscall: exit
-    astay rdi, 0          ; error yupay
+    astay rax, 60
+    astay rdi, 0
     llanu_waqyay
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Imayna Ruway
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py qu programa.masm
+# Transpilar a NASM estándar:
+mlasm qu programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build qu programa.masm
 ```

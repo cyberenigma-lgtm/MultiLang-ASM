@@ -1,118 +1,93 @@
-# 📚 Referensi Lengkap Instruksi — Bahasa Indonesia (MultiLang-ASM)
+# MultiLang-ASM: Manual de Instrucciones [ID]
 
-Panduan ini berisi semua instruksi yang didukung dalam Bahasa Indonesia untuk assembler multibahasa **MultiLang-ASM**, bagian dari ekosistem **Neuro-OS.es**.
-
-> MultiLang-ASM memungkinkan Anda menulis kode assembly dalam bahasa ibu Anda dan menghasilkan kode ASM standar yang kompatibel dengan NASM/FASM/GAS.
-
----
-
-## 📦 Perpindahan Data
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `pindah`, `salin` | `mov` | Memindahkan data antar register/memori |
-| `tukar` | `xchg` | Menukar nilai antar operand |
-| `muat_efektif` | `lea` | Memuat alamat efektif |
-| `perpanjang_nol` | `movzx` | Pindah dengan ekstensi nol |
-| `perpanjang_tanda` | `movsx` | Pindah dengan ekstensi tanda |
+**Idioma:** Indonesian / Bahasa Indonesia (`id`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 44  
 
 ---
 
-## ➕ Aritmatika
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `tambah`, `jumlah` | `add` | Menambahkan dua operand |
-| `kurang` | `sub` | Mengurangkan dua operand |
-| `kali` | `mul` | Perkalian tanpa tanda |
-| `kali_tanda` | `imul` | Perkalian dengan tanda |
-| `bagi` | `div` | Pembagian tanpa tanda |
-| `bagi_tanda` | `idiv` | Pembagian dengan tanda |
-| `tambah_satu` | `inc` | Menambah 1 |
-| `kurang_satu` | `dec` | Mengurangi 1 |
-| `negatif` | `neg` | Negasi (komplemen 2) |
-
----
-
-## 🔢 Operasi Logika
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `dan` | `and` | AND logika bit demi bit |
-| `atau` | `or` | OR logika bit demi bit |
-| `tidak` | `not` | NOT logika (komplemen 1) |
-| `eksklusif` | `xor` | XOR logika bit demi bit |
-| `geser_kiri` | `shl`, `sal` | Geser logika/aritmatika kiri |
-| `geser_kanan` | `shr`, `sar` | Geser logika/aritmatika kanan |
-| `putar_kiri` | `rol` | Rotasi ke kiri |
-| `putar_kanan` | `ror` | Rotasi ke kanan |
-
----
-
-## 🔍 Perbandingan dan Tes
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `bandingkan` | `cmp` | Membandingkan dua operand |
-| `uji` | `test` | AND logika tanpa menyimpan hasil |
-
----
-
-## 🎯 Kontrol Alur
-
-### Lompatan Tanpa Syarat
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `lompat` | `jmp` | Lompatan tanpa syarat |
-| `panggil` | `call` | Memanggil subrutin |
-| `kembali` | `ret` | Kembali dari subrutin |
-
-### Lompatan Bersyarat
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `jika_sama` | `je`, `jz` | Lompat jika sama / jika nol |
-| `jika_beda` | `jne`, `jnz` | Lompat jika beda / jika bukan nol |
-| `jika_lebih` | `jg` | Lompat jika lebih besar (bertanda) |
-| `jika_lebih_sama` | `jge` | Lompat jika lebih besar atau sama |
-| `jika_kurang` | `jl` | Lompat jika lebih kecil (bertanda) |
-| `jika_kurang_sama` | `jle` | Lompat jika lebih kecil atau sama |
-| `jika_atas` | `ja` | Lompat jika di atas (tanpa tanda) |
-| `jika_bawah` | `jb` | Lompat jika di bawah (tanpa tanda) |
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `bagi` | `div` |
+| `bagi_tanda` | `idiv` |
+| `bandingkan` | `cmp` |
+| `byte_ke_word` | `cbw` |
+| `double_ke_quad` | `cdq` |
+| `henti` | `hlt` |
+| `interupsi` | `int` |
+| `jika_beda` | `jne` |
+| `jika_lebih_besar` | `jg` |
+| `jika_lebih_kecil` | `jl` |
+| `jika_nol` | `jz` |
+| `jika_sama` | `je` |
+| `jumlah` | `add` |
+| `kali` | `mul` |
+| `kali_tanda` | `imul` |
+| `keluarkan` | `pop` |
+| `keluarkan_flag` | `popf` |
+| `kembali` | `ret` |
+| `kembali_sistem` | `sysret` |
+| `kosong` | `nop` |
+| `kurang` | `sub` |
+| `kurang_satu` | `dec` |
+| `lompat` | `jmp` |
+| `masukkan` | `push` |
+| `masukkan_flag` | `pushf` |
+| `muat_byte` | `lodsb` |
+| `muat_efektif` | `lea` |
+| `negatif` | `neg` |
+| `panggil` | `call` |
+| `panggilan_sistem` | `syscall` |
+| `perpanjang_nol` | `movzx` |
+| `perpanjang_tanda` | `movsx` |
+| `pindah` | `mov` |
+| `pindah_byte` | `movsb` |
+| `putaran` | `loop` |
+| `putaran_jika_nol` | `loopz` |
+| `salin` | `mov` |
+| `simpan_byte` | `stosb` |
+| `tambah` | `add` |
+| `tambah_satu` | `inc` |
+| `tukar` | `xchg` |
+| `uji` | `test` |
+| `ulang` | `rep` |
+| `word_ke_double` | `cwd` |
 
 ---
 
-## 📚 Tumpukan (Stack)
-
-| Bahasa Indonesia | ASM | Deskripsi |
-|---------|-----|-----------|
-| `masukkan` | `push` | Masukkan nilai ke stack |
-| `keluarkan` | `pop` | Keluarkan nilai dari stack |
-| `masukkan_bendera` | `pushf` | Masukkan register bendera |
-| `keluarkan_bendera` | `popf` | Keluarkan register bendera |
-
----
-
-## 📝 Contoh Penggunaan
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Fungsi yang menjumlahkan dua angka
-fungsi_jumlah:
-    masukkan rbp            ; push rbp
-    pindah rbp, rsp         ; mov rbp, rsp
-    
-    tambah rdi, rsi         ; add rdi, rsi
-    pindah rax, rdi         ; mov rax, rdi
-    
-    keluarkan rbp           ; pop rbp
-    kembali                 ; ret
+; Ejemplo en Indonesian / Bahasa Indonesia (id)
+section .text
+global _start
+
+_start:
+    pindah rax, 1
+    pindah rdi, 1
+    pindah rsi, msg
+    pindah rdx, 13
+    panggilan_sistem
+
+    pindah rax, 60
+    pindah rdi, 0
+    panggilan_sistem
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-> [!TIP]
-> Semua instruksi standar dalam bahasa Inggris (mov, add, jmp, dll.) juga berfungsi langsung tanpa terjemahan.
+## 🛠️ Compilación con Motor Nativo C99
 
----
+```bash
+# Transpilar a NASM estándar:
+mlasm id programa.masm -o programa.asm
 
-**Total:** 80+ instruksi x86_64 didukung dalam Bahasa Indonesia.  
-**MultiLang-ASM** — Bagian dari ekosistem **Neuro-OS.es**.
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build id programa.masm
+```

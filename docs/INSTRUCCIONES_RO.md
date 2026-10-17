@@ -1,45 +1,89 @@
-# MultiLang-ASM: Instrucțiuni (Română - ro)
+# MultiLang-ASM: Manual de Instrucciones [RO]
 
-Bun venit la suportul pentru limba română în MultiLang-ASM.
+**Idioma:** Romanian / Română (`ro`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 40  
 
-## 🛠 Comenzi de Bază
+---
 
-| MultiLang-ASM | NASM (x86_64) | Descriere |
-| :--- | :--- | :--- |
-| `muta` | `mov` | Mută date |
-| `aduna` | `add` | Adună valoare |
-| `scade` | `sub` | Scade valoare |
-| `compara` | `cmp` | Compară valori |
-| `sari` | `jmp` | Sari la adresă |
-| `apeleaza` | `call` | Apelează funcție |
-| `returneaza` | `ret` | Revenire din funcție |
-| `intrerupere` | `int` | Întrerupere software |
-| `apel_sistem` | `syscall` | Apel de sistem |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 Exemplu de Cod
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `aduna` | `add` |
+| `apel_sistem` | `syscall` |
+| `apeleaza` | `call` |
+| `bucla` | `loop` |
+| `bucla_daca_zero` | `loopz` |
+| `byte_la_word` | `cbw` |
+| `compara` | `cmp` |
+| `daca_egal` | `je` |
+| `daca_mai_mare` | `jg` |
+| `daca_mai_mic` | `jl` |
+| `daca_nu_egal` | `jne` |
+| `daca_zero` | `jz` |
+| `decrementeaza` | `dec` |
+| `double_la_quad` | `cdq` |
+| `extinde_semn` | `movsx` |
+| `extinde_zero` | `movzx` |
+| `imparte` | `div` |
+| `incarca_byte` | `lodsb` |
+| `incarca_efectiv` | `lea` |
+| `incrementeaza` | `inc` |
+| `inmulteste` | `mul` |
+| `intrerupere` | `int` |
+| `muta` | `mov` |
+| `muta_byte` | `movsb` |
+| `neaga` | `neg` |
+| `nimic` | `nop` |
+| `opreste` | `hlt` |
+| `pune` | `push` |
+| `pune_steguri` | `pushf` |
+| `repeta` | `rep` |
+| `retur_sistem` | `sysret` |
+| `returneaza` | `ret` |
+| `sari` | `jmp` |
+| `scade` | `sub` |
+| `schimba` | `xchg` |
+| `scoate` | `pop` |
+| `scoate_steguri` | `popf` |
+| `stocheaza_byte` | `stosb` |
+| `testeaza` | `test` |
+| `word_la_double` | `cwd` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Salut lume în română
-secțiune .data
-    mesaj: db "Salut lume!", 10
-
-secțiune .text
-    global _start
+; Ejemplo en Romanian / Română (ro)
+section .text
+global _start
 
 _start:
-    muta rax, 1          ; syscall: write
-    muta rdi, 1          ; fd: stdout
-    muta rsi, mesaj      ; buffer
-    muta rdx, 12         ; length
+    muta rax, 1
+    muta rdi, 1
+    muta rsi, msg
+    muta rdx, 13
     apel_sistem
 
-    muta rax, 60         ; syscall: exit
-    muta rdi, 0          ; cod eroare
+    muta rax, 60
+    muta rdi, 0
     apel_sistem
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 Utilizare
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py ro program.masm
+# Transpilar a NASM estándar:
+mlasm ro programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build ro programa.masm
 ```

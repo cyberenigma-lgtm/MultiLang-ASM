@@ -1,45 +1,82 @@
-# MultiLang-ASM: הוראות (עברית - he)
+# MultiLang-ASM: Manual de Instrucciones [HE]
 
-ברוכים הבאים לתמיכה בעברית עבור MultiLang-ASM.
+**Idioma:** Hebrew / עברית (`he`)  
+**Versión:** 1.0.0 (Estándar Nativo ANSI C99 / UPL+)  
+**Mnemónicos soportados:** 33  
 
-## 🛠 פקודות בסיסיות
+---
 
-| MultiLang-ASM | NASM (x86_64) | תיאור |
-| :--- | :--- | :--- |
-| `הזז` | `mov` | העברת נתונים |
-| `חבר` | `add` | חיבור |
-| `חסר` | `sub` | חיסור |
-| `השווה` | `cmp` | השוואת ערכים |
-| `קפוץ` | `jmp` | קפיצה לכתובת |
-| `קרא` | `call` | קריאה לפונקציה |
-| `חזור` | `ret` | חזרה מפונקציה |
-| `פסיקה` | `int` | פסיקת תוכנה |
-| `קריאת_מערכת` | `syscall` | קריאת מערכת |
+## 📋 Tabla de Correspondencia (Nativo ↔ NASM)
 
-## 📝 דוגמת קוד
+| Palabra Clave Nativa | Mnemónico NASM Estándar |
+| :--- | :--- |
+| `אם_אפס` | `jz` |
+| `אם_גדול` | `jg` |
+| `אם_לא_שווה` | `jne` |
+| `אם_קטן` | `jl` |
+| `אם_שווה` | `je` |
+| `בדוק` | `test` |
+| `בייט_לוורד` | `cbw` |
+| `דחוף` | `push` |
+| `דחוף_דגלים` | `pushf` |
+| `הזז` | `mov` |
+| `הזז_בייט` | `movsb` |
+| `החלף` | `xchg` |
+| `השווה` | `cmp` |
+| `וורד_לדאבל` | `cwd` |
+| `חבר` | `add` |
+| `חזור` | `ret` |
+| `חזור_על` | `rep` |
+| `חזרת_מערכת` | `sysret` |
+| `חסר` | `sub` |
+| `טען_בייט` | `lodsb` |
+| `טען_כתובת` | `lea` |
+| `כלום` | `nop` |
+| `כפול` | `mul` |
+| `לולאה` | `loop` |
+| `לולאה_אם_אפס` | `loopz` |
+| `משוך` | `pop` |
+| `משוך_דגלים` | `popf` |
+| `עצור` | `hlt` |
+| `פסיקה` | `int` |
+| `קפוץ` | `jmp` |
+| `קרא` | `call` |
+| `קריאת_מערכת` | `syscall` |
+| `שמור_בייט` | `stosb` |
+
+---
+
+## 💻 Ejemplo de Uso Rápido
 
 ```asm
-; Hello World בעברית
-מקטע .מידע
-    הודעה: db "שלום עולם!", 10
+; Ejemplo en Hebrew / עברית (he)
+section .text
+global _start
 
-מקטע .טקסט
-    גלובלי _התחלה
-
-_התחלה:
-    הזז rax, 1          ; syscall: write
-    הזז rdi, 1          ; fd: stdout
-    הזז rsi, הודעה      ; buffer
-    הזז rdx, 12         ; length
+_start:
+    הזז rax, 1
+    הזז rdi, 1
+    הזז rsi, msg
+    הזז rdx, 13
     קריאת_מערכת
 
-    הזז rax, 60         ; syscall: exit
-    הזז rdi, 0          ; error code
+    הזז rax, 60
+    הזז rdi, 0
     קריאת_מערכת
+
+section .data
+    msg db "Hello World!", 0xA
 ```
 
-## 🚀 שימוש
+## 🛠️ Compilación con Motor Nativo C99
 
 ```bash
-python mlasm.py he program.masm
+# Transpilar a NASM estándar:
+mlasm he programa.masm -o programa.asm
+
+# Auto-detección del idioma:
+mlasm auto programa.masm -o programa.asm
+
+# Compilar directo a binario ejecutable (.exe):
+mlasm --build he programa.masm
 ```
