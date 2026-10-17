@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Romansh / Rumantsch",
+    "code": "rm",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Romansh / Rumantsch."
+  },
+  "keywords": {
+    "mover": "mov",
+    "agiuntar": "add",
+    "sulevar": "sub",
+    "multiplitgar": "mul",
+    "divider": "div",
+    "siglir": "jmp",
+    "clamar": "call",
+    "turnar": "ret",
+    "cumparegliar": "cmp",
+    "provar": "test",
+    "e": "and",
+    "u": "or",
+    "exclusiv": "xor",
+    "betg": "not",
+    "metter": "push",
+    "trair": "pop",
+    "interrupziun": "int",
+    "clamada_sistem": "syscall",
+    "rudien": "loop",
+    "chalar": "hlt",
+    "nagut": "nop"
+  },
+  "kids_keywords": {
+    "rm": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

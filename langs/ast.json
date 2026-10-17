@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Asturian / Asturianu",
+    "code": "ast",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Asturian / Asturianu."
+  },
+  "keywords": {
+    "mover": "mov",
+    "amestar": "add",
+    "restar": "sub",
+    "multiplicar": "mul",
+    "dixebrar": "div",
+    "blincar": "jmp",
+    "llamar": "call",
+    "tornar": "ret",
+    "comparar": "cmp",
+    "prebar": "test",
+    "y": "and",
+    "o": "or",
+    "esclusivu": "xor",
+    "non": "not",
+    "meter": "push",
+    "sacar": "pop",
+    "interrupcion": "int",
+    "llamada_sistema": "syscall",
+    "ciclu": "loop",
+    "parar": "hlt",
+    "nada": "nop"
+  },
+  "kids_keywords": {
+    "ast": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

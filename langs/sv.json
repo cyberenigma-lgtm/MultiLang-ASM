@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "name": "Swedish / Svenska",
+    "code": "sv",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Swedish."
+  },
+  "keywords": {
+    "flytta": "mov",
+    "byt": "xchg",
+    "ladda_adress": "lea",
+    "addera": "add",
+    "subtrahera": "sub",
+    "multiplicera": "mul",
+    "dividera": "div",
+    "oka": "inc",
+    "minska": "dec",
+    "negera": "neg",
+    "och": "and",
+    "eller": "or",
+    "inte": "not",
+    "xor": "xor",
+    "jamfor": "cmp",
+    "testa": "test",
+    "hoppa": "jmp",
+    "anropa": "call",
+    "returnera": "ret",
+    "om_lika": "je",
+    "om_noll": "jz",
+    "om_olika": "jne",
+    "om_storre": "jg",
+    "om_mindre": "jl",
+    "lagg": "push",
+    "ta": "pop",
+    "lagg_flaggor": "pushf",
+    "ta_flaggor": "popf",
+    "flytta_byte": "movsb",
+    "spara_byte": "stosb",
+    "ladda_byte": "lodsb",
+    "repetera": "rep",
+    "loop": "loop",
+    "loop_om_noll": "loopz",
+    "avbrott": "int",
+    "systemanrop": "syscall",
+    "systemretur": "sysret",
+    "stopp": "hlt",
+    "inget": "nop"
+  },
+  "kids_keywords": {
+    "sv": {
+      "and": "mov",
+      "plus": "add",
+      "minus": "sub",
+      "visa": "syscall"
+    }
+  }
+}

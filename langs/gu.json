@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Gujarati / ગુજરાતી",
+    "code": "gu",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Gujarati / ગુજરાતી."
+  },
+  "keywords": {
+    "ખસેડો": "mov",
+    "ઉમેરો": "add",
+    "બાદ_કરો": "sub",
+    "ગુણાકાર": "mul",
+    "ભાગાકાર": "div",
+    "કૂદો": "jmp",
+    "બોલાવો": "call",
+    "પાછા": "ret",
+    "સરખામણી": "cmp",
+    "પરીક્ષણ": "test",
+    "અને": "and",
+    "અથવા": "or",
+    "વિશિષ્ટ": "xor",
+    "નથી": "not",
+    "મૂકો": "push",
+    "કાઢો": "pop",
+    "અવરોધ": "int",
+    "સિસ્ટમ_કૉલ": "syscall",
+    "લૂપ": "loop",
+    "અટકો": "hlt",
+    "કંઈ_નહીં": "nop"
+  },
+  "kids_keywords": {
+    "gu": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

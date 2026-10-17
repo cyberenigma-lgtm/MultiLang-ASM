@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Breton / Brezhoneg",
+    "code": "br",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Breton / Brezhoneg."
+  },
+  "keywords": {
+    "fiñval": "mov",
+    "ouzhpennañ": "add",
+    "tennañ": "sub",
+    "lieskemmañ": "mul",
+    "rannañ": "div",
+    "lammat": "jmp",
+    "gervel": "call",
+    "distreiñ": "ret",
+    "keñveriañ": "cmp",
+    "amprouiñ": "test",
+    "ha": "and",
+    "pe": "or",
+    "nemet": "xor",
+    "ket": "not",
+    "bountañ": "push",
+    "tennañ_maez": "pop",
+    "troc'h": "int",
+    "galv_reizhiad": "syscall",
+    "rodell": "loop",
+    "herzel": "hlt",
+    "netra": "nop"
+  },
+  "kids_keywords": {
+    "br": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Yoruba",
+    "code": "yo",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Atilẹyin kikun fun assembler ni ede Yoruba."
+  },
+  "keywords": {
+    "gbe": "mov",
+    "paarọ": "xchg",
+    "kojọpọ_adirẹsi": "lea",
+    "faagun_odo": "movzx",
+    "faagun_ami": "movsx",
+    "fikun": "add",
+    "yọkuro": "sub",
+    "pọsi": "mul",
+    "pin": "div",
+    "fikun_ẹyọ": "inc",
+    "yọkuro_ẹyọ": "dec",
+    "sẹ": "neg",
+    "fiwe": "cmp",
+    "danwo": "test",
+    "mẹfọ": "jmp",
+    "pè": "call",
+    "padà": "ret",
+    "bi_o_ba_dogba": "je",
+    "bi_o_ba_odo": "jz",
+    "bi_o_ba_yatọ": "jne",
+    "bi_o_ba_tobi": "jg",
+    "bi_o_ba_kere": "jl",
+    "tì": "push",
+    "yọ": "pop",
+    "tì_asia": "pushf",
+    "yọ_asia": "popf",
+    "gbe_byte": "movsb",
+    "fipamọ_byte": "stosb",
+    "kojọpọ_byte": "lodsb",
+    "tunṣe": "rep",
+    "yipo": "loop",
+    "yipo_bi_o_ba_odo": "loopz",
+    "da_duro": "int",
+    "pe_eto": "syscall",
+    "padà_eto": "sysret",
+    "duro": "hlt",
+    "asán": "nop",
+    "byte_si_ọrọ": "cbw",
+    "ọrọ_si_meji": "cwd",
+    "meji_si_mẹrin": "cdq"
+  },
+  "kids_keywords": {
+    "yo": {
+      "fi_le": "mov",
+      "fikun": "add",
+      "yọkuro": "sub",
+      "fihan": "syscall"
+    }
+  }
+}

@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (Edizione UPL+ C99)
 
-> *"Il primo assemblatore x86_64 multilingue."*
+**Il primo motore assemblatore multilingue sovrano al mondo per x86_64.**  
+Parte fondamentale dell'ecosistema **UPL (Universal Polyglot Layer)** e del kernel Neuro-OS.
 
-**Scrivi assembler nella tua lingua madre.**
+Scrivi codice assembly nella tua lingua madre · 150 Lingue del Mondo · 200+ Istruzioni x86_64 · Motore Nativo 100% ANSI C99 · Zero Dipendenze Python · Esecuzione Istantanea (<2 ms) · Compatibile con NASM.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **Italiano** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 Che cos'è?
-
-MultiLang-ASM ti permette di scrivere assembly x86_64 usando parole chiave in **Italiano**.
-Traduce automaticamente il tuo codice in assembly NASM standard.
-
-## ✨ Caratteristiche
-
-- 🌍 **Scrivi in Italiano** (it)
-- 🤖 **Rilevamento Auto:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `Italiano <-> ASM`
-
-## 📖 Esempio in Italiano
-
-### Source Code (`hello.masm`)
-```asm
-spostare rax, 1
-spostare rdi, 1
-spostare rsi, msg
-spostare rdx, 13
-chiamata_sistema
-
-spostare rax, 60
-spostare rdi, 0
-chiamata_sistema
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ Utilizzo
-
+## Uso Rapido
 ```bash
-python mlasm.py auto hello.masm
-```
+# Compilazione del motore nativo:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# Transpilazione:
+mlasm it esempio.masm -o esempio.asm
+
+# Rilevamento automatico della lingua:
+mlasm auto esempio.masm -o esempio.asm
+```

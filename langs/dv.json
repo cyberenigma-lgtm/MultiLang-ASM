@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Dhivehi / ދިވެހި",
+    "code": "dv",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Dhivehi / ދިވެހި."
+  },
+  "keywords": {
+    "ބަދަލުކުރޭ": "mov",
+    "އެއްކުރޭ": "add",
+    "ކަނޑާ": "sub",
+    "ގުނަކުރޭ": "mul",
+    "ބަހާ": "div",
+    "ފުންމާ": "jmp",
+    "ގޮވާ": "call",
+    "އަނބުރާ": "ret",
+    "އަޅާކިޔާ": "cmp",
+    "ޓެސްޓު": "test",
+    "އަދި": "and",
+    "ނުވަތަ": "or",
+    "ވަކި": "xor",
+    "ނޫން": "not",
+    "ލާ": "push",
+    "ނަގާ": "pop",
+    "ހުއްޓުން": "int",
+    "ސިސްޓަމް_ކޯލް": "syscall",
+    "ބުރު": "loop",
+    "ހުއްޓާ": "hlt",
+    "އެއްވެސް_އެއްޗެއް_ނޫން": "nop"
+  },
+  "kids_keywords": {
+    "dv": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Pashto / پښتو",
+    "code": "ps",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Pashto / پښتو."
+  },
+  "keywords": {
+    "لږدول": "mov",
+    "جمع_کول": "add",
+    "منفي_کول": "sub",
+    "ضرب_کول": "mul",
+    "وېشل": "div",
+    "ټوپ_وهل": "jmp",
+    "بلل": "call",
+    "بیرته_راتلل": "ret",
+    "پر پرتله_کول": "cmp",
+    "ازمویل": "test",
+    "او": "and",
+    "یا": "or",
+    "ځانګړی": "xor",
+    "نه": "not",
+    "دننه_کول": "push",
+    "بهر_کول": "pop",
+    "خنډ": "int",
+    "سیسټم_غوښتنه": "syscall",
+    "څرخ": "loop",
+    "درېدل": "hlt",
+    "هیڅ_نه": "nop"
+  },
+  "kids_keywords": {
+    "ps": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Danish / Dansk",
+    "code": "da",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Danish / Dansk."
+  },
+  "keywords": {
+    "flyt": "mov",
+    "tilfoj": "add",
+    "traek_fra": "sub",
+    "gang": "mul",
+    "divider": "div",
+    "hop": "jmp",
+    "kald": "call",
+    "returner": "ret",
+    "sammenlign": "cmp",
+    "test": "test",
+    "og": "and",
+    "eller": "or",
+    "eksklusiv": "xor",
+    "ikke": "not",
+    "skub": "push",
+    "traek": "pop",
+    "afbrydelse": "int",
+    "systemkald": "syscall",
+    "lokke": "loop",
+    "stop": "hlt",
+    "intet": "nop"
+  },
+  "kids_keywords": {
+    "da": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kikuyu / Gĩkũyũ",
+    "code": "ki",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kikuyu / Gĩkũyũ."
+  },
+  "keywords": {
+    "thaama": "mov",
+    "ongerera": "add",
+    "eheria": "sub",
+    "ingĩhia": "mul",
+    "gaya": "div",
+    "rũga": "jmp",
+    "ĩta": "call",
+    "coka": "ret",
+    "ringithania": "cmp",
+    "thima": "test",
+    "na": "and",
+    "kana": "or",
+    "mwanya": "xor",
+    "aaca": "not",
+    "ikĩa": "push",
+    "rũta": "pop",
+    "kũhingĩcĩrĩrio": "int",
+    "gwĩta_kĩbũrũri": "syscall",
+    "mũthiũrũrũko": "loop",
+    "rũgama": "hlt",
+    "gũtirĩ_kĩndũ": "nop"
+  },
+  "kids_keywords": {
+    "ki": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Cherokee / ᏣᎳᎩ",
+    "code": "chr",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Cherokee / ᏣᎳᎩ."
+  },
+  "keywords": {
+    "ᎦᏅᏍᏙᏗ": "mov",
+    "ᎠᏛᎯᏍᏙᏗ": "add",
+    "ᎠᏓᏅᏖᏗ": "sub",
+    "ᎠᏠᏯᏍᏗ": "mul",
+    "ᎠᏯᏙᎯᏍᏗ": "div",
+    "ᎠᎵᏖᎸᏗ": "jmp",
+    "ᎠᏯᏂᏍᏗ": "call",
+    "ᎤᏨᏒ": "ret",
+    "ᎠᏟᎶᏍᏗ": "cmp",
+    "ᎠᏎᎵᏙᏗ": "test",
+    "ᎠᎴ": "and",
+    "ᏱᎩ": "or",
+    "ᎤᏓᏅᏒ": "xor",
+    "ᎥᏝ": "not",
+    "ᎦᎶᎯᏍᏗ": "push",
+    "ᎦᏂᎩᏛ": "pop",
+    "ᎠᏲᏍᏙᏗ": "int",
+    "ᎠᏂᏏᏍᏗ_ᎤᎵᏍᎨᏛ": "syscall",
+    "ᎦᏛᏗ": "loop",
+    "ᎤᎴᏅᏛ": "hlt",
+    "Ꮭ_ᎪᎱᏍᏗ": "nop"
+  },
+  "kids_keywords": {
+    "chr": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

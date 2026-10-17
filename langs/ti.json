@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tigrinya / ትግርኛ",
+    "code": "ti",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tigrinya / ትግርኛ."
+  },
+  "keywords": {
+    "ኣንቀሳቕስ": "mov",
+    "ወስኽ": "add",
+    "ኣጉድል": "sub",
+    "ኣራብሕ": "mul",
+    "መቅል": "div",
+    "ዝለል": "jmp",
+    "ጸውዕ": "call",
+    "ተመለስ": "ret",
+    "ኣረኣኢ": "cmp",
+    "መርምር": "test",
+    "ከምኡ_ውን": "and",
+    "ወይ": "or",
+    "ፍሉይ": "xor",
+    "ኣይኮነን": "not",
+    "ኣእቱ": "push",
+    "ኣውጽእ": "pop",
+    "ምቁራጽ": "int",
+    "ጻውዒት_ስርዓት": "syscall",
+    "ዑደት": "loop",
+    "ደው_በል": "hlt",
+    "ዋላ_ሓንቲ": "nop"
+  },
+  "kids_keywords": {
+    "ti": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

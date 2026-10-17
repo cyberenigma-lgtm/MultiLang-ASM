@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Belgian French / Français (Belgique)",
+    "code": "fr_be",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Variante belge du français pour l'assembleur."
+  },
+  "keywords": {
+    "deplacer": "mov",
+    "copier": "mov",
+    "septante": "mov",
+    "charger_adresse": "lea",
+    "ajouter": "add",
+    "soustraire": "sub",
+    "multiplier": "mul",
+    "diviser": "div",
+    "plus_un": "inc",
+    "moins_un": "dec",
+    "et": "and",
+    "ou": "or",
+    "non": "not",
+    "comparer": "cmp",
+    "tester": "test",
+    "sauter": "jmp",
+    "appeler": "call",
+    "revenir": "ret",
+    "si_egal": "je",
+    "si_zero": "jz",
+    "si_pas_egal": "jne",
+    "si_plus_grand": "jg",
+    "si_plus_petit": "jl",
+    "pousser": "push",
+    "tirer": "pop",
+    "pousser_flags": "pushf",
+    "tirer_flags": "popf",
+    "bouger_octet": "movsb",
+    "stocker_octet": "stosb",
+    "charger_octet": "lodsb",
+    "encore": "rep",
+    "tourner": "loop",
+    "si_zero_tourner": "loopz",
+    "interrompre": "int",
+    "appel_systeme": "syscall",
+    "retour_systeme": "sysret",
+    "stop": "hlt",
+    "rien": "nop",
+    "octet_en_mot": "cbw",
+    "mot_en_double": "cwd"
+  },
+  "kids_keywords": {
+    "fr_be": {
+      "mets": "mov",
+      "ajoute": "add",
+      "enleve": "sub",
+      "montre": "syscall"
+    }
+  }
+}

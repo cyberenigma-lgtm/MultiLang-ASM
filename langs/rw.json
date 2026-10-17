@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kinyarwanda",
+    "code": "rw",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kinyarwanda."
+  },
+  "keywords": {
+    "imura": "mov",
+    "ongera": "add",
+    "kura": "sub",
+    "gwandika": "mul",
+    "gabanya": "div",
+    "simbuka": "jmp",
+    "hamagara": "call",
+    "garuka": "ret",
+    "gereranya": "cmp",
+    "gerageza": "test",
+    "na": "and",
+    "cyangwa": "or",
+    "umwihariko": "xor",
+    "oya": "not",
+    "shyiramo": "push",
+    "kuramo": "pop",
+    "guhagarika": "int",
+    "guhamagara_sisitemu": "syscall",
+    "uruziga": "loop",
+    "hagarara": "hlt",
+    "ntakintu": "nop"
+  },
+  "kids_keywords": {
+    "rw": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

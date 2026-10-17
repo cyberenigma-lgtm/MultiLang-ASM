@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Quechua / Runa Simi",
+    "code": "qu",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Tukuy yanapay assemblerpapaq Quechua simipi."
+  },
+  "keywords": {
+    "astay": "mov",
+    "trukay": "xchg",
+    "dir_kargay": "lea",
+    "chusaq_mastariy": "movzx",
+    "unancha_mastariy": "movsx",
+    "yapay": "add",
+    "qichuy": "sub",
+    "mirachiy": "mul",
+    "rakiniy": "div",
+    "wiñachiy": "inc",
+    "pisiyachiy": "dec",
+    "pampachay": "neg",
+    "tupachiy": "cmp",
+    "llanchiy": "test",
+    "paway": "jmp",
+    "waqyay": "call",
+    "kutimuy": "ret",
+    "kaqlla_hina": "je",
+    "chusaq_hina": "jz",
+    "mana_kaqlla": "jne",
+    "aswan_hatun": "jg",
+    "aswan_uchuy": "jl",
+    "winay": "push",
+    "qurpuy": "pop",
+    "unancha_winay": "pushf",
+    "unancha_qurpuy": "popf",
+    "byte_astay": "movsb",
+    "byte_waqaychay": "stosb",
+    "byte_kargay": "lodsb",
+    "tikray": "rep",
+    "muyuy": "loop",
+    "chusaq_muyuy": "loopz",
+    "samachiy": "int",
+    "llanu_waqyay": "syscall",
+    "llanu_kutimuy": "sysret",
+    "sayachiy": "hlt",
+    "imapas_mana": "nop",
+    "byte_wordman": "cbw",
+    "word_doubleman": "cwd",
+    "double_quadman": "cdq"
+  },
+  "kids_keywords": {
+    "qu": {
+      "churay": "mov",
+      "yapay": "add",
+      "qichuy": "sub",
+      "rikuchiy": "syscall"
+    }
+  }
+}

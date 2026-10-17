@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tetum / Lia-Tetun",
+    "code": "tet",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tetum / Lia-Tetun."
+  },
+  "keywords": {
+    "muda": "mov",
+    "aumenta": "add",
+    "hasai": "sub",
+    "multiplika": "mul",
+    "fahe": "div",
+    "haksoit": "jmp",
+    "bolu": "call",
+    "fila": "ret",
+    "kompara": "cmp",
+    "koko": "test",
+    "ho": "and",
+    "ka": "or",
+    "eskluzivu": "xor",
+    "lae": "not",
+    "dudu": "push",
+    "puxa": "pop",
+    "interrupsaun": "int",
+    "bolu_sistema": "syscall",
+    "siklu": "loop",
+    "para": "hlt",
+    "la_iha": "nop"
+  },
+  "kids_keywords": {
+    "tet": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

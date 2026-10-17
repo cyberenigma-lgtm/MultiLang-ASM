@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Nahuatl / Mexicano",
+    "code": "nah",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Nahuatlahtolli tlapalhuiliztli assembler-techcopa."
+  },
+  "keywords": {
+    "huica": "mov",
+    "patla": "xchg",
+    "tlatzacuia_maca": "lea",
+    "ay_tic_tlapalo": "movzx",
+    "unancha_tlapalo": "movsx",
+    "tlapohua": "add",
+    "tlatzacuia": "sub",
+    "miquilia": "mul",
+    "xelua": "div",
+    "chicahua": "inc",
+    "ahcic": "dec",
+    "amo": "neg",
+    "tlanonotza": "cmp",
+    "yehuatl": "test",
+    "choloa": "jmp",
+    "notza": "call",
+    "cuepa": "ret",
+    "neneuhqui": "je",
+    "ayac_neneuh": "jz",
+    "amo_neneuh": "jne",
+    "hueyi": "jg",
+    "tepitzin": "jl",
+    "tlatzacuilli_huica": "push",
+    "quixtia": "pop",
+    "flag_huica": "pushf",
+    "flag_quixtia": "popf",
+    "byte_huica": "movsb",
+    "tlatzacuia_byte": "stosb",
+    "kargay_byte": "lodsb",
+    "yancuic": "rep",
+    "malacatl": "loop",
+    "ayac_malacatl": "loopz",
+    "tzacuia": "int",
+    "tequitl_notza": "syscall",
+    "tequitl_cuepa": "sysret",
+    "uactia": "hlt",
+    "amo_itla": "nop",
+    "byte_wordtech": "cbw",
+    "word_doubletech": "cwd",
+    "double_quadtech": "cdq"
+  },
+  "kids_keywords": {
+    "nah": {
+      "tlalia": "mov",
+      "tlapohua": "add",
+      "tlatzacuia": "sub",
+      "itla_nextia": "syscall"
+    }
+  }
+}

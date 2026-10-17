@@ -1,31 +1,32 @@
-# 🏗️ Arquitectura Modular (Babel v0.6)
+# Arquitectura Nativa ANSI C99 & Integración UPL+
 
-MultiLang-ASM v0.6 marca la transición de un motor monolítico a un sistema de **micro-paquetes de idiomas**.
+MultiLang-ASM v1.0.0 abandona la sobrecarga de intérpretes para convertirse en un componente de infraestructura de bajo nivel.
 
-## ¿Cómo funciona el motor?
+---
 
-El archivo `mlasm.py` actúa como un orquestador. Al iniciarse, ejecuta la función `load_language_packs()`:
+## 🏛️ Diseño del Motor C99
 
-1. **Escaneo**: Busca todos los archivos `.py` dentro de la carpeta `langs/`.
-2. **Carga Dinámica**: Utiliza `importlib.util` para importar cada archivo como un módulo independiente.
-3. **Inyección de Diccionarios**: 
-   - Extrae `KEYWORDS` y los fusiona en la tabla global.
-   - Extrae `KIDS_KEYWORDS` para el soporte educativo.
-   - Extrae `METADATA` para el sistema de información del CLI.
-
-## Diagrama de Flujo
-```mermaid
-graph TD
-    A[mlasm.py Start] --> B[Scans langs/ Folder]
-    B --> C{Found .py?}
-    C -->|Yes| D[Load Module via ImportLib]
-    D --> E[Populate Global TABLE]
-    E --> F[Populate Global METADATA]
-    C -->|No| G[Error/Default]
-    F --> H[CLI Ready]
+```
+[ Código Fuente .masm ]
+          │
+          ▼
+┌──────────────────────────────────────────────┐
+│  Motor Nativo MultiLang-ASM (mlasm_core.c)   │
+│  - Preprocesador de Macros (%define)         │
+│  - Detector Automático de Idioma             │
+│  - Tablas Monolíticas Constantes (C99)       │
+│  - Diccionario de 150 Idiomas (masm_tables.h)│
+└──────────────────────────────────────────────┘
+          │
+          ▼
+[ Código Ensamblador Estándar (.asm) ]
+          │
+          ▼
+[ NASM / FASM / GAS ] ──► [ Objeto .o ] ──► [ Enlazador GCC / LD ] ──► [ Ejecutable .exe / Kernel .bin ]
 ```
 
-## Ventajas del sistema v0.6
-- **Ligereza**: El motor central no pesa casi nada.
-- **Portabilidad**: Puedes compartir solo tu archivo `.py` de idioma.
-- **Seguridad**: Los errores en un paquete de idioma no rompen necesariamente la ejecución de los otros.
+### Características Técnicas
+1. **Zero Heap Allocation durante la traducción**: La mayoría de las líneas se procesan en buffers estáticos de pila, eliminando problemas de fragmentación de memoria.
+2. **Tablas Constantes en Memoria de Solo Lectura (.rodata)**: Las tablas de 150 idiomas están compiladas directamente en el segmento de código, lo que permite que el sistema operativo comparta páginas de memoria entre múltiples procesos.
+3. **Latencia < 2 ms**: La transpilación de programas de ensamblador completos toma menos de 2 milisegundos.
+4. **Independiente de Runtime**: No requiere libc compleja, ni Python, ni Node, ni Rust. Se ejecuta directamente en cualquier entorno POSIX o Win32.

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Southern Ndebele / isiNdebele",
+    "code": "nr",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Southern Ndebele / isiNdebele."
+  },
+  "keywords": {
+    "tjhugulula": "mov",
+    "ngezelela": "add",
+    "susa": "sub",
+    "phindaphinda": "mul",
+    "hlukanisa": "div",
+    "stjhidla": "jmp",
+    "biza": "call",
+    "buyela": "ret",
+    "mannisa": "cmp",
+    "linga": "test",
+    "begodu": "and",
+    "namkha": "or",
+    "khethekileko": "xor",
+    "awa": "not",
+    "faka": "push",
+    "khipha": "pop",
+    "sitjhobo": "int",
+    "ukubiza_isistimu": "syscall",
+    "isondo": "loop",
+    "jama": "hlt",
+    "ayikho_into": "nop"
+  },
+  "kids_keywords": {
+    "nr": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

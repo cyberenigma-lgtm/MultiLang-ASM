@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Luo / Dholuo",
+    "code": "luo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Luo / Dholuo."
+  },
+  "keywords": {
+    "gol": "mov",
+    "med": "add",
+    "gol_kuom": "sub",
+    "nyuol": "mul",
+    "pok": "div",
+    "chik": "jmp",
+    "luong": "call",
+    "dog": "ret",
+    "pim": "cmp",
+    "tem": "test",
+    "gi": "and",
+    "kata": "or",
+    "makende": "xor",
+    "ok": "not",
+    "ket_iye": "push",
+    "gol_oko": "pop",
+    "geng'o": "int",
+    "luongo_mar_chenro": "syscall",
+    "kikwette": "loop",
+    "chung'": "hlt",
+    "onge_gimoro": "nop"
+  },
+  "kids_keywords": {
+    "luo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

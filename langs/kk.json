@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kazakh / Қазақ тілі",
+    "code": "kk",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kazakh / Қазақ тілі."
+  },
+  "keywords": {
+    "жылжыту": "mov",
+    "қосу": "add",
+    "азайту": "sub",
+    "көбейту": "mul",
+    "бөлу": "div",
+    "секіру": "jmp",
+    "шақыру": "call",
+    "қайтару": "ret",
+    "салыстыру": "cmp",
+    "тексеру": "test",
+    "және": "and",
+    "немесе": "or",
+    "ерекше": "xor",
+    "емес": "not",
+    "кіргізу": "push",
+    "шығару": "pop",
+    "үзіліс": "int",
+    "жүйелік_шақыру": "syscall",
+    "цикл": "loop",
+    "тоқтау": "hlt",
+    "ештеңе": "nop"
+  },
+  "kids_keywords": {
+    "kk": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

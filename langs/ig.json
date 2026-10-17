@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Igbo",
+    "code": "ig",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Nkwado zuru oke maka assembler n'asụsụ Igbo."
+  },
+  "keywords": {
+    "bugharịa": "mov",
+    "gbanwee": "xchg",
+    "bubata_adirẹsi": "lea",
+    "gbasaa_efu": "movzx",
+    "gbasaa_akara": "movsx",
+    "tinye": "add",
+    "wepụ": "sub",
+    "mụbaa": "mul",
+    "kewa": "div",
+    "mụbaa_otu": "inc",
+    "belata_otu": "dec",
+    "jụọ": "neg",
+    "tụnyere": "cmp",
+    "nwale": "test",
+    "mali": "jmp",
+    "kpọọ": "call",
+    "lọta": "ret",
+    "ma_ọ_bụrụ_na_nhata": "je",
+    "ma_ọ_bụrụ_na_efu": "jz",
+    "ma_ọ_bụrụ_na_anaghị_nhata": "jne",
+    "ma_ọ_bụrụ_na_ka_ibu": "jg",
+    "ma_ọ_bụrụ_na_ka_ntakị": "jl",
+    "tinye_n'ime": "push",
+    "wepụ_n'ime": "pop",
+    "tinye_ọkọlọtọ": "pushf",
+    "wepụ_ọkọlọtọ": "popf",
+    "bugharịa_byte": "movsb",
+    "chekwaa_byte": "stosb",
+    "bubata_byte": "lodsb",
+    "meghachi_omume": "rep",
+    "akaghị": "loop",
+    "akaghị_ma_ọ_bụrụ_na_efu": "loopz",
+    "ndabichi": "int",
+    "nkpọ_usoro": "syscall",
+    "nlọta_usoro": "sysret",
+    "maka": "hlt",
+    "ntakịrị": "nop",
+    "byte_gaa_na_okwu": "cbw",
+    "okwu_gaa_na_abụọ": "cwd",
+    "abụọ_gaa_na_anọ": "cdq"
+  },
+  "kids_keywords": {
+    "ig": {
+      "tinye_ebe": "mov",
+      "tinye": "add",
+      "wepụ": "sub",
+      "gosi": "syscall"
+    }
+  }
+}

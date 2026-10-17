@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Hausa",
+    "code": "ha",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Cikakken tallafi ga taro (assembler) a yaren Hausa."
+  },
+  "keywords": {
+    "motsa": "mov",
+    "musaya": "xchg",
+    "loda_adireshi": "lea",
+    "fadada_sifiri": "movzx",
+    "fadada_shara": "movsx",
+    "kara": "add",
+    "rage": "sub",
+    "rubanya": "mul",
+    "raba": "div",
+    "kara_daya": "inc",
+    "rage_daya": "dec",
+    "karyata": "neg",
+    "gwada": "cmp",
+    "jarraba": "test",
+    "tsallaka": "jmp",
+    "kira": "call",
+    "koma": "ret",
+    "idan_daidai": "je",
+    "idan_sifiri": "jz",
+    "idan_ba_daidai_ba": "jne",
+    "idan_fi": "jg",
+    "idan_kasa": "jl",
+    "tura": "push",
+    "cire": "pop",
+    "tura_tuta": "pushf",
+    "cire_tuta": "popf",
+    "motsa_byte": "movsb",
+    "ajiye_byte": "stosb",
+    "loda_byte": "lodsb",
+    "maimaita": "rep",
+    "madauki": "loop",
+    "madauki_idan_sifiri": "loopz",
+    "tsayawa": "int",
+    "kiran_tsarin": "syscall",
+    "koma_tsarin": "sysret",
+    "dakatar": "hlt",
+    "babu": "nop",
+    "byte_zuwa_kalma": "cbw",
+    "kalma_zuwa_biyu": "cwd",
+    "biyu_zuwa_hudu": "cdq"
+  },
+  "kids_keywords": {
+    "ha": {
+      "sanya": "mov",
+      "kara": "add",
+      "rage": "sub",
+      "nuna": "syscall"
+    }
+  }
+}

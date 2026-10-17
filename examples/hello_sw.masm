@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (sw) - Swahili / Kiswahili
+; Transpile with: mlasm sw hello_sw.masm -o hello_sw.asm
+; Or auto-detect: mlasm auto hello_sw.masm -o hello_sw.asm
+
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 15)
+    hamisha rax, 1
+    hamisha rdi, 1
+    hamisha rsi, msg
+    hamisha rdx, 15
+    ito_mfumo
+
+    ; Exit(0)
+    hamisha rax, 60
+    hamisha rdi, 0
+    ito_mfumo
+
+section .data
+    msg db "Habari Dunia!", 0xA

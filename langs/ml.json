@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Malayalam / മലയാളം",
+    "code": "ml",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Malayalam / മലയാളം."
+  },
+  "keywords": {
+    "നീക്കുക": "mov",
+    "കൂട്ടുക": "add",
+    "കുറയ്ക്കുക": "sub",
+    "ഗുണിക്കുക": "mul",
+    "ഹരിക്കുക": "div",
+    "ചാടുക": "jmp",
+    "വിളിക്കുക": "call",
+    "തിരികെ": "ret",
+    "താരതമ്യം": "cmp",
+    "പരിശോധിക്കുക": "test",
+    "കൂടാതെ": "and",
+    "അല്ലെങ്കിൽ": "or",
+    "പ്രത്യേക": "xor",
+    "അല്ല": "not",
+    "നിക്ഷേപിക്കുക": "push",
+    "എടുക്കുക": "pop",
+    "തടസ്സം": "int",
+    "സിസ്റ്റം_കോൾ": "syscall",
+    "ചക്രം": "loop",
+    "നിർത്തുക": "hlt",
+    "ഒന്നുമില്ല": "nop"
+  },
+  "kids_keywords": {
+    "ml": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

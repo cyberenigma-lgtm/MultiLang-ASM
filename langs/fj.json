@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Fijian / Na Vosa Vakaviti",
+    "code": "fj",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Fijian / Na Vosa Vakaviti."
+  },
+  "keywords": {
+    "tosoya": "mov",
+    "kuria": "add",
+    "kauta_tani": "sub",
+    "vakalewena": "mul",
+    "wasea": "div",
+    "ria": "jmp",
+    "kaciva": "call",
+    "lesu": "ret",
+    "vakatautauvatataka": "cmp",
+    "vakatovolea": "test",
+    "kei_na": "and",
+    "se": "or",
+    "vakatikitiki": "xor",
+    "sega": "not",
+    "biliga": "push",
+    "kauta_mai": "pop",
+    "tarova": "int",
+    "kaci_ni_ivakarau": "syscall",
+    "wavoki": "loop",
+    "cava": "hlt",
+    "sega_na_ka": "nop"
+  },
+  "kids_keywords": {
+    "fj": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

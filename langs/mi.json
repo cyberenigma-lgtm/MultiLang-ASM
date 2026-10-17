@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Maori / Te Reo Māori",
+    "code": "mi",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Tautoko katoa mo te assembler i te reo Māori."
+  },
+  "keywords": {
+    "neke": "mov",
+    "fari": "xchg",
+    "uta_nohoanga": "lea",
+    "whakawhanui_kore": "movzx",
+    "whakawhanui_tohu": "movsx",
+    "tāpiri": "add",
+    "tango": "sub",
+    "whakarea": "mul",
+    "wehe": "div",
+    "whakapiki": "inc",
+    "whakapalo": "dec",
+    "whakakore": "neg",
+    "whakataurite": "cmp",
+    "whakamātau": "test",
+    "peke": "jmp",
+    "karanga": "call",
+    "hoki": "ret",
+    "mehemea_rite": "je",
+    "mehemea_kore": "jz",
+    "mehemea_kore_rite": "jne",
+    "mehemea_nui": "jg",
+    "mehemea_iti": "jl",
+    "tene": "push",
+    "unu": "pop",
+    "tene_tohu": "pushf",
+    "unu_tohu": "popf",
+    "neke_byte": "movsb",
+    "pūmau_byte": "stosb",
+    "uta_byte": "lodsb",
+    "tukurua": "rep",
+    "koropiko": "loop",
+    "koropiko_mehemea_kore": "loopz",
+    "aukati": "int",
+    "karanga_pūnaha": "syscall",
+    "hoki_pūnaha": "sysret",
+    "whakamutu": "hlt",
+    "kahore": "nop",
+    "byte_ki_focal": "cbw",
+    "focal_ki_double": "cwd",
+    "double_ki_quad": "cdq"
+  },
+  "kids_keywords": {
+    "mi": {
+      "whakatakoto": "mov",
+      "tāpiri": "add",
+      "tango": "sub",
+      "whakaatu": "syscall"
+    }
+  }
+}

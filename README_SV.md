@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (UPL+ C99 Utgåva)
 
-> *"Den första flerspråkiga x86_64-assemblern."*
+**Världens första suveräna flerspråkiga x86_64-assemblermotor.**  
+En integrerad del av **UPL (Universal Polyglot Layer)** och Neuro-OS.
 
-**Skriv assembler på ditt modersmål.**
+Skriv assemblerkod på ditt modersmål · 150 Världsspråk · 200+ x86_64-instruktioner · 100% Inbyggd ANSI C99-motor · Noll Python-beroenden · Blixtsnabb (<2 ms) · NASM-kompatibel.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **Svenska** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 Vad är detta?
-
-MultiLang-ASM låter dig skriva x86_64-assembler med nyckelord på **Svenska**.
-Den översätter automatiskt din kod till standard NASM-assembler.
-
-## ✨ Funktioner
-
-- 🌍 **Skriv på Svenska** (sv)
-- 🤖 **Automatisk Detektering:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `Svenska <-> ASM`
-
-## 📖 Svenskt Exempel
-
-### Source Code (`hello.masm`)
-```asm
-flytta rax, 1
-flytta rdi, 1
-flytta rsi, msg
-flytta rdx, 13
-syscall
-
-flytta rax, 60
-flytta rdi, 0
-syscall
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ Användning
-
+## Snabbstart
 ```bash
-python mlasm.py auto hello.masm
-```
+# Kompilera den inbyggda motorn:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# Transpilera:
+mlasm sv exempel.masm -o exempel.asm
+
+# Automatisk språkdetektering:
+mlasm auto exempel.masm -o exempel.asm
+```

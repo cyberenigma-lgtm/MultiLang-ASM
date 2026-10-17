@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kannada / ಕನ್ನಡ",
+    "code": "kn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kannada / ಕನ್ನಡ."
+  },
+  "keywords": {
+    "ಸ್ಥಳಾಂತರಿಸಿ": "mov",
+    "ಕೂಡಿಸು": "add",
+    "ಕಳೆಯಿರಿ": "sub",
+    "ಗುಣಿಸು": "mul",
+    "ಭಾಗಿಸು": "div",
+    "ಜಿಗಿ": "jmp",
+    "ಕರೆ": "call",
+    "ಹಿಂತಿರುಗಿ": "ret",
+    "ಹೋಲಿಸಿ": "cmp",
+    "ಪರೀಕ್ಷಿಸಿ": "test",
+    "ಮತ್ತು": "and",
+    "ಅಥವಾ": "or",
+    "ವಿಶೇಷ": "xor",
+    "ಇಲ್ಲ": "not",
+    "ಹಾಕಿ": "push",
+    "ತೆಗೆಯಿರಿ": "pop",
+    "ತಡೆ": "int",
+    "ವ್ಯವಸ್ಥೆ_ಕರೆ": "syscall",
+    "ಸುತ್ತು": "loop",
+    "ನಿಲ್ಲಿಸು": "hlt",
+    "ಏನೂ_ಇಲ್ಲ": "nop"
+  },
+  "kids_keywords": {
+    "kn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

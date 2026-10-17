@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Samoan / Gagana Sāmoa",
+    "code": "sm",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Samoan / Gagana Sāmoa."
+  },
+  "keywords": {
+    "sui": "mov",
+    "faaopoopo": "add",
+    "toese": "sub",
+    "faatele": "mul",
+    "vaevae": "div",
+    "oso": "jmp",
+    "valaau": "call",
+    "toe_foi": "ret",
+    "faatusatusa": "cmp",
+    "tofotofo": "test",
+    "ma": "and",
+    "pe": "or",
+    "faapitoa": "xor",
+    "leai": "not",
+    "tulei": "push",
+    "toso": "pop",
+    "faalavelave": "int",
+    "valaau_faiga": "syscall",
+    "matasele": "loop",
+    "taofi": "hlt",
+    "leai_se_mea": "nop"
+  },
+  "kids_keywords": {
+    "sm": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

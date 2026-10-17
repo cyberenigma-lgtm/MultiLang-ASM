@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Navajo / Diné bizaad",
+    "code": "nav",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Navajo / Diné bizaad."
+  },
+  "keywords": {
+    "yíłtsood": "mov",
+    "bee_bikʼi": "add",
+    "bąąh_chʼéldzid": "sub",
+    "néeltʼeʼ": "mul",
+    "ałtsʼą́ą́h": "div",
+    "dah_naatłʼo": "jmp",
+    "yízhí": "call",
+    "nádleeh": "ret",
+    "ałhąąh": "cmp",
+    "néaltsos": "test",
+    "dóó": "and",
+    "éí_doodaiiʼ": "or",
+    "tʼáá_sahee": "xor",
+    "dooda": "not",
+    "biih_yíníł": "push",
+    "chʼéníł": "pop",
+    "ałtsʼá": "int",
+    "beesh_bee_haneʼ": "syscall",
+    "názbas": "loop",
+    "tʼóó_haziʼ": "hlt",
+    "ádingo": "nop"
+  },
+  "kids_keywords": {
+    "nav": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

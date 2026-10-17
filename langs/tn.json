@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Setswana",
+    "code": "tn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Setswana."
+  },
+  "keywords": {
+    "tsamaisa": "mov",
+    "oketsa": "add",
+    "fokotsa": "sub",
+    "atafatsa": "mul",
+    "kgaoganya": "div",
+    "tlola": "jmp",
+    "bipitsa": "call",
+    "boa": "ret",
+    "tshwantshanya": "cmp",
+    "lekeletsa": "test",
+    "le": "and",
+    "kgotsa": "or",
+    "kgethegileng": "xor",
+    "eseng": "not",
+    "tsenya": "push",
+    "ntsha": "pop",
+    "kgoreletso": "int",
+    "pitso_ya_tsamaiso": "syscall",
+    "tidiko": "loop",
+    "ema": "hlt",
+    "ga_go_sepe": "nop"
+  },
+  "kids_keywords": {
+    "tn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

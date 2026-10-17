@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kongo / Kikongo",
+    "code": "kg",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kongo / Kikongo."
+  },
+  "keywords": {
+    "natisa": "mov",
+    "yika": "add",
+    "katula": "sub",
+    "kudisa": "mul",
+    "kabula": "div",
+    "tina": "jmp",
+    "binga": "call",
+    "vutuka": "ret",
+    "fwanisa": "cmp",
+    "solola": "test",
+    "ye": "and",
+    "to": "or",
+    "mpambula": "xor",
+    "ve": "not",
+    "kotesa": "push",
+    "vaikisa": "pop",
+    "tenda": "int",
+    "mbila_nkandikila": "syscall",
+    "zietolo": "loop",
+    "telama": "hlt",
+    "kima_ve": "nop"
+  },
+  "kids_keywords": {
+    "kg": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

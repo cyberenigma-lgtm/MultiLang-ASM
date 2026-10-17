@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Venda / Tshivenḓa",
+    "code": "ve",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Venda / Tshivenḓa."
+  },
+  "keywords": {
+    "sudzusa": "mov",
+    "engedza": "add",
+    "tusa": "sub",
+    "andisa": "mul",
+    "kovha": "div",
+    "fhufha": "jmp",
+    "vhidza": "call",
+    "vhuyelela": "ret",
+    "vhambedza": "cmp",
+    "lingedza": "test",
+    "na": "and",
+    "kana": "or",
+    "tshiphiri": "xor",
+    "hai": "not",
+    "dhengedza": "push",
+    "bvisa": "pop",
+    "thithiso": "int",
+    "uvhidza_sisitemu": "syscall",
+    "mutingo": "loop",
+    "ima": "hlt",
+    "a_huna_tshithu": "nop"
+  },
+  "kids_keywords": {
+    "ve": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

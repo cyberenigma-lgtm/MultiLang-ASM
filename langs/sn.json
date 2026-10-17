@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Shona / ChiShona",
+    "code": "sn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Shona / ChiShona."
+  },
+  "keywords": {
+    "fambisa": "mov",
+    "wedzera": "add",
+    "bvisa": "sub",
+    "wanza": "mul",
+    "gova": "div",
+    "svetuka": "jmp",
+    "daidza": "call",
+    "dzoka": "ret",
+    "enzanisa": "cmp",
+    "edza": "test",
+    "uye": "and",
+    "kana": "or",
+    "oga": "xor",
+    "kwete": "not",
+    "pinda": "push",
+    "buda": "pop",
+    "chikanganiso": "int",
+    "kudana_sisitimu": "syscall",
+    "denderedzwa": "loop",
+    "mira": "hlt",
+    "hapana": "nop"
+  },
+  "kids_keywords": {
+    "sn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

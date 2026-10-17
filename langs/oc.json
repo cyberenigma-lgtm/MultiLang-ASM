@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Occitan / Lenga d'òc",
+    "code": "oc",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Occitan / Lenga d'òc."
+  },
+  "keywords": {
+    "desplaçar": "mov",
+    "apondre": "add",
+    "sustraire": "sub",
+    "multiplicar": "mul",
+    "devesir": "div",
+    "sautar": "jmp",
+    "sonar": "call",
+    "retornar": "ret",
+    "comparar": "cmp",
+    "ensajar": "test",
+    "e": "and",
+    "o": "or",
+    "exclusiu": "xor",
+    "pas": "not",
+    "empenher": "push",
+    "traire": "pop",
+    "interrupcion": "int",
+    "sonada_sistema": "syscall",
+    "bocla": "loop",
+    "arrestar": "hlt",
+    "ren": "nop"
+  },
+  "kids_keywords": {
+    "oc": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

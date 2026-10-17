@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Javanese / Basa Jawa",
+    "code": "jv",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Panyengkuyung lengkap kanggo assembler ing basa Jawa."
+  },
+  "keywords": {
+    "pindah": "mov",
+    "ijol": "xchg",
+    "muat_alamat": "lea",
+    "jembar_nol": "movzx",
+    "jembar_tanda": "movsx",
+    "tambah": "add",
+    "suda": "sub",
+    "ping": "mul",
+    "para": "div",
+    "tambah_siji": "inc",
+    "suda_siji": "dec",
+    "mungkur": "neg",
+    "banding": "cmp",
+    "uji": "test",
+    "mlumpat": "jmp",
+    "timbal": "call",
+    "bali": "ret",
+    "yen_podo": "je",
+    "yen_nol": "jz",
+    "yen_bedo": "jne",
+    "yen_luwih": "jg",
+    "yen_kurang": "jl",
+    "lebokne": "push",
+    "wetokne": "pop",
+    "lebokne_gendero": "pushf",
+    "wetokne_gendero": "popf",
+    "pindah_byte": "movsb",
+    "simpen_byte": "stosb",
+    "muat_byte": "lodsb",
+    "baleni": "rep",
+    "gelung": "loop",
+    "gelung_yen_nol": "loopz",
+    "selo": "int",
+    "timbal_sistem": "syscall",
+    "bali_sistem": "sysret",
+    "mandeg": "hlt",
+    "ora_ono": "nop",
+    "byte_neng_word": "cbw",
+    "word_neng_double": "cwd",
+    "double_neng_quad": "cdq"
+  },
+  "kids_keywords": {
+    "jv": {
+      "deleh": "mov",
+      "tambah": "add",
+      "suda": "sub",
+      "tuduhno": "syscall"
+    }
+  }
+}

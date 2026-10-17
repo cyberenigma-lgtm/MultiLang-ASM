@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (cs) - Czech / Čeština
+; Transpile with: mlasm cs hello_cs.masm -o hello_cs.asm
+; Or auto-detect: mlasm auto hello_cs.masm -o hello_cs.asm
+
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 14)
+    presunout rax, 1
+    presunout rdi, 1
+    presunout rsi, msg
+    presunout rdx, 14
+    systemove_volani
+
+    ; Exit(0)
+    presunout rax, 60
+    presunout rdi, 0
+    systemove_volani
+
+section .data
+    msg db "Ahoj, svete!", 0xA

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Mongolian / Монгол",
+    "code": "mn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Mongolian / Монгол."
+  },
+  "keywords": {
+    "зөөх": "mov",
+    "нэмэх": "add",
+    "хасах": "sub",
+    "үржүүлэх": "mul",
+    "хуваах": "div",
+    "үсрэх": "jmp",
+    "дуудах": "call",
+    "буцах": "ret",
+    "харьцуулах": "cmp",
+    "шалгах": "test",
+    "ба": "and",
+    "эсвэл": "or",
+    "онцгой": "xor",
+    "биш": "not",
+    "түлхэх": "push",
+    "татах": "pop",
+    "тасалдал": "int",
+    "системийн_дуудалт": "syscall",
+    "давталт": "loop",
+    "зогс": "hlt",
+    "юу_ч_биш": "nop"
+  },
+  "kids_keywords": {
+    "mn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

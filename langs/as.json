@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Assamese / অসমীয়া",
+    "code": "as",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Assamese / অসমীয়া."
+  },
+  "keywords": {
+    "স্থানান্তৰ": "mov",
+    "যোগ_কৰক": "add",
+    "বিয়োগ_কৰক": "sub",
+    "পূৰণ_কৰক": "mul",
+    "হৰণ_কৰক": "div",
+    "জঁপিয়াওক": "jmp",
+    "মাতক": "call",
+    "উভতি_যাওক": "ret",
+    "তুলনা_কৰক": "cmp",
+    "পৰীক্ষা_কৰক": "test",
+    "আৰু": "and",
+    "বা": "or",
+    "স্বতন্ত্ৰ": "xor",
+    "নহয়": "not",
+    "ভৰাওক": "push",
+    "উলিয়াওক": "pop",
+    "বাধা": "int",
+    "ব্যৱস্থাৰ_আহ্বান": "syscall",
+    "লুপ": "loop",
+    "ৰখক": "hlt",
+    "একো_নাই": "nop"
+  },
+  "kids_keywords": {
+    "as": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

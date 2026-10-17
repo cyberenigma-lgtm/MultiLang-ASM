@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Latvian / Latviešu",
+    "code": "lv",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Latvian / Latviešu."
+  },
+  "keywords": {
+    "parvietot": "mov",
+    "pieskaitit": "add",
+    "atnemt": "sub",
+    "reizinat": "mul",
+    "dalit": "div",
+    "lekt": "jmp",
+    "saukt": "call",
+    "atgriezt": "ret",
+    "salidzinat": "cmp",
+    "parbaudit": "test",
+    "un": "and",
+    "vai": "or",
+    "izslegts": "xor",
+    "ne": "not",
+    "iespiest": "push",
+    "iznemt": "pop",
+    "partraukums": "int",
+    "sistemas_izsaukums": "syscall",
+    "cikls": "loop",
+    "apturet": "hlt",
+    "nekas": "nop"
+  },
+  "kids_keywords": {
+    "lv": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

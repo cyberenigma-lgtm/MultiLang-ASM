@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Wolof",
+    "code": "wo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Wolof."
+  },
+  "keywords": {
+    "yóbbu": "mov",
+    "yokk": "add",
+    "wàññi": "sub",
+    "baaraat": "mul",
+    "séddale": "div",
+    "tëb": "jmp",
+    "woote": "call",
+    "dellu": "ret",
+    "mengale": "cmp",
+    "natt": "test",
+    "ak": "and",
+    "walla": "or",
+    "boppam": "xor",
+    "du": "not",
+    "dugal": "push",
+    "génne": "pop",
+    "dagg": "int",
+    "woote_noste": "syscall",
+    "dank": "loop",
+    "taxaw": "hlt",
+    "dara": "nop"
+  },
+  "kids_keywords": {
+    "wo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

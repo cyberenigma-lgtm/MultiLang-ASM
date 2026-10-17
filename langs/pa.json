@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Punjabi / ਪੰਜਾਬੀ",
+    "code": "pa",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Punjabi / ਪੰਜਾਬੀ."
+  },
+  "keywords": {
+    "ਭੇਜੋ": "mov",
+    "ਜੋੜੋ": "add",
+    "ਘਟਾਓ": "sub",
+    "ਗੁਣਾ": "mul",
+    "ਵੰਡੋ": "div",
+    "ਛਾਲ": "jmp",
+    "ਬੁਲਾਓ": "call",
+    "ਵਾਪਸ": "ret",
+    "ਤੁਲਨਾ": "cmp",
+    "ਪਰਖ": "test",
+    "ਅਤੇ": "and",
+    "ਜਾਂ": "or",
+    "ਵਿਲੱਖਣ": "xor",
+    "ਨਹੀਂ": "not",
+    "ਪਾਓ": "push",
+    "ਕੱਢੋ": "pop",
+    "ਰੋਕ": "int",
+    "ਸਿਸਟਮ_ਕਾਲ": "syscall",
+    "ਚੱਕਰ": "loop",
+    "ਰੁਕੋ": "hlt",
+    "ਕੁਝ_ਨਹੀਂ": "nop"
+  },
+  "kids_keywords": {
+    "pa": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

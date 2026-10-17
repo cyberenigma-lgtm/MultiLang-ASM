@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Swati / SiSwati",
+    "code": "ss",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Swati / SiSwati."
+  },
+  "keywords": {
+    "gudluta": "mov",
+    "engeta": "add",
+    "susa": "sub",
+    "phindzaphindza": "mul",
+    "hlukanisa": "div",
+    "gcuma": "jmp",
+    "bita": "call",
+    "buyela": "ret",
+    "qhathanisa": "cmp",
+    "hlola": "test",
+    "futhi": "and",
+    "noma": "or",
+    "khetekile": "xor",
+    "hhayi": "not",
+    "faka": "push",
+    "khipha": "pop",
+    "kuphazamisa": "int",
+    "kubita_sisitemu": "syscall",
+    "siyingi": "loop",
+    "yima": "hlt",
+    "kute": "nop"
+  },
+  "kids_keywords": {
+    "ss": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

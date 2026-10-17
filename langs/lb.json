@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Luxembourgish / Lëtzebuergesch",
+    "code": "lb",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Luxembourgish / Lëtzebuergesch."
+  },
+  "keywords": {
+    "beweegen": "mov",
+    "dobaidinn": "add",
+    "ofzéien": "sub",
+    "multiplizéieren": "mul",
+    "deelen": "div",
+    "sprangen": "jmp",
+    "ruffen": "call",
+    "zréckgoen": "ret",
+    "vergläichen": "cmp",
+    "testen": "test",
+    "an": "and",
+    "oder": "or",
+    "exklusiv": "xor",
+    "net": "not",
+    "drécken": "push",
+    "huelen": "pop",
+    "ënnerbriechung": "int",
+    "systemruff": "syscall",
+    "schläif": "loop",
+    "stoppen": "hlt",
+    "näischt": "nop"
+  },
+  "kids_keywords": {
+    "lb": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

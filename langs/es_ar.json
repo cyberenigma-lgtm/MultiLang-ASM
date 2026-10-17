@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "name": "Spanish (Argentina) / Español (Argentina)",
+    "code": "es_ar",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Variante argentina del ensamblador en español."
+  },
+  "keywords": {
+    "mover": "mov",
+    "copiar": "mov",
+    "intercambiar": "xchg",
+    "cargar": "mov",
+    "mandar": "mov",
+    "pasar": "mov",
+    "sumar": "add",
+    "restar": "sub",
+    "multiplicar": "mul",
+    "dividir": "div",
+    "aumentar": "inc",
+    "bajar": "dec",
+    "y": "and",
+    "o": "or",
+    "no": "not",
+    "comparar": "cmp",
+    "chequear": "test",
+    "saltar": "jmp",
+    "llamar": "call",
+    "volver": "ret",
+    "si_es_igual": "je",
+    "si_es_cero": "jz",
+    "si_es_distinto": "jne",
+    "si_es_mayor": "jg",
+    "si_es_menor": "jl",
+    "empujar": "push",
+    "sacar": "pop",
+    "mandar_flags": "pushf",
+    "traer_flags": "popf",
+    "mover_byte": "movsb",
+    "guardar_byte": "stosb",
+    "cargar_byte": "lodsb",
+    "repetir": "rep",
+    "vuelta": "loop",
+    "vuelta_si_cero": "loopz",
+    "atencion": "int",
+    "aviso_sistema": "syscall",
+    "chau_sistema": "sysret",
+    "cortar": "hlt",
+    "nada": "nop",
+    "che_byte_a_word": "cbw",
+    "word_a_doble": "cwd"
+  },
+  "kids_keywords": {
+    "es_ar": {
+      "pone": "mov",
+      "sumale": "add",
+      "restale": "sub",
+      "mostra": "syscall"
+    }
+  }
+}

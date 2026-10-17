@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Corsican / Corsu",
+    "code": "co",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Corsican / Corsu."
+  },
+  "keywords": {
+    "spustà": "mov",
+    "aghjunghje": "add",
+    "suttrae": "sub",
+    "multiplicà": "mul",
+    "sparte": "div",
+    "saltà": "jmp",
+    "chjamà": "call",
+    "riturnà": "ret",
+    "paragunà": "cmp",
+    "pruvà": "test",
+    "è": "and",
+    "o": "or",
+    "esclusivu": "xor",
+    "micca": "not",
+    "spinghje": "push",
+    "caccià": "pop",
+    "interruzzione": "int",
+    "chjama_sistema": "syscall",
+    "giru": "loop",
+    "fermà": "hlt",
+    "nulla": "nop"
+  },
+  "kids_keywords": {
+    "co": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

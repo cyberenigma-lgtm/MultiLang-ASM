@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Sundanese / Basa Sunda",
+    "code": "su",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Pangrojong lengkep pikeun assembler dina basa Sunda."
+  },
+  "keywords": {
+    "pindah": "mov",
+    "genti": "xchg",
+    "muat_alamat": "lea",
+    "lega_nol": "movzx",
+    "lega_tanda": "movsx",
+    "tambah": "add",
+    "kurang": "sub",
+    "kali": "mul",
+    "bagi": "div",
+    "naek": "inc",
+    "turun": "dec",
+    "ingkar": "neg",
+    "banding": "cmp",
+    "uji": "test",
+    "luncat": "jmp",
+    "ngagero": "call",
+    "balik": "ret",
+    "lamun_sarua": "je",
+    "lamun_nol": "jz",
+    "lamun_beda": "jne",
+    "lamun_gede": "jg",
+    "lamun_leutik": "jl",
+    "asupkeun": "push",
+    "aluarkeun": "pop",
+    "asup_bandera": "pushf",
+    "aluar_bandera": "popf",
+    "pindah_byte": "movsb",
+    "simpen_byte": "stosb",
+    "muat_byte": "lodsb",
+    "ulang": "rep",
+    "gelung": "loop",
+    "gelung_lamun_nol": "loopz",
+    "sela": "int",
+    "gero_sistem": "syscall",
+    "balik_sistem": "sysret",
+    "eureun": "hlt",
+    "kosong": "nop",
+    "byte_ka_kecap": "cbw",
+    "kecap_ka_dua": "cwd",
+    "dua_ka_opat": "cdq"
+  },
+  "kids_keywords": {
+    "su": {
+      "teundeun": "mov",
+      "tambah": "add",
+      "kurang": "sub",
+      "témbongkeun": "syscall"
+    }
+  }
+}

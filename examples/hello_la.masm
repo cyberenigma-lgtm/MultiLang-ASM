@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (la) - Latin / Latina
+; Transpile with: mlasm la hello_la.masm -o hello_la.asm
+; Or auto-detect: mlasm auto hello_la.masm -o hello_la.asm
+
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 14)
+    movere rax, 1
+    movere rdi, 1
+    movere rsi, msg
+    movere rdx, 14
+    vocatio_systematis
+
+    ; Exit(0)
+    movere rax, 60
+    movere rdi, 0
+    vocatio_systematis
+
+section .data
+    msg db "Salve, Munde!", 0xA

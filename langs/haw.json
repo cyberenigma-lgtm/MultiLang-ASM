@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Hawaiian / ʻŌlelo Hawaiʻi",
+    "code": "haw",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Hawaiian / ʻŌlelo Hawaiʻi."
+  },
+  "keywords": {
+    "neʻe": "mov",
+    "hoʻohui": "add",
+    "kāpae": "sub",
+    "hoʻomāhuahua": "mul",
+    "māhele": "div",
+    "lele": "jmp",
+    "kāhea": "call",
+    "hoʻi": "ret",
+    "hoʻohālike": "cmp",
+    "hōʻoia": "test",
+    "a_me": "and",
+    "a_i_ʻole": "or",
+    "kūʻokoʻa": "xor",
+    "ʻaʻole": "not",
+    "pahu": "push",
+    "huki": "pop",
+    "hoʻopilikia": "int",
+    "kāhea_ʻōnaehana": "syscall",
+    "luka": "loop",
+    "hoʻomaha": "hlt",
+    "ʻaʻohe_mea": "nop"
+  },
+  "kids_keywords": {
+    "haw": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

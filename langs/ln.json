@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Lingala",
+    "code": "ln",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Lingala."
+  },
+  "keywords": {
+    "boma": "mov",
+    "bakisa": "add",
+    "longola": "sub",
+    "matisa": "mul",
+    "kabola": "div",
+    "pumbwa": "jmp",
+    "benga": "call",
+    "zonga": "ret",
+    "mekanisa": "cmp",
+    "meka": "test",
+    "pe": "and",
+    "to": "or",
+    "kakeseni": "xor",
+    "te": "not",
+    "kotisa": "push",
+    "bimisa": "pop",
+    "kokatisa": "int",
+    "kobienga_ebongiseli": "syscall",
+    "zinga": "loop",
+    "telemisa": "hlt",
+    "eloko_te": "nop"
+  },
+  "kids_keywords": {
+    "ln": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

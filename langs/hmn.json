@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Hmong / Hmoob",
+    "code": "hmn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Hmong / Hmoob."
+  },
+  "keywords": {
+    "tsiv": "mov",
+    "ntxiv": "add",
+    "rho": "sub",
+    "muab_ntau": "mul",
+    "faib": "div",
+    "dhia": "jmp",
+    "hu": "call",
+    "rov_qab": "ret",
+    "pab_phev": "cmp",
+    "kuaj": "test",
+    "thiab": "and",
+    "lossis": "or",
+    "tshwj_xeeb": "xor",
+    "tsis": "not",
+    "thawb": "push",
+    "rub_tawm": "pop",
+    "tขwv_tshav": "int",
+    "hu_kab_ke": "syscall",
+    "voj_kuj": "loop",
+    "nres": "hlt",
+    "tsis_muaj_dabtsi": "nop"
+  },
+  "kids_keywords": {
+    "hmn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

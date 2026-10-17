@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Armenian / Հայերեն",
+    "code": "hy",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Armenian / Հայերեն."
+  },
+  "keywords": {
+    "տեղափոխել": "mov",
+    "գումարել": "add",
+    "հանել": "sub",
+    "բազմապատկել": "mul",
+    "բաժանել": "div",
+    "ցատկել": "jmp",
+    "կանչել": "call",
+    "վերադառնալ": "ret",
+    "համեմատել": "cmp",
+    "փորձարկել": "test",
+    "և": "and",
+    "կամ": "or",
+    "բացառիկ": "xor",
+    "ոչ": "not",
+    "մտցնել": "push",
+    "հանել_ստեկից": "pop",
+    "ընդհատում": "int",
+    "համակարգային_կանչ": "syscall",
+    "ցիկլ": "loop",
+    "կանգնել": "hlt",
+    "ոչինչ": "nop"
+  },
+  "kids_keywords": {
+    "hy": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

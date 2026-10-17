@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Croatian / Hrvatski",
+    "code": "hr",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Croatian / Hrvatski."
+  },
+  "keywords": {
+    "premjesti": "mov",
+    "dodaj": "add",
+    "oduzmi": "sub",
+    "pomnozi": "mul",
+    "podijeli": "div",
+    "skoci": "jmp",
+    "pozovi": "call",
+    "vrati": "ret",
+    "usporedi": "cmp",
+    "testiraj": "test",
+    "i": "and",
+    "ili": "or",
+    "iskljucivo": "xor",
+    "ne": "not",
+    "gurni": "push",
+    "izvuci": "pop",
+    "prekid": "int",
+    "sistemski_poziv": "syscall",
+    "petlja": "loop",
+    "zaustavi": "hlt",
+    "nista": "nop",
+    "povecaj": "inc",
+    "smanji": "dec",
+    "razmijeni": "xchg",
+    "ako_jednako": "je",
+    "ako_nije": "jne"
+  },
+  "kids_keywords": {
+    "hr": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

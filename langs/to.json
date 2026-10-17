@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tongan / Lea Faka-Tonga",
+    "code": "to",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tongan / Lea Faka-Tonga."
+  },
+  "keywords": {
+    "hiki": "mov",
+    "tanaki": "add",
+    "toʻo": "sub",
+    "liungofua": "mul",
+    "vahevahe": "div",
+    "hopohopo": "jmp",
+    "ui": "call",
+    "foki": "ret",
+    "fakafanongo": "cmp",
+    "siviʻi": "test",
+    "pea": "and",
+    "pe": "or",
+    "makehe": "xor",
+    "ikai": "not",
+    "teke": "push",
+    "fusi": "pop",
+    "fakahohaʻa": "int",
+    "ui_fakatoka": "syscall",
+    "takai": "loop",
+    "taʻofi": "hlt",
+    "hala_ha_meʻa": "nop"
+  },
+  "kids_keywords": {
+    "to": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

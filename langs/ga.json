@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Irish / Gaeilge",
+    "code": "ga",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Tacaíocht iomlán don tionólaí i nGaeilge."
+  },
+  "keywords": {
+    "bog": "mov",
+    "mhalartaigh": "xchg",
+    "luchtaigh_seolta": "lea",
+    "leathnaigh_nialas": "movzx",
+    "leathnaigh_comhartha": "movsx",
+    "suimigh": "add",
+    "dealú": "sub",
+    "iolraigh": "mul",
+    "roinn": "div",
+    "incrimint": "inc",
+    "deicrimint": "dec",
+    "diúltaigh": "neg",
+    "cuir_i_gcomparáid": "cmp",
+    "tástáil": "test",
+    "léim": "jmp",
+    "glaoch": "call",
+    "filleadh": "ret",
+    "más_ionann": "je",
+    "más_nialas": "jz",
+    "mura_ionann": "jne",
+    "más_mó": "jg",
+    "más_lú": "jl",
+    "brúigh": "push",
+    "pop": "pop",
+    "brúigh_bratacha": "pushf",
+    "pop_bratacha": "popf",
+    "bog_beart": "movsb",
+    "stóráil_beart": "stosb",
+    "luchtaigh_beart": "lodsb",
+    "athdhéan": "rep",
+    "lúb": "loop",
+    "lúb_más_nialas": "loopz",
+    "idirbhriseadh": "int",
+    "glaoch_córais": "syscall",
+    "filleadh_córais": "sysret",
+    "stad": "hlt",
+    "tada": "nop",
+    "beart_go_focal": "cbw",
+    "focal_go_dúbailte": "cwd",
+    "dúbailte_go_ceathracha": "cdq"
+  },
+  "kids_keywords": {
+    "ga": {
+      "cuir": "mov",
+      "breis": "add",
+      "lúide": "sub",
+      "taispeáin": "syscall"
+    }
+  }
+}

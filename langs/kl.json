@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Greenlandic / Kalaallisut",
+    "code": "kl",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Greenlandic / Kalaallisut."
+  },
+  "keywords": {
+    "nussorpaa": "mov",
+    "ilannguppaa": "add",
+    "peerpaa": "sub",
+    "amerlisarpaa": "mul",
+    "aveqqippaa": "div",
+    "pissippoq": "jmp",
+    "torluppaa": "call",
+    "uteqqippoq": "ret",
+    "nalilersorpaa": "cmp",
+    "misilippaa": "test",
+    "aamma": "and",
+    "imaluunniit": "or",
+    "immikkut": "xor",
+    "naagga": "not",
+    "manguppaa": "push",
+    "nussorpaa_ane": "pop",
+    "akornusersorpaa": "int",
+    "atortup_qaaqqussutaa": "syscall",
+    "kaaviiaartoq": "loop",
+    "unitsiguk": "hlt",
+    "soqanngilaq": "nop"
+  },
+  "kids_keywords": {
+    "kl": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,250 +1,57 @@
-# How to Use MultiLang-ASM
+# How to Use MultiLang-ASM (v1.0.0 Native C99 / UPL+)
 
-Complete guide to installing and using MultiLang-ASM.
+MultiLang-ASM runs as a standalone native binary with **zero external dependencies**.
 
 ---
 
-## 📦 Installation
+## 🛠️ 1. Compiling the Engine
 
-### Requirements
-- Python 3.6 or higher
-- NASM (for final compilation)
-
-### Quick Install
+The engine is written in standard ANSI C99 and compiles with any C compiler:
 
 ```bash
-git clone https://github.com/cyberenigma-lgtm/MultiLang-ASM.git
-cd MultiLang-ASM
+# Windows (MinGW GCC):
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm.exe
+
+# Linux / macOS:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 ```
 
-That's it! No dependencies required.
+Alternatively, running `mlasm.bat` (Windows) or `make` (Linux/macOS) will automatically build the executable.
 
 ---
 
-## 🚀 Basic Usage
+## 💻 2. Basic CLI Commands
 
-### 1. Write Assembly in Your Language
-
-Create a file `hello.masm` in Spanish:
-
-```asm
-; hello.masm
-seccion .texto
-global _inicio
-
-_inicio:
-    mover rax, 1          ; syscall write
-    mover rdi, 1          ; stdout
-    llamada_sistema
-    
-    mover rax, 60         ; syscall exit
-    mover rdi, 0
-    interrupcion 0x80
-```
-
-### 2. Translate to Standard ASM
-
+### Direct Transpilation
+Specify the language code and the target output file:
 ```bash
-python mlasm.py es hello.masm hello.asm
+mlasm es examples/hello_es.masm -o hello_es.asm
+mlasm fr examples/hello_fr.masm -o hello_fr.asm
+mlasm zh examples/hello_zh.masm -o hello_zh.asm
 ```
 
-Output:
-```
-🛡️ MultiLang-ASM v0.3
-   Language: ES
-   Mode: Standard (NASM)
-   Input: hello.masm
-   Output: hello.asm
-   Status: ✅ OK
-```
-
-### 3. Compile with NASM
-
+### Auto-Detection Mode
+MultiLang-ASM can automatically determine the source language by scanning keyword frequencies:
 ```bash
-nasm -f elf64 hello.asm -o hello.o
-ld hello.o -o hello
+mlasm auto examples/hello_ru.masm -o hello_ru.asm
+mlasm auto examples/hello_la.masm -o hello_la.asm
 ```
 
-### 4. Run
-
+### Reversible / PRETTY Mode
+Convert standard NASM assembly into any of the 150 supported languages:
 ```bash
-./hello
+mlasm --reverse es standard_code.asm -o code_in_spanish.masm
+mlasm --reverse ja standard_code.asm -o code_in_japanese.masm
 ```
 
----
-
-## 🔄 Reverse Mode (PRETTY)
-
-View standard ASM code in any language:
-
+### Direct Build Pipeline (`--build`)
+Transpiles, assembles via NASM, and links via GCC in one command:
 ```bash
-# View in French
-python mlasm.py fr standard.asm french_view.masm --reverse
-
-# View in Japanese
-python mlasm.py ja standard.asm japanese_view.masm --reverse
-
-# View in Arabic
-python mlasm.py ar standard.asm arabic_view.masm --reverse
+mlasm --build es examples/hello_es.masm
 ```
 
-This is useful for:
-- Learning assembly in your language
-- International collaboration
-- Code review in native language
-
----
-
-## 🛠️ Command Line Reference
-
-### Basic Syntax
-
+### List Languages & Run Tests
 ```bash
-python mlasm.py <language> <input> <output> [--reverse]
+mlasm --list-langs    # Displays all 150 compiled language packages
+mlasm --test          # Executes the internal 9-step C99 verification suite
 ```
-
-### Parameters
-
-- `<language>` - Language code: `es`, `fr`, `de`, `it`, `ar`, `ru`, `ko`, `id`, `zh`, `ja`
-- `<input>` - Input file path
-- `<output>` - Output file path
-- `--reverse` - (Optional) Reverse mode: standard ASM → native language
-
-### Examples
-
-```bash
-# Spanish to NASM
-python mlasm.py es programa.masm programa.asm
-
-# French to NASM
-python mlasm.py fr programme.masm programme.asm
-
-# NASM to German (reverse)
-python mlasm.py de program.asm programm_de.masm --reverse
-```
-
----
-
-## 📁 Project Structure Recommendations
-
-### Small Project
-
-```
-my-program/
-├── mlasm.py           # Copy of translator
-├── src/
-│   └── main.masm     # Your code in native language
-├── build/
-│   ├── main.asm      # Generated NASM
-│   └── main.o        # Compiled object
-└── programa           # Final binary
-```
-
-### Larger Project
-
-```
-my-os/
-├── mlasm.py
-├── Makefile
-├── src/
-│   ├── boot.masm
-│   ├── kernel.masm
-│   └── drivers.masm
-└── build/
-```
-
-**Makefile example:**
-```makefile
-all:
-	python mlasm.py es src/boot.masm build/boot.asm
-	python mlasm.py es src/kernel.masm build/kernel.asm
-	nasm -f elf64 build/boot.asm -o build/boot.o
-	nasm -f elf64 build/kernel.asm -o build/kernel.o
-	ld -T linker.ld build/*.o -o kernel.bin
-```
-
----
-
-## 🧪 Testing Your Code
-
-### Verify Translation
-
-```bash
-# Translate
-python mlasm.py es test.masm test.asm
-
-# View generated ASM
-cat test.asm
-
-# Reverse to check
-python mlasm.py es test.asm test_check.masm --reverse
-diff test.masm test_check.masm
-```
-
-### Common Workflow
-
-1. Write code in native language
-2. Translate to NASM
-3. Compile with NASM
-4. Link with ld
-5. Test binary
-
----
-
-## 🔧 Integration with Build Systems
-
-### Make
-
-See `Makefile.example` in the repository.
-
-### CMake
-
-```cmake
-function(add_mlasm_executable target lang source)
-    set(ASM_FILE "${CMAKE_BINARY_DIR}/${target}.asm")
-    
-    add_custom_command(
-        OUTPUT ${ASM_FILE}
-        COMMAND python ${CMAKE_SOURCE_DIR}/mlasm.py ${lang} ${source} ${ASM_FILE}
-        DEPENDS ${source}
-    )
-    
-    # ... continue with NASM compilation
-endfunction()
-```
-
-### VSCode Tasks
-
-See [Quick Start Guide](https://github.com/cyberenigma-lgtm/MultiLang-ASM/blob/main/QUICKSTART.md#-configuraci%C3%B3n-del-editor-vscode) for VSCode integration.
-
----
-
-## ❓ Troubleshooting
-
-### "File not found" error
-- Verify file paths are correct
-- Use absolute paths if needed
-
-### "Language not supported" error
-- Check language code (must be one of: es, fr, de, it, ar, ru, ko, id, zh, ja)
-- Ensure correct spelling
-
-### Comments not preserved
-- Comments with `;` are preserved automatically
-- Multi-line comments may need adjustment
-
-### Unicode issues on Windows
-- Ensure console supports UTF-8
-- Use `chcp 65001` before running
-
----
-
-## 📚 Next Steps
-
-- Read [Examples](Examples) for code samples
-- Check [PRETTY Mode](PRETTY-Mode) for reverse translation details
-- See [Contributing](Contributing) to add features or languages
-
----
-
-**Need help?** Open an [issue](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues) or start a [discussion](https://github.com/cyberenigma-lgtm/MultiLang-ASM/discussions).

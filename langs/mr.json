@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Marathi / मराठी",
+    "code": "mr",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Marathi / मराठी."
+  },
+  "keywords": {
+    "हलवा": "mov",
+    "बेरीज": "add",
+    "वजा": "sub",
+    "गुणा": "mul",
+    "भागा": "div",
+    "उडी": "jmp",
+    "कॉल": "call",
+    "परत": "ret",
+    "तुलना": "cmp",
+    "तपासा": "test",
+    "आणि": "and",
+    "किंवा": "or",
+    "विशेष": "xor",
+    "नाही": "not",
+    "टाका": "push",
+    "काढा": "pop",
+    "व्यत्यय": "int",
+    "सिस्टम_कॉल": "syscall",
+    "लूप": "loop",
+    "थांबा": "hlt",
+    "काहीही_नाही": "nop"
+  },
+  "kids_keywords": {
+    "mr": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

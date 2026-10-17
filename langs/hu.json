@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Hungarian / Magyar",
+    "code": "hu",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Hungarian / Magyar."
+  },
+  "keywords": {
+    "mozgat": "mov",
+    "hozzaad": "add",
+    "kivon": "sub",
+    "szoroz": "mul",
+    "oszt": "div",
+    "ugrik": "jmp",
+    "hiv": "call",
+    "visszater": "ret",
+    "osszehasonlit": "cmp",
+    "tesztel": "test",
+    "es": "and",
+    "vagy": "or",
+    "kizaro": "xor",
+    "nem": "not",
+    "betesz": "push",
+    "kivesz": "pop",
+    "megszakitas": "int",
+    "rendszerhivas": "syscall",
+    "ciklus": "loop",
+    "megall": "hlt",
+    "semmi": "nop",
+    "novel": "inc",
+    "csokkent": "dec",
+    "csere": "xchg",
+    "ha_egyenlo": "je",
+    "ha_nem_egyenlo": "jne"
+  },
+  "kids_keywords": {
+    "hu": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

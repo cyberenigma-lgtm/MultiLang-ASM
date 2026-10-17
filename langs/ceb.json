@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Cebuano / Sinugboanon",
+    "code": "ceb",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Cebuano / Sinugboanon."
+  },
+  "keywords": {
+    "balhin": "mov",
+    "dugang": "add",
+    "kuha": "sub",
+    "padaghan": "mul",
+    "bahin": "div",
+    "ambak": "jmp",
+    "tawag": "call",
+    "balik": "ret",
+    "tandi": "cmp",
+    "sulay": "test",
+    "ug": "and",
+    "o": "or",
+    "eksklusibo": "xor",
+    "dili": "not",
+    "iduso": "push",
+    "ibira": "pop",
+    "abal": "int",
+    "tawag_sa_sistema": "syscall",
+    "libot": "loop",
+    "hunong": "hlt",
+    "wala": "nop"
+  },
+  "kids_keywords": {
+    "ceb": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

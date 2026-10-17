@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Esperanto",
+    "code": "eo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Esperanto."
+  },
+  "keywords": {
+    "movi": "mov",
+    "aldoni": "add",
+    "subtrahi": "sub",
+    "multipliki": "mul",
+    "dividi": "div",
+    "salti": "jmp",
+    "voki": "call",
+    "reveni": "ret",
+    "kompari": "cmp",
+    "testi": "test",
+    "kaj": "and",
+    "au": "or",
+    "ekskluziva": "xor",
+    "ne": "not",
+    "pusxi": "push",
+    "tiri": "pop",
+    "interrompo": "int",
+    "sistemvoko": "syscall",
+    "buklo": "loop",
+    "halti": "hlt",
+    "nenio": "nop"
+  },
+  "kids_keywords": {
+    "eo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

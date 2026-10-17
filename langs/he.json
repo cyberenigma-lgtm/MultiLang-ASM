@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "name": "Hebrew / עברית",
+    "code": "he",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Hebrew."
+  },
+  "keywords": {
+    "הזז": "mov",
+    "החלף": "xchg",
+    "טען_כתובת": "lea",
+    "חבר": "add",
+    "חסר": "sub",
+    "כפול": "mul",
+    "השווה": "cmp",
+    "בדוק": "test",
+    "קפוץ": "jmp",
+    "קרא": "call",
+    "חזור": "ret",
+    "אם_שווה": "je",
+    "אם_אפס": "jz",
+    "אם_לא_שווה": "jne",
+    "אם_גדול": "jg",
+    "אם_קטן": "jl",
+    "דחוף": "push",
+    "משוך": "pop",
+    "דחוף_דגלים": "pushf",
+    "משוך_דגלים": "popf",
+    "הזז_בייט": "movsb",
+    "שמור_בייט": "stosb",
+    "טען_בייט": "lodsb",
+    "חזור_על": "rep",
+    "לולאה": "loop",
+    "לולאה_אם_אפס": "loopz",
+    "פסיקה": "int",
+    "קריאת_מערכת": "syscall",
+    "חזרת_מערכת": "sysret",
+    "עצור": "hlt",
+    "כלום": "nop",
+    "בייט_לוורד": "cbw",
+    "וורד_לדאבל": "cwd"
+  },
+  "kids_keywords": {
+    "he": {
+      "sim": "mov",
+      "hosef": "add",
+      "haser": "sub",
+      "hare": "syscall"
+    }
+  }
+}

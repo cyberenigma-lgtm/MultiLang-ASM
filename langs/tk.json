@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Turkmen / Türkmençe",
+    "code": "tk",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Turkmen / Türkmençe."
+  },
+  "keywords": {
+    "geçir": "mov",
+    "goş": "add",
+    "aýyr": "sub",
+    "köpelt": "mul",
+    "böl": "div",
+    "bök": "jmp",
+    "çagyr": "call",
+    "gaýt": "ret",
+    "deňeşdir": "cmp",
+    "barla": "test",
+    "we": "and",
+    "ýa-da": "or",
+    "aýratyn": "xor",
+    "däl": "not",
+    "it": "push",
+    "çek": "pop",
+    "kesilme": "int",
+    "ulgam_çagyryşy": "syscall",
+    "aýlaw": "loop",
+    "saklan": "hlt",
+    "hiç_zat": "nop"
+  },
+  "kids_keywords": {
+    "tk": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

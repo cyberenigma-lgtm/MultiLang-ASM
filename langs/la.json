@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Latin / Latina",
+    "code": "la",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Latin / Latina."
+  },
+  "keywords": {
+    "movere": "mov",
+    "addere": "add",
+    "subtrahere": "sub",
+    "multiplicare": "mul",
+    "dividere": "div",
+    "saltare": "jmp",
+    "vocare": "call",
+    "redire": "ret",
+    "comparare": "cmp",
+    "probare": "test",
+    "et": "and",
+    "aut": "or",
+    "disiunctivum": "xor",
+    "non": "not",
+    "trudere": "push",
+    "trahere": "pop",
+    "interruptio": "int",
+    "vocatio_systematis": "syscall",
+    "circulus": "loop",
+    "sistere": "hlt",
+    "nihil": "nop"
+  },
+  "kids_keywords": {
+    "la": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

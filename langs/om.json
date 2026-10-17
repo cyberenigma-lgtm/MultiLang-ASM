@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Oromo / Afaan Oromoo",
+    "code": "om",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Oromo / Afaan Oromoo."
+  },
+  "keywords": {
+    "sochoosi": "mov",
+    "ida'i": "add",
+    "hir'isi": "sub",
+    "baay'isi": "mul",
+    "qodi": "div",
+    "utaali": "jmp",
+    "waami": "call",
+    "deebi'i": "ret",
+    "walbira_qabi": "cmp",
+    "qori": "test",
+    "fi": "and",
+    "yookiin": "or",
+    "adda": "xor",
+    "miti": "not",
+    "galchi": "push",
+    "baasi": "pop",
+    "gidduu_seensa": "int",
+    "waamicha_sirnaa": "syscall",
+    "marsoo": "loop",
+    "dhaabi": "hlt",
+    "homaa": "nop"
+  },
+  "kids_keywords": {
+    "om": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

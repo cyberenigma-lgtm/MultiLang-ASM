@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Malagasy",
+    "code": "mg",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Malagasy."
+  },
+  "keywords": {
+    "afindrao": "mov",
+    "ampio": "add",
+    "esory": "sub",
+    "ampitomboy": "mul",
+    "zarazarao": "div",
+    "mitsambikina": "jmp",
+    "antsoy": "call",
+    "miverena": "ret",
+    "ampitahao": "cmp",
+    "zahao": "test",
+    "sy": "and",
+    "na": "or",
+    "manokana": "xor",
+    "tsia": "not",
+    "atsofohy": "push",
+    "avoahy": "pop",
+    "fanelingelenana": "int",
+    "fampiantsoana_rafitra": "syscall",
+    "fihodinana": "loop",
+    "ajanony": "hlt",
+    "tsy_misy": "nop"
+  },
+  "kids_keywords": {
+    "mg": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

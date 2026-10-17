@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "name": "Polish / Polski",
+    "code": "pl",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Polish."
+  },
+  "keywords": {
+    "przenies": "mov",
+    "przesun": "mov",
+    "przesuń": "mov",
+    "zamien": "xchg",
+    "zaladuj_adres": "lea",
+    "dodaj": "add",
+    "odejmij": "sub",
+    "pomnoz": "mul",
+    "podziel": "div",
+    "zwieksz": "inc",
+    "zmniejsz": "dec",
+    "zaneguj": "neg",
+    "i": "and",
+    "oraz": "and",
+    "lub": "or",
+    "albo": "xor",
+    "porownaj": "cmp",
+    "testuj": "test",
+    "skocz": "jmp",
+    "wolaj": "call",
+    "wroc": "ret",
+    "jesli_rowne": "je",
+    "jesli_zero": "jz",
+    "jesli_nierowne": "jne",
+    "jesli_wieksze": "jg",
+    "jesli_mniejsze": "jl",
+    "poloz": "push",
+    "zdejmij": "pop",
+    "poloz_flagi": "pushf",
+    "zdejmij_flagi": "popf",
+    "przenies_bajt": "movsb",
+    "zapisz_bajt": "stosb",
+    "laduj_bajt": "lodsb",
+    "powtarzaj": "rep",
+    "petla": "loop",
+    "petla_jesli_zero": "loopz",
+    "przerwanie": "int",
+    "wywolanie_systemowe": "syscall",
+    "powrot_systemowy": "sysret",
+    "stop": "hlt",
+    "nic": "nop",
+    "bajt_na_slowo": "cbw",
+    "slowo_na_podwojne": "cwd"
+  },
+  "kids_keywords": {
+    "pl": {
+      "poloz": "mov",
+      "dodaj": "add",
+      "zabierz": "sub",
+      "pokaz": "syscall"
+    }
+  }
+}

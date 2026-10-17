@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Czech / Čeština",
+    "code": "cs",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Czech / Čeština."
+  },
+  "keywords": {
+    "presunout": "mov",
+    "pridat": "add",
+    "odecist": "sub",
+    "nasobit": "mul",
+    "delit": "div",
+    "skocit": "jmp",
+    "zavolat": "call",
+    "vratit": "ret",
+    "porovnat": "cmp",
+    "otestovat": "test",
+    "a": "and",
+    "nebo": "or",
+    "exkluzivni": "xor",
+    "ne": "not",
+    "vlozit": "push",
+    "vyjmout": "pop",
+    "preruseni": "int",
+    "systemove_volani": "syscall",
+    "cyklus": "loop",
+    "zastavit": "hlt",
+    "nic": "nop",
+    "zvysit": "inc",
+    "snizit": "dec",
+    "vymenit": "xchg",
+    "pokud_rovno": "je",
+    "pokud_nerovno": "jne"
+  },
+  "kids_keywords": {
+    "cs": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

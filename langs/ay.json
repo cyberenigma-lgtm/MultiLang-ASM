@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Aymara",
+    "code": "ay",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Taqpacha yanapa assembler-taki Aymara aruna."
+  },
+  "keywords": {
+    "kuna": "mov",
+    "turkaña": "xchg",
+    "katuña": "lea",
+    "ch'usa_mast'aña": "movzx",
+    "unancha_mast'aña": "movsx",
+    "yapaña": "add",
+    "apaqaña": "sub",
+    "mirayaña": "mul",
+    "jaljaña": "div",
+    "jilayaña": "inc",
+    "pisiyaña": "dec",
+    "jani_arunayaña": "neg",
+    "kipkaña": "cmp",
+    "yant'aña": "test",
+    "t'it'iña": "jmp",
+    "jawsaña": "call",
+    "kutiña": "ret",
+    "kipka_hina": "je",
+    "ch'usa_hina": "jz",
+    "jani_kipka": "jne",
+    "aswan_jach'a": "jg",
+    "aswan_jisk'a": "jl",
+    "uchuqaña": "push",
+    "apsuña": "pop",
+    "unancha_uchuqa": "pushf",
+    "unancha_apsu": "popf",
+    "byte_kuna": "movsb",
+    "byte_imayaña": "stosb",
+    "byte_katuña": "lodsb",
+    "kutiyaña": "rep",
+    "muyuta": "loop",
+    "ch'usa_muyuta": "loopz",
+    "samaña": "int",
+    "sistema_jawsaña": "syscall",
+    "sistema_kutiña": "sysret",
+    "sayayaña": "hlt",
+    "jani_kunnasa": "nop",
+    "byte_wordtech": "cbw",
+    "word_doubletech": "cwd",
+    "double_quadtech": "cdq"
+  },
+  "kids_keywords": {
+    "ay": {
+      "uchuña": "mov",
+      "yapaña": "add",
+      "apaqaña": "sub",
+      "uñachaya": "syscall"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Ilocano / Ilokano",
+    "code": "ilo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Ilocano / Ilokano."
+  },
+  "keywords": {
+    "yakar": "mov",
+    "inayon": "add",
+    "ikkat": "sub",
+    "paaduen": "mul",
+    "bingayen": "div",
+    "lagto": "jmp",
+    "awagan": "call",
+    "subli": "ret",
+    "idilig": "cmp",
+    "suboken": "test",
+    "ket": "and",
+    "wenno": "or",
+    "naisangayan": "xor",
+    "saan": "not",
+    "iduron": "push",
+    "iguyod": "pop",
+    "singa": "int",
+    "awag_ti_sistema": "syscall",
+    "rikos": "loop",
+    "agsardeng": "hlt",
+    "awan": "nop"
+  },
+  "kids_keywords": {
+    "ilo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

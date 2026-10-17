@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Albanian / Shqip",
+    "code": "sq",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Albanian / Shqip."
+  },
+  "keywords": {
+    "leviz": "mov",
+    "shto": "add",
+    "zbrit": "sub",
+    "shumezo": "mul",
+    "pjeseto": "div",
+    "kerce": "jmp",
+    "therrit": "call",
+    "kthe": "ret",
+    "krahaso": "cmp",
+    "testo": "test",
+    "dhe": "and",
+    "ose": "or",
+    "ekskluzive": "xor",
+    "jo": "not",
+    "fut": "push",
+    "nxirr": "pop",
+    "nderprerje": "int",
+    "thirrje_sistemi": "syscall",
+    "cikel": "loop",
+    "ndalo": "hlt",
+    "asgje": "nop"
+  },
+  "kids_keywords": {
+    "sq": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (Стандарт UPL+ C99)
 
-> *"Первый многоязычный ассемблер x86_64."*
+**Первый в мире суверенный многоязычный ассемблерный движок x86_64.**  
+Часть экосистемы **UPL (Universal Polyglot Layer)** и ядра Neuro-OS.
 
-**Пишите на ассемблере на своем родном языке.**
+Пишите на ассемблере на родном языке · 150 языков мира · 200+ инструкций x86_64 · 100% нативный ANSI C99 движок · 0% зависимостей от Python · Мгновенная работа (<2 мс) · Совместимость с NASM.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **Русский** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 Что это?
-
-MultiLang-ASM позволяет писать ассемблерный код x86_64, используя ключевые слова на **Русском**.
-Он автоматически переводит ваш код в стандартный ассемблер NASM.
-
-## ✨ Особенности
-
-- 🌍 **Писать на Русском** (ru)
-- 🤖 **Автоопределение:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `Русский <-> ASM`
-
-## 📖 Пример на Русском
-
-### Source Code (`hello.masm`)
-```asm
-перенести rax, 1
-перенести rdi, 1
-перенести rsi, msg
-перенести rdx, 13
-системный_вызов
-
-перенести rax, 60
-перенести rdi, 0
-системный_вызов
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ Использование
-
+## Быстрый старт
 ```bash
-python mlasm.py auto hello.masm
-```
+# Сборка нативного движка:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# Транспиляция:
+mlasm ru пример.masm -o пример.asm
+
+# Автоопределение языка:
+mlasm auto пример.masm -o пример.asm
+```

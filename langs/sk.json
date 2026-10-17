@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Slovak / Slovenčina",
+    "code": "sk",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Slovak / Slovenčina."
+  },
+  "keywords": {
+    "presunut": "mov",
+    "pridat": "add",
+    "odpocitat": "sub",
+    "vynasobit": "mul",
+    "vydelit": "div",
+    "skocit": "jmp",
+    "zavolat": "call",
+    "vratit": "ret",
+    "porovnat": "cmp",
+    "testovat": "test",
+    "a": "and",
+    "alebo": "or",
+    "exkluzivne": "xor",
+    "nie": "not",
+    "vlozit": "push",
+    "vybrat": "pop",
+    "prerusenie": "int",
+    "systemove_volanie": "syscall",
+    "cyklus": "loop",
+    "zastavit": "hlt",
+    "nic": "nop",
+    "zvysit": "inc",
+    "znizit": "dec",
+    "vymenit": "xchg",
+    "ak_rovne": "je",
+    "ak_nerovne": "jne"
+  },
+  "kids_keywords": {
+    "sk": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Bulgarian / Български",
+    "code": "bg",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Bulgarian / Български."
+  },
+  "keywords": {
+    "премести": "mov",
+    "добави": "add",
+    "извади": "sub",
+    "умножи": "mul",
+    "раздели": "div",
+    "скочи": "jmp",
+    "извикай": "call",
+    "върни": "ret",
+    "сравни": "cmp",
+    "тествай": "test",
+    "и": "and",
+    "или": "or",
+    "изключващо": "xor",
+    "не": "not",
+    "постави": "push",
+    "извади_стек": "pop",
+    "прекъсване": "int",
+    "системно_повикване": "syscall",
+    "цикъл": "loop",
+    "спри": "hlt",
+    "нищо": "nop",
+    "увеличи": "inc",
+    "намали": "dec",
+    "размени": "xchg",
+    "ако_равно": "je",
+    "ако_различно": "jne"
+  },
+  "kids_keywords": {
+    "bg": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Fula / Fulfulde",
+    "code": "ff",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Fula / Fulfulde."
+  },
+  "keywords": {
+    "yaggal": "mov",
+    "ɓeydu": "add",
+    "ustu": "sub",
+    "saɗɗin": "mul",
+    "sendu": "div",
+    "diw": "jmp",
+    "noddu": "call",
+    "rutto": "ret",
+    "yerondir": "cmp",
+    "ndartor": "test",
+    "e": "and",
+    "walla": "or",
+    "feere": "xor",
+    "wonaa": "not",
+    "loow": "push",
+    "wurtin": "pop",
+    "taƴo": "int",
+    "noddaango_laawol": "syscall",
+    "taareede": "loop",
+    "darnu": "hlt",
+    "fus": "nop"
+  },
+  "kids_keywords": {
+    "ff": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

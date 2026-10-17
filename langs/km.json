@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Khmer / ភាសាខ្មែរ",
+    "code": "km",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Khmer / ភាសាខ្មែរ."
+  },
+  "keywords": {
+    "រំកិល": "mov",
+    "បូក": "add",
+    "ដក": "sub",
+    "គុណ": "mul",
+    "ចែក": "div",
+    "លោត": "jmp",
+    "ហៅ": "call",
+    "ត្រឡប់": "ret",
+    "ប្រៀបធៀប": "cmp",
+    "សាកល្បង": "test",
+    "និង": "and",
+    "ឬ": "or",
+    "ផ្ដាច់មុខ": "xor",
+    "មិន": "not",
+    "រុញ": "push",
+    "ដកចេញ": "pop",
+    "រំខាន": "int",
+    "ការហៅប្រព័ន្ធ": "syscall",
+    "រង្វិលជុំ": "loop",
+    "បញ្ឈប់": "hlt",
+    "គ្មានអ្វី": "nop"
+  },
+  "kids_keywords": {
+    "km": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "name": "Dutch / Nederlands",
+    "code": "nl",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Dutch."
+  },
+  "keywords": {
+    "verplaats": "mov",
+    "wissel": "xchg",
+    "laad_adres": "lea",
+    "optellen": "add",
+    "aftrekken": "sub",
+    "vermenigvuldigen": "mul",
+    "delen": "div",
+    "verhogen": "inc",
+    "verlagen": "dec",
+    "ontkennen": "neg",
+    "en": "and",
+    "of": "or",
+    "niet": "not",
+    "xor": "xor",
+    "vergelijk": "cmp",
+    "test": "test",
+    "spring": "jmp",
+    "roep": "call",
+    "keer_terug": "ret",
+    "als_gelijk": "je",
+    "als_nul": "jz",
+    "als_niet_gelijk": "jne",
+    "als_groter": "jg",
+    "als_kleiner": "jl",
+    "duw": "push",
+    "trek": "pop",
+    "duw_vlaggen": "pushf",
+    "trek_vlaggen": "popf",
+    "verplaats_byte": "movsb",
+    "sla_byte_op": "stosb",
+    "laad_byte": "lodsb",
+    "herhaal": "rep",
+    "lus": "loop",
+    "lus_als_nul": "loopz",
+    "onderbreking": "int",
+    "systeemaanroep": "syscall",
+    "systeem_terug": "sysret",
+    "stop": "hlt",
+    "niets": "nop"
+  },
+  "kids_keywords": {
+    "nl": {
+      "zet": "mov",
+      "plus": "add",
+      "min": "sub",
+      "toon": "syscall"
+    }
+  }
+}

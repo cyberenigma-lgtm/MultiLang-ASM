@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Tok Pisin",
+    "code": "tpi",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Ful sapot bilong assembler long Tok Pisin."
+  },
+  "keywords": {
+    "muvim": "mov",
+    "senisim": "xchg",
+    "lodim_adres": "lea",
+    "bikim_zero": "movzx",
+    "bikim_mak": "movsx",
+    "plusim": "add",
+    "minusim": "sub",
+    "mulpim": "mul",
+    "divim": "div",
+    "go_ap": "inc",
+    "go_daun": "dec",
+    "no_makim": "neg",
+    "sekim": "cmp",
+    "testim": "test",
+    "kalap": "jmp",
+    "singaut": "call",
+    "go_bek": "ret",
+    "sapos_sem": "je",
+    "sapos_nating": "jz",
+    "sapos_no_sem": "jne",
+    "sapos_bik": "jg",
+    "sapos_liklik": "jl",
+    "putim_insait": "push",
+    "autim": "pop",
+    "putim_flek": "pushf",
+    "autim_flek": "popf",
+    "muvim_byte": "movsb",
+    "holim_byte": "stosb",
+    "lodim_byte": "lodsb",
+    "mekim_gen": "rep",
+    "lup": "loop",
+    "lup_sapos_nating": "loopz",
+    "stopim": "int",
+    "singaut_sistem": "syscall",
+    "bek_sistem": "sysret",
+    "pinis": "hlt",
+    "nating": "nop",
+    "byte_go_word": "cbw",
+    "word_go_double": "cwd",
+    "double_go_quad": "cdq"
+  },
+  "kids_keywords": {
+    "tpi": {
+      "putim": "mov",
+      "plus": "add",
+      "minus": "sub",
+      "soim": "syscall"
+    }
+  }
+}

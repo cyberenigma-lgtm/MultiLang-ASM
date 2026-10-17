@@ -1,344 +1,132 @@
-# 🛡️ MultiLang-ASM v0.2
+# 🛡️ MultiLang-ASM v1.0.0
+<p align="center">
+  <img src="assets/logo.png" alt="MultiLang-ASM Logo" width="800">
+</p>
 
-> *"No saber inglés no debería impedirte crear. La imaginación no tiene idioma."*
+> *"No saber inglés no debería impedirte crear. La imaginación no tiene idioma y la máquina solo entiende binario."*
 
-**El primer ensamblador multilingüe. Escribe ensamblador x86_64 en tu idioma nativo.**
+**El primer motor de ensamblador x86_64 soberano y multilingüe del mundo.**  
+Parte fundamental del ecosistema **UPL (Universal Polyglot Layer)** y del núcleo de **Neuro-OS**.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/INSTRUCCIONES_ES.md)
-[![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
+Escribe código ensamblador en tu lengua materna · 150 Idiomas del Mundo · 200+ Instrucciones x86_64 Canónicas · Motor Nativo 100% ANSI C99 · Cero Dependencias de Runtime · Ejecución Instantánea (<2 ms) · Compatible con NASM/FASM/GAS.
 
-📖 **Español** | **[English](README.md)**
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg)](LICENSE)
+[![Estándar: ANSI C99](https://img.shields.io/badge/Est%C3%A1ndar-ANSI%20C99-blue.svg)](src/)
+[![Idiomas](https://img.shields.io/badge/idiomas-150%20Global-success.svg)](LISTA_PAISES_LENGUAS.md)
+[![Instrucciones](https://img.shields.io/badge/instrucciones-200%2B%20x86__64-brightgreen.svg)](docs/INSTRUCCIONES_ES.md)
+[![Ecosistema: UPL+](https://img.shields.io/badge/Ecosistema-UPL%2B%20Soberano-purple.svg)](https://github.com/cyberenigma-lgtm/UNIVERSAL-POLYGLOT-LAYER-UPL)
+
+📖 **[Español](README_ES.md)** | **[English](README.md)** | **[Français](README_FR.md)** | **[Deutsch](README_DE.md)** | **[Italiano](README_IT.md)** | **[Português](README_PT.md)** | **[Русский](README_RU.md)** | **[日本語](README_JA.md)** | **[中文](README_ZH.md)** | **[한국어](README_KO.md)** | **[العربية](README_AR.md)** | **[Bahasa](README_ID.md)** | **[Hindi](README_HI.md)** | **[Türkçe](README_TR.md)** | **[Polski](README_PL.md)** | **[Svenska](README_SV.md)** | **[Nederlands](README_NL.md)**
 
 ---
 
-## 🚀 ¿Qué es esto?
+## 🚀 ¿Qué es MultiLang-ASM?
 
-Ya no necesitas dominar inglés para crear kernels, drivers o firmware.
+MultiLang-ASM es un transpilador y preprocesador de ensamblador x86_64 ultra-rápido y sin dependencias.  
+Permite a desarrolladores de sistemas, estudiantes, creadores de kernels y firmware escribir ensamblador utilizando palabras clave en su idioma nativo, traduciéndolo de forma instantánea a código NASM estándar.
 
-Este proyecto demuestra que las barreras lingüísticas en la programación son **artificiales** y eliminables.
+Habiendo comenzado como un prototipo en Python, **la versión 1.0.0 ha sido reescrita íntegramente como un motor nativo ANSI C99**, eliminando todo requisito de Python en tiempo de compilación y ejecución, logrando tiempos de traducción inferiores a 2 milisegundos.
 
-## 💡 ¿Por qué importa?
-
-La mayoría de las herramientas de bajo nivel fueron diseñadas en un contexto angloparlante hace décadas. Esto ha creado una barrera invisible que excluye a millones de personas con talento, creatividad e ideas brillantes.
-
-**MultiLang-ASM rompe esa herencia** y abre la puerta a:
-- Estudiantes que aprenden en su idioma nativo
-- Autodidactas sin acceso a educación formal en inglés
-- Comunidades enteras que hoy están fuera del bajo nivel
-- Niños que pueden experimentar sin barreras artificiales
-
-No es solo código. Es **justicia tecnológica**.
-
-## ✨ Características
-
-- 🌐 **Multilingüe:** Escribe en Español, Árabe, Hindú, Turco... (16 idiomas)
-- 🔄 **Reversible:** Visualiza el mismo código en diferentes idiomas sin modificarlo
-- 🛠️ **Compatible:** Genera ASM estándar compatible con NASM, FASM y GAS
-- 📚 **Educativo:** Ideal para estudiantes y autodidactas sin conocimientos previos de inglés
-- 🎯 **Universal:** El binario final es idéntico, sin importar el idioma usado
-
-## � Novedades v0.4 (Released)
-
-### 🤖 Auto-Detección de Idioma
-Ya no necesitas especificar el idioma manualmente. MultiLang-ASM analiza tu código y detecta el idioma con alta precisión.
-
-```bash
-# Antes (v0.3)
-python mlasm.py es programa.masm
-
-# Ahora (v0.4)
-python mlasm.py auto programa.masm
-```
-
-### ⚡ Macros (`%define`)
-Soporte básico para preprocesador. Define constantes o alias en tu propio idioma.
+### Ejemplo Bidireccional (Español ↔ NASM Estándar)
 
 ```asm
-; Español
-%define SALUDO 0x1
-mover eax, SALUDO
+; Entrada en Español (examples/hello_es.masm)
+mover rax, 1
+mover rdi, 1
+mover rsi, mensaje
+mover rdx, 13
+llamada_sistema
 
-; Hindi
-%define RAKHO 0x1
-bhejo eax, RAKHO
+; Salida transpilada instantáneamente → NASM Estándar
+mov rax, 1
+mov rdi, 1
+mov rsi, mensaje
+mov rdx, 13
+syscall
 ```
-
-### 🌍 5 Nuevos Idiomas (Beta)
-Se han añadido 5 nuevos idiomas a la familia, con soporte "Core+" (Instrucciones esenciales de lógica, aritmética y control de flujo):
-
-- 🇮🇳 **Hindi (`hi`)**: `bhejo` (mov), `joro` (add), `kudo` (jmp)...
-- 🇹🇷 **Turco (`tr`)**: `taşı` (mov), `ekle` (add), `atla` (jmp)...
-- 🇵🇱 **Polaco (`pl`)**: `przesun` (mov), `dodaj` (add), `skocz` (jmp)...
-- 🇸🇪 **Sueco (`sv`)**: `flytta` (mov), `addera` (add), `hoppa` (jmp)...
-- 🇳🇱 **Holandés (`nl`)**: `verplaats` (mov), `optellen` (add), `spring` (jmp)...
-
-Estos idiomas incluyen soporte completo para lógica (`AND`/`OR`/`XOR`/`NOT`) y comparación (`CMP`/`TEST`).
-
-## �📖 Ejemplo Rápido
-
-### Código en Español
-```asm
-mover rax, rbx
-sumar rax, 4
-saltar etiqueta_fin
-```
-
-### Código en Árabe
-```asm
-نقل rax, rbx
-جمع rax, 4
-اقفز etiqueta_fin
-```
-
-### Ambos generan el mismo ASM estándar
-```asm
-mov rax, rbx
-add rax, 4
-jmp etiqueta_fin
-```
-
-## 🎯 Uso
-
-### 1. Traducir de tu idioma a NASM
-```bash
-python mlasm.py es demo_es.masm demo.asm
-```
-
-### 2. Compilar normalmente
-```bash
-nasm -f elf64 demo.asm -o demo.o
-ld demo.o -o demo
-```
-
-### 3. Visualizar en otro idioma (modo reversible)
-```bash
-python mlasm.py fr demo.asm demo_fr.masm --reverse
-```
-
-## 📊 Mapa de Instrucciones Soportadas
-
-| Idioma | Ejemplo | Traducción | ASM Estándar |
-|--------|---------|------------|-------------|
-| Español | `mover rax, rbx` | → | `mov rax, rbx` |
-| Árabe | `نقل rax, rbx` | → | `mov rax, rbx` |
-| Francés | `depl rax, rbx` | → | `mov rax, rbx` |
-| Alemán | `bewegen rax, rbx` | → | `mov rax, rbx` |
-| Ruso | `перенести rax, rbx` | → | `mov rax, rbx` |
-| Japonés | `移動 rax, rbx` | → | `mov rax, rbx` |
-| Coreano | `이동 rax, rbx` | → | `mov rax, rbx` |
-
-Ver diccionario completo en [`mlasm.py`](mlasm.py).
-
-## 🌟 Filosofía
-
-Este proyecto nace de una convicción simple:
-
-- El inglés no es un requisito **técnico**, es una convención **histórica**
-- La CPU entiende **opcodes**, no idiomas humanos
-- Eliminar barreras lingüísticas **democratiza** la tecnología
-- La creatividad no debería depender del idioma que hablas
-
-## 🗺️ Idiomas Soportados
-
-| Idioma | Código | Estado |
-|--------|--------|--------|
-| Español | `es` | ✅ Activo |
-| Francés | `fr` | ✅ Activo |
-| Italiano | `it` | ✅ Activo |
-| Árabe | `ar` | ✅ Activo |
-| Alemán | `de` | ✅ Activo |
-| Ruso | `ru` | ✅ Activo |
-| Coreano | `ko` | ✅ Activo |
-| Indonesio | `id` | ✅ Activo |
-| Chino Tradicional | `zh` | ✅ Activo |
-| Japonés | `ja` | ✅ Activo |
-| Portugués | `pt` | ✅ Activo |
-| Hindi | `hi` | ✅ Beta |
-| Turco | `tr` | ✅ Beta |
-| Polaco | `pl` | ✅ Beta |
-| Sueco | `sv` | ✅ Beta |
-| Holandés | `nl` | ✅ Beta |
-
-## 🛠️ Instalación
-
-```bash
-git clone https://github.com/tuusuario/MultiLang-ASM.git
-cd MultiLang-ASM
-python mlasm.py --help
-```
-
-No se requieren dependencias externas. Solo Python 3.6+.
-
-## 📈 Estado del Proyecto
-
-| Característica | Estado |
-|----------------|--------|
-| Prototipo funcional | ✅ Completado |
-| Traducción bidireccional | ✅ Completado |
-| Soporte para 10 idiomas | ✅ Completado |
-| Preservación de comentarios | ✅ Completado |
-| Alias múltiples | ✅ Completado |
-| Expansión sintáctica (macros) | ✅ Completado |
-| Detección automática de idioma | ✅ Completado |
-| Integración con IDEs | 🔄 Planeado |
-| Validación sintáctica ASM | 🔄 Planeado |
-
-## ⚠️ Limitaciones Actuales (v0.2)
-
-Ser transparente sobre lo que **no** hace (todavía) es tan importante como mostrar lo que sí hace:
-
-- ❌ No soporta macros complejas
-- ❌ No traduce estructuras de control de alto nivel
-- ❌ No detecta automáticamente el idioma del código fuente
-- ❌ No valida sintaxis ASM avanzada (eso lo hace NASM)
-- ❌ No traduce nombres de secciones (`.text`, `.data`)
-
-Estas limitaciones están en el roadmap para versiones futuras.
-
-## 🔬 Ejemplo Completo de Flujo
-
-### Paso 1: Escribir en tu idioma
-Crea `hola.masm` en Español:
-```asm
-; Programa: Hola Mundo
-seccion .texto
-global _inicio
-
-_inicio:
-    mover rax, 1        ; syscall write
-    mover rdi, 1        ; stdout
-    mover rsi, mensaje
-    mover rdx, 12
-    interrupcion 0x80
-    
-    mover rax, 60       ; syscall exit
-    mover rdi, 0
-    interrupcion 0x80
-
-seccion .datos
-    mensaje db "Hola Mundo!", 0xA
-```
-
-### Paso 2: Traducir a NASM estándar
-```bash
-python mlasm.py es hola.masm hola.asm
-```
-
-Salida:
-```
-🛡️ MultiLang-ASM v0.2
-   Idioma: ES
-   Modo: Estándar (NASM)
-   Entrada: hola.masm
-   Salida: hola.asm
-   Estado: ✅ OK
-```
-
-### Paso 3: Compilar con NASM
-```bash
-nasm -f elf64 hola.asm -o hola.o
-ld hola.o -o hola
-```
-
-### Paso 4: Ejecutar
-```bash
-./hola
-# Salida: Hola Mundo!
-```
-
-### Bonus: Ver en otro idioma
-```bash
-python mlasm.py ar hola.asm hola_ar.masm --reverse
-# Ahora hola_ar.masm usa mnemónicos en árabe
-```
-
-## 🤝 Contribuir
-
-¿Quieres añadir tu idioma? ¡Perfecto!
-
-1. Edita `mlasm.py`
-2. Añade tu tabla de traducción en el diccionario `TABLE`
-3. Haz un pull request
-4. ¡Listo! Habrás democratizado el bajo nivel para tu comunidad
-
-## 📄 Documentación
-
-- [Visión y Arquitectura](VISION_Y_ARQUITECTURA.md)
-- [Informe de Concepto](INFORME_DE_CONCEPTO.md)
-- [Changelog](CHANGELOG.md)
-- **[🌍 Documentación Multilingüe](docs/)** ← Referencias completas en 10 idiomas
-
-### Referencias de Instrucciones por Idioma (80+ instrucciones cada uno)
-- 🇪🇸 [Español](docs/INSTRUCCIONES_ES.md)
-- 🇫🇷 [Français](docs/INSTRUCCIONES_FR.md)
-- 🇩🇪 [Deutsch](docs/INSTRUCCIONES_DE.md)
-- 🇮🇹 [Italiano](docs/INSTRUCCIONES_IT.md)
-- 🇸🇦 [العربية (Arabic)](docs/INSTRUCCIONES_AR.md)
-- 🇷🇺 [Русский (Russian)](docs/INSTRUCCIONES_RU.md)
-- 🇰🇷 [한국어 (Korean)](docs/INSTRUCCIONES_KO.md)
-- 🇮🇩 [Bahasa Indonesia](docs/INSTRUCCIONES_ID.md)
-- 🇨🇳 [中文 (Traditional Chinese)](docs/INSTRUCCIONES_ZH.md)
-- 🇯🇵 [日本語 (Japanese)](docs/INSTRUCCIONES_JA.md)
-- 🇧🇷 [Português (Portuguese-BR)](docs/MULTILANG_ASM_PTBR.md)
-
-## ⚖️ Disclaimer Técnico
-
-**MultiLang-ASM no reemplaza a NASM, FASM o GAS.**
-
-Es una **capa de accesibilidad** que traduce mnemónicos nativos a ASM estándar. El archivo generado es 100% compatible con cualquier ensamblador tradicional. La CPU nunca ve la diferencia.
-
-Piénsalo como un "preprocesador humano" que elimina la barrera del idioma sin modificar la arquitectura subyacente.
-
-## 💭 Mensaje del Autor
-
-**"No saber inglés no debería ser una barrera para crear. El conocimiento debe fluir en todos los idiomas."**
-
-Si este proyecto te ayudó, compártelo. Cada persona que programa en su idioma nativo es una victoria contra las barreras artificiales en tecnología.
 
 ---
 
-## 🤝 ¿Quieres Contribuir?
+## ✨ Novedades y Características (v1.0.0 Estándar UPL+)
 
-**MultiLang-ASM está abierto a colaboraciones de todo el mundo.**
-
-No necesitas saber ensamblador: si hablas otro idioma, puedes ayudar a traducir, documentar o crear ejemplos.
-
-**¿Cómo puedes ayudar?**
-- 🌍 Añadir soporte para nuevos idiomas
-- 📝 Mejorar traducciones existentes
-- 📚 Crear tutoriales en tu idioma
-- 🐛 Reportar bugs o sugerir mejoras
-- ⭐ Dar una estrella al repo
-
-**Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para empezar.**
-
-Issues etiquetados con `good first issue` son perfectos para nuevos contribuidores.
+- ⚡ **Motor 100% Nativo en ANSI C99**: Cero dependencias externas. Compilable con cualquier compilador estándar C99 (`gcc`, `clang`, `tcc`, `msvc`). Binario de menos de 80 KB.
+- 🌍 **150 Idiomas y Dialectos del Mundo**: Cobertura completa de los 5 continentes (Europa, América, África, Asia y Oceanía), incluyendo lenguas indígenas y regionales.
+- ⚙️ **200+ Instrucciones Canónicas**: Soporte exhaustivo para todo el repertorio x86_64: transferencia de datos, aritmética, lógica, manipulación de bits, banderas de control, cadenas, bucles, llamadas de sistema, tablas de descriptores (GDT/IDT/LDT) y operaciones FPU/x87.
+- 🤖 **Auto-Detección Instantánea de Idioma**: MultiLang-ASM analiza el código fuente e identifica automáticamente la lengua utilizada (`mlasm auto archivo.masm`).
+- 🔁 **Modo Inverso Reversible (PRETTY)**: Permite visualizar código NASM estándar en cualquiera de los 150 idiomas soportados (`--reverse`).
+- 🧠 **Preprocesador de Macros Nativo**: Soporte en C para `%define NOMBRE valor`.
+- 🛡️ **Arquitectura Pass-Through**: Toda instrucción x86 no registrada explícitamente se transfiere directamente a NASM sin alteraciones.
+- 📦 **Compilación Directa (`--build`)**: Transpila, ensambla con NASM y enlaza con GCC en un solo paso (`mlasm --build es archivo.masm`).
 
 ---
 
-## 📧 Contacto
+## 🛠️ Instalación y Uso Rápido
 
-**Email:** neuro.so.ia.sim@gmail.com  
-**Issues:** [GitHub Issues](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)  
-**Discussions:** [GitHub Discussions](https://github.com/cyberenigma-lgtm/MultiLang-ASM/discussions)
+### 1. Compilación del Motor Nativo
+
+**En Windows:**
+```cmd
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm.exe
+```
+*(O ejecuta directamente `mlasm.bat`, que compila el binario automáticamente en el primer inicio).*
+
+**En Linux / macOS:**
+```bash
+make
+# o: gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
+```
+
+### 2. Comandos Principales
+
+```bash
+# Transpilación básica con especificación de idioma:
+mlasm es examples/hello_es.masm -o bin/hello_es.asm
+
+# Auto-detección inteligente del idioma:
+mlasm auto examples/hello_zh.masm -o bin/hello_zh.asm
+
+# Modo inverso (NASM estándar -> Idioma nativo):
+mlasm --reverse es bin/hello_es.asm -o bin/hello_invertido.masm
+
+# Compilar directo a ejecutable binario (.exe):
+mlasm --build es examples/hello_es.masm
+
+# Ejecutar suite de pruebas internas:
+mlasm --test
+
+# Listar los 150 idiomas soportados:
+mlasm --list-langs
+```
 
 ---
 
-**Versión:** v0.4  
-**Licencia:** MIT  
-**Autor:** J / Neuro-OS Project  
-**Repositorio:** https://github.com/cyberenigma-lgtm/MultiLang-ASM
+## 🗺️ Cobertura Lingüística (150 Lenguas)
 
-— J
-
-🛡️ **Parte del ecosistema Neuro-OS**
-
-## 📜 Licencia
-
-MIT License - Libertad total para usar, modificar y distribuir.
+Consulta el [Directorio Oficial de Países y Lenguas (LISTA_PAISES_LENGUAS.md)](LISTA_PAISES_LENGUAS.md) para ver la lista completa categorizada por continentes:
+- **Europa (46 lenguas)**: Español, Catalán, Gallego, Euskera, Asturiano, Aragonés, Occitano, Bretón, Francés, Alemán, Italiano, Portugués, Inglés, Irlandés, Gaélico Escocés, Galés, Neerlandés, Danés, Sueco, Noruego, Islandés, Feroés, Finlandés, Estonio, Letón, Lituano, Polaco, Checo, Eslovaco, Húngaro, Rumano, Búlgaro, Serbio, Croata, Bosnio, Esloveno, Macedonio, Albanés, Griego, Maltés, Bielorruso, Ruso, Ucraniano, Latín, Esperanto.
+- **América (16 lenguas)**: Variantes dialectales de Español americano, Quechua, Aimara, Náhuatl, Maya, Guaraní, Cheroqui, Navajo, Inuktitut, Groenlandés, Hawaiano, etc.
+- **África (36 lenguas)**: Suajili, Amárico, Oromo, Tigriña, Somalí, Hausa, Yoruba, Igbo, Fula, Wolof, Akan, Lingala, Kongo, Kinyarwanda, Kirundi, Shona, Chichewa, Zulú, Xhosa, Afrikaans, etc.
+- **Asia y Oceanía (52 lenguas)**: Chino Mandarín, Cantonés, Japonés, Coreano, Vietnamita, Tailandés, Jemer, Birmano, Indonesio, Javanés, Tagalo, Cebuano, Hindi, Urdu, Bengalí, Panyabí, Maratí, Guyaratí, Tamil, Telugu, Canarés, Malayalam, Persa, Pashto, Kurdo, Hebreo, Árabe, Turco, Kazajo, Uzbeko, Mongol, Maorí, Samoano, Fiyiano, Tok Pisin, etc.
 
 ---
 
-🛡️ **Este proyecto es un manifiesto. No es solo código; es una declaración de que la tecnología debe adaptarse a las personas, no al revés.**
+## 🧪 Pruebas y Validación
+
+El repositorio cuenta con scripts de validación nativos:
+```bash
+# En Windows:
+test.bat
+
+# En Linux o macOS:
+./test.sh
+```
+Todas las pruebas de integridad mnemónica, macros, modo reversible y auto-detección se ejecutan en menos de 5 milisegundos con 0 errores.
+
+---
+
+## 📜 Filosofía de Soberanía Tecnológica
+
+> *"Las herramientas de bajo nivel han sido diseñadas históricamente bajo una barrera idiomática anglocéntrica. MultiLang-ASM y UPL devuelven la soberanía a cada pueblo: la máquina ejecuta binario; el ser humano programa en su lengua nativa."*
+
+MultiLang-ASM es software libre de código abierto bajo la **Licencia MIT**.  
+Diseñado como parte del ecosistema soberano **UPL (Universal Polyglot Layer)** y **Neuro-OS**.

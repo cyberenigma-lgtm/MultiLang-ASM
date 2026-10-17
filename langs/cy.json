@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Welsh / Cymraeg",
+    "code": "cy",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Welsh / Cymraeg."
+  },
+  "keywords": {
+    "symud": "mov",
+    "ychwanegu": "add",
+    "tynnu": "sub",
+    "lluosi": "mul",
+    "rhannu": "div",
+    "neidio": "jmp",
+    "galw": "call",
+    "dychwelyd": "ret",
+    "cymharu": "cmp",
+    "profi": "test",
+    "ac": "and",
+    "neu": "or",
+    "anghynhwysol": "xor",
+    "ddim": "not",
+    "gwthio": "push",
+    "tynnu_allan": "pop",
+    "torri_ar_draws": "int",
+    "galwad_system": "syscall",
+    "dolen": "loop",
+    "aros": "hlt",
+    "dim_byd": "nop"
+  },
+  "kids_keywords": {
+    "cy": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

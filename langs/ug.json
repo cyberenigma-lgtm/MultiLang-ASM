@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Uyghur / ئۇيغۇرچە",
+    "code": "ug",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Uyghur / ئۇيغۇرچە."
+  },
+  "keywords": {
+    "يۆتكەش": "mov",
+    "قوشۇش": "add",
+    "ئېلىش": "sub",
+    "كۆپەيتىش": "mul",
+    "بۆلۈش": "div",
+    "سەكرەش": "jmp",
+    "چاقىرىش": "call",
+    "قايتىش": "ret",
+    "سېلىشتۇرۇش": "cmp",
+    "سىناش": "test",
+    "ۋە": "and",
+    "ياكى": "or",
+    "ئالاھىدە": "xor",
+    "ئەمەس": "not",
+    "كىرگۈزۈش": "push",
+    "چىقىرىش": "pop",
+    "ئۈزۈلۈش": "int",
+    "سىستېما_چاقىرىقى": "syscall",
+    "ئايلانما": "loop",
+    "توختاش": "hlt",
+    "ھېچنېمە": "nop"
+  },
+  "kids_keywords": {
+    "ug": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Waray",
+    "code": "war",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Waray."
+  },
+  "keywords": {
+    "balhina": "mov",
+    "dugangi": "add",
+    "kuhai": "sub",
+    "damoa": "mul",
+    "bahina": "div",
+    "lukso": "jmp",
+    "tawaga": "call",
+    "balik": "ret",
+    "itanding": "cmp",
+    "testingi": "test",
+    "ngan": "and",
+    "o": "or",
+    "eksklusibo": "xor",
+    "diri": "not",
+    "iduon": "push",
+    "ibutong": "pop",
+    "ulang": "int",
+    "tawag_han_sistema": "syscall",
+    "libot": "loop",
+    "pahuway": "hlt",
+    "waray": "nop"
+  },
+  "kids_keywords": {
+    "war": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

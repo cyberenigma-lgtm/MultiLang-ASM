@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Cantonese / 粵語",
+    "code": "yue",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "粵語組合語言完整支援。"
+  },
+  "keywords": {
+    "搬": "mov",
+    "換": "xchg",
+    "攞有效地址": "lea",
+    "零擴展": "movzx",
+    "符號擴展": "movsx",
+    "加": "add",
+    "減": "sub",
+    "乘": "mul",
+    "除": "div",
+    "加一": "inc",
+    "減一": "dec",
+    "變負": "neg",
+    "比": "cmp",
+    "試": "test",
+    "跳": "jmp",
+    "叫": "call",
+    "返": "ret",
+    "如果等": "je",
+    "如果零": "jz",
+    "如果唔等": "jne",
+    "如果大": "jg",
+    "如果細": "jl",
+    "推入": "push",
+    "彈出": "pop",
+    "推標誌": "pushf",
+    "彈標誌": "popf",
+    "搬位元組": "movsb",
+    "存位元組": "stosb",
+    "攞位元組": "lodsb",
+    "重複": "rep",
+    "圈": "loop",
+    "零圈": "loopz",
+    "中斷": "int",
+    "叫系統": "syscall",
+    "返系統": "sysret",
+    "停": "hlt",
+    "乜都唔做": "nop",
+    "位元組變字": "cbw",
+    "字變雙字": "cwd",
+    "雙字變四字": "cdq"
+  },
+  "kids_keywords": {
+    "yue": {
+      "放": "mov",
+      "加": "add",
+      "減": "sub",
+      "畀我睇": "syscall"
+    }
+  }
+}

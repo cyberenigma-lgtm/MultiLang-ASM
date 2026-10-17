@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tsonga / Xitsonga",
+    "code": "ts",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tsonga / Xitsonga."
+  },
+  "keywords": {
+    "fambisa": "mov",
+    "engetela": "add",
+    "susa": "sub",
+    "andzisa": "mul",
+    "ava": "div",
+    "tlula": "jmp",
+    "vitana": "call",
+    "vuyela": "ret",
+    "pimanisa": "cmp",
+    "kambela": "test",
+    "na": "and",
+    "kumbe": "or",
+    "hoxekile": "xor",
+    "e-e": "not",
+    "nghenisa": "push",
+    "humesa": "pop",
+    "nsivelo": "int",
+    "vitano_ra_sisiteme": "syscall",
+    "rhumbu": "loop",
+    "yima": "hlt",
+    "a_ku_na_nchumu": "nop"
+  },
+  "kids_keywords": {
+    "ts": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

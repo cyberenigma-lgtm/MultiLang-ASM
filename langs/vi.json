@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "name": "Vietnamese / Tiếng Việt",
+    "code": "vi",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Vietnamese."
+  },
+  "keywords": {
+    "chuyen": "mov",
+    "trao_doi": "xchg",
+    "nap_dia_chi": "lea",
+    "cong": "add",
+    "tru": "sub",
+    "nhan": "mul",
+    "so_sanh": "cmp",
+    "kiem_tra": "test",
+    "nhay": "jmp",
+    "goi": "call",
+    "tra_ve": "ret",
+    "neu_bang": "je",
+    "neu_khong": "jz",
+    "neu_khac": "jne",
+    "neu_lon_hon": "jg",
+    "neu_nho_hon": "jl",
+    "day_vao": "push",
+    "lay_ra": "pop",
+    "day_co": "pushf",
+    "lay_co": "popf",
+    "di_chuyen_byte": "movsb",
+    "luu_byte": "stosb",
+    "tai_byte": "lodsb",
+    "lap_lai": "rep",
+    "vong_lap": "loop",
+    "vong_lap_neu_khong": "loopz",
+    "ngat": "int",
+    "goi_he_thong": "syscall",
+    "tra_ve_he_thong": "sysret",
+    "dung": "hlt",
+    "khong_lam_gi": "nop",
+    "byte_sang_word": "cbw",
+    "word_sang_double": "cwd"
+  },
+  "kids_keywords": {
+    "vi": {
+      "dat": "mov",
+      "them": "add",
+      "tru": "sub",
+      "hien": "syscall"
+    }
+  }
+}

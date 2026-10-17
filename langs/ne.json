@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Nepali / नेपाली",
+    "code": "ne",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Nepali / नेपाली."
+  },
+  "keywords": {
+    "सार्नुहोस्": "mov",
+    "जोड्नुहोस्": "add",
+    "घटाउनुहोस्": "sub",
+    "गुणन_गर्नुहोस्": "mul",
+    "भाग_गर्नुहोस्": "div",
+    "उफ्रनुहोस्": "jmp",
+    "बोलाउनुहोस्": "call",
+    "फर्कनुहोस्": "ret",
+    "तुलना_गर्नुहोस्": "cmp",
+    "जाँच्नुहोस्": "test",
+    "र": "and",
+    "वा": "or",
+    "विशेष": "xor",
+    "होइन": "not",
+    "राख्नुहोस्": "push",
+    "निकाल्नुहोस्": "pop",
+    "अवरोध": "int",
+    "प्रणाली_कल": "syscall",
+    "लुप": "loop",
+    "रोक्नुहोस्": "hlt",
+    "केही_छैन": "nop"
+  },
+  "kids_keywords": {
+    "ne": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

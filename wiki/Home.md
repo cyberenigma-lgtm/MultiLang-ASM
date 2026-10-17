@@ -1,87 +1,33 @@
 # Welcome to the MultiLang-ASM Wiki 🛡️
 
-**MultiLang-ASM** is the world's first multilingual assembler for x86_64. Write assembly code in your native language and compile to standard NASM-compatible output.
+**MultiLang-ASM v1.0.0** is the world's first sovereign multilingual assembler for x86_64, built as part of the **UPL (Universal Polyglot Layer)** ecosystem.
 
 ---
 
-## 🚀 Quick Links
+## 🚀 Quick Navigation
 
-- **[Supported Languages](Supported-Languages)** - Full list of 27 supported languages
-- **[Kids Mode](Kids-Mode)** - 🧸 Simplified coding for children (New!)
-- **[How to Use](How-to-Use)** - Installation and basic usage guide
-- **[PRETTY Mode](PRETTY-Mode)** - Reverse translation feature
-- **[Examples](Examples)** - Code examples in all languages
-- **[Contributing](Contributing)** - How to contribute to the project
-- **[FAQ](FAQ)** - Frequently asked questions
-- **[Roadmap](Roadmap)** - Future plans and versions
-
----
-
-## 📖 What is MultiLang-ASM?
-
-MultiLang-ASM is a translation layer that allows developers to write x86_64 assembly using **natural language keywords** in their mother tongue.
-
-### Example: Spanish → NASM
-
-```asm
-; Spanish
-mover rax, 1
-sumar rbx, 10
-llamada_sistema
-
-↓ Translates to ↓
-
-; Standard NASM
-mov rax, 1
-add rbx, 10
-syscall
-```
-
-### Why?
-
-**Not knowing English shouldn't be a barrier to learning low-level programming.**
-
-This project removes artificial linguistic barriers and opens systems programming to:
-- Students learning in their native language
-- Self-taught developers without formal English education
-- Communities currently excluded from low-level development
+- **[Supported Languages](Supported-Languages)** - Complete registry of 150 supported world languages
+- **[How to Use](How-to-Use)** - Compilation with native C99 engine, CLI flags & pipelines
+- **[Examples](Examples)** - Real-world code examples in Spanish, English, Latin, Esperanto, Russian, Chinese, Swahili, etc.
+- **[Architecture & Modular Design](ARQUITECTURA_MODULAR)** - C99 memory layout, 0 dependencies, sub-2ms latency
+- **[How It Works](HOW_IT_WORKS)** - Lexing, macro expansion, and NASM output pipeline
+- **[Kernel Tutorial](Kernel-Tutorial)** - Writing an x86_64 bootloader and kernel in your native language
+- **[PRETTY Mode](PRETTY-Mode)** - Bidirectional reverse translation
+- **[Contributing](Contributing)** - Contributing new languages and dialect extensions
+- **[Roadmap](Roadmap)** - Future evolution within the Neuro-OS & UPL ecosystems
 
 ---
 
-## ✨ Key Features
+## 📖 Key Specifications
 
-- 🌍 **10 Languages** - Spanish, French, German, Italian, Arabic, Russian, Korean, Indonesian, Chinese, Japanese
-- 🔄 **Reversible** - View standard ASM in any language
-- ⚡ **Fast** - Instant translation
-- 🛠️ **Compatible** - 100% NASM/FASM/GAS compatible
-- 📚 **Documented** - Complete reference for each language
-
----
-
-## 🎯 Current Version: v0.5
-
-**Latest features:**
-- ✅ **27 languages** fully supported
-- ✅ **Kids Mode** for all languages
-- ✅ **Professional Mode** (Stack/Logic/Flow)
-- ✅ **VSCode Extension**
-- ✅ Bidirectional translation
+- ⚡ **Engine**: 100% ANSI C99 Standalone Executable (<80 KB).
+- 🌍 **Linguistic Scope**: 150 Global Languages (Europe, Americas, Africa, Asia, Oceania).
+- ⚙️ **Instruction Depth**: 200+ x86_64 Canonical Assembly Mnemonics.
+- ⏱️ **Performance**: Transpiles thousands of lines in <2 milliseconds.
+- 0️⃣ **Dependencies**: 0% Python required at runtime. Works directly with `gcc`, `clang`, and `nasm`.
 
 ---
 
-## 📞 Support & Community
+## 📜 Sovereign Philosophy
 
-- **Issues:** [GitHub Issues](https://github.com/cyberenigma-lgtm/MultiLang-ASM/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/cyberenigma-lgtm/MultiLang-ASM/discussions)
-- **Email:** neuro.so.ia.sim@gmail.com
-
----
-
-## 📜 License
-
-MIT License - Free to use, modify, and distribute.
-
----
-
-**Repository:** https://github.com/cyberenigma-lgtm/MultiLang-ASM  
-**Created by:** J / Neuro-OS Project
+> *"Assembly language is the gateway to hardware sovereignty. Removing linguistic barriers enables every culture to build kernels, drivers, and operating systems in their own voice."*

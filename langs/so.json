@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Somali / Soomaali",
+    "code": "so",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Somali / Soomaali."
+  },
+  "keywords": {
+    "rari": "mov",
+    "ku_dar": "add",
+    "ka_jar": "sub",
+    "ku_dhufo": "mul",
+    "u_qaybi": "div",
+    "bood": "jmp",
+    "wac": "call",
+    "soo_noqo": "ret",
+    "isbarbardhig": "cmp",
+    "tijaabi": "test",
+    "iyo": "and",
+    "ama": "or",
+    "keliya": "xor",
+    "maaha": "not",
+    "geli": "push",
+    "saar": "pop",
+    "kala_goys": "int",
+    "yeeritaanka_nidaamka": "syscall",
+    "wareeg": "loop",
+    "joogso": "hlt",
+    "waxba": "nop"
+  },
+  "kids_keywords": {
+    "so": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Lithuanian / Lietuvių",
+    "code": "lt",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Lithuanian / Lietuvių."
+  },
+  "keywords": {
+    "perkelti": "mov",
+    "prideti": "add",
+    "atimti": "sub",
+    "dauginti": "mul",
+    "dalinti": "div",
+    "sokti": "jmp",
+    "kviesti": "call",
+    "grazinti": "ret",
+    "palyginti": "cmp",
+    "testuoti": "test",
+    "ir": "and",
+    "arba": "or",
+    "isimtinai": "xor",
+    "ne": "not",
+    "ideti": "push",
+    "isimti": "pop",
+    "pertrauktis": "int",
+    "sisteminis_iskvietimas": "syscall",
+    "ciklas": "loop",
+    "stabdyti": "hlt",
+    "nieko": "nop"
+  },
+  "kids_keywords": {
+    "lt": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

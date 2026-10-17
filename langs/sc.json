@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Sardinian / Sardu",
+    "code": "sc",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Sardinian / Sardu."
+  },
+  "keywords": {
+    "movimentare": "mov",
+    "azunghere": "add",
+    "bogare": "sub",
+    "multiplicare": "mul",
+    "partire": "div",
+    "sartare": "jmp",
+    "ciamare": "call",
+    "torrare": "ret",
+    "cunfrontare": "cmp",
+    "proare": "test",
+    "e": "and",
+    "o": "or",
+    "esclusivu": "xor",
+    "non": "not",
+    "pompire": "push",
+    "leare": "pop",
+    "interrutzione": "int",
+    "ciamadore_sistema": "syscall",
+    "chircu": "loop",
+    "firmare": "hlt",
+    "nudda": "nop"
+  },
+  "kids_keywords": {
+    "sc": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

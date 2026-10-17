@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Burmese / မြန်မာစာ",
+    "code": "my",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Burmese / မြန်မာစာ."
+  },
+  "keywords": {
+    "ရွှေ့": "mov",
+    "ပေါင်း": "add",
+    "နှုတ်": "sub",
+    "မြှောက်": "mul",
+    "စား": "div",
+    "ခုန်": "jmp",
+    "ခေါ်": "call",
+    "ပြန်": "ret",
+    "နှိုင်းယှဉ်": "cmp",
+    "စစ်ဆေး": "test",
+    "နှင့်": "and",
+    "သို့မဟုတ်": "or",
+    "သီးသန့်": "xor",
+    "မဟုတ်": "not",
+    "ထည့်": "push",
+    "ထုတ်": "pop",
+    "ကြားဖြတ်": "int",
+    "စနစ်ခေါ်ဆိုမှု": "syscall",
+    "ပတ်လမ်း": "loop",
+    "ရပ်": "hlt",
+    "ဘာမှမရှိ": "nop"
+  },
+  "kids_keywords": {
+    "my": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

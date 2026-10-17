@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Maltese / Malti",
+    "code": "mt",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Maltese / Malti."
+  },
+  "keywords": {
+    "mexxi": "mov",
+    "zid": "add",
+    "naqqas": "sub",
+    "immoltiplika": "mul",
+    "aqsam": "div",
+    "aqbez": "jmp",
+    "sejjaħ": "call",
+    "irritorna": "ret",
+    "qabbel": "cmp",
+    "ittestja": "test",
+    "u": "and",
+    "jew": "or",
+    "esklussiv": "xor",
+    "mhux": "not",
+    "imbutta": "push",
+    "ohrog": "pop",
+    "interruzzjoni": "int",
+    "sejha_sistema": "syscall",
+    "linja": "loop",
+    "waqqaf": "hlt",
+    "xejn": "nop"
+  },
+  "kids_keywords": {
+    "mt": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

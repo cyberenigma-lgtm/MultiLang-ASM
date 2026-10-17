@@ -1,10 +1,20 @@
-node_modules
+# Build outputs and temporary objects
+bin/*.exe
+bin/*.o
+bin/*.obj
+bin/*.asm
+*.o
+*.obj
+*.exe
+build/
+
+# Node and Python
+node_modules/
 *.pyc
-__pycache__
-.vscode
-.idea
+__pycache__/
+
+# IDE and Editor configs
+.vscode/
+.idea/
 *.vsix
-MultiLang-ASM.wiki
-*.bat
-
-
+MultiLang-ASM.wiki/

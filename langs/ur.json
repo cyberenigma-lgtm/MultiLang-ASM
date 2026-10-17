@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Urdu / اردو",
+    "code": "ur",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Urdu / اردو."
+  },
+  "keywords": {
+    "منتقل": "mov",
+    "جمع": "add",
+    "تفریق": "sub",
+    "ضرب": "mul",
+    "تقسیم": "div",
+    "چھلانگ": "jmp",
+    "کال": "call",
+    "واپسی": "ret",
+    "موازنہ": "cmp",
+    "جانچ": "test",
+    "اور": "and",
+    "یا": "or",
+    "منفرد": "xor",
+    "نہیں": "not",
+    "ڈالیں": "push",
+    "نکالیں": "pop",
+    "خلل": "int",
+    "سسٹم_کال": "syscall",
+    "چکر": "loop",
+    "روکیں": "hlt",
+    "کچھ_نہیں": "nop"
+  },
+  "kids_keywords": {
+    "ur": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

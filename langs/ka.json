@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Georgian / ქართული",
+    "code": "ka",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Georgian / ქართული."
+  },
+  "keywords": {
+    "გადატანა": "mov",
+    "მიმატება": "add",
+    "გამოკლება": "sub",
+    "გამრავლება": "mul",
+    "გაყოფა": "div",
+    "გადახტომა": "jmp",
+    "გამოძახება": "call",
+    "დაბრუნება": "ret",
+    "შედარება": "cmp",
+    "შემოწმება": "test",
+    "და": "and",
+    "ან": "or",
+    "გამორიცხვითი": "xor",
+    "არა": "not",
+    "ჩადება": "push",
+    "ამოღება": "pop",
+    "შეწყვეტა": "int",
+    "სისტემური_ზარი": "syscall",
+    "ციკლი": "loop",
+    "გაჩერება": "hlt",
+    "არაფერი": "nop"
+  },
+  "kids_keywords": {
+    "ka": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

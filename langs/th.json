@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "name": "Thai / ไทย",
+    "code": "th",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Thai."
+  },
+  "keywords": {
+    "ย้าย": "mov",
+    "สลับ": "xchg",
+    "โหลด": "lea",
+    "บวก": "add",
+    "ลบ": "sub",
+    "คูณ": "mul",
+    "เปรียบเทียบ": "cmp",
+    "ทดสอบ": "test",
+    "กระโดด": "jmp",
+    "เรียก": "call",
+    "กลับ": "ret",
+    "ถ้าเท่ากับ": "je",
+    "ถ้าเป็นศูนย์": "jz",
+    "ถ้าไม่เท่ากับ": "jne",
+    "ถ้ามากกว่า": "jg",
+    "ถ้าน้อยกว่า": "jl",
+    "ผลัก": "push",
+    "ดึง": "pop",
+    "ผลักแฟล็ก": "pushf",
+    "ดึงแฟล็ก": "popf",
+    "ย้ายไบต์": "movsb",
+    "เก็บบายต์": "stosb",
+    "โหลดไบต์": "lodsb",
+    "ทำซ้ำ": "rep",
+    "วนรอบ": "loop",
+    "วนรอบถ้าเป็นศูนย์": "loopz",
+    "ขัดจังหวะ": "int",
+    "เรียกใช้ระบบ": "syscall",
+    "คืนค่าระบบ": "sysret",
+    "หยุด": "hlt",
+    "ไม่มีการทำงาน": "nop",
+    "ไบต์เป็นเวิร์ด": "cbw",
+    "เวิร์ดเป็นดับเบิล": "cwd"
+  },
+  "kids_keywords": {
+    "th": {
+      "sai": "mov",
+      "buak": "add",
+      "lop": "sub",
+      "sadang": "syscall"
+    }
+  }
+}

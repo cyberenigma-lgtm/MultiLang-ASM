@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Bemba / ChiBemba",
+    "code": "bem",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Bemba / ChiBemba."
+  },
+  "keywords": {
+    "selesha": "mov",
+    "lundapo": "add",
+    "fumyapo": "sub",
+    "fushisheni": "mul",
+    "akeniko": "div",
+    "cilauke": "jmp",
+    "iteni": "call",
+    "bweleni": "ret",
+    "linganyeni": "cmp",
+    "esheni": "test",
+    "na": "and",
+    "nangu": "or",
+    "ibela": "xor",
+    "awe": "not",
+    "bikeni": "push",
+    "fumyeni": "pop",
+    "ukulesha": "int",
+    "ita_system": "syscall",
+    "kushinguluka": "loop",
+    "iminina": "hlt",
+    "tapali_kantu": "nop"
+  },
+  "kids_keywords": {
+    "bem": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Icelandic / Íslenska",
+    "code": "is",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Icelandic / Íslenska."
+  },
+  "keywords": {
+    "faera": "mov",
+    "baeta": "add",
+    "draga": "sub",
+    "marga": "mul",
+    "deila": "div",
+    "stoppa": "jmp",
+    "kalla": "call",
+    "skila": "ret",
+    "bera_saman": "cmp",
+    "profa": "test",
+    "og": "and",
+    "eda": "or",
+    "einka": "xor",
+    "ekki": "not",
+    "yta": "push",
+    "draga_ut": "pop",
+    "truflun": "int",
+    "kerfiskall": "syscall",
+    "lykkja": "loop",
+    "haetta": "hlt",
+    "ekkert": "nop"
+  },
+  "kids_keywords": {
+    "is": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

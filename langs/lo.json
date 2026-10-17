@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Lao / ພາສາລາວ",
+    "code": "lo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Lao / ພາສາລາວ."
+  },
+  "keywords": {
+    "ຍ້າຍ": "mov",
+    "ບວກ": "add",
+    "ລົບ": "sub",
+    "ຄູນ": "mul",
+    "ຫານ": "div",
+    "ເຕັ້ນ": "jmp",
+    "ເອີ້ນ": "call",
+    "ກັບຄືນ": "ret",
+    "ປຽບທຽບ": "cmp",
+    "ທົດສອບ": "test",
+    "ແລະ": "and",
+    "ຫຼື": "or",
+    "ພິເສດ": "xor",
+    "ບໍ່": "not",
+    "ໃສ່": "push",
+    "ດຶງອອກ": "pop",
+    "ຂັດຂວາງ": "int",
+    "ການເອີ້ນລະບົບ": "syscall",
+    "ຮອບວຽນ": "loop",
+    "ຢຸດ": "hlt",
+    "ບໍ່ມີຫຍັງ": "nop"
+  },
+  "kids_keywords": {
+    "lo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

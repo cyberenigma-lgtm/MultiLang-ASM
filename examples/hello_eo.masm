@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (eo) - Esperanto
+; Transpile with: mlasm eo hello_eo.masm -o hello_eo.asm
+; Or auto-detect: mlasm auto hello_eo.masm -o hello_eo.asm
+
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 15)
+    movi rax, 1
+    movi rdi, 1
+    movi rsi, msg
+    movi rdx, 15
+    sistemvoko
+
+    ; Exit(0)
+    movi rax, 60
+    movi rdi, 0
+    sistemvoko
+
+section .data
+    msg db "Saluton, Mondo!", 0xA

@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (UPL+ C99 Editie)
 
-> *"De eerste meertalige x86_64 assembler."*
+**'s Werelds eerste soevereine meertalige x86_64-assemblermotor.**  
+Onderdeel van het **UPL (Universal Polyglot Layer)** ecosysteem en Neuro-OS.
 
-**Schrijf assembler in je moedertaal.**
+Schrijf assembleercode in uw moedertaal · 150 Wereldtalen · 200+ x86_64-instructies · 100% Native ANSI C99 Motor · Geen Python-afhankelijkheid · Ultrasnel (<2 ms) · Volledig NASM-compatibel.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **Nederlands** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 Wat is dit?
-
-Met MultiLang-ASM kun je x86_64 assembler schrijven met trefwoorden in het **Nederlands**.
-Het vertaalt je code automatisch naar standaard NASM assembler.
-
-## ✨ Functies
-
-- 🌍 **Schrijf in het Nederlands** (nl)
-- 🤖 **Automatische Detectie:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `Nederlands <-> ASM`
-
-## 📖 Nederlands Voorbeeld
-
-### Source Code (`hello.masm`)
-```asm
-verplaats rax, 1
-verplaats rdi, 1
-verplaats rsi, msg
-verplaats rdx, 13
-syscall
-
-verplaats rax, 60
-verplaats rdi, 0
-syscall
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ Gebruik
-
+## Snel Aan de Slag
 ```bash
-python mlasm.py auto hello.masm
-```
+# Compileer de native motor:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# Transpileren:
+mlasm nl voorbeeld.masm -o voorbeeld.asm
+
+# Automatische taaldetectie:
+mlasm auto voorbeeld.masm -o voorbeeld.asm
+```

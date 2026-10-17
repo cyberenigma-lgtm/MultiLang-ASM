@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Inuktitut / ᐃᓄᒃᑎᑐᑦ",
+    "code": "iu",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Inuktitut / ᐃᓄᒃᑎᑐᑦ."
+  },
+  "keywords": {
+    "ᓅᑎᕆᕗᖅ": "mov",
+    "ᐃᓚᓯᕗᖅ": "add",
+    "ᐃᓚᖔᖅᐹ": "sub",
+    "ᐊᒥᓱᖑᖅᑎᐹ": "mul",
+    "ᐊᕕᒃᑐᖅᐹ": "div",
+    "ᖃᖓᑕᕗᖅ": "jmp",
+    "ᖃᐃᖁᔨᕗᖅ": "call",
+    "ᐅᑎᖅᐳᖅ": "ret",
+    "ᐊᔾᔨᒌᖕᓂᖏᑦ": "cmp",
+    "ᖃᐅᔨᓴᖅᐳᖅ": "test",
+    "ᐊᒻᒪᓗ": "and",
+    "ᐅᕝᕙᓘᓐᓃᑦ": "or",
+    "ᐊᓯᐊᒍᑦ": "xor",
+    "ᐋᒃᑲ": "not",
+    "ᐃᓯᖅᑎᑉᐹ": "push",
+    "ᐊᓂᑎᑉᐹ": "pop",
+    "ᓄᖅᑲᖅᑎᑦᑎᕗᖅ": "int",
+    "ᖃᕆᑕᐅᔭᐅᑉ_ᑐᒃᓯᕋᐅᑎᖓ": "syscall",
+    "ᑲᐃᕙᓪᓚᒍᑎ": "loop",
+    "ᓄᖅᑲᕆᑦ": "hlt",
+    "ᓱᓇᖃᙱᑦᑐᖅ": "nop"
+  },
+  "kids_keywords": {
+    "iu": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

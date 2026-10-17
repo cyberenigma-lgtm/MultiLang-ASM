@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Sinhala / සිංහල",
+    "code": "si",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Sinhala / සිංහල."
+  },
+  "keywords": {
+    "ගෙනියන්න": "mov",
+    "එකතු_කරන්න": "add",
+    "අඩු_කරන්න": "sub",
+    "ගුණ_කරන්න": "mul",
+    "බෙදන්න": "div",
+    "පනින්න": "jmp",
+    "අමතන්න": "call",
+    "නැවත_එන්න": "ret",
+    "සසඳන්න": "cmp",
+    "පරීක්ෂා_කරන්න": "test",
+    "සහ": "and",
+    "හෝ": "or",
+    "විශේෂ": "xor",
+    "නැත": "not",
+    "ඇතුල්_කරන්න": "push",
+    "ඉවත්_කරන්න": "pop",
+    "බාධාව": "int",
+    "පද්ධති_ඇමතුම": "syscall",
+    "ලූපය": "loop",
+    "නවත්වන්න": "hlt",
+    "කිසිවක්_නැත": "nop"
+  },
+  "kids_keywords": {
+    "si": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

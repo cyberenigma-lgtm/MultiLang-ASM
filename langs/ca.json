@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Catalan / Català",
+    "code": "ca",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Suport complet per a l'assemblador en Català."
+  },
+  "keywords": {
+    "moure": "mov",
+    "intercanviar": "xchg",
+    "carregar_efectiva": "lea",
+    "estendre_zero": "movzx",
+    "estendre_signe": "movsx",
+    "sumar": "add",
+    "restar": "sub",
+    "multiplicar": "mul",
+    "dividir": "div",
+    "incrementar": "inc",
+    "decrementar": "dec",
+    "negar": "neg",
+    "comparar": "cmp",
+    "testar": "test",
+    "saltar": "jmp",
+    "cridar": "call",
+    "retornar": "ret",
+    "si_igual": "je",
+    "si_zero": "jz",
+    "si_no_igual": "jne",
+    "si_major": "jg",
+    "si_menor": "jl",
+    "empènyer": "push",
+    "extreure": "pop",
+    "empènyer_banderes": "pushf",
+    "extreure_banderes": "popf",
+    "moure_byte": "movsb",
+    "emmagatzemar_byte": "stosb",
+    "carregar_byte": "lodsb",
+    "repetir": "rep",
+    "bucle": "loop",
+    "bucle_si_zero": "loopz",
+    "interrupció": "int",
+    "crida_sistema": "syscall",
+    "retorn_sistema": "sysret",
+    "aturar": "hlt",
+    "res": "nop",
+    "byte_a_paraula": "cbw",
+    "paraula_a_doble": "cwd",
+    "doble_a_quad": "cdq"
+  },
+  "kids_keywords": {
+    "ca": {
+      "posa": "mov",
+      "suma": "add",
+      "treu": "sub",
+      "mostra": "syscall"
+    }
+  }
+}

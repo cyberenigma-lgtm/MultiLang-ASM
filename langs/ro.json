@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Romanian / Română",
+    "code": "ro",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Suport complet pentru asamblor în limba română."
+  },
+  "keywords": {
+    "muta": "mov",
+    "schimba": "xchg",
+    "incarca_efectiv": "lea",
+    "extinde_zero": "movzx",
+    "extinde_semn": "movsx",
+    "aduna": "add",
+    "scade": "sub",
+    "inmulteste": "mul",
+    "imparte": "div",
+    "incrementeaza": "inc",
+    "decrementeaza": "dec",
+    "neaga": "neg",
+    "compara": "cmp",
+    "testeaza": "test",
+    "sari": "jmp",
+    "apeleaza": "call",
+    "returneaza": "ret",
+    "daca_egal": "je",
+    "daca_zero": "jz",
+    "daca_nu_egal": "jne",
+    "daca_mai_mare": "jg",
+    "daca_mai_mic": "jl",
+    "pune": "push",
+    "scoate": "pop",
+    "pune_steguri": "pushf",
+    "scoate_steguri": "popf",
+    "muta_byte": "movsb",
+    "stocheaza_byte": "stosb",
+    "incarca_byte": "lodsb",
+    "repeta": "rep",
+    "bucla": "loop",
+    "bucla_daca_zero": "loopz",
+    "intrerupere": "int",
+    "apel_sistem": "syscall",
+    "retur_sistem": "sysret",
+    "opreste": "hlt",
+    "nimic": "nop",
+    "byte_la_word": "cbw",
+    "word_la_double": "cwd",
+    "double_la_quad": "cdq"
+  },
+  "kids_keywords": {
+    "ro": {
+      "pune": "mov",
+      "plus": "add",
+      "minus": "sub",
+      "arata": "syscall"
+    }
+  }
+}

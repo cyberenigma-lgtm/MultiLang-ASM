@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Tagalog / Filipino",
+    "code": "tl",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Buong suporta para sa assembler sa Tagalog."
+  },
+  "keywords": {
+    "ilipat": "mov",
+    "pagpalit": "xchg",
+    "i-load": "lea",
+    "palawakin_zero": "movzx",
+    "palawakin_sign": "movsx",
+    "idagdag": "add",
+    "ibawas": "sub",
+    "i-multiply": "mul",
+    "i-divide": "div",
+    "itaas": "inc",
+    "ibaba": "dec",
+    "i-negate": "neg",
+    "ihambing": "cmp",
+    "subukan": "test",
+    "tumalon": "jmp",
+    "itawag": "call",
+    "bumalik": "ret",
+    "kung_pareho": "je",
+    "kung_zero": "jz",
+    "kung_hindi_pareho": "jne",
+    "kung_mas_malaki": "jg",
+    "kung_mas_maliit": "jl",
+    "itulak": "push",
+    "kunin": "pop",
+    "itulak_flag": "pushf",
+    "kunin_flag": "popf",
+    "ilipat_byte": "movsb",
+    "i-save_byte": "stosb",
+    "i-load_byte": "lodsb",
+    "ulitin": "rep",
+    "ikot": "loop",
+    "ikot_kung_zero": "loopz",
+    "abala": "int",
+    "tawag_system": "syscall",
+    "balik_system": "sysret",
+    "itigil": "hlt",
+    "wala": "nop",
+    "byte_sa_word": "cbw",
+    "word_sa_double": "cwd",
+    "double_sa_quad": "cdq"
+  },
+  "kids_keywords": {
+    "tl": {
+      "ilagay": "mov",
+      "dagdag": "add",
+      "bawas": "sub",
+      "ipakita": "syscall"
+    }
+  }
+}

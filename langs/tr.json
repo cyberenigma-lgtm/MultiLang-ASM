@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "name": "Turkish / Türkçe",
+    "code": "tr",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Turkish."
+  },
+  "keywords": {
+    "tasi": "mov",
+    "taşı": "mov",
+    "degistir": "xchg",
+    "adresi_yukle": "lea",
+    "topla": "add",
+    "ekle": "add",
+    "cikar": "sub",
+    "carp": "mul",
+    "bol": "div",
+    "arttir": "inc",
+    "azalt": "dec",
+    "degille": "neg",
+    "ve": "and",
+    "veya": "or",
+    "degil": "not",
+    "ozel_veya": "xor",
+    "özel_veya": "xor",
+    "karsilastir": "cmp",
+    "test_et": "test",
+    "atla": "jmp",
+    "cagir": "call",
+    "don": "ret",
+    "esitse": "je",
+    "sifirsa": "jz",
+    "esit_degilse": "jne",
+    "buyukse": "jg",
+    "kucukse": "jl",
+    "it": "push",
+    "cek": "pop",
+    "bayraklari_it": "pushf",
+    "bayraklari_cek": "popf",
+    "bayt_tasi": "movsb",
+    "bayt_sakla": "stosb",
+    "bayt_yukle": "lodsb",
+    "tekrarla": "rep",
+    "dongu": "loop",
+    "sifirsa_dongu": "loopz",
+    "kesme": "int",
+    "sistem_cagrisi": "syscall",
+    "sistem_donusu": "sysret",
+    "dur": "hlt",
+    "bos": "nop",
+    "bayt_to_word": "cbw",
+    "word_to_double": "cwd"
+  },
+  "kids_keywords": {
+    "tr": {
+      "koy": "mov",
+      "ekle": "add",
+      "cikar": "sub",
+      "goster": "syscall"
+    }
+  }
+}

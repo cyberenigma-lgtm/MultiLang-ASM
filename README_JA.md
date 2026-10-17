@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (UPL+ C99 ネイティブ版)
 
-> *"世界初の多言語 x86_64 アセンブラ。"*
+**世界初のx86_64向け多言語アセンブラエンジン。**  
+**UPL (Universal Polyglot Layer)** エコシステムおよび Neuro-OS コアの一部。
 
-**母国語でアセンブリを書きましょう。**
+母国語でアセンブリコードを記述 · 世界150言語に対応 · 200以上のx86_64命令セット · 100% ANSI C99ネイティブ実装 · Python依存ゼロ · 超高速変換（2ミリ秒未満） · NASM完全互換。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **日本語** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 これは何ですか？
-
-MultiLang-ASM は、**日本語**のキーワードを使用して x86_64 アセンブリを書くことを可能にします。
-コードは自動的に標準的な NASM アセンブリに翻訳されます。
-
-## ✨ 特徴
-
-- 🌍 **日本語で書く** (ja)
-- 🤖 **自動検出:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `日本語 <-> ASM`
-
-## 📖 日本語の例
-
-### Source Code (`hello.masm`)
-```asm
-移動 rax, 1
-移動 rdi, 1
-移動 rsi, msg
-移動 rdx, 13
-システムコール
-
-移動 rax, 60
-移動 rdi, 0
-システムコール
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ 使い方
-
+## クイックスタート
 ```bash
-python mlasm.py auto hello.masm
-```
+# ネイティブエンジンのコンパイル:
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# アセンブリのトランスパイル:
+mlasm ja sample.masm -o sample.asm
+
+# 言語の自動検出:
+mlasm auto sample.masm -o sample.asm
+```

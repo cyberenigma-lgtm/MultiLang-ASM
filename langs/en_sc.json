@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Scottish English / Scots",
+    "code": "en_sc",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Scottish refined assembly keywords."
+  },
+  "keywords": {
+    "pit": "mov",
+    "swap": "xchg",
+    "fetch": "lea",
+    "tot": "add",
+    "dock": "sub",
+    "multiply": "mul",
+    "divide": "div",
+    "heeze": "inc",
+    "lowp": "dec",
+    "an": "and",
+    "or": "or",
+    "no": "not",
+    "xor": "xor",
+    "neer": "cmp",
+    "canny": "test",
+    "loup": "jmp",
+    "ca": "call",
+    "back": "ret",
+    "gin_equal": "je",
+    "gin_nought": "jz",
+    "gin_no_equal": "jne",
+    "gin_mair": "jg",
+    "gin_wee": "jl",
+    "shove": "push",
+    "pull": "pop",
+    "shove_flags": "pushf",
+    "pull_flags": "popf",
+    "shift_byte": "movsb",
+    "stash_byte": "stosb",
+    "grab_byte": "lodsb",
+    "again": "rep",
+    "birl": "loop",
+    "birling_nought": "loopz",
+    "haud": "int",
+    "cry_system": "syscall",
+    "gang_hame": "sysret",
+    "wheesht": "hlt",
+    "nowt": "nop",
+    "wee_to_big": "cbw",
+    "big_to_mair": "cwd"
+  },
+  "kids_keywords": {
+    "en_sc": {
+      "pit": "mov",
+      "tot": "add",
+      "dock": "sub",
+      "keek": "syscall"
+    }
+  }
+}

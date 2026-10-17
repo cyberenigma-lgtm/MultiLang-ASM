@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Azerbaijani / Azərbaycan",
+    "code": "az",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Azerbaijani / Azərbaycan."
+  },
+  "keywords": {
+    "köçür": "mov",
+    "əlavə_et": "add",
+    "çıx": "sub",
+    "vur": "mul",
+    "böl": "div",
+    "tullan": "jmp",
+    "çağır": "call",
+    "qayıt": "ret",
+    "müqayisə_et": "cmp",
+    "yoxla": "test",
+    "və": "and",
+    "və_ya": "or",
+    "xüsusi": "xor",
+    "deyil": "not",
+    "itələ": "push",
+    "çıxart": "pop",
+    "kəsilmə": "int",
+    "sistem_zəngi": "syscall",
+    "dövr": "loop",
+    "dayan": "hlt",
+    "heç_nə": "nop"
+  },
+  "kids_keywords": {
+    "az": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

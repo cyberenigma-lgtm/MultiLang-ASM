@@ -1,0 +1,22 @@
+; MultiLang-ASM Example (gn) - Guarani / Avañe'ẽ
+; Transpile with: mlasm gn hello_gn.masm -o hello_gn.asm
+; Or auto-detect: mlasm auto hello_gn.masm -o hello_gn.asm
+
+section .text
+global _start
+
+_start:
+    ; Write(1, msg, 15)
+    mbohasa rax, 1
+    mbohasa rdi, 1
+    mbohasa rsi, msg
+    mbohasa rdx, 15
+    henoi_sistema
+
+    ; Exit(0)
+    mbohasa rax, 60
+    mbohasa rdi, 0
+    henoi_sistema
+
+section .data
+    msg db "Mba'eichapa, Ara!", 0xA

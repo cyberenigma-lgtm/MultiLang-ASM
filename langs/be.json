@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Belarusian / Беларуская",
+    "code": "be",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Belarusian / Беларуская."
+  },
+  "keywords": {
+    "перамясціць": "mov",
+    "дадаць": "add",
+    "адняць": "sub",
+    "памножыць": "mul",
+    "падзяліць": "div",
+    "скокнуць": "jmp",
+    "выклікаць": "call",
+    "вярнуць": "ret",
+    "параўнаць": "cmp",
+    "праверыць": "test",
+    "і": "and",
+    "або": "or",
+    "выключнае": "xor",
+    "не": "not",
+    "пакласці": "push",
+    "выняць": "pop",
+    "перапыненне": "int",
+    "сістэмны_выклік": "syscall",
+    "цыкл": "loop",
+    "спыніць": "hlt",
+    "нічога": "nop"
+  },
+  "kids_keywords": {
+    "be": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

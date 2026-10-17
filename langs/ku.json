@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kurdish / Kurdî",
+    "code": "ku",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kurdish / Kurdî."
+  },
+  "keywords": {
+    "veguhezîne": "mov",
+    "zêde_bike": "add",
+    "derxe": "sub",
+    "caran": "mul",
+    "parve_bike": "div",
+    "bipirse": "jmp",
+    "bang_bike": "call",
+    "vegere": "ret",
+    "berawird_bike": "cmp",
+    "biceribîne": "test",
+    "û": "and",
+    "an": "or",
+    "taybet": "xor",
+    "ne": "not",
+    "deyne": "push",
+    "rake": "pop",
+    "navbir": "int",
+    "banga_pergalê": "syscall",
+    "zivirandin": "loop",
+    "bisekine": "hlt",
+    "tiştek_tune": "nop"
+  },
+  "kids_keywords": {
+    "ku": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

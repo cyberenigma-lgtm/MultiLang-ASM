@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Uzbek / O'zbek",
+    "code": "uz",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Uzbek / O'zbek."
+  },
+  "keywords": {
+    "kochir": "mov",
+    "qosh": "add",
+    "ayir": "sub",
+    "kopaytir": "mul",
+    "bol": "div",
+    "sakrash": "jmp",
+    "chaqir": "call",
+    "qayt": "ret",
+    "solishtir": "cmp",
+    "tekshir": "test",
+    "va": "and",
+    "yoki": "or",
+    "istisno": "xor",
+    "emas": "not",
+    "kirit": "push",
+    "chiqar": "pop",
+    "uzilish": "int",
+    "tizim_chaqiruvi": "syscall",
+    "tsikl": "loop",
+    "toxta": "hlt",
+    "hech_narsa": "nop"
+  },
+  "kids_keywords": {
+    "uz": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

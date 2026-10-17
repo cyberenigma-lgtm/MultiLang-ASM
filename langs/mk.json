@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Macedonian / Македонски",
+    "code": "mk",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Macedonian / Македонски."
+  },
+  "keywords": {
+    "премести": "mov",
+    "собери": "add",
+    "одземи": "sub",
+    "помножи": "mul",
+    "подели": "div",
+    "скокни": "jmp",
+    "повикај": "call",
+    "врати": "ret",
+    "спореди": "cmp",
+    "тестирај": "test",
+    "и": "and",
+    "или": "or",
+    "исклучиво": "xor",
+    "не": "not",
+    "турни": "push",
+    "извади": "pop",
+    "прекин": "int",
+    "системски_повик": "syscall",
+    "јамка": "loop",
+    "сопри": "hlt",
+    "ништо": "nop"
+  },
+  "kids_keywords": {
+    "mk": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

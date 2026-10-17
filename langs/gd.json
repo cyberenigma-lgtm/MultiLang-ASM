@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Scottish Gaelic / Gàidhlig",
+    "code": "gd",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Scottish Gaelic / Gàidhlig."
+  },
+  "keywords": {
+    "gluais": "mov",
+    "cuir_ris": "add",
+    "toir_air_falbh": "sub",
+    "iomadaich": "mul",
+    "roinn": "div",
+    "leum": "jmp",
+    "gairm": "call",
+    "till": "ret",
+    "coimeas": "cmp",
+    "deuchainn": "test",
+    "agus": "and",
+    "no": "or",
+    "as-aithneach": "xor",
+    "cha": "not",
+    "put": "push",
+    "tarraing": "pop",
+    "briseadh": "int",
+    "gairm_siostam": "syscall",
+    "lùb": "loop",
+    "stad": "hlt",
+    "dad": "nop"
+  },
+  "kids_keywords": {
+    "gd": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

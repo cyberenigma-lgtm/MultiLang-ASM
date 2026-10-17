@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Akan",
+    "code": "ak",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Mmoatowa mma assembler wɔ Akan kasa mu."
+  },
+  "keywords": {
+    "tu": "mov",
+    "sesa": "xchg",
+    "fa_atadi": "lea",
+    "trɛw_hwee": "movzx",
+    "trɛw_nsɛnkyerɛnne": "movsx",
+    "ka_ho": "add",
+    "yi_fi_mu": "sub",
+    "dɔɔso": "mul",
+    "kyɛ": "div",
+    "ma_ɛnyɛ_kɛse": "inc",
+    "ma_ɛnyɛ_ketewa": "dec",
+    "po": "neg",
+    "toto": "cmp",
+    "sɔ_hwɛ": "test",
+    "huri": "jmp",
+    "frɛ": "call",
+    "ba_man": "ret",
+    "sɛ_ɛyɛ_pɛ": "je",
+    "sɛ_ɛyɛ_hwee": "jz",
+    "sɛ_ɛnyɛ_pɛ": "jne",
+    "sɛ_ɛsõ": "jg",
+    "sɛ_ɛyɛ_ketewa": "jl",
+    "pia_mu": "push",
+    "yi_adi": "pop",
+    "pia_frankaa": "pushf",
+    "yi_frankaa": "popf",
+    "tu_byte": "movsb",
+    "sie_byte": "stosb",
+    "fa_byte": "lodsb",
+    "san_yɛ": "rep",
+    "kɔ_to_ho": "loop",
+    "kɔ_to_ho_sɛ_hwee": "loopz",
+    "gyae": "int",
+    "frɛ_nhyehyɛe": "syscall",
+    "ba_nhyehyɛe": "sysret",
+    "gyina": "hlt",
+    "hwee_nni_hɔ": "nop",
+    "byte_kɔ_asɛmfua": "cbw",
+    "asɛmfua_kɔ_mmienu": "cwd",
+    "mmienu_kɔ_nan": "cdq"
+  },
+  "kids_keywords": {
+    "ak": {
+      "sie": "mov",
+      "ka_ho": "add",
+      "yi_fi": "sub",
+      "kyerɛ": "syscall"
+    }
+  }
+}

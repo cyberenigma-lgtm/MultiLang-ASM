@@ -1,62 +1,18 @@
-# 🛡️ MultiLang-ASM v0.4
+# MultiLang-ASM v1.0.0 (UPL+ C99 原生引擎版)
 
-> *"第一个多语言 x86_64 汇编器。"*
+**全球首個專為主權低階開發打造的 x86_64 多語言組譯器引擎。**  
+屬於 **UPL (Universal Polyglot Layer)** 生態系統與 Neuro-OS 核心技術。
 
-**用您的母语编写汇编代码。**
+使用母語編寫組合語言代碼 · 支援全球 150 種語言與方言 · 200+ 條標準 x86_64 指令 · 100% 純 ANSI C99 打造 · 零 Python 依賴 · 極速轉譯 (<2 ms) · 完全相容 NASM。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Languages](https://img.shields.io/badge/languages-16-blue.svg)](docs/)
-[![Instructions](https://img.shields.io/badge/instructions-80+-green.svg)](docs/)
-
-📖 **中文** | **[English](README.md)** | **[Español](README_ES.md)**
-
----
-
-## 🚀 这是什么？
-
-MultiLang-ASM 允许您使用**中文**关键字编写 x86_64 汇编。
-它会自动将您的代码翻译成标准的 NASM 汇编。
-
-## ✨ 特性
-
-- 🌍 **用中文编写** (zh)
-- 🤖 **自动检测:** `python mlasm.py auto program.masm`
-- ⚡ **Macros:** `%define` supported
-- 🔁 **Reversible:** `中文 <-> ASM`
-
-## 📖 中文示例
-
-### Source Code (`hello.masm`)
-```asm
-移動 rax, 1
-移動 rdi, 1
-移動 rsi, msg
-移動 rdx, 13
-系統呼叫
-
-移動 rax, 60
-移動 rdi, 0
-系統呼叫
-```
-
-### Generates Standard ASM
-```asm
-mov rax, 1
-mov rdi, 1
-mov rsi, msg
-mov rdx, 13
-syscall
-
-mov rax, 60
-mov rdi, 0
-syscall
-```
-
-## 🛠️ 用法
-
+## 快速使用
 ```bash
-python mlasm.py auto hello.masm
-```
+# 編譯原生執行檔：
+gcc -std=c99 -Wall -Wextra -O2 src/mlasm_core.c -I src -o bin/mlasm
 
----
-**Version:** v0.4 | **Project:** [MultiLang-ASM](https://github.com/cyberenigma-lgtm/MultiLang-ASM)
+# 轉譯組譯碼：
+mlasm zh 範例.masm -o 範例.asm
+
+# 智慧自動語言識別：
+mlasm auto 範例.masm -o 範例.asm
+```

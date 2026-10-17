@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Chichewa / Nyanja",
+    "code": "ny",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Chichewa / Nyanja."
+  },
+  "keywords": {
+    "suntha": "mov",
+    "onjezani": "add",
+    "chotsani": "sub",
+    "chulukitsani": "mul",
+    "gawani": "div",
+    "dumpha": "jmp",
+    "itanani": "call",
+    "bwererani": "ret",
+    "yerekezerani": "cmp",
+    "yesani": "test",
+    "ndi": "and",
+    "kapena": "or",
+    "chapaderadera": "xor",
+    "ayi": "not",
+    "kankhirani": "push",
+    "tulutsani": "pop",
+    "chidule": "int",
+    "kuitana_makina": "syscall",
+    "kuzungulira": "loop",
+    "imani": "hlt",
+    "palibe": "nop"
+  },
+  "kids_keywords": {
+    "ny": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

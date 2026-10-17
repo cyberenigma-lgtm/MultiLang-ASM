@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Aragonese / Aragonés",
+    "code": "an",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Aragonese / Aragonés."
+  },
+  "keywords": {
+    "mover": "mov",
+    "adhibir": "add",
+    "restar": "sub",
+    "multiplicar": "mul",
+    "dividir": "div",
+    "blincar": "jmp",
+    "clamar": "call",
+    "tornar": "ret",
+    "comparar": "cmp",
+    "comprebar": "test",
+    "y": "and",
+    "u": "or",
+    "esclusivo": "xor",
+    "no": "not",
+    "ficar": "push",
+    "trayer": "pop",
+    "interrupcion": "int",
+    "clamada_sistema": "syscall",
+    "corro": "loop",
+    "aturar": "hlt",
+    "cosa": "nop"
+  },
+  "kids_keywords": {
+    "an": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

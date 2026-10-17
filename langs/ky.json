@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kyrgyz / Кыргызча",
+    "code": "ky",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kyrgyz / Кыргызча."
+  },
+  "keywords": {
+    "жылдыруу": "mov",
+    "кошуу": "add",
+    "кемитүү": "sub",
+    "көбөйтүү": "mul",
+    "бөлүү": "div",
+    "секирүү": "jmp",
+    "чакыруу": "call",
+    "кайтуу": "ret",
+    "салыштыруу": "cmp",
+    "сыноо": "test",
+    "жана": "and",
+    "же": "or",
+    "өзгөчө": "xor",
+    "эмес": "not",
+    "киргизүү": "push",
+    "алуу": "pop",
+    "үзгүлтүк": "int",
+    "системалык_чакыруу": "syscall",
+    "цикл": "loop",
+    "токто": "hlt",
+    "эч_нерсе": "nop"
+  },
+  "kids_keywords": {
+    "ky": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

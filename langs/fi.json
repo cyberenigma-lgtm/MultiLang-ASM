@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Finnish / Suomi",
+    "code": "fi",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Täysi tuki assemblerille suomeksi."
+  },
+  "keywords": {
+    "siirrä": "mov",
+    "vaihda": "xchg",
+    "lataa_osoite": "lea",
+    "laajenna_nolla": "movzx",
+    "laajenna_merkki": "movsx",
+    "lisää": "add",
+    "vähennä": "sub",
+    "kerro": "mul",
+    "jaa": "div",
+    "kasvata": "inc",
+    "pienennä": "dec",
+    "käännä": "neg",
+    "vertaa": "cmp",
+    "testaa": "test",
+    "hyppää": "jmp",
+    "kutsu": "call",
+    "palaa": "ret",
+    "jos_sama": "je",
+    "jos_nolla": "jz",
+    "jos_eri": "jne",
+    "jos_suurempi": "jg",
+    "jos_pienempi": "jl",
+    "työnnä": "push",
+    "vedä": "pop",
+    "työnnä_liput": "pushf",
+    "vedä_liput": "popf",
+    "siirrä_tavu": "movsb",
+    "tallenna_tavu": "stosb",
+    "lataa_tavu": "lodsb",
+    "toista": "rep",
+    "silmukka": "loop",
+    "silmukka_jos_nolla": "loopz",
+    "keskeytys": "int",
+    "järjestelmäkutsu": "syscall",
+    "järjestelmäpaluu": "sysret",
+    "pysäytä": "hlt",
+    "tyhjä": "nop",
+    "tavu_sanaksi": "cbw",
+    "sana_kaksoissanaksi": "cwd",
+    "kaksoissana_nelois": "cdq"
+  },
+  "kids_keywords": {
+    "fi": {
+      "laita": "mov",
+      "plus": "add",
+      "miinus": "sub",
+      "nayta": "syscall"
+    }
+  }
+}

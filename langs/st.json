@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Sesotho",
+    "code": "st",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Sesotho."
+  },
+  "keywords": {
+    "suthisa": "mov",
+    "eketsa": "add",
+    "tlosa": "sub",
+    "ngatafatsa": "mul",
+    "arola": "div",
+    "tlola": "jmp",
+    "biletsa": "call",
+    "khutla": "ret",
+    "bapisa": "cmp",
+    "leka": "test",
+    "le": "and",
+    "kapa": "or",
+    "kgethehileng": "xor",
+    "eseng": "not",
+    "kenya": "push",
+    "ntsha": "pop",
+    "tshenyo": "int",
+    "piletso_ya_tsamaiso": "syscall",
+    "sedikadikwe": "loop",
+    "ema": "hlt",
+    "ha_ho_letho": "nop"
+  },
+  "kids_keywords": {
+    "st": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

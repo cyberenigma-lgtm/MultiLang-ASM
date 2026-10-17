@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Bosnian / Bosanski",
+    "code": "bs",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Bosnian / Bosanski."
+  },
+  "keywords": {
+    "pomjeri": "mov",
+    "saberi": "add",
+    "oduzmi": "sub",
+    "pomnozi": "mul",
+    "podijeli": "div",
+    "skoci": "jmp",
+    "pozovi": "call",
+    "vrati": "ret",
+    "uporedi": "cmp",
+    "provjeri": "test",
+    "i": "and",
+    "ili": "or",
+    "iskljucivo": "xor",
+    "ne": "not",
+    "gurni": "push",
+    "izvadi": "pop",
+    "prekid": "int",
+    "sistemski_poziv": "syscall",
+    "petlja": "loop",
+    "zaustavi": "hlt",
+    "nista": "nop"
+  },
+  "kids_keywords": {
+    "bs": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

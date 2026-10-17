@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "name": "Greek / Ελληνικά",
+    "code": "el",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Full support for Assembly in Greek."
+  },
+  "keywords": {
+    "μετακίνηση": "mov",
+    "ανταλλαγή": "xchg",
+    "φόρτωση": "lea",
+    "πρόσθεση": "add",
+    "αφαίρεση": "sub",
+    "πολλαπλασιασμός": "mul",
+    "σύγκριση": "cmp",
+    "έλεγχος": "test",
+    "άλμα": "jmp",
+    "κλήση": "call",
+    "επιστροφή": "ret",
+    "εάν_ίσο": "je",
+    "εάν_μηδέν": "jz",
+    "εάν_όχι_ίσο": "jne",
+    "εάν_μεγαλύτερο": "jg",
+    "εάν_μικρότερο": "jl",
+    "ώθηση": "push",
+    "εξαγωγή": "pop",
+    "ώθηση_σημαιών": "pushf",
+    "εξαγωγή_σημαιών": "popf",
+    "μετακίνηση_byte": "movsb",
+    "αποθήκευση_byte": "stosb",
+    "φόρτωση_byte": "lodsb",
+    "επανάληψη": "rep",
+    "βρόχος": "loop",
+    "βρόχος_εάν_μηδέν": "loopz",
+    "διακοπή": "int",
+    "κλήση_συστήματος": "syscall",
+    "επιστροφή_συστήματος": "sysret",
+    "παύση": "hlt",
+    "τίποτα": "nop",
+    "byte_σε_word": "cbw",
+    "word_σε_double": "cwd"
+  },
+  "kids_keywords": {
+    "el": {
+      "bale": "mov",
+      "prosthese": "add",
+      "afairese": "sub",
+      "diekse": "syscall"
+    }
+  }
+}

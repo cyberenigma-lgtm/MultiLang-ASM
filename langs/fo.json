@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Faroese / Føroyskt",
+    "code": "fo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Faroese / Føroyskt."
+  },
+  "keywords": {
+    "flyt": "mov",
+    "legg_aftrat": "add",
+    "drag_fra": "sub",
+    "falda": "mul",
+    "deil": "div",
+    "leyp": "jmp",
+    "kall": "call",
+    "vend_aftur": "ret",
+    "samanber": "cmp",
+    "royn": "test",
+    "og": "and",
+    "ella": "or",
+    "serstakt": "xor",
+    "ikki": "not",
+    "skjot": "push",
+    "tak": "pop",
+    "avbrot": "int",
+    "skipanarkall": "syscall",
+    "lykkja": "loop",
+    "steðga": "hlt",
+    "einki": "nop"
+  },
+  "kids_keywords": {
+    "fo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

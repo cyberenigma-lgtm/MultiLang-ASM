@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tibetan / བོད་སྐད་",
+    "code": "bo",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tibetan / བོད་སྐད་."
+  },
+  "keywords": {
+    "སྤོ": "mov",
+    "སྣོན": "add",
+    "འཐེན": "sub",
+    "སྒྱུར": "mul",
+    "བགོ": "div",
+    "མཆོང": "jmp",
+    "འབོད": "call",
+    "ཕྱིར་ལོག": "ret",
+    "བསྡུར": "cmp",
+    "ཚོད་ལྟ": "test",
+    "དང": "and",
+    "ཡང་ན": "or",
+    "ཐུན་མོང_མིན་པ": "xor",
+    "མིན": "not",
+    "འཇུག": "push",
+    "འདོན": "pop",
+    "བར་ཆད": "int",
+    "མ་ལག_འབོད་པ": "syscall",
+    "འཁོར་ལོ": "loop",
+    "མཚམས་འཇོག": "hlt",
+    "ཅི་ཡང་མེད": "nop"
+  },
+  "kids_keywords": {
+    "bo": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

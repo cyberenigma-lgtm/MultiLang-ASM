@@ -1,51 +1,14 @@
-# Supported Languages
+# Supported Languages Directory (150 Languages)
 
-MultiLang-ASM currently supports **56 languages and dialects** with full technical parity, comprehensive instruction mapping, and reverse translation.
-
----
-
-## 🌍 Complete Language List
-
-| Language | Code | Instructions | Manual |
-| :--- | :--- | :--- | :--- |
-| **Español** | `es` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ES.md) |
-| **English** | `en` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/README.md) |
-| **Français** | `fr` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_FR.md) |
-| **Deutsch** | `de` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_DE.md) |
-| **Italiano**| `it` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_IT.md) |
-| **Português**| `pt` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_PT.md) |
-| **Русский** | `ru` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_RU.md) |
-| **日本語** | `ja` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_JA.md) |
-| **中文** | `zh` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ZH.md) |
-| **한국어** | `ko` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_KO.md) |
-| **Català** | `ca` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_CA.md) |
-| **Norsk** | `no` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_NO.md) |
-| **Galego** | `gl` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_GL.md) |
-| **Euskara** | `eu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_EU.md) |
-| **Gaeilge** | `ga` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_GA.md) |
-| **Quechua** | `qu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_QU.md) |
-| **Aymara** | `ay` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AY.md) |
-| **Nahuatl** | `nah`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_NAH.md) |
-| **Maya** | `may`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_MAY.md) |
-| **IsiZulu** | `zu` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_ZU.md) |
-| **Afrikaans**| `af` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AF.md) |
-| **Hausa** | `ha` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_HA.md) |
-| **Igbo** | `ig` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_IG.md) |
-| **Yoruba** | `yo` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_YO.md) |
-| **Akan** | `ak` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AK.md) |
-| **Amharic** | `am` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_AM.md) |
-| **Bengali** | `bn` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_BN.md) |
-| **Tamil** | `ta` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TA.md) |
-| **Telugu** | `te` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TE.md) |
-| **Javanese** | `jv` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_JV.md) |
-| **Sundanese**| `su` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_SU.md) |
-| **Maori** | `mi` | 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_MI.md) |
-| **Tok Pisin**| `tpi`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_TPI.md) |
-| **Cantonese**| `yue`| 80+ | [Manual](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/docs/INSTRUCCIONES_YUE.md) |
-
-*(And 20+ more dialects and variants)*
+MultiLang-ASM v1.0.0 includes native support for **150 world languages and dialects** compiled directly into the C99 engine.
 
 ---
 
-## 🌎 Regional Coverage
-For a full breakdown of which language to use for each country, see the **[List of Countries and Languages](file:///c:/Users/cyber/OneDrive/Documentos/NeuroOs/Neuro-OS-Genesis/MultiLang-ASM/LISTA_PAISES_LENGUAS.md)**.
+## Summary by Continent
+
+- **Europe (46 languages)**: Spanish (`es`), English (`en`), French (`fr`), German (`de`), Italian (`it`), Portuguese (`pt`), Russian (`ru`), Ukrainian (`uk`), Polish (`pl`), Dutch (`nl`), Swedish (`sv`), Danish (`da`), Norwegian (`no`), Finnish (`fi`), Czech (`cs`), Slovak (`sk`), Hungarian (`hu`), Romanian (`ro`), Bulgarian (`bg`), Greek (`el`), Latin (`la`), Esperanto (`eo`), Catalan (`ca`), Galician (`gl`), Basque (`eu`), Asturian (`ast`), Aragonese (`an`), Occitan (`oc`), Breton (`br`), Irish (`ga`), Welsh (`cy`), Scottish Gaelic (`gd`), etc.
+- **Americas (16 languages)**: Latin American Spanish (`es_mx`, `es_ar`), Quechua (`qu`), Aymara (`ay`), Nahuatl (`nah`), Maya (`may`), Guarani (`gn`), Cherokee (`chr`), Navajo (`nav`), Inuktitut (`iu`), Greenlandic (`kl`), Hawaiian (`haw`), etc.
+- **Africa (36 languages)**: Swahili (`sw`), Amharic (`am`), Oromo (`om`), Tigrinya (`ti`), Somali (`so`), Hausa (`ha`), Yoruba (`yo`), Igbo (`ig`), Fula (`ff`), Wolof (`wo`), Akan (`ak`), Lingala (`ln`), Kongo (`kg`), Kinyarwanda (`rw`), Kirundi (`rn`), Shona (`sn`), Chichewa (`ny`), Zulu (`zu`), Xhosa / Swati (`ss`), Afrikaans (`af`), etc.
+- **Asia & Oceania (52 languages)**: Mandarin (`zh`), Cantonese (`yue`), Japanese (`ja`), Korean (`ko`), Vietnamese (`vi`), Thai (`th`), Khmer (`km`), Burmese (`my`), Indonesian (`id`), Javanese (`jv`), Tagalog (`tl`), Hindi (`hi`), Urdu (`ur`), Bengali (`bn`), Punjabi (`pa`), Marathi (`mr`), Gujarati (`gu`), Tamil (`ta`), Telugu (`te`), Kannada (`kn`), Malayalam (`ml`), Persian (`fa`), Pashto (`ps`), Kurdish (`ku`), Hebrew (`he`), Arabic (`ar`), Turkish (`tr`), Kazakh (`kk`), Uzbek (`uz`), Mongolian (`mn`), Maori (`mi`), Samoan (`sm`), Fijian (`fj`), Tok Pisin (`tpi`), etc.
+
+Full breakdown with country mappings is available in [LISTA_PAISES_LENGUAS.md](../LISTA_PAISES_LENGUAS.md).

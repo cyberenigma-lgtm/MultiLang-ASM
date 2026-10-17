@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Guarani / Avañe'ẽ",
+    "code": "gn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Guarani / Avañe'ẽ."
+  },
+  "keywords": {
+    "mbohasa": "mov",
+    "mbojoapy": "add",
+    "mbogue": "sub",
+    "mboheta": "mul",
+    "mbovo": "div",
+    "po": "jmp",
+    "henoi": "call",
+    "jevy": "ret",
+    "mbojoja": "cmp",
+    "ha'a": "test",
+    "ha": "and",
+    "térã": "or",
+    "ha'eñomi": "xor",
+    "nahániri": "not",
+    "moinge": "push",
+    "nohê": "pop",
+    "joko": "int",
+    "henoi_sistema": "syscall",
+    "apu'a": "loop",
+    "pytu'u": "hlt",
+    "mba'eve": "nop"
+  },
+  "kids_keywords": {
+    "gn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

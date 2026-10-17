@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Kirundi",
+    "code": "rn",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Kirundi."
+  },
+  "keywords": {
+    "yimura": "mov",
+    "ongerako": "add",
+    "kuraho": "sub",
+    "gwiza": "mul",
+    "gabura": "div",
+    "simbuka": "jmp",
+    "hamagara": "call",
+    "subira": "ret",
+    "gereranya": "cmp",
+    "gereza": "test",
+    "na": "and",
+    "canke": "or",
+    "rudende": "xor",
+    "oya": "not",
+    "injiza": "push",
+    "sokora": "pop",
+    "uguhagarika": "int",
+    "ihamagara_ry_uburyo": "syscall",
+    "ikizunguruko": "loop",
+    "hagarara": "hlt",
+    "ntakintu": "nop"
+  },
+  "kids_keywords": {
+    "rn": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

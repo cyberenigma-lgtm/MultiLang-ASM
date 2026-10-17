@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Estonian / Eesti",
+    "code": "et",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Estonian / Eesti."
+  },
+  "keywords": {
+    "liiguta": "mov",
+    "liida": "add",
+    "lahuta": "sub",
+    "korruta": "mul",
+    "jaga": "div",
+    "huppa": "jmp",
+    "kutsu": "call",
+    "tagasta": "ret",
+    "vordle": "cmp",
+    "testi": "test",
+    "ja": "and",
+    "voi": "or",
+    "valistav": "xor",
+    "mitte": "not",
+    "tuka": "push",
+    "tiri": "pop",
+    "katkestus": "int",
+    "susteemikutse": "syscall",
+    "tsukkel": "loop",
+    "peata": "hlt",
+    "mittemidagi": "nop"
+  },
+  "kids_keywords": {
+    "et": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

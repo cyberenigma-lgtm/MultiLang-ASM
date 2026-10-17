@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Odia / ଓଡ଼ିଆ",
+    "code": "or",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Odia / ଓଡ଼ିଆ."
+  },
+  "keywords": {
+    "ଘୁଞ୍ଚାଅ": "mov",
+    "ଯୋଡ଼": "add",
+    "ଫେଡ଼": "sub",
+    "ଗୁଣନ": "mul",
+    "ହରଣ": "div",
+    "ଡେଇଁବା": "jmp",
+    "ଡାକନ୍ତୁ": "call",
+    "ଫେରସ୍ତ": "ret",
+    "ତୁଳନା": "cmp",
+    "ପରୀକ୍ଷା": "test",
+    "ଏବଂ": "and",
+    "କିମ୍ବା": "or",
+    "ସ୍ୱତନ୍ତ୍ର": "xor",
+    "ନାହିଁ": "not",
+    "ରଖନ୍ତୁ": "push",
+    "କାଢ଼ନ୍ତୁ": "pop",
+    "ବ୍ୟାଘାତ": "int",
+    "ସିଷ୍ଟମ_କଲ୍": "syscall",
+    "ଚକ୍ର": "loop",
+    "ଅଟକନ୍ତୁ": "hlt",
+    "କିଛି_ନାହିଁ": "nop"
+  },
+  "kids_keywords": {
+    "or": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

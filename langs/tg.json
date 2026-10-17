@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Tajik / Тоҷикӣ",
+    "code": "tg",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Tajik / Тоҷикӣ."
+  },
+  "keywords": {
+    "кӯчонидан": "mov",
+    "чамъ_кардан": "add",
+    "тарҳ_кардан": "sub",
+    "зарб_кардан": "mul",
+    "тақсим_кардан": "div",
+    "ҷаҳидан": "jmp",
+    "даъват_кардан": "call",
+    "баргаштан": "ret",
+    "муқоиса_кардан": "cmp",
+    "санҷидан": "test",
+    "ва": "and",
+    "ё": "or",
+    "истисноӣ": "xor",
+    "не": "not",
+    "гузоштан": "push",
+    "кашидан": "pop",
+    "қатъ": "int",
+    "даъвати_системавӣ": "syscall",
+    "давр": "loop",
+    "истодан": "hlt",
+    "ҳеҷ_чиз": "nop"
+  },
+  "kids_keywords": {
+    "tg": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

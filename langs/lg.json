@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Ganda / Luganda",
+    "code": "lg",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Ganda / Luganda."
+  },
+  "keywords": {
+    "sindiika": "mov",
+    "yongerako": "add",
+    "toolako": "sub",
+    "kubisaamu": "mul",
+    "gabanako": "div",
+    "buuka": "jmp",
+    "yita": "call",
+    "komawo": "ret",
+    "geraageranya": "cmp",
+    "kebera": "test",
+    "ne": "and",
+    "oba": "or",
+    "kyawukana": "xor",
+    "nedda": "not",
+    "yingiza": "push",
+    "gyamu": "pop",
+    "okusalako": "int",
+    "omulanga_gw_enkola": "syscall",
+    "ennetoloola": "loop",
+    "yimirira": "hlt",
+    "tewali": "nop"
+  },
+  "kids_keywords": {
+    "lg": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}

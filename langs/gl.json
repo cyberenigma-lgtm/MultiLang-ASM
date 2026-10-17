@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Galician / Galego",
+    "code": "gl",
+    "author": "Neuro-OS Community",
+    "version": "1.0",
+    "description": "Soporte completo para o ensamblador en Galego."
+  },
+  "keywords": {
+    "mover": "mov",
+    "intercambiar": "xchg",
+    "cargar_efectiva": "lea",
+    "estender_cero": "movzx",
+    "estender_signo": "movsx",
+    "sumar": "add",
+    "restar": "sub",
+    "multiplicar": "mul",
+    "dividir": "div",
+    "incrementar": "inc",
+    "decrementar": "dec",
+    "negar": "neg",
+    "comparar": "cmp",
+    "probar": "test",
+    "saltar": "jmp",
+    "chamar": "call",
+    "retornar": "ret",
+    "se_igual": "je",
+    "se_cero": "jz",
+    "se_non_igual": "jne",
+    "se_maior": "jg",
+    "se_menor": "jl",
+    "meter": "push",
+    "sacar": "pop",
+    "meter_bandeiras": "pushf",
+    "sacar_bandeiras": "popf",
+    "mover_byte": "movsb",
+    "almacenar_byte": "stosb",
+    "cargar_byte": "lodsb",
+    "repetir": "rep",
+    "bucle": "loop",
+    "bucle_se_cero": "loopz",
+    "interrupción": "int",
+    "chamada_sistema": "syscall",
+    "retorno_sistema": "sysret",
+    "deter": "hlt",
+    "nada": "nop",
+    "byte_a_palabra": "cbw",
+    "palabra_a_dobre": "cwd",
+    "dobre_a_quad": "cdq"
+  },
+  "kids_keywords": {
+    "gl": {
+      "pon": "mov",
+      "suma": "add",
+      "resta": "sub",
+      "amosa": "syscall"
+    }
+  }
+}

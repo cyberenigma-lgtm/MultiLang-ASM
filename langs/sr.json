@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Serbian / Српски",
+    "code": "sr",
+    "author": "Neuro-OS & UPL Sovereign Systems",
+    "version": "1.0.0",
+    "description": "Soporte oficial de ensamblador para Serbian / Српски."
+  },
+  "keywords": {
+    "премести": "mov",
+    "сабери": "add",
+    "одузми": "sub",
+    "помножи": "mul",
+    "подели": "div",
+    "скочи": "jmp",
+    "позови": "call",
+    "врати": "ret",
+    "упореди": "cmp",
+    "тестирај": "test",
+    "и": "and",
+    "или": "or",
+    "искључиво": "xor",
+    "не": "not",
+    "гурни": "push",
+    "извуци": "pop",
+    "прекид": "int",
+    "системски_позив": "syscall",
+    "петља": "loop",
+    "заустави": "hlt",
+    "ништа": "nop",
+    "повећај": "inc",
+    "смањи": "dec",
+    "размени": "xchg",
+    "ако_једнако": "je",
+    "ако_није": "jne"
+  },
+  "kids_keywords": {
+    "sr": {
+      "pon": "mov",
+      "suma": "add"
+    }
+  }
+}
