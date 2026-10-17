@@ -19,6 +19,9 @@ KEYWORDS = {
     "delen": "div", "verhogen": "inc", "verlagen": "dec",
     "ontkennen": "neg",
     
+    # Logica
+    "en": "and", "of": "or", "niet": "not", "xor": "xor",
+    
     # Vergelijking
     "vergelijk": "cmp", "test": "test",
     

@@ -1,5 +1,14 @@
 import os
+import sys
 import importlib.util
+
+if os.name == 'nt':
+    import codecs
+    try:
+        sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'replace')
+        sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'replace')
+    except Exception:
+        pass
 
 def test_language_integrity():
     langs_dir = "langs"

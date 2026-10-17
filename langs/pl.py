@@ -12,12 +12,15 @@ METADATA = {
 # Standard mapping: Native Keyword -> NASM Mnemonic
 KEYWORDS = {
     # Ruch
-    "przenies": "mov", "zamien": "xchg", "zaladuj_adres": "lea",
+    "przenies": "mov", "przesun": "mov", "przesuń": "mov", "zamien": "xchg", "zaladuj_adres": "lea",
     
     # Arytmetyka
     "dodaj": "add", "odejmij": "sub", "pomnoz": "mul",
     "podziel": "div", "zwieksz": "inc", "zmniejsz": "dec",
     "zaneguj": "neg",
+    
+    # Logika
+    "i": "and", "oraz": "and", "lub": "or", "albo": "xor",
     
     # Porownanie
     "porownaj": "cmp", "testuj": "test",

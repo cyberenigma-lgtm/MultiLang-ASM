@@ -12,17 +12,17 @@ METADATA = {
 # Standard mapping: Native Keyword -> NASM Mnemonic
 KEYWORDS = {
     # डेटा संचलन (Movement)
-    "स्थानांतरित": "mov", "बदलें": "xchg", "पता_लोड": "lea",
+    "स्थानांतरित": "mov", "बदलें": "xchg", "पता_लोड": "lea", "pata_load": "lea",
     
     # अंकगणित (Arithmetic)
     "जोड़ें": "add", "घटाएं": "sub", "गुणा": "mul",
     "विभाजन": "div", "बढ़ाएं": "inc", "घटाएं_एक": "dec",
     
     # तुलना (Comparison)
-    "तुलना": "cmp", "परीक्षण": "test",
+    "तुलना": "cmp", "परीक्षण": "test", "pariksha": "test",
     
     # नियंत्रण प्रवाह (Flow Control)
-    "कूदें": "jmp", "कॉल": "call", "वापस": "ret",
+    "कूदें": "jmp", "kudo": "jmp", "कॉल": "call", "वापस": "ret",
     "यदि_बराबर": "je", "यदि_शून्य": "jz", "यदि_नहीं_बराबर": "jne",
     "यदि_बड़ा": "jg", "यदि_छोटा": "jl",
     

@@ -19,6 +19,9 @@ KEYWORDS = {
     "dividera": "div", "oka": "inc", "minska": "dec",
     "negera": "neg",
     
+    # Logik
+    "och": "and", "eller": "or", "inte": "not", "xor": "xor",
+    
     # Jamforelse
     "jamfor": "cmp", "testa": "test",
     

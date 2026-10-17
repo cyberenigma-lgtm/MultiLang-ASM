@@ -12,12 +12,15 @@ METADATA = {
 # Standard mapping: Native Keyword -> NASM Mnemonic
 KEYWORDS = {
     # Hareket
-    "tasi": "mov", "degistir": "xchg", "adresi_yukle": "lea",
+    "tasi": "mov", "taşı": "mov", "degistir": "xchg", "adresi_yukle": "lea",
     
     # Aritmetik
     "topla": "add", "ekle": "add", "cikar": "sub",
     "carp": "mul", "bol": "div", "arttir": "inc",
     "azalt": "dec", "degille": "neg",
+    
+    # Mantik
+    "ve": "and", "veya": "or", "degil": "not", "ozel_veya": "xor", "özel_veya": "xor",
     
     # Karsilastirma
     "karsilastir": "cmp", "test_et": "test",
